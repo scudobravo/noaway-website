@@ -12,8 +12,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-$mac_universal = function_exists('noaway_mac_universal_url') ? noaway_mac_universal_url() : 'https://noaway.app/download/';
-$mac_arm64 = function_exists('noaway_mac_arm64_url') ? noaway_mac_arm64_url() : 'https://noaway.app/download/';
+$mac_universal = function_exists('noaway_mac_universal_url') ? noaway_mac_universal_url() : 'https://noaway.app/downloads/';
+$mac_arm64 = function_exists('noaway_mac_arm64_url') ? noaway_mac_arm64_url() : 'https://noaway.app/downloads/';
 
 get_header();
 ?>

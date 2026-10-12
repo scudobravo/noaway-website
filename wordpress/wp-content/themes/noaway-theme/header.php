@@ -38,11 +38,7 @@
 			<div class="noaway-header-cta">
 				<a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary"><?php esc_html_e( 'Contact', 'noaway' ); ?></a>
 				<a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-bold tracking-wide text-white shadow-sm hover:opacity-95 transition-opacity"<?php echo noaway_buy_cta_attrs( 'header' ); ?>><?php
-					printf(
-						/* translators: %s: launch price, e.g. €4.99. */
-						esc_html__( 'Buy NoAway – %s', 'noaway' ),
-						esc_html( noaway_price_label() )
-					);
+					echo esc_html( function_exists( 'noaway_i18n_buy_cta_label' ) ? noaway_i18n_buy_cta_label() : ( 'Buy NoAway – ' . noaway_price_label() ) );
 				?></a>
 			</div>
 		</div>
@@ -51,12 +47,14 @@
 <div class="sticky top-16 md:top-20 z-40 w-full text-center py-2 px-3 sm:px-4 text-xs sm:text-sm font-bold tracking-wide shadow-sm" style="background-color:#ff5a00;color:#ffffff;">
 	<?php
 	echo esc_html(
-		sprintf(
-			/* translators: 1: launch price, 2: regular price. */
-			__( 'Launch price %1$s · one-time, no subscription · regular price %2$s soon', 'noaway' ),
-			noaway_price_label(),
-			noaway_regular_price_label()
-		)
+		function_exists( 'noaway_i18n_price_banner_text' )
+			? noaway_i18n_price_banner_text()
+			: sprintf(
+				/* translators: 1: launch price, 2: regular price. */
+				__( 'Launch price %1$s · one-time, no subscription · regular price %2$s soon', 'noaway' ),
+				noaway_price_label(),
+				noaway_regular_price_label()
+			)
 	);
 	?>
 </div>

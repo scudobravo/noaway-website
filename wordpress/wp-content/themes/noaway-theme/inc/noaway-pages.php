@@ -252,9 +252,49 @@ function noaway_help_page_url() {
 }
 
 function noaway_downloads_page_url() {
-	// Production slug is /download/ (singular). /downloads/ is not a live page.
-	return noaway_page_url_by_template( 'page-downloads.php', '/download/' );
+	// Canonical download URL is /downloads/ (/download/ 301s there).
+	return noaway_page_url_by_template( 'page-downloads.php', '/downloads/' );
 }
+
+/**
+ * Ensure the downloads page uses the /downloads/ slug (idempotent).
+ */
+function noaway_ensure_downloads_slug() {
+	if ( ! function_exists( 'wp_update_post' ) ) {
+		return;
+	}
+	$pages = get_pages(
+		array(
+			'meta_key'    => '_wp_page_template',
+			'meta_value'  => 'page-downloads.php',
+			'number'      => 1,
+			'post_status' => array( 'publish', 'private', 'draft' ),
+		)
+	);
+	if ( empty( $pages[0] ) ) {
+		return;
+	}
+	$page = $pages[0];
+	if ( $page->post_name === 'downloads' ) {
+		return;
+	}
+	$conflict = get_page_by_path( 'downloads', OBJECT, 'page' );
+	if ( $conflict instanceof WP_Post && (int) $conflict->ID !== (int) $page->ID ) {
+		return;
+	}
+	$result = wp_update_post(
+		array(
+			'ID'        => (int) $page->ID,
+			'post_name' => 'downloads',
+		),
+		true
+	);
+	if ( ! is_wp_error( $result ) ) {
+		flush_rewrite_rules( false );
+	}
+}
+add_action( 'after_switch_theme', 'noaway_ensure_downloads_slug' );
+add_action( 'admin_init', 'noaway_ensure_downloads_slug', 31 );
 
 function noaway_faq_page_url() {
 	return noaway_page_url_by_template( 'page-faq.php', '/faq/' );

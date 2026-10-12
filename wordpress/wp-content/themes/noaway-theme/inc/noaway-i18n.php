@@ -460,7 +460,7 @@ function noaway_i18n_replace_price( $value ) {
  */
 function noaway_i18n_tokens() {
 	$lang       = isset( $GLOBALS['noaway_landing_lang'] ) ? noaway_i18n_normalize_lang( $GLOBALS['noaway_landing_lang'] ) : 'en';
-	$download   = function_exists( 'noaway_downloads_page_url' ) ? noaway_downloads_page_url() : home_url( '/download/' );
+	$download   = function_exists( 'noaway_downloads_page_url' ) ? noaway_downloads_page_url() : home_url( '/downloads/' );
 	$teams_away = function_exists( 'noaway_teams_away_status_page_url' ) ? noaway_teams_away_status_page_url() : home_url( '/teams-away-status/' );
 	$faq        = function_exists( 'noaway_faq_page_url' ) ? noaway_faq_page_url() : home_url( '/faq/' );
 	$help       = function_exists( 'noaway_help_page_url' ) ? noaway_help_page_url() : home_url( '/help/' );
@@ -634,6 +634,137 @@ function noaway_i18n_language_labels() {
 }
 
 /**
+ * Shared chrome strings (header/footer buy CTA, price banner, email-link box).
+ *
+ * @return array<string, array<string, string>>
+ */
+function noaway_i18n_ui_copies() {
+	return array(
+		'en'    => array(
+			'buy'               => 'Buy NoAway – {price}',
+			'price_banner'      => 'Launch price %1$s · one-time, no subscription · regular price %2$s soon',
+			'email_aria'        => 'Email yourself the download link',
+			'email_title'       => 'On your phone? Email yourself the link and buy on your computer.',
+			'email_label'       => 'Email address',
+			'email_placeholder' => 'you@example.com',
+			'email_hp'          => 'Company website',
+			'email_consent'     => 'Send me occasional product emails (optional)',
+			'email_note'        => 'We email only the download link unless you opt in. See our',
+			'email_privacy'     => 'Privacy Policy',
+			'email_submit'      => 'Email me the link',
+		),
+		'de'    => array(
+			'buy'               => 'NoAway kaufen – {price}',
+			'price_banner'      => 'Einführungspreis %1$s · einmalig, kein Abo · regulärer Preis %2$s demnächst',
+			'email_aria'        => 'Download-Link per E-Mail an dich senden',
+			'email_title'       => 'Am Smartphone? Schick dir den Link und kaufe am Computer.',
+			'email_label'       => 'E-Mail-Adresse',
+			'email_placeholder' => 'du@beispiel.de',
+			'email_hp'          => 'Firmenwebsite',
+			'email_consent'     => 'Gelegentliche Produkt-E-Mails senden (optional)',
+			'email_note'        => 'Wir senden nur den Download-Link, außer du willigst ein. Siehe unsere',
+			'email_privacy'     => 'Datenschutzerklärung',
+			'email_submit'      => 'Link per E-Mail senden',
+		),
+		'es'    => array(
+			'buy'               => 'Comprar NoAway – {price}',
+			'price_banner'      => 'Precio de lanzamiento %1$s · pago único, sin suscripción · precio habitual %2$s pronto',
+			'email_aria'        => 'Envíate el enlace de descarga por correo',
+			'email_title'       => '¿En el móvil? Envíate el enlace y compra en el ordenador.',
+			'email_label'       => 'Correo electrónico',
+			'email_placeholder' => 'tu@ejemplo.com',
+			'email_hp'          => 'Sitio web de la empresa',
+			'email_consent'     => 'Enviarme correos de producto de vez en cuando (opcional)',
+			'email_note'        => 'Solo enviamos el enlace de descarga salvo que aceptes. Consulta nuestra',
+			'email_privacy'     => 'Política de privacidad',
+			'email_submit'      => 'Envíame el enlace',
+		),
+		'pt-br' => array(
+			'buy'               => 'Comprar o NoAway – {price}',
+			'price_banner'      => 'Preço de lançamento %1$s · pagamento único, sem assinatura · preço normal %2$s em breve',
+			'email_aria'        => 'Envie o link de download para o seu e-mail',
+			'email_title'       => 'No celular? Envie o link para você e compre no computador.',
+			'email_label'       => 'Endereço de e-mail',
+			'email_placeholder' => 'voce@exemplo.com',
+			'email_hp'          => 'Site da empresa',
+			'email_consent'     => 'Enviar e-mails ocasionais sobre o produto (opcional)',
+			'email_note'        => 'Enviamos só o link de download, a menos que você aceite. Veja nossa',
+			'email_privacy'     => 'Política de Privacidade',
+			'email_submit'      => 'Enviar o link por e-mail',
+		),
+		'fr'    => array(
+			'buy'               => 'Acheter NoAway – {price}',
+			'price_banner'      => 'Prix de lancement %1$s · achat unique, sans abonnement · prix habituel %2$s bientôt',
+			'email_aria'        => 'Recevoir le lien de téléchargement par e-mail',
+			'email_title'       => 'Sur téléphone ? Envoyez-vous le lien et achetez sur ordinateur.',
+			'email_label'       => 'Adresse e-mail',
+			'email_placeholder' => 'vous@exemple.com',
+			'email_hp'          => 'Site de l’entreprise',
+			'email_consent'     => 'M’envoyer des e-mails produit de temps en temps (facultatif)',
+			'email_note'        => 'Nous n’envoyons que le lien de téléchargement sauf si vous acceptez. Voir notre',
+			'email_privacy'     => 'Politique de confidentialité',
+			'email_submit'      => 'M’envoyer le lien',
+		),
+	);
+}
+
+/**
+ * Current UI language for chrome (landing lang, else English).
+ *
+ * @return string
+ */
+function noaway_i18n_ui_lang() {
+	$landing = noaway_i18n_current_landing();
+	if ( is_array( $landing ) && ! empty( $landing['lang'] ) ) {
+		return noaway_i18n_normalize_lang( $landing['lang'] );
+	}
+	return 'en';
+}
+
+/**
+ * One chrome UI string for the current (or given) language.
+ *
+ * @param string      $key
+ * @param string|null $lang
+ * @return string
+ */
+function noaway_i18n_ui( $key, $lang = null ) {
+	$lang  = $lang ? noaway_i18n_normalize_lang( $lang ) : noaway_i18n_ui_lang();
+	$all   = noaway_i18n_ui_copies();
+	$row   = isset( $all[ $lang ] ) ? $all[ $lang ] : $all['en'];
+	$value = isset( $row[ $key ] ) ? $row[ $key ] : ( isset( $all['en'][ $key ] ) ? $all['en'][ $key ] : '' );
+	return noaway_i18n_replace_price( $value );
+}
+
+/**
+ * Localized "Buy NoAway – €x" label (landing buy string when available).
+ *
+ * @return string
+ */
+function noaway_i18n_buy_cta_label() {
+	$landing = noaway_i18n_current_landing();
+	if ( is_array( $landing ) ) {
+		$copy = noaway_i18n_landing_copy( $landing['family'], $landing['lang'] );
+		if ( ! empty( $copy['buy'] ) ) {
+			return (string) $copy['buy'];
+		}
+	}
+	return noaway_i18n_ui( 'buy' );
+}
+
+/**
+ * Localized orange price banner text.
+ *
+ * @return string
+ */
+function noaway_i18n_price_banner_text() {
+	$tpl = noaway_i18n_ui( 'price_banner' );
+	$launch = function_exists( 'noaway_price_label' ) ? noaway_price_label() : '€4.99';
+	$regular = function_exists( 'noaway_regular_price_label' ) ? noaway_regular_price_label() : '€9.99';
+	return sprintf( $tpl, $launch, $regular );
+}
+
+/**
  * Short labels for the switcher chrome (Language / Sprache / …).
  *
  * @return array<string, string>
@@ -777,14 +908,19 @@ function noaway_i18n_render_locale_banner( $family, $lang ) {
  */
 function noaway_i18n_language_attributes( $output ) {
 	$landing = noaway_i18n_current_landing();
-	if ( ! is_array( $landing ) || $landing['lang'] === 'en' ) {
+	if ( ! is_array( $landing ) ) {
 		return $output;
 	}
 	$lang = noaway_i18n_bcp47( $landing['lang'] );
 	if ( preg_match( '/\blang="[^"]*"/', $output ) ) {
-		return preg_replace( '/\blang="[^"]*"/', 'lang="' . esc_attr( $lang ) . '"', $output, 1 );
+		$output = preg_replace( '/\blang="[^"]*"/', 'lang="' . esc_attr( $lang ) . '"', $output, 1 );
+	} else {
+		$output = 'lang="' . esc_attr( $lang ) . '" ' . $output;
 	}
-	return 'lang="' . esc_attr( $lang ) . '" ' . $output;
+	if ( preg_match( '/\bxml:lang="[^"]*"/', $output ) ) {
+		$output = preg_replace( '/\bxml:lang="[^"]*"/', 'xml:lang="' . esc_attr( $lang ) . '"', $output, 1 );
+	}
+	return $output;
 }
 add_filter( 'language_attributes', 'noaway_i18n_language_attributes' );
 

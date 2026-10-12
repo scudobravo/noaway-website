@@ -51,11 +51,7 @@ $tagline  = __( 'Stay active on Teams and Slack during long tasks, builds, and r
 					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php esc_html_e( 'macOS', 'noaway' ); ?></a></li>
 					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php esc_html_e( 'Windows', 'noaway' ); ?></a></li>
 					<li><a href="<?php echo esc_url( $checkout ); ?>"<?php echo noaway_buy_cta_attrs( 'footer' ); ?>><?php
-						printf(
-							/* translators: %s: launch price, e.g. €4.99. */
-							esc_html__( 'Buy NoAway – %s', 'noaway' ),
-							esc_html( noaway_price_label() )
-						);
+						echo esc_html( function_exists( 'noaway_i18n_buy_cta_label' ) ? noaway_i18n_buy_cta_label() : ( 'Buy NoAway – ' . noaway_price_label() ) );
 					?></a></li>
 				</ul>
 			</div>

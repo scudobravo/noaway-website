@@ -79,8 +79,8 @@ add_filter(
  * Legacy path (no trailing slash) => target path.
  * Add rows here. /noaway-releases/ is never redirected.
  *
- * /download/ and /contacts/ are not redirected away: those are the live pages
- * (page-downloads.php and page-contatti.php). /downloads/ → /download/ (alias).
+ * /contacts/ is the live contact page (page-contatti.php).
+ * Canonical download URL is /downloads/; /download/ 301s there.
  * /contact/ already 301s to /contacts/ at the server/WP level.
  */
 function noaway_legacy_redirects() {
@@ -92,8 +92,8 @@ function noaway_legacy_redirects() {
 		'/keep-active-native'          => '/',
 		'/keep-ticks-active'           => '/',
 		'/keep-testimonials'           => '/',
-		// Alias only: live download page slug is /download/ (do not reverse this).
-		'/downloads'                   => '/download/',
+		// Canonical download slug is /downloads/.
+		'/download'                    => '/downloads/',
 	);
 }
 
