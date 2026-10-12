@@ -1,0 +1,37 @@
+---
+description: cPanel production deploy for NoAway website
+alwaysApply: true
+---
+
+# Deploy (cPanel)
+
+Production path: `/home/izmljlig/public_html`.
+
+Deploys run **only** via `.cpanel.yml` at the repo root. Do not invent alternate deploy scripts or SFTP workflows for production releases.
+
+## What `.cpanel.yml` copies
+
+1. `wordpress/wp-content/themes/noaway-theme` → `$DEPLOYPATH/wp-content/themes/`
+2. `wordpress/wp-content/plugins/noaway-analytics` → `$DEPLOYPATH/wp-content/plugins/`
+3. `wordpress/robots.txt` and `wordpress/llms.txt` → `$DEPLOYPATH/`
+
+## Production constraints
+
+- Production has **no Node.js**. Commit compiled assets (`assets/css/tailwind.css`, WebP images) before push.
+- After theme deploy, re-save **Settings → Permalinks** in wp-admin.
+- Before overwriting the live theme, backup:
+
+```bash
+cd ~/public_html/wp-content/themes && tar czf ~/noaway-theme-backup-YYYY-MM-DD.tgz noaway-theme
+```
+
+Rollback:
+
+```bash
+cd ~/public_html/wp-content/themes && rm -rf noaway-theme && tar xzf ~/noaway-theme-backup-YYYY-MM-DD.tgz
+```
+
+## Do not commit
+
+- `.vscode/sftp.json` (gitignored)
+- Real passwords, API keys, tokens, or secrets

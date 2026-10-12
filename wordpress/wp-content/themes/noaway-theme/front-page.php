@@ -45,7 +45,18 @@ get_header();
                   <div class="size-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></div>
                   <span class="text-[10px] font-bold text-green-500 uppercase">Available</span>
                 </div>
-                <img class="w-full h-full object-cover" alt="NoAway app to keep Teams active and keep Teams icon green—prevent Teams away status on screen" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/landing-hero-section.png' ); ?>" width="1200" height="630" fetchpriority="high">
+                <?php
+				noaway_picture(
+					'landing-hero-section',
+					'NoAway app to keep Teams active and keep Teams icon green—prevent Teams away status on screen',
+					array(
+						'class'          => 'w-full h-full object-cover',
+						'width'          => 1200,
+						'height'         => 630,
+						'fetchpriority'  => 'high',
+					)
+				);
+				?>
               </div>
             </div>
             <div class="absolute -z-10 -top-20 -right-20 w-64 h-64 bg-primary/20 blur-3xl rounded-full"></div>

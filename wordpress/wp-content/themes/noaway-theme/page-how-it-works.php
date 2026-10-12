@@ -24,7 +24,18 @@ get_header();
       </div>
       <div class="mt-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
         <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative">
-          <img class="object-cover w-full h-full" alt="How NoAway works: system tray icon and Keep Active control on desktop" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/how-it-works-hero-section.png' ); ?>" width="1200" height="630" loading="eager">
+          <?php
+			noaway_picture(
+				'how-it-works-hero-section',
+				'How NoAway works: system tray icon and Keep Active control on desktop',
+				array(
+					'class'   => 'object-cover w-full h-full',
+					'width'   => 1200,
+					'height'  => 630,
+					'loading' => 'eager',
+				)
+			);
+			?>
         </div>
       </div>
     </div>

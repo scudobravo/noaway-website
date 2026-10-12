@@ -79,19 +79,21 @@ add_filter(
  * Legacy path (no trailing slash) => target path.
  * Add rows here. /noaway-releases/ is never redirected.
  *
- * /download/ and /contacts/ are not in this map: those slugs are the live pages
- * (page-downloads.php and page-contatti.php). /downloads/ is a 404, and /contact/
- * already 301s to /contacts/.
+ * /download/ and /contacts/ are not redirected away: those are the live pages
+ * (page-downloads.php and page-contatti.php). /downloads/ → /download/ (alias).
+ * /contact/ already 301s to /contacts/ at the server/WP level.
  */
 function noaway_legacy_redirects() {
 	return array(
-		'/prevent-teams-away'         => '/keep-teams-active/',
-		'/keep-teams-icon-green'      => '/keep-teams-active/',
+		'/prevent-teams-away'          => '/keep-teams-active/',
+		'/keep-teams-icon-green'       => '/keep-teams-active/',
 		'/keep-microsoft-teams-active' => '/keep-teams-active/',
-		'/keep-active'                => '/',
-		'/keep-active-native'         => '/',
-		'/keep-ticks-active'          => '/',
-		'/keep-testimonials'          => '/',
+		'/keep-active'                 => '/',
+		'/keep-active-native'          => '/',
+		'/keep-ticks-active'           => '/',
+		'/keep-testimonials'           => '/',
+		// Alias only: live download page slug is /download/ (do not reverse this).
+		'/downloads'                   => '/download/',
 	);
 }
 

@@ -252,7 +252,8 @@ function noaway_help_page_url() {
 }
 
 function noaway_downloads_page_url() {
-	return noaway_page_url_by_template( 'page-downloads.php', '/downloads/' );
+	// Production slug is /download/ (singular). /downloads/ is not a live page.
+	return noaway_page_url_by_template( 'page-downloads.php', '/download/' );
 }
 
 function noaway_faq_page_url() {
@@ -260,5 +261,62 @@ function noaway_faq_page_url() {
 }
 
 function noaway_contact_page_url() {
-	return noaway_page_url_by_template( 'page-contatti.php', '/contact/' );
+	// Production slug is /contacts/. /contact/ already 301s to /contacts/.
+	return noaway_page_url_by_template( 'page-contatti.php', '/contacts/' );
+}
+
+/**
+ * Responsive <picture> with WebP + PNG fallback for theme images.
+ *
+ * @param string               $basename Filename without extension under assets/images/ (e.g. landing-hero-section).
+ * @param string               $alt      Alt text.
+ * @param array<string,mixed>  $attrs    Optional img attrs: class, width, height, loading, fetchpriority, decoding.
+ */
+function noaway_picture( $basename, $alt, $attrs = array() ) {
+	$basename = is_string( $basename ) ? basename( $basename ) : '';
+	$basename = preg_replace( '/\.(webp|png|jpe?g|gif|svg)$/i', '', $basename );
+	if ( ! is_string( $basename ) || $basename === '' ) {
+		return;
+	}
+	if ( ! is_array( $attrs ) ) {
+		$attrs = array();
+	}
+	$dir  = get_stylesheet_directory() . '/assets/images/';
+	$uri  = get_stylesheet_directory_uri() . '/assets/images/';
+	$webp = $dir . $basename . '.webp';
+	$png  = $dir . $basename . '.png';
+	$class = isset( $attrs['class'] ) ? (string) $attrs['class'] : '';
+	$width = isset( $attrs['width'] ) ? (int) $attrs['width'] : 0;
+	$height = isset( $attrs['height'] ) ? (int) $attrs['height'] : 0;
+	$loading = isset( $attrs['loading'] ) ? (string) $attrs['loading'] : '';
+	$fetchpriority = isset( $attrs['fetchpriority'] ) ? (string) $attrs['fetchpriority'] : '';
+	$decoding = isset( $attrs['decoding'] ) ? (string) $attrs['decoding'] : 'async';
+
+	$img_attrs = '';
+	if ( $class !== '' ) {
+		$img_attrs .= ' class="' . esc_attr( $class ) . '"';
+	}
+	if ( $width > 0 ) {
+		$img_attrs .= ' width="' . $width . '"';
+	}
+	if ( $height > 0 ) {
+		$img_attrs .= ' height="' . $height . '"';
+	}
+	if ( $loading !== '' ) {
+		$img_attrs .= ' loading="' . esc_attr( $loading ) . '"';
+	}
+	if ( $fetchpriority !== '' ) {
+		$img_attrs .= ' fetchpriority="' . esc_attr( $fetchpriority ) . '"';
+	}
+	if ( $decoding !== '' ) {
+		$img_attrs .= ' decoding="' . esc_attr( $decoding ) . '"';
+	}
+
+	$fallback_src = file_exists( $png ) ? $uri . $basename . '.png' : $uri . $basename . '.webp';
+	echo '<picture>';
+	if ( file_exists( $webp ) ) {
+		echo '<source type="image/webp" srcset="' . esc_url( $uri . $basename . '.webp' ) . '">';
+	}
+	echo '<img' . $img_attrs . ' alt="' . esc_attr( $alt ) . '" src="' . esc_url( $fallback_src ) . '">';
+	echo '</picture>';
 }

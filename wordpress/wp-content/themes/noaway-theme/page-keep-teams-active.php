@@ -63,7 +63,18 @@ get_header();
               <div class="size-2 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]"></div>
               <span class="text-[10px] font-bold text-green-500 uppercase"><?php echo noaway_i18n_plain( $t['hero_status'] ); ?></span>
             </div>
-            <img class="w-full h-full object-cover" alt="<?php echo esc_attr( $t['hero_alt'] ); ?>" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/landing-hero-section.png' ); ?>" width="1200" height="630" loading="eager">
+            <?php
+			noaway_picture(
+				'landing-hero-section',
+				$t['hero_alt'],
+				array(
+					'class'   => 'w-full h-full object-cover',
+					'width'   => 1200,
+					'height'  => 630,
+					'loading' => 'eager',
+				)
+			);
+			?>
           </div>
         </div>
       </div>
@@ -78,7 +89,18 @@ get_header();
         <p class="text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['problem_p'] ); ?></p>
       </div>
       <div class="mb-16 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xl">
-        <img class="w-full h-auto object-cover" alt="<?php echo esc_attr( $t['problem_alt'] ); ?>" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/landing-problem-section.png' ); ?>" width="1200" height="630" loading="lazy">
+        <?php
+		noaway_picture(
+			'landing-problem-section',
+			$t['problem_alt'],
+			array(
+				'class'   => 'w-full h-auto object-cover',
+				'width'   => 1200,
+				'height'  => 630,
+				'loading' => 'lazy',
+			)
+		);
+		?>
       </div>
 
       <div class="max-w-4xl mx-auto space-y-12 mb-16">
@@ -124,7 +146,18 @@ get_header();
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
       <div class="order-2 lg:order-1 relative">
         <div class="rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-2xl">
-          <img class="w-full h-auto object-cover" alt="<?php echo esc_attr( $t['solution_alt'] ); ?>" src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/landing-solution-section.png' ); ?>" width="1200" height="630" loading="lazy">
+          <?php
+			noaway_picture(
+				'landing-solution-section',
+				$t['solution_alt'],
+				array(
+					'class'   => 'w-full h-auto object-cover',
+					'width'   => 1200,
+					'height'  => 630,
+					'loading' => 'lazy',
+				)
+			);
+			?>
         </div>
       </div>
       <div class="order-1 lg:order-2 flex flex-col gap-6">
