@@ -166,6 +166,50 @@ function noaway_i18n_landing_from_request() {
 }
 
 /**
+ * Template file for a localized guide (non-English).
+ *
+ * @param string $family slack|teams
+ * @param string $lang
+ * @return string
+ */
+function noaway_i18n_guide_template( $family, $lang ) {
+	$lang   = noaway_i18n_normalize_lang( $lang );
+	$suffix = $lang === 'pt-br' ? 'pt-br' : $lang;
+	$base   = $family === 'teams' ? 'page-keep-teams-active-' : 'page-keep-slack-active-';
+	return $base . $suffix . '.php';
+}
+
+/**
+ * Guide slug under the language parent (keep-slack-active / keep-teams-active).
+ *
+ * @param string $family slack|teams
+ * @return string
+ */
+function noaway_i18n_guide_slug( $family ) {
+	return $family === 'teams' ? 'keep-teams-active' : 'keep-slack-active';
+}
+
+/**
+ * Find a published page that uses a given page template.
+ *
+ * @param string $template_file
+ * @return WP_Post|null
+ */
+function noaway_i18n_find_page_by_template( $template_file ) {
+	$pages = get_pages(
+		array(
+			'meta_key'    => '_wp_page_template',
+			'meta_value'  => $template_file,
+			'number'      => 1,
+			'post_status' => 'publish',
+			'sort_column' => 'ID',
+			'sort_order'  => 'ASC',
+		)
+	);
+	return ! empty( $pages[0] ) ? $pages[0] : null;
+}
+
+/**
  * Public URL for one landing in one language.
  *
  * @param string $family slack|teams
@@ -174,7 +218,7 @@ function noaway_i18n_landing_from_request() {
  */
 function noaway_i18n_landing_url( $family, $lang ) {
 	$lang = noaway_i18n_normalize_lang( $lang );
-	$slug = $family === 'teams' ? 'keep-teams-active' : 'keep-slack-active';
+	$slug = noaway_i18n_guide_slug( $family );
 	if ( $lang === 'en' ) {
 		if ( $family === 'teams' && function_exists( 'noaway_keep_teams_active_page_url' ) ) {
 			return noaway_keep_teams_active_page_url();
@@ -182,14 +226,183 @@ function noaway_i18n_landing_url( $family, $lang ) {
 		if ( $family === 'slack' && function_exists( 'noaway_keep_slack_active_page_url' ) ) {
 			return noaway_keep_slack_active_page_url();
 		}
+	} else {
+		$page = noaway_i18n_find_page_by_template( noaway_i18n_guide_template( $family, $lang ) );
+		if ( $page ) {
+			$url = get_permalink( $page->ID );
+			if ( is_string( $url ) && $url !== '' ) {
+				return function_exists( 'noaway_seo_canonical_url' ) ? noaway_seo_canonical_url( $url ) : $url;
+			}
+		}
 	}
-	$path = '/' . $lang . '/' . $slug . '/';
+	$path = $lang === 'en' ? '/' . $slug . '/' : '/' . $lang . '/' . $slug . '/';
 	$url  = home_url( $path );
 	if ( function_exists( 'noaway_seo_canonical_url' ) ) {
 		$url = noaway_seo_canonical_url( $url );
 	}
 	return $url;
 }
+
+/**
+ * Language parent page titles (URL slug = language code).
+ *
+ * @return array<string, string>
+ */
+function noaway_i18n_parent_titles() {
+	return array(
+		'de'    => 'Deutsch',
+		'es'    => 'Español',
+		'fr'    => 'Français',
+		'pt-br' => 'Português (Brasil)',
+	);
+}
+
+/**
+ * Ensure a published parent page exists for /{lang}/.
+ *
+ * @param string $lang
+ * @return int Parent page ID, or 0 on failure.
+ */
+function noaway_i18n_ensure_lang_parent( $lang ) {
+	$lang = noaway_i18n_normalize_lang( $lang );
+	if ( $lang === 'en' ) {
+		return 0;
+	}
+	$titles = noaway_i18n_parent_titles();
+	if ( ! isset( $titles[ $lang ] ) ) {
+		return 0;
+	}
+	$existing = get_page_by_path( $lang, OBJECT, 'page' );
+	if ( $existing instanceof WP_Post ) {
+		if ( $existing->post_status !== 'publish' ) {
+			wp_update_post(
+				array(
+					'ID'          => (int) $existing->ID,
+					'post_status' => 'publish',
+				)
+			);
+		}
+		return (int) $existing->ID;
+	}
+	$id = wp_insert_post(
+		array(
+			'post_type'    => 'page',
+			'post_status'  => 'publish',
+			'post_title'   => $titles[ $lang ],
+			'post_name'    => $lang,
+			'post_content' => '',
+			'post_parent'  => 0,
+		),
+		true
+	);
+	return ( ! is_wp_error( $id ) && $id ) ? (int) $id : 0;
+}
+
+/**
+ * Ensure a localized guide page exists under its language parent.
+ *
+ * @param string $family slack|teams
+ * @param string $lang
+ * @param int    $parent_id
+ * @return bool True when a page was created or updated.
+ */
+function noaway_i18n_ensure_guide_page( $family, $lang, $parent_id ) {
+	$lang = noaway_i18n_normalize_lang( $lang );
+	if ( $lang === 'en' || $parent_id <= 0 || ! noaway_i18n_valid( $family, $lang ) ) {
+		return false;
+	}
+	$template = noaway_i18n_guide_template( $family, $lang );
+	$slug     = noaway_i18n_guide_slug( $family );
+	$copy     = noaway_i18n_landing_copy( $family, $lang );
+	$title    = ! empty( $copy['h1'] ) ? $copy['h1'] : $slug;
+	$changed  = false;
+
+	$page = noaway_i18n_find_page_by_template( $template );
+	if ( $page ) {
+		$update = array( 'ID' => (int) $page->ID );
+		if ( (int) $page->post_parent !== (int) $parent_id ) {
+			$update['post_parent'] = (int) $parent_id;
+			$changed               = true;
+		}
+		if ( $page->post_name !== $slug ) {
+			$update['post_name'] = $slug;
+			$changed             = true;
+		}
+		if ( $page->post_status !== 'publish' ) {
+			$update['post_status'] = 'publish';
+			$changed               = true;
+		}
+		if ( $changed ) {
+			wp_update_post( $update );
+		}
+		return $changed;
+	}
+
+	$path = $lang . '/' . $slug;
+	$by_path = get_page_by_path( $path, OBJECT, 'page' );
+	if ( $by_path instanceof WP_Post ) {
+		wp_update_post(
+			array(
+				'ID'          => (int) $by_path->ID,
+				'post_parent' => (int) $parent_id,
+				'post_name'   => $slug,
+				'post_status' => 'publish',
+				'post_title'  => $title,
+			)
+		);
+		update_post_meta( (int) $by_path->ID, '_wp_page_template', $template );
+		return true;
+	}
+
+	$id = wp_insert_post(
+		array(
+			'post_type'     => 'page',
+			'post_status'   => 'publish',
+			'post_title'    => $title,
+			'post_name'     => $slug,
+			'post_content'  => '',
+			'post_parent'   => (int) $parent_id,
+			'page_template' => $template,
+		),
+		true
+	);
+	if ( is_wp_error( $id ) || ! $id ) {
+		return false;
+	}
+	update_post_meta( (int) $id, '_wp_page_template', $template );
+	return true;
+}
+
+/**
+ * Create missing /{lang}/ parents and guide pages (idempotent).
+ */
+function noaway_i18n_ensure_localized_pages() {
+	if ( ! function_exists( 'wp_insert_post' ) ) {
+		return;
+	}
+	$created_or_fixed = false;
+	foreach ( array( 'de', 'es', 'fr', 'pt-br' ) as $lang ) {
+		$parent_id = noaway_i18n_ensure_lang_parent( $lang );
+		if ( $parent_id <= 0 ) {
+			continue;
+		}
+		foreach ( array( 'slack', 'teams' ) as $family ) {
+			if ( noaway_i18n_ensure_guide_page( $family, $lang, $parent_id ) ) {
+				$created_or_fixed = true;
+			}
+		}
+	}
+	$version = '1';
+	if ( get_option( 'noaway_i18n_pages_version' ) !== $version ) {
+		update_option( 'noaway_i18n_pages_version', $version, false );
+		$created_or_fixed = true;
+	}
+	if ( $created_or_fixed ) {
+		flush_rewrite_rules( false );
+	}
+}
+add_action( 'after_switch_theme', 'noaway_i18n_ensure_localized_pages' );
+add_action( 'admin_init', 'noaway_i18n_ensure_localized_pages', 30 );
 
 /**
  * hreflang alternates for one cluster, including x-default.
@@ -421,29 +634,141 @@ function noaway_i18n_language_labels() {
 }
 
 /**
- * @param string $family slack|teams
+ * Short labels for the switcher chrome (Language / Sprache / …).
+ *
+ * @return array<string, string>
  */
-function noaway_i18n_language_switcher( $family ) {
+function noaway_i18n_switcher_chrome() {
+	return array(
+		'en'    => 'Language',
+		'de'    => 'Sprache',
+		'es'    => 'Idioma',
+		'pt-br' => 'Idioma',
+		'fr'    => 'Langue',
+	);
+}
+
+/**
+ * Visible language switcher for Slack/Teams guides.
+ *
+ * @param string $family  slack|teams
+ * @param string $context header|under-title
+ */
+function noaway_i18n_language_switcher( $family, $context = 'header' ) {
 	$landing = noaway_i18n_current_landing();
 	$current = is_array( $landing ) ? $landing['lang'] : 'en';
-	$aria    = array(
-		'en'    => 'Languages',
-		'de'    => 'Sprachen',
-		'es'    => 'Idiomas',
-		'pt-br' => 'Idiomas',
-		'fr'    => 'Langues',
-	);
-	$label   = isset( $aria[ $current ] ) ? $aria[ $current ] : 'Languages';
-	echo '<nav class="mb-6 flex flex-wrap gap-x-3 gap-y-1 text-sm font-semibold text-slate-500 dark:text-slate-400" aria-label="' . esc_attr( $label ) . '">';
-	foreach ( noaway_i18n_language_labels() as $code => $name ) {
+	$labels  = noaway_i18n_language_labels();
+	$chrome  = noaway_i18n_switcher_chrome();
+	$aria    = isset( $chrome[ $current ] ) ? $chrome[ $current ] : 'Language';
+	$current_name = isset( $labels[ $current ] ) ? $labels[ $current ] : $current;
+	$extra   = $context === 'under-title' ? ' noaway-lang-switcher--under-title mt-5 mb-2' : ' noaway-lang-switcher--header mb-6';
+
+	echo '<nav class="noaway-lang-switcher' . esc_attr( $extra ) . '" aria-label="' . esc_attr( $aria ) . '">';
+	echo '<span class="noaway-lang-switcher__chrome">' . esc_html( $aria ) . ': <strong class="noaway-lang-switcher__current">' . esc_html( $current_name ) . '</strong></span>';
+	echo '<ul class="noaway-lang-switcher__list">';
+	foreach ( $labels as $code => $name ) {
 		$url = noaway_i18n_landing_url( $family, $code );
+		echo '<li>';
 		if ( $code === $current ) {
-			echo '<span class="text-primary" aria-current="page">' . esc_html( $name ) . '</span>';
-			continue;
+			echo '<span class="noaway-lang-switcher__item noaway-lang-switcher__item--active" aria-current="page">' . esc_html( $name ) . '</span>';
+		} else {
+			echo '<a class="noaway-lang-switcher__item" href="' . esc_url( $url ) . '" hreflang="' . esc_attr( noaway_i18n_bcp47( $code ) ) . '">' . esc_html( $name ) . '</a>';
 		}
-		echo '<a class="hover:text-primary transition-colors" href="' . esc_url( $url ) . '" hreflang="' . esc_attr( noaway_i18n_bcp47( $code ) ) . '">' . esc_html( $name ) . '</a>';
+		echo '</li>';
 	}
-	echo '</nav>';
+	echo '</ul></nav>';
+}
+
+/**
+ * Locale suggestion messages (browser language → localized guide).
+ *
+ * @return array<string, string>
+ */
+function noaway_i18n_locale_banner_messages() {
+	return array(
+		'de'    => 'Diese Anleitung auf Deutsch lesen?',
+		'es'    => '¿Leer esta guía en español?',
+		'fr'    => 'Lire ce guide en français ?',
+		'pt-br' => 'Ler este guia em português?',
+	);
+}
+
+/**
+ * Whether assets for guide i18n UI should load.
+ *
+ * @return bool
+ */
+function noaway_i18n_should_load_guide_assets() {
+	$landing = noaway_i18n_current_landing();
+	return is_array( $landing ) && ( $landing['family'] === 'slack' || $landing['family'] === 'teams' );
+}
+
+/**
+ * Enqueue language-switcher CSS + optional locale banner JS on guide pages only.
+ */
+function noaway_i18n_enqueue_guide_assets() {
+	if ( ! noaway_i18n_should_load_guide_assets() ) {
+		return;
+	}
+	$landing = noaway_i18n_current_landing();
+	$css_rel = '/assets/css/noaway-i18n.css';
+	$js_rel  = '/assets/js/noaway-i18n-locale-banner.js';
+	$css_abs = get_template_directory() . $css_rel;
+	$js_abs  = get_template_directory() . $js_rel;
+	$css_ver = file_exists( $css_abs ) ? (string) filemtime( $css_abs ) : '1.0.0';
+	$js_ver  = file_exists( $js_abs ) ? (string) filemtime( $js_abs ) : '1.0.0';
+
+	wp_enqueue_style(
+		'noaway-i18n',
+		get_template_directory_uri() . $css_rel,
+		array(),
+		$css_ver
+	);
+	wp_enqueue_script(
+		'noaway-i18n-locale-banner',
+		get_template_directory_uri() . $js_rel,
+		array(),
+		$js_ver,
+		true
+	);
+
+	$urls = array();
+	foreach ( array( 'de', 'es', 'fr', 'pt-br' ) as $code ) {
+		$urls[ $code ] = noaway_i18n_landing_url( $landing['family'], $code );
+	}
+	wp_localize_script(
+		'noaway-i18n-locale-banner',
+		'NoAwayI18nBanner',
+		array(
+			'currentLang' => $landing['lang'],
+			'family'      => $landing['family'],
+			'urls'        => $urls,
+			'messages'    => noaway_i18n_locale_banner_messages(),
+			'dismissAria' => array(
+				'en'    => 'Dismiss',
+				'de'    => 'Schließen',
+				'es'    => 'Cerrar',
+				'fr'    => 'Fermer',
+				'pt-br' => 'Fechar',
+			),
+			'storageKey'  => 'noaway.i18nBanner.dismissed.v1',
+		)
+	);
+}
+add_action( 'wp_enqueue_scripts', 'noaway_i18n_enqueue_guide_assets', 36 );
+
+/**
+ * Markup host for the non-redirecting locale suggestion banner (filled by JS).
+ *
+ * @param string $family slack|teams
+ * @param string $lang
+ */
+function noaway_i18n_render_locale_banner( $family, $lang ) {
+	$lang = noaway_i18n_normalize_lang( $lang );
+	if ( ! noaway_i18n_valid( $family, $lang ) ) {
+		return;
+	}
+	echo '<div class="noaway-locale-banner" data-noaway-locale-banner hidden role="region" aria-live="polite"></div>';
 }
 
 /**

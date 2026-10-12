@@ -191,19 +191,20 @@ function noaway_seo_get_page_data() {
     if ( is_array( $landing ) ) {
       $data['og_locale']   = noaway_i18n_og_locale( $landing['lang'] );
       $data['in_language'] = noaway_i18n_bcp47( $landing['lang'] );
+      $copy = noaway_i18n_landing_copy( $landing['family'], $landing['lang'] );
       if ( $landing['lang'] !== 'en' ) {
-        $copy = noaway_i18n_landing_copy( $landing['family'], $landing['lang'] );
         if ( ! empty( $copy['seo_title'] ) ) {
           $data['title'] = $copy['seo_title'];
         }
         if ( ! empty( $copy['seo_description'] ) ) {
           $data['description'] = $copy['seo_description'];
         }
-        $localized_url = noaway_i18n_landing_url( $landing['family'], $landing['lang'] );
-        if ( is_string( $localized_url ) && $localized_url !== '' ) {
-          $data['canonical']        = $localized_url;
-          $data['canonical_branch'] = 'permalink';
-        }
+      }
+      // Self-canonical for every language in the cluster (en + localized).
+      $self_url = noaway_i18n_landing_url( $landing['family'], $landing['lang'] );
+      if ( is_string( $self_url ) && $self_url !== '' ) {
+        $data['canonical']        = $self_url;
+        $data['canonical_branch'] = 'permalink';
       }
     }
   }

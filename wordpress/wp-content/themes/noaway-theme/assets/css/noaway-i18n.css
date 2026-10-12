@@ -1,0 +1,152 @@
+/* Language switcher + locale suggestion banner (Slack/Teams guides only). */
+
+.noaway-lang-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(226 232 240);
+  background: rgb(248 250 252);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+.dark .noaway-lang-switcher {
+  border-color: rgb(51 65 85);
+  background: rgb(15 23 42 / 0.55);
+}
+
+.noaway-lang-switcher__chrome {
+  color: rgb(71 85 105);
+  font-weight: 600;
+}
+
+.dark .noaway-lang-switcher__chrome {
+  color: rgb(148 163 184);
+}
+
+.noaway-lang-switcher__current {
+  color: rgb(15 23 42);
+  font-weight: 800;
+}
+
+.dark .noaway-lang-switcher__current {
+  color: rgb(241 245 249);
+}
+
+.noaway-lang-switcher__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.noaway-lang-switcher__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgb(203 213 225);
+  color: rgb(51 65 85);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.dark .noaway-lang-switcher__item {
+  border-color: rgb(71 85 105);
+  color: rgb(203 213 225);
+}
+
+a.noaway-lang-switcher__item:hover {
+  border-color: rgb(37 99 235);
+  color: rgb(37 99 235);
+  background: rgb(37 99 235 / 0.08);
+}
+
+.noaway-lang-switcher__item--active {
+  border-color: rgb(37 99 235);
+  background: rgb(37 99 235);
+  color: #fff;
+}
+
+.dark .noaway-lang-switcher__item--active {
+  border-color: rgb(59 130 246);
+  background: rgb(37 99 235);
+  color: #fff;
+}
+
+.noaway-locale-banner {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 40;
+  margin: 0 auto;
+  max-width: 56rem;
+  padding: 0 1.5rem;
+}
+
+.noaway-locale-banner[hidden] {
+  display: none !important;
+}
+
+.noaway-locale-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgb(37 99 235 / 0.35);
+  background: rgb(239 246 255);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.08);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgb(30 64 175);
+}
+
+.dark .noaway-locale-banner__inner {
+  background: rgb(30 58 138 / 0.45);
+  border-color: rgb(96 165 250 / 0.4);
+  color: rgb(191 219 254);
+  box-shadow: none;
+}
+
+.noaway-locale-banner__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 800;
+}
+
+.noaway-locale-banner__link:hover {
+  opacity: 0.9;
+}
+
+.noaway-locale-banner__dismiss {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.noaway-locale-banner__dismiss:hover {
+  background: rgb(15 23 42 / 0.08);
+}
+
+.dark .noaway-locale-banner__dismiss:hover {
+  background: rgb(255 255 255 / 0.1);
+}

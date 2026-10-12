@@ -15,15 +15,17 @@ $t = noaway_i18n_landing_copy( 'slack', $noaway_landing_lang );
 get_header();
 ?>
 <main>
+  <?php noaway_i18n_render_locale_banner( 'slack', $noaway_landing_lang ); ?>
   <article class="max-w-4xl mx-auto px-6 py-16 lg:py-24" itemscope itemtype="https://schema.org/Article">
     <header class="mb-12">
-      <?php noaway_i18n_language_switcher( 'slack' ); ?>
+      <?php noaway_i18n_language_switcher( 'slack', 'header' ); ?>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit mb-6">
         <span class="text-primary text-xs font-bold uppercase tracking-wider"><?php echo noaway_i18n_plain( $t['badge'] ); ?></span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-slate-100 mb-6">
+      <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-slate-100 mb-2">
         <?php echo noaway_i18n_plain( $t['h1'] ); ?>
       </h1>
+      <?php noaway_i18n_language_switcher( 'slack', 'under-title' ); ?>
       <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
         <?php echo noaway_i18n_plain( $t['lead'] ); ?>
       </p>

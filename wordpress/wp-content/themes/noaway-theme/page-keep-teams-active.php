@@ -16,11 +16,12 @@ $checkout_url = noaway_checkout_url();
 get_header();
 ?>
 <main>
+  <?php noaway_i18n_render_locale_banner( 'teams', $noaway_landing_lang ); ?>
   <section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40 px-6 lg:px-20">
     <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
       <div class="flex flex-col gap-8">
-        <?php noaway_i18n_language_switcher( 'teams' ); ?>
+        <?php noaway_i18n_language_switcher( 'teams', 'header' ); ?>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -32,6 +33,7 @@ get_header();
           <h1 class="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-slate-100">
             <?php echo noaway_i18n_plain( $t['h1'] ); ?>
           </h1>
+          <?php noaway_i18n_language_switcher( 'teams', 'under-title' ); ?>
           <p class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
             <?php echo noaway_i18n_plain( $t['lead'] ); ?>
           </p>
