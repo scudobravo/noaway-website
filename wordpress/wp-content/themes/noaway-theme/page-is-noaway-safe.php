@@ -90,9 +90,7 @@ $download_url = noaway_downloads_page_url();
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="signed-heading">
       <h2 id="signed-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Is it signed/notarized?</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        <?php // TODO: Confirm macOS Developer ID signing + notarization status for current DMG. ?>
-        <?php // TODO: Confirm Windows Authenticode / code-signing certificate for current installer. ?>
-        Desktop apps should be distributed with platform code-signing so Gatekeeper (Mac) and SmartScreen (Windows) can trust the publisher. Confirm the current build’s signing and notarization status before you rely on this page for procurement—we will keep this section aligned with the live installers.
+        Yes. Official NoAway installers are code-signed for both platforms and produced through our GitHub Actions release pipeline: macOS builds use Apple Developer ID signing and notarization (Gatekeeper), and Windows builds use Authenticode signing (SmartScreen). Always download from the official NoAway site so you get those signed binaries—not unofficial mirrors.
       </p>
     </section>
 
@@ -107,8 +105,7 @@ $download_url = noaway_downloads_page_url();
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="refunds-heading">
       <h2 id="refunds-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Refunds and support</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        <?php // TODO: Confirm consumer refund window (EU withdrawal / Stripe policy) beyond Terms §11-bis external-change clause. ?>
-        Support is available through the <a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-primary font-semibold hover:underline">contact</a> page and the <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help Center</a>. The <a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>" class="text-primary font-semibold hover:underline">Terms of Service</a> explain license limits and that changes to operating systems or third-party apps (Teams, Slack, and similar) do not automatically entitle you to a refund.
+        All sales are final: we do not offer refunds. The <a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>" class="text-primary font-semibold hover:underline">Terms of Service</a> also state that changes to operating systems or third-party apps (Teams, Slack, and similar) do not entitle you to a refund. Support for purchase or activation issues is still available through the <a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-primary font-semibold hover:underline">contact</a> page and the <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help Center</a>.
       </p>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         If something goes wrong with purchase or activation, contact support with your order email—do not rely on unofficial resellers.
@@ -138,8 +135,12 @@ $download_url = noaway_downloads_page_url();
         'text' => 'Keep Active runs locally and does not stream your work activity. License activation and downloading the app require a network connection. See the Privacy Policy for what is and is not collected.',
       ),
       array(
-        'name' => 'How do I get support or ask about a refund?',
-        'text' => 'Use the contact page or Help Center. Refund and license terms are described in the Terms of Service; support can help with purchase and activation issues.',
+        'name' => 'Do you offer refunds? How do I get support?',
+        'text' => 'No. All sales are final; we do not offer refunds. For purchase or activation help, use the contact page or Help Center with your order email. License terms are in the Terms of Service.',
+      ),
+      array(
+        'name' => 'Is NoAway code-signed on Mac and Windows?',
+        'text' => 'Yes. Official installers are signed in our GitHub Actions release pipeline: Developer ID and notarization on macOS, Authenticode on Windows. Download only from the official NoAway site.',
       ),
     );
     ?>

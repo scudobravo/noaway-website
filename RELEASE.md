@@ -47,6 +47,15 @@ Production still runs an older `noaway-theme`. This release replaces the theme t
 
 ---
 
+## Product decisions (locked for this release)
+
+| Topic | Decision |
+|-------|----------|
+| Comparison pages (`noaway-vs-*`) | **Do not create** in wp-admin; removed from sitemap/HTML sitemap/internal links until facts are verified |
+| Refunds | **No refunds** (all sales final) — copy on `/is-noaway-safe/` updated |
+| Code signing | Confirmed: Mac (Developer ID + notarization) and Windows (Authenticode) via GitHub Actions |
+| Localized `/de|/es|/pt-br|/fr/` | **No WP pages** — theme serves them automatically |
+
 ## wp-admin checklist (after deploy)
 
 1. **Backup theme** (SSH, before or immediately after first deploy):
@@ -71,10 +80,6 @@ Production still runs an older `noaway-theme`. This release replaces the theme t
 | Keep Slack Active | `keep-slack-active` | Keep Slack Active SEO |
 | Prevent Computer Sleep | `prevent-computer-sleep` | Prevent Computer Sleep SEO |
 | Is NoAway safe | `is-noaway-safe` | Is NoAway safe |
-| NoAway vs PowerToys Awake | `noaway-vs-powertoys-awake` | Compare NoAway |
-| NoAway vs Amphetamine | `noaway-vs-amphetamine` | Compare NoAway |
-| NoAway vs Caffeine | `noaway-vs-caffeine` | Compare NoAway |
-| NoAway vs Mouse Jiggler | `noaway-vs-mouse-jiggler` | Compare NoAway |
 | Downloads | `download` (keep singular — live URL) | Downloads NoAway |
 | FAQ | `faq` | FAQ NoAway |
 | Contacts | `contacts` | Contatti NoAway |
@@ -84,29 +89,16 @@ Production still runs an older `noaway-theme`. This release replaces the theme t
 | Terms of Service | `terms-of-service` | Terms of Service NoAway |
 | Thank You | `thank-you` | Thank You (NoAway) |
 
-5. **Localized landings** (`/de/`, `/es/`, `/pt-br/`, `/fr/`):
+**Do not create** comparison pages (`noaway-vs-powertoys-awake`, `noaway-vs-amphetamine`, `noaway-vs-caffeine`, `noaway-vs-mouse-jiggler`) and **do not create** localized WP pages under `de`/`es`/`fr`/`pt-br` (theme handles those URLs).
 
-   The theme serves these on 404 via `noaway_i18n_template_redirect` **without** WP pages. Optional but recommended for cleaner admin: create parent pages `de`, `es`, `fr`, `pt-br`, then children:
-
-| Parent slug | Child slug | Template |
-|-------------|------------|----------|
-| `de` | `keep-teams-active` | Keep Teams Active (Deutsch) |
-| `es` | `keep-teams-active` | Keep Teams Active (Español) |
-| `fr` | `keep-teams-active` | Keep Teams Active (Français) |
-| `pt-br` | `keep-teams-active` | Keep Teams Active (Português) |
-| `de` | `keep-slack-active` | Keep Slack Active (Deutsch) |
-| `es` | `keep-slack-active` | Keep Slack Active (Español) |
-| `fr` | `keep-slack-active` | Keep Slack Active (Français) |
-| `pt-br` | `keep-slack-active` | Keep Slack Active (Português) |
-
-6. **Set to Draft** (after deploy so 301s apply):
+5. **Set to Draft** (after deploy so 301s apply):
 
 | Slug | Reason |
 |------|--------|
 | `prevent-teams-away` | Consolidated into `/keep-teams-active/` |
 | `keep-teams-icon-green` | Same (anchor `#keep-teams-icon-green` on Teams page) |
 
-7. Confirm existing `/download/` and `/contacts/` keep those slugs (do **not** rename to `downloads` / `contact`).
+6. Confirm existing `/download/` and `/contacts/` keep those slugs (do **not** rename to `downloads` / `contact`).
 
 ---
 
@@ -114,42 +106,28 @@ Production still runs an older `noaway-theme`. This release replaces the theme t
 
 - `/` (home, WebP hero)
 - `/features/`, `/how-it-works/`, `/keep-teams-active/`, `/keep-slack-active/`
-- `/teams-away-status/`, `/prevent-computer-sleep/`, `/is-noaway-safe/`
-- `/noaway-vs-powertoys-awake/`, `/noaway-vs-amphetamine/`, `/noaway-vs-caffeine/`, `/noaway-vs-mouse-jiggler/`
-- `/de/keep-teams-active/`, `/es/keep-teams-active/`, `/pt-br/keep-teams-active/`, `/fr/keep-teams-active/`
+- `/teams-away-status/`, `/prevent-computer-sleep/`, `/is-noaway-safe/` (signing + no-refund copy)
+- `/de/keep-teams-active/`, `/es/keep-teams-active/`, `/pt-br/keep-teams-active/`, `/fr/keep-teams-active/` (no WP pages needed)
 - `/de/keep-slack-active/`, `/es/keep-slack-active/`, `/pt-br/keep-slack-active/`, `/fr/keep-slack-active/`
 - `/download/`, `/downloads/` (must 301 → `/download/`), `/contacts/`, `/faq/`, `/help/`, `/sitemap/`
 - `/prevent-teams-away` and `/keep-teams-icon-green` → 301 `/keep-teams-active/`
+- `/noaway-vs-*` should **404** (not in sitemap; do not create WP pages)
 - `/sitemap.xml`, `/robots.txt`, `/llms.txt`
 - Buy CTA → checkout; cookie banner; email-link flow if used
 
 ---
 
-## Open TODOs in theme (file:line)
+## Open TODOs still in theme (not blocking this deploy)
 
-### Visible risk if published unconfirmed (competitor / trust claims on live HTML)
+Comparison data in `inc/noaway-comparisons.php` remains in the repo for a later release; pages are not published.
 
-Comments are HTML-hidden, but **table/FAQ cell text still shows**. Confirm before treating comparison pages as final:
+Optional polish on `/is-noaway-safe/` (comments only / hedging copy already safe):
 
-| Location | Topic |
-|----------|--------|
-| `inc/noaway-comparisons.php:52–82` | PowerToys Awake platforms, presence, modes, admin, price, setup |
-| `inc/noaway-comparisons.php:92–104,122–127` | PowerToys org policy, maintenance, docs, macOS absence |
-| `inc/noaway-comparisons.php:150–180,190–198,215–220` | Amphetamine OS, presence, triggers, install, price, distribution |
-| `inc/noaway-comparisons.php:243–273,283–291,308–313` | Which “Caffeine”, idle behavior, modes, privileges, price, maintenance |
-| `inc/noaway-comparisons.php:336–366,376–384,401–406` | Mouse jiggler scope, failure modes, sleep vs idle, corporate policy, price |
-| `page-compare.php:59` | Verdict length ~50 words (editorial) |
-| `page-is-noaway-safe.php:35` | Third-party trust signals |
-| `page-is-noaway-safe.php:46` | Exact OS idle APIs |
-| `page-is-noaway-safe.php:60` | Network: license / updates / crash reports |
-| `page-is-noaway-safe.php:72` | Admin rights edge cases |
-| `page-is-noaway-safe.php:93–94` | **macOS signing/notarization + Windows Authenticode** — page hedges; do not imply signed until confirmed |
-| `page-is-noaway-safe.php:102` | Open-source status (copy already says commercial/not OSS) |
-| `page-is-noaway-safe.php:110` | **Consumer refund window** (EU / Stripe) — not stated numerically; still confirm before ads |
-
-### Lower risk
-
-- `page-compare.php:81–82,115,151` — HTML comments only echoing `competitor_todo` / `todo` (not shown to users).
+- Trust signals (reviews, AV false positives)
+- Exact OS idle APIs
+- Network exceptions (updates / crash reports)
+- Admin edge cases
+- Open-source wording (already says commercial)
 
 ---
 

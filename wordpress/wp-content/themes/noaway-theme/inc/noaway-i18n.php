@@ -247,11 +247,10 @@ function noaway_i18n_replace_price( $value ) {
  */
 function noaway_i18n_tokens() {
 	$lang       = isset( $GLOBALS['noaway_landing_lang'] ) ? noaway_i18n_normalize_lang( $GLOBALS['noaway_landing_lang'] ) : 'en';
-	$download   = function_exists( 'noaway_downloads_page_url' ) ? noaway_downloads_page_url() : home_url( '/downloads/' );
+	$download   = function_exists( 'noaway_downloads_page_url' ) ? noaway_downloads_page_url() : home_url( '/download/' );
 	$teams_away = function_exists( 'noaway_teams_away_status_page_url' ) ? noaway_teams_away_status_page_url() : home_url( '/teams-away-status/' );
 	$faq        = function_exists( 'noaway_faq_page_url' ) ? noaway_faq_page_url() : home_url( '/faq/' );
 	$help       = function_exists( 'noaway_help_page_url' ) ? noaway_help_page_url() : home_url( '/help/' );
-	$power      = function_exists( 'noaway_vs_powertoys_awake_page_url' ) ? noaway_vs_powertoys_awake_page_url() : home_url( '/noaway-vs-powertoys-awake/' );
 	$price      = function_exists( 'noaway_price_label' ) ? noaway_price_label() : '€4.99';
 	return array(
 		'{download_url}'     => esc_url( $download ),
@@ -260,7 +259,6 @@ function noaway_i18n_tokens() {
 		'{slack_active_url}' => esc_url( noaway_i18n_landing_url( 'slack', $lang ) ),
 		'{faq_url}'          => esc_url( $faq ),
 		'{help_url}'         => esc_url( $help ),
-		'{powertoys_url}'    => esc_url( $power ),
 		'{ms_presence_url}'  => 'https://support.microsoft.com/en-us/office/user-presence-in-teams-33a1a9c0-f1c2-4f1b-9a3c-3d6fbe6d4f67',
 		'{ms_status_url}'    => 'https://support.microsoft.com/en-us/office/change-your-status-in-microsoft-teams-58d8f0f1-9e6c-4f5c-93f1-6e4f0e2a1f04',
 		'{price}'            => esc_html( $price ),

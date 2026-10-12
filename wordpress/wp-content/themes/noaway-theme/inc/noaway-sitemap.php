@@ -93,10 +93,7 @@ function noaway_get_sitemap_urls() {
     array( 'loc' => $base . 'fr/keep-slack-active/', 'priority' => '0.7', 'changefreq' => 'monthly', 'alternates' => noaway_i18n_hreflang_pairs( 'slack' ) ),
     array( 'loc' => $base . 'prevent-computer-sleep/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'is-noaway-safe/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
-    array( 'loc' => $base . 'noaway-vs-powertoys-awake/', 'priority' => '0.7', 'changefreq' => 'monthly' ),
-    array( 'loc' => $base . 'noaway-vs-amphetamine/', 'priority' => '0.6', 'changefreq' => 'monthly' ),
-    array( 'loc' => $base . 'noaway-vs-caffeine/', 'priority' => '0.6', 'changefreq' => 'monthly' ),
-    array( 'loc' => $base . 'noaway-vs-mouse-jiggler/', 'priority' => '0.6', 'changefreq' => 'monthly' ),
+    // Comparison landings (noaway-vs-*) intentionally omitted until competitor facts are verified.
     array( 'loc' => $base . 'help/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'download/', 'priority' => '0.9', 'changefreq' => 'weekly' ),
     array( 'loc' => $base . 'faq/', 'priority' => '0.8', 'changefreq' => 'monthly' ),

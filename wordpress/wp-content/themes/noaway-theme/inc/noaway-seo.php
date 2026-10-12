@@ -483,8 +483,12 @@ function noaway_seo_landing_faq_items( $template_slug ) {
         'text' => 'Keep Active runs locally and does not stream your work activity. License activation and downloading the app require a network connection. See the Privacy Policy for what is and is not collected.',
       ),
       array(
-        'name' => 'How do I get support or ask about a refund?',
-        'text' => 'Use the contact page or Help Center. Refund and license terms are described in the Terms of Service; support can help with purchase and activation issues.',
+        'name' => 'Do you offer refunds? How do I get support?',
+        'text' => 'No. All sales are final; we do not offer refunds. For purchase or activation help, use the contact page or Help Center with your order email. License terms are in the Terms of Service.',
+      ),
+      array(
+        'name' => 'Is NoAway code-signed on Mac and Windows?',
+        'text' => 'Yes. Official installers are signed in our GitHub Actions release pipeline: Developer ID and notarization on macOS, Authenticode on Windows. Download only from the official NoAway site.',
       ),
     ),
   );
