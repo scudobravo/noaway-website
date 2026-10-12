@@ -1,0 +1,284 @@
+/*
+Theme Name: NoAway
+Description: Minimal theme for NoAway marketing pages (download, landing).
+Version: 1.1.0
+Author: NoAway
+Text Domain: noaway
+*/
+
+/* Header: mobile burger + responsive nav layout */
+.noaway-site-header {
+  position: sticky;
+}
+.noaway-header-inner {
+  position: relative;
+}
+.noaway-menu-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.75rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  background: #fff;
+  color: #334155;
+}
+.noaway-menu-toggle__line {
+  width: 1.125rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.noaway-header-links {
+  display: none;
+  width: 100%;
+}
+.noaway-site-header.is-open .noaway-header-links {
+  display: block;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  right: 0;
+  z-index: 70;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 1rem;
+}
+.noaway-site-header.is-open .noaway-menu-toggle__line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.noaway-site-header.is-open .noaway-menu-toggle__line:nth-child(2) {
+  opacity: 0;
+}
+.noaway-site-header.is-open .noaway-menu-toggle__line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.noaway-primary-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+.noaway-header-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+@media (min-width: 768px) {
+  .noaway-menu-toggle {
+    display: none;
+  }
+  .noaway-header-links {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+  }
+  .noaway-primary-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+  }
+  .noaway-header-cta {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+/* Header: WordPress custom logo size */
+.noaway-site-logo a {
+  display: inline-flex;
+  align-items: center;
+}
+.noaway-site-logo img {
+  height: 2.25rem !important;
+  width: auto !important;
+  max-height: 2.5rem !important;
+  max-width: 10rem;
+  object-fit: contain;
+}
+
+/*
+ * Default mark + wordmark (assets/images/logo.svg).
+ * Tailwind preflight sets img { max-width:100%; height:auto } — without !important the logo can blow up.
+ */
+.noaway-header-logo-link .noaway-header-logo-img {
+  display: block;
+  height: 2.25rem !important;
+  width: auto !important;
+  max-height: 2.5rem !important;
+  max-width: 2.75rem;
+  object-fit: contain;
+}
+
+/* Footer: 4-column grid (responsive) */
+.noaway-footer-grid {
+  display: grid;
+  gap: 2.5rem 2rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .noaway-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .noaway-footer-grid {
+    grid-template-columns: minmax(0, 1.15fr) repeat(3, minmax(0, 1fr));
+    gap: 3rem 2rem;
+  }
+}
+
+.noaway-footer-heading {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+.dark .noaway-footer-heading {
+  color: #64748b;
+}
+
+.noaway-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.noaway-footer-links li + li {
+  margin-top: 0.75rem;
+}
+.noaway-footer-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.noaway-footer-links a:hover {
+  color: #5851ec;
+}
+.dark .noaway-footer-links a {
+  color: #cbd5e1;
+}
+.dark .noaway-footer-links a:hover {
+  color: #a5b4fc;
+}
+
+/* Slightly larger mark in footer column */
+.noaway-brand-mark--footer .noaway-header-logo-link .noaway-header-logo-img {
+  height: 2.5rem !important;
+  max-height: 2.75rem !important;
+  max-width: 3rem;
+}
+
+/* --- Download page (page-download.php) --- */
+.noaway-download-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+.noaway-download-wrap h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.noaway-download-wrap .lead {
+  color: #444;
+  margin-bottom: 2rem;
+}
+.noaway-download-cards {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+@media (min-width: 640px) {
+  .noaway-download-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.noaway-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background: #fafafa;
+}
+.noaway-card h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem 0;
+}
+.noaway-card p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+.noaway-card .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #0a5;
+  background: #e8f5e9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.noaway-btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  background: #0a84ff;
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+}
+.noaway-btn:hover {
+  background: #0066cc;
+  color: #fff !important;
+}
+.noaway-help {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: #f5f7fa;
+  border-radius: 12px;
+  border-left: 4px solid #0a84ff;
+}
+.noaway-help h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.75rem 0;
+}
+.noaway-help ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.noaway-help li {
+  margin-bottom: 0.5rem;
+}
+.noaway-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+}

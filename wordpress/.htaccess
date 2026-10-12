@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Canonical host + HTTPS in one hop.
+RewriteCond %{HTTP_HOST} !^www\.noaway\.app$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://www.noaway.app%{REQUEST_URI} [L,R=301,NE]
+
+# WordPress front controller.
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>

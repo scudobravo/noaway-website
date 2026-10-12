@@ -1,0 +1,21 @@
+{
+  "site": "NoAway",
+  "url": "https://noaway.app/",
+  "description": "NoAway is a desktop app for macOS and Windows that prevents computer idle so Microsoft Teams and Slack stay Available.",
+  "focus_topics": [
+    "keep teams active",
+    "prevent teams away",
+    "keep teams icon green",
+    "prevent computer sleep"
+  ],
+  "important_pages": [
+    "https://noaway.app/keep-teams-active/",
+    "https://noaway.app/teams-away-status/",
+    "https://noaway.app/download/"
+  ],
+  "feeds": [
+    "https://noaway.app/feed/",
+    "https://noaway.app/feed/atom/"
+  ],
+  "sitemap": "https://noaway.app/sitemap.xml"
+}

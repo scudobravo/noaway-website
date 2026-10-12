@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /private/
+Disallow: /test/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /test/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /test/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /test/
+
+Sitemap: https://noaway.app/sitemap.xml
+llms: https://noaway.app/llms.txt
+ai-policy: https://noaway.app/.well-known/ai.txt

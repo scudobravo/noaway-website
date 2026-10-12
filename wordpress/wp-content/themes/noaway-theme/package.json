@@ -1,0 +1,12 @@
+{
+  "name": "noaway-theme",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/tailwind-input.css -o ./assets/css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.3.3",
+    "tailwindcss": "^3.4.19"
+  }
+}

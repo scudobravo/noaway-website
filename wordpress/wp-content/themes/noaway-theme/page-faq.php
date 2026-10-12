@@ -1,0 +1,128 @@
+<?php
+/**
+ * Template Name: FAQ NoAway
+ * Pagina FAQ - Domande frequenti con accordion (click per aprire/chiudere)
+ * Schema FAQPage: emesso una sola volta in wp_head da inc/noaway-seo.php (evita "Campo duplicato FAQPage").
+ */
+get_header();
+
+$faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noaway_seo_faq_schema_entities() : array();
+?>
+<main>
+  <section class="relative pt-16 pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+        <span class="material-symbols-outlined text-sm">help</span>
+        FAQ
+      </div>
+      <h1 class="text-5xl md:text-6xl font-black tracking-tight mb-6">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Quick answers about NoAway, how to keep your status always online in Microsoft Teams, and the best practice for staying active. Why common "stay active" tricks don't work.
+      </p>
+      <p class="mt-6 text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
+        Asking about privacy or IT policy? Read <a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>" class="text-primary font-semibold hover:underline">Is NoAway safe?</a> for what the app does and does not do.
+      </p>
+    </div>
+    <div class="absolute -top-24 -right-24 size-96 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 -left-24 size-64 bg-primary/10 rounded-full blur-3xl"></div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 pb-24" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="sr-only">Common questions</h2>
+
+    <!-- What people search for (Google / Reddit – SEO) -->
+    <div class="mb-12">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">What people ask: how to stop Teams showing Away</h3>
+      <div class="space-y-4">
+        <?php
+        $search_faqs = array_slice( $faq_schema_entities, 19, 8 );
+        foreach ( $search_faqs as $faq ) :
+          ?>
+        <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <span><?php echo esc_html( $faq['name'] ); ?></span>
+            <span class="material-symbols-outlined text-slate-400 shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t-0">
+            <?php echo esc_html( $faq['text'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <!-- About NoAway -->
+    <div class="mb-12">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">About NoAway</h3>
+      <div class="space-y-4">
+        <?php
+        $about_faqs = array_slice( $faq_schema_entities, 0, 6 );
+        foreach ( $about_faqs as $faq ) :
+          ?>
+        <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <span><?php echo esc_html( $faq['name'] ); ?></span>
+            <span class="material-symbols-outlined text-slate-400 shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t-0">
+            <?php echo esc_html( $faq['text'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <!-- Privacy, detection & compliance -->
+    <div class="mb-12">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Privacy, detection &amp; compliance</h3>
+      <div class="space-y-4">
+        <?php
+        $privacy_faqs = array_slice( $faq_schema_entities, 6, 4 );
+        foreach ( $privacy_faqs as $faq ) :
+          ?>
+        <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <span><?php echo esc_html( $faq['name'] ); ?></span>
+            <span class="material-symbols-outlined text-slate-400 shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t-0">
+            <?php echo esc_html( $faq['text'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <!-- Why common Teams "stay active" tricks don't work -->
+    <div>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Why common Teams "stay active" tricks don't work</h3>
+      <div class="space-y-4">
+        <?php
+        $teams_faqs = array_slice( $faq_schema_entities, 10, 9 );
+        foreach ( $teams_faqs as $faq ) :
+          ?>
+        <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+            <span><?php echo esc_html( $faq['name'] ); ?></span>
+            <span class="material-symbols-outlined text-slate-400 shrink-0 transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t-0">
+            <?php echo esc_html( $faq['text'] ); ?>
+          </div>
+        </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-slate-500 mb-4">Still didn't find what you're looking for?</p>
+      <a class="inline-flex items-center gap-2 font-bold text-primary group" href="<?php echo esc_url( noaway_contact_page_url() ); ?>">
+        Contact support
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+</main>
+<?php get_footer(); ?>

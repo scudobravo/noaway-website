@@ -1,0 +1,9 @@
+# NoAway API - Rewrite per URL senza .php (/api/activate, /api/validate, /api/download)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /api/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^activate$ activate.php [L]
+    RewriteRule ^validate$ validate.php [L]
+    RewriteRule ^download$ download.php [L,QSA]
+</IfModule>

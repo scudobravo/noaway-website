@@ -1,0 +1,24 @@
+{
+  "service": "NoAway",
+  "category": "Desktop productivity utility",
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "capabilities": [
+    "Prevent operating system idle state",
+    "Keep Microsoft Teams status available by preventing idle",
+    "Keep Slack status active by preventing idle",
+    "Run in tray/menu bar with lightweight resource usage"
+  ],
+  "pricing": {
+    "model": "one-time purchase",
+    "currency": "EUR",
+    "price": "4.99"
+  },
+  "links": {
+    "download": "https://noaway.app/download/",
+    "help": "https://noaway.app/help/",
+    "faq": "https://noaway.app/faq/"
+  }
+}

@@ -1,0 +1,264 @@
+<?php
+/**
+ * NoAway theme — page URLs, checkout, license API, macOS DMG URLs.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Resolve permalink for a page using a given template file, or fallback path.
+ *
+ * @param string $template_file e.g. 'page-downloads.php'.
+ * @param string $fallback_path e.g. '/downloads/'.
+ */
+function noaway_page_url_by_template( $template_file, $fallback_path ) {
+	$fallback_path = is_string( $fallback_path ) ? trim( $fallback_path ) : '/';
+	if ( $fallback_path === '' ) {
+		$fallback_path = '/';
+	}
+	if ( $fallback_path[0] !== '/' ) {
+		$fallback_path = '/' . $fallback_path;
+	}
+
+	$base = '';
+	if ( defined( 'WP_HOME' ) && WP_HOME ) {
+		$base = rtrim( WP_HOME, '/' );
+	} else {
+		$home = home_url( '/' );
+		if ( is_string( $home ) && preg_match( '#^https?://#i', $home ) ) {
+			$base = rtrim( $home, '/' );
+		}
+	}
+	$fallback_url = $base !== '' ? $base . $fallback_path : home_url( $fallback_path );
+
+	$pages = get_pages(
+		array(
+			'meta_key'    => '_wp_page_template',
+			'meta_value'  => $template_file,
+			'number'      => 1,
+			'sort_column' => 'post_date',
+			'sort_order'  => 'ASC',
+		)
+	);
+	$url = ! empty( $pages ) ? get_permalink( $pages[0]->ID ) : $fallback_url;
+	if ( ! is_string( $url ) || $url === '' || $url === '/' ) {
+		$url = $fallback_url;
+	}
+	if ( function_exists( 'noaway_seo_canonical_url' ) ) {
+		$url = noaway_seo_canonical_url( $url );
+	}
+	if ( ! preg_match( '#^https?://#i', $url ) ) {
+		$url = $fallback_url;
+	}
+	return $url;
+}
+
+/**
+ * Current landing slug for attribution (home, keep-teams-active, …).
+ *
+ * @return string
+ */
+function noaway_current_landing_slug() {
+	if ( is_front_page() ) {
+		return 'home';
+	}
+	if ( is_singular() ) {
+		$post = get_queried_object();
+		if ( $post && ! empty( $post->post_name ) && is_string( $post->post_name ) ) {
+			return sanitize_title( $post->post_name );
+		}
+	}
+	$path = '';
+	if ( isset( $_SERVER['REQUEST_URI'] ) && is_string( $_SERVER['REQUEST_URI'] ) ) {
+		$parsed = wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH );
+		if ( is_string( $parsed ) ) {
+			$path = trim( $parsed, '/' );
+		}
+	}
+	if ( $path === '' ) {
+		return 'home';
+	}
+	$parts = explode( '/', $path );
+	$slug  = end( $parts );
+	return $slug ? sanitize_title( $slug ) : 'home';
+}
+
+/**
+ * Current page path for CTA analytics (e.g. /keep-teams-active/).
+ *
+ * @return string
+ */
+function noaway_current_landing_path() {
+	if ( is_front_page() ) {
+		return '/';
+	}
+	if ( is_singular() ) {
+		$permalink = get_permalink();
+		if ( is_string( $permalink ) && $permalink !== '' ) {
+			$path = wp_parse_url( $permalink, PHP_URL_PATH );
+			if ( is_string( $path ) && $path !== '' ) {
+				return trailingslashit( $path );
+			}
+		}
+	}
+	if ( isset( $_SERVER['REQUEST_URI'] ) && is_string( $_SERVER['REQUEST_URI'] ) ) {
+		$path = wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH );
+		if ( is_string( $path ) && $path !== '' ) {
+			return trailingslashit( $path );
+		}
+	}
+	return '/';
+}
+
+/**
+ * Stripe / license checkout URL, with landing attribution query args.
+ *
+ * @param array<string,mixed> $args Optional. Keys: ref (slug override).
+ * @return string
+ */
+function noaway_checkout_url( $args = array() ) {
+	$base = defined( 'NOAWAY_STRIPE_CHECKOUT_URL' ) ? NOAWAY_STRIPE_CHECKOUT_URL : 'https://license.noaway.app/create-checkout-session';
+	if ( ! is_array( $args ) ) {
+		$args = array();
+	}
+	$slug = '';
+	if ( isset( $args['ref'] ) && is_string( $args['ref'] ) && $args['ref'] !== '' ) {
+		$slug = sanitize_title( $args['ref'] );
+	} else {
+		$slug = noaway_current_landing_slug();
+	}
+	if ( $slug !== '' ) {
+		// ref = our analytics slug; client_reference_id = Stripe-compatible if the endpoint forwards it.
+		$base = add_query_arg(
+			array(
+				'ref'                  => $slug,
+				'client_reference_id'  => $slug,
+			),
+			$base
+		);
+	}
+	return $base;
+}
+
+/**
+ * HTML attributes for buy CTAs (tracking + attribution metadata).
+ *
+ * @param string $position Button position label (hero, footer, header, cta, …).
+ * @return string Attributes string starting with a space (safe to echo inside a tag).
+ */
+function noaway_buy_cta_attrs( $position = 'cta' ) {
+	$position = is_string( $position ) ? sanitize_key( $position ) : 'cta';
+	if ( $position === '' ) {
+		$position = 'cta';
+	}
+	$path = noaway_current_landing_path();
+	$slug = noaway_current_landing_slug();
+	return sprintf(
+		' data-noaway-cta="buy" data-noaway-path="%s" data-noaway-position="%s" data-noaway-ref="%s"',
+		esc_attr( $path ),
+		esc_attr( $position ),
+		esc_attr( $slug )
+	);
+}
+
+function noaway_license_api_url() {
+	return defined( 'NOAWAY_LICENSE_API_URL' ) ? NOAWAY_LICENSE_API_URL : 'https://license.noaway.app';
+}
+
+/** Launch price label, e.g. "€4.99". Amount: NOAWAY_SEO_PRICE_AMOUNT. */
+function noaway_price_label() {
+	return '€' . NOAWAY_SEO_PRICE_AMOUNT;
+}
+
+/** Regular price label, e.g. "€9.99". Amount: NOAWAY_REGULAR_PRICE_AMOUNT. */
+function noaway_regular_price_label() {
+	return '€' . NOAWAY_REGULAR_PRICE_AMOUNT;
+}
+
+/**
+ * Optional social-proof label for the homepage.
+ * Empty by default so unverified counts are not shown.
+ * Supply a real figure via the `noaway_social_proof_label` filter.
+ *
+ * @return string
+ */
+function noaway_social_proof_label() {
+	$label = apply_filters( 'noaway_social_proof_label', '' );
+	if ( ! is_string( $label ) ) {
+		return '';
+	}
+	return trim( $label );
+}
+
+/** Universal DMG (Intel + Apple Silicon). Set NOAWAY_MAC_UNIVERSAL_DMG in wp-config.php. */
+function noaway_mac_universal_url() {
+	if ( defined( 'NOAWAY_MAC_UNIVERSAL_DMG' ) && NOAWAY_MAC_UNIVERSAL_DMG ) {
+		return NOAWAY_MAC_UNIVERSAL_DMG;
+	}
+	return noaway_downloads_page_url();
+}
+
+/** Apple Silicon–only DMG (arm64). Set NOAWAY_MAC_ARM64_DMG in wp-config.php. */
+function noaway_mac_arm64_url() {
+	if ( defined( 'NOAWAY_MAC_ARM64_DMG' ) && NOAWAY_MAC_ARM64_DMG ) {
+		return NOAWAY_MAC_ARM64_DMG;
+	}
+	return noaway_downloads_page_url();
+}
+
+/**
+ * Windows installer (.exe). Set NOAWAY_WINDOWS_SETUP_EXE in wp-config.php (full URL).
+ * If unset, callers may fall back to checkout or downloads page.
+ */
+function noaway_windows_setup_url() {
+	if ( defined( 'NOAWAY_WINDOWS_SETUP_EXE' ) && NOAWAY_WINDOWS_SETUP_EXE ) {
+		return NOAWAY_WINDOWS_SETUP_EXE;
+	}
+	return '';
+}
+
+function noaway_features_page_url() {
+	return noaway_page_url_by_template( 'page-features.php', '/features/' );
+}
+
+function noaway_how_it_works_page_url() {
+	return noaway_page_url_by_template( 'page-how-it-works.php', '/how-it-works/' );
+}
+
+function noaway_keep_teams_active_page_url() {
+	return noaway_page_url_by_template( 'page-keep-teams-active.php', '/keep-teams-active/' );
+}
+
+function noaway_teams_away_status_page_url() {
+	return noaway_page_url_by_template( 'page-teams-away-status.php', '/teams-away-status/' );
+}
+
+function noaway_keep_slack_active_page_url() {
+	return noaway_page_url_by_template( 'page-keep-slack-active.php', '/keep-slack-active/' );
+}
+
+function noaway_prevent_computer_sleep_page_url() {
+	return noaway_page_url_by_template( 'page-prevent-computer-sleep.php', '/prevent-computer-sleep/' );
+}
+
+function noaway_is_noaway_safe_page_url() {
+	return noaway_page_url_by_template( 'page-is-noaway-safe.php', '/is-noaway-safe/' );
+}
+
+function noaway_help_page_url() {
+	return noaway_page_url_by_template( 'page-help.php', '/help/' );
+}
+
+function noaway_downloads_page_url() {
+	return noaway_page_url_by_template( 'page-downloads.php', '/downloads/' );
+}
+
+function noaway_faq_page_url() {
+	return noaway_page_url_by_template( 'page-faq.php', '/faq/' );
+}
+
+function noaway_contact_page_url() {
+	return noaway_page_url_by_template( 'page-contatti.php', '/contact/' );
+}

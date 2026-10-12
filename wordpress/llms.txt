@@ -1,0 +1,18 @@
+# NoAway
+
+> NoAway is a desktop productivity app for macOS 11 (Big Sur) or later and Windows 10/11 (64-bit) that keeps your computer from entering an idle state so Microsoft Teams, Slack, and Zoom can stay Available. It prevents system idle at the OS level and does not interact with, inject into, or modify Teams or Slack. It does not keylog, capture your screen, access chat accounts or messages, or collect personal activity data. One-time launch price €4.99 (EUR)—no subscription, no free trial. Support: support@noaway.app
+
+Base-URL: https://noaway.app/
+
+## Key pages
+
+- https://noaway.app/ — Product overview: stay Available on Teams and Slack
+- https://noaway.app/keep-slack-active/ — Keep Slack Active on Mac and Windows (~30 min desktop idle)
+- https://noaway.app/keep-teams-active/ — Keep Microsoft Teams Available / green icon without jigglers
+- https://noaway.app/teams-away-status/ — Why Teams shows Away (~5 min idle) and how presence works
+- https://noaway.app/prevent-computer-sleep/ — Prevent computer sleep and keep the machine awake
+- https://noaway.app/is-noaway-safe/ — Safety, privacy, admin rights, and what NoAway does not do
+- https://noaway.app/faq/ — Common questions on install, pricing, privacy, and Teams/Slack
+- https://noaway.app/downloads/ — Download NoAway for macOS and Windows (one-time €4.99)
+
+Sitemap: https://noaway.app/sitemap.xml

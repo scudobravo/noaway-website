@@ -1,0 +1,6 @@
+# Optional: old email links used /api/download (no .php). Point them to download.php.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /api/
+RewriteRule ^download$ download.php [L,QSA]
+</IfModule>

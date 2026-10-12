@@ -1,0 +1,31 @@
+{
+  "type": "FAQ",
+  "site": "NoAway",
+  "url": "https://noaway.app/faq/",
+  "faq": [
+    {
+      "question": "Will I always appear Active on Teams or Slack?",
+      "answer": "NoAway prevents your computer from entering an idle state while it is running. This helps your system remain active during long tasks such as downloads, builds, or presentations."
+    },
+    {
+      "question": "Is using NoAway safe?",
+      "answer": "Yes. NoAway is a simple desktop utility that runs locally. It does not access files, read messages, or track personal data."
+    },
+    {
+      "question": "How do I stop Microsoft Teams from showing away?",
+      "answer": "Microsoft Teams switches to Away when it detects no keyboard or mouse activity. Use NoAway to keep your computer active so your status stays Available."
+    },
+    {
+      "question": "How to keep Teams stay active?",
+      "answer": "Use an app that keeps Teams active, such as NoAway. It simulates natural activity so your system does not go idle."
+    },
+    {
+      "question": "How to keep the Teams icon green?",
+      "answer": "To keep the Teams icon green, keep your computer active at the system level. NoAway helps prevent idle so Teams keeps showing Available."
+    },
+    {
+      "question": "What should I do if Teams still shows Away?",
+      "answer": "Make sure NoAway is running and Keep Active is enabled. Update to the latest version and restart the activity engine from the tray menu."
+    }
+  ]
+}

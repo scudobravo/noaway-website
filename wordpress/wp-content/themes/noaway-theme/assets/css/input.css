@@ -1,0 +1,12 @@
+/* Build Tailwind opzionale: npm run build da noaway-theme/
+   Il tema usa il CDN Tailwind di default; questo file serve per generare assets/css/tailwind.css
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}

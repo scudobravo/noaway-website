@@ -1,0 +1,66 @@
+# WordPress + MySQL + wp-cli
+# Porte scelte per evitare conflitti con altri progetti (verificate libere: 19090, 33071)
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - wp_db_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
+    ports:
+      - "33071:3306"   # MySQL su 33071 (evita 3306, 3307, 3308, 3309, 33065, 33070)
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  wordpress:
+    depends_on:
+      db:
+        condition: service_healthy
+    image: wordpress:php8.2-apache
+    restart: unless-stopped
+    ports:
+      - "19090:80"    # WordPress su http://localhost:19090 (evita 80, 8080, 8888, 9090, 18080, etc.)
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp_web_data:/var/www/html
+      # Monta il tema per sviluppo (override)
+      - ./wp-content/themes/noaway-theme:/var/www/html/wp-content/themes/noaway-theme
+      # Plugin NoAway Analytics (dashboard licenze)
+      - ./wp-content/plugins/noaway-analytics:/var/www/html/wp-content/plugins/noaway-analytics
+      # API NoAway (attivazione + validazione + statistiche)
+      - ./api:/var/www/html/api
+
+  wpcli:
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    image: wordpress:cli-php8.2
+    # Esegue come root per evitare problemi di permessi sul volume condiviso con wordpress
+    volumes:
+      - wp_web_data:/var/www/html
+      - ./wp-content/themes/noaway-theme:/var/www/html/wp-content/themes/noaway-theme
+      - ./wp-content/plugins/noaway-analytics:/var/www/html/wp-content/plugins/noaway-analytics
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    command: tail -f /dev/null   # Resta in esecuzione per eseguire comandi wp-cli
+
+volumes:
+  wp_db_data:
+  wp_web_data:
