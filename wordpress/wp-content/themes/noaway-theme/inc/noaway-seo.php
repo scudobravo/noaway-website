@@ -182,7 +182,10 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-privacy-policy.php' ) {
     $data['title']       = 'Privacy Policy | NoAway';
     $data['description'] = 'NoAway privacy policy: what information we collect, how we use it, and how we protect your data.';
-    $data['canonical']   = noaway_seo_canonical_url( home_url( '/privacy-policy/' ) );
+    $privacy_page = get_page_by_path( 'privacy-policy' );
+    if ( $privacy_page instanceof WP_Post && $privacy_page->post_status === 'publish' ) {
+      $data['canonical'] = noaway_seo_canonical_url( home_url( '/privacy-policy/' ) );
+    }
   } elseif ( $template === 'page-terms-of-service.php' ) {
     $data['title']       = 'Terms of Service | NoAway';
     $data['description'] = 'NoAway terms of service: license, use, and legal terms for the NoAway application.';

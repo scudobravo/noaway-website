@@ -132,6 +132,15 @@ add_action(
 		if ( ! isset( $map[ $path ] ) ) {
 			return;
 		}
+		// WordPress currently serves the policy at /privacy-policy-2/ and
+		// redirects /privacy-policy/ there. 301 the other way only after the
+		// slug in wp-admin is privacy-policy, or the two redirects loop.
+		if ( $path === '/privacy-policy-2' ) {
+			$privacy_page = get_page_by_path( 'privacy-policy' );
+			if ( ! ( $privacy_page instanceof WP_Post ) || $privacy_page->post_status !== 'publish' ) {
+				return;
+			}
+		}
 		$target = home_url( $map[ $path ] );
 		if ( function_exists( 'noaway_seo_canonical_url' ) ) {
 			$target = noaway_seo_canonical_url( $target );
