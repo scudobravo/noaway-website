@@ -207,14 +207,38 @@ function noaway_market_compare_two_year_costs() {
 }
 
 /**
- * Detail table: first column is the feature label; then values in card order.
+ * Detail table: first column is the feature label; then values in product order.
+ * Price rows come first so the comparison is readable without separate cards.
  *
- * @return array{headers:array<int,string>,rows:array<int,array{label:string,cells:array<int,string>}>}
+ * @return array{headers:array<int,string>,highlight_badge:string,rows:array<int,array{label:string,cells:array<int,string>,emphasize?:bool}>}
  */
 function noaway_market_compare_table() {
 	return array(
-		'headers' => array( 'NoAway', 'Slack Green', 'NotAway', 'Idle Pilot', 'Mouse jiggler USB' ),
-		'rows'    => array(
+		'headers'         => array( 'NoAway', 'Slack Green', 'NotAway', 'Idle Pilot', 'Mouse jiggler USB' ),
+		'highlight_badge' => 'Best value',
+		'rows'            => array(
+			array(
+				'label'     => 'Price',
+				'emphasize' => true,
+				'cells'     => array(
+					'€4.99 one-time',
+					'$3.99/month or $23.99/year; Lifetime CLI $79 one-time',
+					'$3.99/month or $29.99/year',
+					'from $4 (billing period not stated)',
+					'about €10–20',
+				),
+			),
+			array(
+				'label'     => 'Cost over 2 years',
+				'emphasize' => true,
+				'cells'     => array(
+					'€4.99',
+					'$47.98 (yearly)',
+					'$59.98 (yearly)',
+					'not stated',
+					'€10–20',
+				),
+			),
 			array(
 				'label' => 'Type',
 				'cells' => array(
@@ -286,6 +310,21 @@ function noaway_market_compare_table() {
 				),
 			),
 		),
+	);
+}
+
+/**
+ * Source links shown under the comparison table.
+ *
+ * @return array<int, array{name:string,url:string,label:string}>
+ */
+function noaway_market_compare_sources() {
+	return array(
+		array( 'name' => 'NoAway', 'url' => home_url( '/' ), 'label' => 'noaway.app' ),
+		array( 'name' => 'Slack Green', 'url' => 'https://slack.green/en', 'label' => 'slack.green' ),
+		array( 'name' => 'NotAway', 'url' => 'https://notaway.app/', 'label' => 'notaway.app' ),
+		array( 'name' => 'Idle Pilot', 'url' => 'https://idlepilot.com/pricing/', 'label' => 'idlepilot.com' ),
+		array( 'name' => 'Mouse jiggler USB', 'url' => '', 'label' => 'typical retail range (no specific brand)' ),
 	);
 }
 

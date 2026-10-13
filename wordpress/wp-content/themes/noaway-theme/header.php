@@ -31,6 +31,7 @@
 			<nav class="noaway-primary-nav text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="Primary">
 				<a href="<?php echo esc_url( noaway_features_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Features', 'noaway' ); ?></a>
 				<a href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'How it works', 'noaway' ); ?></a>
+				<a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Compare', 'noaway' ); ?></a>
 				<a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Download', 'noaway' ); ?></a>
 				<a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'FAQ', 'noaway' ); ?></a>
 				<a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Help', 'noaway' ); ?></a>
