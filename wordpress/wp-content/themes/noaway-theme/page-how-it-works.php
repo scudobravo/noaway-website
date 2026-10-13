@@ -126,15 +126,15 @@ get_header();
       <div class="flex flex-wrap justify-center gap-6">
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-          No activity or usage data sent
+          No keystrokes, screen, chats, or files
         </div>
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-          Only network request: license check (key + device id)
+          License checks may include limited usage fields
         </div>
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-          Works locally on your device
+          Keep Active runs locally on your device
         </div>
       </div>
     </div>
