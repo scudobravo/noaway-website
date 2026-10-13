@@ -148,6 +148,7 @@ function noaway_seo_get_page_data() {
       'contacts'               => 'page-contatti.php',
       'contact'                => 'page-contatti.php',
       'faq'                    => 'page-faq.php',
+      'compare'                => 'page-compare.php',
       'sitemap'                => 'page-sitemap.php',
       'releases'               => 'page-releases.php',
     );
@@ -186,14 +187,21 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-is-noaway-safe.php' ) {
     $data['title']       = 'Is NoAway Safe? Legit, Privacy & Company PCs | NoAway';
     $data['description'] = 'Keep Active runs on your computer; the only network request is the license check. See admin rights, IT policy, and support—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
-  } elseif ( $template === 'page-compare.php' && function_exists( 'noaway_get_comparison_for_current_page' ) ) {
-    $cmp = noaway_get_comparison_for_current_page();
-    if ( is_array( $cmp ) ) {
-      if ( ! empty( $cmp['seo_title'] ) ) {
-        $data['title'] = $cmp['seo_title'];
-      }
-      if ( ! empty( $cmp['seo_description'] ) ) {
-        $data['description'] = $cmp['seo_description'];
+  } elseif ( $template === 'page-compare.php' ) {
+    if ( function_exists( 'noaway_is_market_compare_page' ) && noaway_is_market_compare_page() && function_exists( 'noaway_market_compare_seo' ) ) {
+      $mc = noaway_market_compare_seo();
+      $data['title']       = $mc['title'];
+      $data['description'] = $mc['description'];
+      $data['canonical']   = function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : noaway_seo_canonical_url( home_url( '/compare/' ) );
+    } elseif ( function_exists( 'noaway_get_comparison_for_current_page' ) ) {
+      $cmp = noaway_get_comparison_for_current_page();
+      if ( is_array( $cmp ) ) {
+        if ( ! empty( $cmp['seo_title'] ) ) {
+          $data['title'] = $cmp['seo_title'];
+        }
+        if ( ! empty( $cmp['seo_description'] ) ) {
+          $data['description'] = $cmp['seo_description'];
+        }
       }
     }
   } elseif ( $template === 'page-downloads.php' || $template === 'page-download.php' ) {
@@ -356,6 +364,12 @@ function noaway_seo_faq_schema_entities() {
     array( 'group' => 'about', 'name' => 'Can I start NoAway automatically?', 'text' => 'Yes. NoAway can be configured to start automatically when your computer boots so it is ready whenever you need it.' ),
     array( 'group' => 'about', 'name' => 'Do I need to keep the app open?', 'text' => 'No. ' . noaway_fact( 'requirements.process' ) . ' NoAway can also start automatically when your computer boots.' ),
     array( 'group' => 'about', 'name' => 'Do I need an internet connection?', 'text' => 'Keep Active runs on your computer. A connection is needed to download the app and to activate your license. ' . noaway_fact( 'data_sent.when_label' ) ),
+    array(
+      'group'   => 'about',
+      'compare' => true,
+      'name'    => 'Why pay for NoAway when there are free tools?',
+      'text'    => 'Many free utilities only stop your computer from sleeping: the screen stays on, but Teams or Slack can still mark you Away after a few minutes without input. Others need manual setup, scripts or settings changes on each computer. NoAway keeps the system active in a way Teams, Slack and Zoom recognise, works from the menu bar or tray in one click, and costs €4.99 once, with a 7-day refund if it doesn\'t suit you.',
+    ),
     // --- Privacy, detection & compliance ---
     array( 'group' => 'privacy', 'name' => 'Is NoAway a subscription?', 'text' => 'No. NoAway is a one-time purchase. ' . noaway_fact( 'license.devices_label' ) . ' ' . noaway_fact( 'license.lifetime_updates' ) ),
     array( 'group' => 'privacy', 'name' => 'Will my boss or IT department know I\'m using this?', 'text' => noaway_fact_data_sent_paragraph( false ) . ' While Keep Active is on, your operating system sees the computer as active. Every workplace has its own policies regarding software, so follow your company\'s guidelines.' ),
@@ -707,7 +721,22 @@ function noaway_seo_landing_faq_items( $template_slug ) {
     ),
   );
 
-  // Comparison landings: FAQ from the active comparison slug.
+  // /compare/ market page: FAQs flagged compare from the shared FAQ array (no competitor prices in JSON-LD).
+  if ( $template_slug === 'page-compare.php' && function_exists( 'noaway_is_market_compare_page' ) && noaway_is_market_compare_page() ) {
+    $items = array();
+    foreach ( noaway_seo_faq_schema_entities() as $faq ) {
+      if ( empty( $faq['compare'] ) || empty( $faq['name'] ) || empty( $faq['text'] ) ) {
+        continue;
+      }
+      $items[] = array(
+        'name' => $faq['name'],
+        'text' => $faq['text'],
+      );
+    }
+    return $items ? $items : null;
+  }
+
+  // Comparison landings (noaway-vs-*): FAQ from the active comparison slug.
   if ( $template_slug === 'page-compare.php' && function_exists( 'noaway_get_comparison_for_current_page' ) ) {
     $cmp = noaway_get_comparison_for_current_page();
     if ( is_array( $cmp ) && ! empty( $cmp['faqs'] ) && is_array( $cmp['faqs'] ) ) {
@@ -847,16 +876,27 @@ function noaway_seo_article_schema_for_template( $template_slug, $canonical_url,
       'description' => 'Your NoAway purchase is confirmed. Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. ' . noaway_fact( 'license.lifetime_updates_short' ),
     ),
   );
-  if ( $template_slug === 'page-compare.php' && function_exists( 'noaway_get_comparison_for_current_page' ) ) {
-    $cmp = noaway_get_comparison_for_current_page();
-    if ( is_array( $cmp ) ) {
+  if ( $template_slug === 'page-compare.php' ) {
+    if ( function_exists( 'noaway_is_market_compare_page' ) && noaway_is_market_compare_page() ) {
       return array_merge(
         $base,
         array(
-          'headline'    => isset( $cmp['h1'] ) ? $cmp['h1'] : 'NoAway comparison',
-          'description' => isset( $cmp['verdict'] ) ? $cmp['verdict'] : ( isset( $cmp['intro'] ) ? $cmp['intro'] : '' ),
+          'headline'    => 'Keep your status active for €4.99, once',
+          'description' => 'Compare NoAway with Slack Green, NotAway, Idle Pilot, and USB mouse jigglers. Local desktop app versus cloud Slack tools. Prices checked on ' . ( defined( 'NOAWAY_MARKET_COMPARE_CHECKED' ) ? NOAWAY_MARKET_COMPARE_CHECKED : '13 October 2026' ) . '.',
         )
       );
+    }
+    if ( function_exists( 'noaway_get_comparison_for_current_page' ) ) {
+      $cmp = noaway_get_comparison_for_current_page();
+      if ( is_array( $cmp ) ) {
+        return array_merge(
+          $base,
+          array(
+            'headline'    => isset( $cmp['h1'] ) ? $cmp['h1'] : 'NoAway comparison',
+            'description' => isset( $cmp['verdict'] ) ? $cmp['verdict'] : ( isset( $cmp['intro'] ) ? $cmp['intro'] : '' ),
+          )
+        );
+      }
     }
   }
 

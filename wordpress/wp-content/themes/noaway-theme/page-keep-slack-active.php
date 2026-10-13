@@ -178,7 +178,7 @@ get_header();
       <div class="max-w-md mx-auto mt-2 text-left">
         <?php noaway_render_before_you_buy( $noaway_landing_lang ); ?>
       </div>
-      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['faq_link'] ); ?></a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['help_link'] ); ?></a></p>
+      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['faq_link'] ); ?></a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['help_link'] ); ?></a> · <a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="text-primary font-semibold hover:underline">Compare prices</a></p>
     </section>
   </article>
 </main>

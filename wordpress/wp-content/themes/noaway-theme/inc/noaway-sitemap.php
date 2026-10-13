@@ -93,7 +93,8 @@ function noaway_get_sitemap_urls() {
     array( 'loc' => function_exists( 'noaway_i18n_landing_url' ) ? noaway_i18n_landing_url( 'slack', 'fr' ) : $base . 'fr/keep-slack-active/', 'priority' => '0.7', 'changefreq' => 'monthly', 'alternates' => function_exists( 'noaway_i18n_hreflang_pairs' ) ? noaway_i18n_hreflang_pairs( 'slack' ) : array() ),
     array( 'loc' => $base . 'prevent-computer-sleep/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'is-noaway-safe/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
-    // Comparison landings (noaway-vs-*) intentionally omitted until competitor facts are verified.
+    array( 'loc' => $base . 'compare/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
+    // One-to-one comparison landings (noaway-vs-*) intentionally omitted until competitor facts are verified.
     array( 'loc' => $base . 'help/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'releases/', 'priority' => '0.6', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'downloads/', 'priority' => '0.9', 'changefreq' => 'weekly' ),
@@ -140,6 +141,7 @@ function noaway_sitemap_template_for_path( $path ) {
     '/fr/keep-slack-active'     => 'page-keep-slack-active.php',
     '/prevent-computer-sleep'   => 'page-prevent-computer-sleep.php',
     '/is-noaway-safe'           => 'page-is-noaway-safe.php',
+    '/compare'                  => 'page-compare.php',
     '/help'                     => 'page-help.php',
     '/releases'                 => 'page-releases.php',
     '/downloads'                => 'page-downloads.php',

@@ -34,6 +34,8 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
       </p>
       <p class="mt-6 text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
         Asking about privacy or IT policy? Read <a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>" class="text-primary font-semibold hover:underline">Is NoAway safe?</a> for what the app does and does not do.
+        Comparing prices with Slack Green, NotAway, Idle Pilot, or a USB mouse jiggler?
+        See <a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="text-primary font-semibold hover:underline">Compare</a>.
       </p>
     </div>
     <div class="absolute -top-24 -right-24 size-96 bg-primary/5 rounded-full blur-3xl"></div>

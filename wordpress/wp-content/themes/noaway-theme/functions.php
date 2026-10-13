@@ -12,6 +12,7 @@ require_once $noaway_inc . 'noaway-facts.php';
 require_once $noaway_inc . 'noaway-pages.php';
 require_once $noaway_inc . 'noaway-i18n.php';
 require_once $noaway_inc . 'noaway-comparisons.php';
+require_once $noaway_inc . 'noaway-market-compare.php';
 require_once $noaway_inc . 'noaway-analytics.php';
 require_once $noaway_inc . 'noaway-cookie-consent.php';
 require_once $noaway_inc . 'noaway-email-link.php';

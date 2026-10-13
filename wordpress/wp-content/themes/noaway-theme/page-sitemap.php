@@ -39,6 +39,9 @@ get_header();
           <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>">How it works</a>
         </li>
         <li class="leading-relaxed">
+          <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>">Compare prices</a>
+        </li>
+        <li class="leading-relaxed">
           <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>">Keep Teams Active</a>
           — <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'teams', 'de' ) ); ?>">Deutsch</a>,
           <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'teams', 'es' ) ); ?>">Español</a>,
