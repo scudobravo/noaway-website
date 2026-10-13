@@ -4,6 +4,6 @@ deployment:
     - export DEPLOYPATH=/home/izmljlig/public_html
     - /bin/cp -R wordpress/wp-content/themes/noaway-theme $DEPLOYPATH/wp-content/themes/
     - /bin/cp -R wordpress/wp-content/plugins/noaway-analytics $DEPLOYPATH/wp-content/plugins/
-    - /bin/cp wordpress/robots.txt wordpress/llms.txt $DEPLOYPATH/
+    - /bin/cp wordpress/robots.txt wordpress/llms.txt wordpress/favicon.ico $DEPLOYPATH/
     - /bin/mkdir -p $DEPLOYPATH/wp-content/uploads/noaway-releases
     - /bin/cp wordpress/wp-content/uploads/noaway-releases/.htaccess $DEPLOYPATH/wp-content/uploads/noaway-releases/.htaccess

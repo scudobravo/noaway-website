@@ -42,6 +42,43 @@ add_action(
 	}
 );
 
+/**
+ * Favicon / site icons for browsers and Google Search.
+ * Theme assets take precedence over any WP Site Icon set in admin.
+ */
+remove_action( 'wp_head', 'wp_site_icon', 99 );
+
+/**
+ * Absolute URL for a theme image under assets/images/.
+ *
+ * @param string $filename File name (e.g. favicon-48.png).
+ * @return string
+ */
+function noaway_theme_image_url( $filename ) {
+	return get_template_directory_uri() . '/assets/images/' . ltrim( (string) $filename, '/' );
+}
+
+/**
+ * Output favicon and apple-touch-icon link tags.
+ */
+function noaway_favicon_wp_head() {
+	$icon_32  = esc_url( noaway_theme_image_url( 'favicon-32.png' ) );
+	$icon_48  = esc_url( noaway_theme_image_url( 'favicon-48.png' ) );
+	$icon_192 = esc_url( noaway_theme_image_url( 'favicon-192.png' ) );
+	$icon_svg = esc_url( noaway_theme_image_url( 'logo.svg' ) );
+	$apple    = esc_url( noaway_theme_image_url( 'apple-touch-icon.png' ) );
+	$ico      = esc_url( noaway_theme_image_url( 'favicon.ico' ) );
+
+	echo "\n";
+	echo '<link rel="icon" href="' . $icon_48 . '" sizes="48x48" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . $icon_32 . '" sizes="32x32" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . $icon_192 . '" sizes="192x192" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . $icon_svg . '" type="image/svg+xml">' . "\n";
+	echo '<link rel="shortcut icon" href="' . $ico . '">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . $apple . '" sizes="180x180">' . "\n";
+}
+add_action( 'wp_head', 'noaway_favicon_wp_head', 1 );
+
 add_action(
 	'wp_enqueue_scripts',
 	function () {
