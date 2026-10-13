@@ -84,7 +84,7 @@ $contact_url = noaway_contact_page_url();
             macOS
           </h3>
           <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400">
-            <li>Download the .dmg file from the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a>.</li>
+            <li>After purchase, download the .dmg from your confirmation email or the thank-you page (or start from the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a> → Buy).</li>
             <li>Drag NoAway into your Applications folder.</li>
             <li>Open the app and allow it if macOS shows a security prompt.</li>
             <li>The icon will appear in your menu bar.</li>
@@ -97,7 +97,7 @@ $contact_url = noaway_contact_page_url();
             Windows
           </h3>
           <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400">
-            <li>Download the .exe installer from the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a>.</li>
+            <li>After purchase, download the .exe from your confirmation email or the thank-you page (or start from the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a> → Buy).</li>
             <li>Run the installer and follow the setup wizard.</li>
             <li>Launch NoAway from the Start menu.</li>
             <li>The app will appear in your system tray.</li>
@@ -140,7 +140,7 @@ $contact_url = noaway_contact_page_url();
           <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">My status still shows Away (e.g. in Teams)</h3>
           <p class="text-slate-600 dark:text-slate-400 mb-3">Make sure NoAway is running and “Keep Active” is enabled (not paused). Then try the following:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-400 mb-3">
-            <li><strong>Use the latest version.</strong> We release updates that improve how often the app simulates activity, so Teams does not switch to Away after a few minutes. Download the newest installer from your purchase email or the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a>.</li>
+            <li><strong>Use the latest version.</strong> We release updates that improve how often the app simulates activity, so Teams does not switch to Away after a few minutes. Download the newest installer from your purchase email (or buy again from the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( $downloads_url ); ?>">Download page</a> only if you need a new license).</li>
             <li><strong>After updating,</strong> open the NoAway menu (tray or menu bar) and choose <strong>“Restart Activity Engine”</strong>. This applies the new timing.</li>
             <li><strong>Check the logs.</strong> In the menu, click <strong>“Open Logs”</strong>. If you see lines like “simulated” every few minutes but your status still goes Away, the system is not counting that activity—see <strong>On macOS</strong> below.</li>
           </ul>

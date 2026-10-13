@@ -1,13 +1,11 @@
 <?php
 /**
  * Template Name: Downloads NoAway
- * Downloads for macOS (Apple Silicon vs Universal) and Windows.
+ * Platform chooser → checkout. Installers are delivered only after purchase
+ * (thank-you page + license email via api/download.php).
  */
 get_header();
-$mac_arm64   = noaway_mac_arm64_url();
-$mac_univ    = noaway_mac_universal_url();
-$checkout    = noaway_checkout_url();
-$win_setup   = noaway_windows_setup_url();
+$checkout = noaway_checkout_url();
 ?>
 <main class="mx-auto max-w-5xl px-6 py-12 lg:py-20">
   <!-- Hero Section -->
@@ -19,13 +17,13 @@ $win_setup   = noaway_windows_setup_url();
       Download NoAway for your device
     </h1>
     <p class="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-400">
-      A lightweight tool that keeps your computer active during long tasks, downloads, meetings, and remote work.
+      Purchase once, then get your installers by email and on the thank-you page. No free public downloads.
     </p>
   </div>
 
-  <!-- Download Cards: affiancati su desktop -->
+  <!-- Platform Cards -->
   <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-10 xl:gap-12 mb-20 lg:items-start">
-    <!-- macOS: Apple Silicon vs Universal -->
+    <!-- macOS -->
     <div class="group relative flex flex-col rounded-xl border border-primary/10 bg-white dark:bg-slate-900/50 p-8 transition-all hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 w-full">
       <div class="mb-6 flex items-center">
         <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100">
@@ -33,22 +31,22 @@ $win_setup   = noaway_windows_setup_url();
         </div>
       </div>
       <h3 class="text-2xl font-bold mb-2">For macOS</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Requires macOS 11 Big Sur or later. Pick the build that matches your Mac (see below).</p>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Requires macOS 11 Big Sur or later. After purchase you choose Apple Silicon or Intel (universal) from your download links.</p>
 
       <div class="flex flex-col sm:flex-row gap-4 mb-6">
-        <a href="<?php echo esc_url( $mac_arm64 ); ?>" class="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg bg-primary py-4 px-4 text-center text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-95">
-          <span class="material-symbols-outlined">download</span>
+        <a href="<?php echo esc_url( $checkout ); ?>" class="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg bg-primary py-4 px-4 text-center text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-95"<?php echo noaway_buy_cta_attrs( 'macos-arm64' ); ?>>
+          <span class="material-symbols-outlined">shopping_cart</span>
           <span>Apple Silicon (M1, M2, M3, …)</span>
-          <span class="text-xs font-normal opacity-90">Smaller download · native arm64</span>
+          <span class="text-xs font-normal opacity-90">Buy · then download arm64</span>
         </a>
-        <a href="<?php echo esc_url( $mac_univ ); ?>" class="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg border-2 border-primary bg-white dark:bg-slate-900 py-4 px-4 text-center text-base font-bold text-primary transition-transform hover:scale-[1.02] active:scale-95">
-          <span class="material-symbols-outlined">download</span>
+        <a href="<?php echo esc_url( $checkout ); ?>" class="flex flex-1 flex-col items-center justify-center gap-2 rounded-lg border-2 border-primary bg-white dark:bg-slate-900 py-4 px-4 text-center text-base font-bold text-primary transition-transform hover:scale-[1.02] active:scale-95"<?php echo noaway_buy_cta_attrs( 'macos-intel' ); ?>>
+          <span class="material-symbols-outlined">shopping_cart</span>
           <span>Intel</span>
-          <span class="text-xs font-normal opacity-90">Universal installer · larger download</span>
+          <span class="text-xs font-normal opacity-90">Buy · then download universal</span>
         </a>
       </div>
 
-      <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">The Apple Silicon build’s file name usually includes <code class="bg-slate-100 dark:bg-slate-800 px-1 rounded">arm64</code>. Choose <strong>Intel</strong> (universal DMG) if you have an <strong>Intel</strong> Mac, or one installer for every Mac.</p>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">After checkout, pick the build that matches your Mac. The Apple Silicon build’s file name usually includes <code class="bg-slate-100 dark:bg-slate-800 px-1 rounded">arm64</code>. Choose <strong>Intel</strong> (universal DMG) if you have an <strong>Intel</strong> Mac.</p>
 
       <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 text-left text-sm text-slate-600 dark:text-slate-300">
         <p class="font-bold text-slate-900 dark:text-white mb-2">Which Mac do I have?</p>
@@ -56,14 +54,14 @@ $win_setup   = noaway_windows_setup_url();
           <li>Open the <strong>Apple menu</strong> (top-left) → <strong>About This Mac</strong>.</li>
           <li>Check <strong>Chip</strong> or <strong>Processor</strong>:
             <ul class="list-disc pl-5 mt-1 space-y-1">
-              <li><strong>Apple M1, M2, M3, M4</strong>, or similar → download <strong>Apple Silicon</strong>.</li>
-              <li><strong>Intel</strong> → download <strong>Intel</strong> (universal installer).</li>
+              <li><strong>Apple M1, M2, M3, M4</strong>, or similar → use <strong>Apple Silicon</strong> after purchase.</li>
+              <li><strong>Intel</strong> → use <strong>Intel</strong> (universal installer).</li>
             </ul>
           </li>
         </ol>
       </div>
 
-      <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Purchased already? Use the links in your email, or <a href="<?php echo esc_url( $checkout ); ?>" class="text-primary font-semibold hover:underline"<?php echo noaway_buy_cta_attrs( 'inline' ); ?>>Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?></a> to get your files.</p>
+      <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Already purchased? Use the links in your confirmation email (valid 7 days).</p>
     </div>
 
     <!-- Windows Card -->
@@ -74,18 +72,11 @@ $win_setup   = noaway_windows_setup_url();
         </div>
       </div>
       <h3 class="text-2xl font-bold mb-2">For Windows</h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-8">Compatible with Windows 10 and Windows 11 (64-bit).</p>
-      <?php if ( $win_setup ) : ?>
-      <a href="<?php echo esc_url( $win_setup ); ?>" class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-4 text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-95">
-        <span class="material-symbols-outlined">download</span>
-        Download for Windows
-      </a>
-      <?php else : ?>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-8">Compatible with Windows 10 and Windows 11 (64-bit). Installer arrives after purchase.</p>
       <a href="<?php echo esc_url( $checkout ); ?>" class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-4 text-base font-bold text-white transition-transform hover:scale-[1.02] active:scale-95"<?php echo noaway_buy_cta_attrs( 'windows-card' ); ?>>
         <span class="material-symbols-outlined">shopping_cart</span>
         Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
       </a>
-      <?php endif; ?>
     </div>
   </div>
 
@@ -98,7 +89,7 @@ $win_setup   = noaway_windows_setup_url();
         </div>
         <h3 class="mb-3 text-3xl font-extrabold">Purchase License</h3>
         <p class="text-slate-600 dark:text-slate-400 mb-4">
-          One-time purchase. No subscriptions and no hidden fees.
+          One-time purchase. No subscriptions and no hidden fees. Download links are sent only after payment.
         </p>
         <div class="mb-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <span class="text-slate-500 dark:text-slate-400 text-sm">Launch price:</span>
@@ -127,13 +118,13 @@ $win_setup   = noaway_windows_setup_url();
     <div class="grid gap-8 md:grid-cols-3">
       <div class="flex flex-col items-center text-center">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-lg">1</div>
-        <h3 class="mb-2 font-bold">Download</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Download the installer for your operating system.</p>
+        <h3 class="mb-2 font-bold">Purchase</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Buy a lifetime license. You get download links on the thank-you page and by email.</p>
       </div>
       <div class="flex flex-col items-center text-center">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-lg">2</div>
-        <h3 class="mb-2 font-bold">Install</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Run the installer and follow the simple on-screen instructions.</p>
+        <h3 class="mb-2 font-bold">Download &amp; install</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Open the installer for your OS and follow the on-screen steps.</p>
       </div>
       <div class="flex flex-col items-center text-center">
         <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary font-bold text-lg">3</div>

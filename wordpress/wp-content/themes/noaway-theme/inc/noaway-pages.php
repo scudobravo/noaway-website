@@ -192,30 +192,23 @@ function noaway_social_proof_label() {
 	return trim( $label );
 }
 
-/** Universal DMG (Intel + Apple Silicon). Set NOAWAY_MAC_UNIVERSAL_DMG in wp-config.php. */
-function noaway_mac_universal_url() {
-	if ( defined( 'NOAWAY_MAC_UNIVERSAL_DMG' ) && NOAWAY_MAC_UNIVERSAL_DMG ) {
-		return NOAWAY_MAC_UNIVERSAL_DMG;
-	}
-	return noaway_downloads_page_url();
-}
-
-/** Apple Silicon–only DMG (arm64). Set NOAWAY_MAC_ARM64_DMG in wp-config.php. */
-function noaway_mac_arm64_url() {
-	if ( defined( 'NOAWAY_MAC_ARM64_DMG' ) && NOAWAY_MAC_ARM64_DMG ) {
-		return NOAWAY_MAC_ARM64_DMG;
-	}
-	return noaway_downloads_page_url();
-}
-
 /**
- * Windows installer (.exe). Set NOAWAY_WINDOWS_SETUP_EXE in wp-config.php (full URL).
- * If unset, callers may fall back to checkout or downloads page.
+ * Public Mac/Windows installer URLs are intentionally not exposed.
+ * Anonymous visitors go to checkout; signed links are issued after purchase
+ * (thank-you page + license email via api/download.php).
+ *
+ * Legacy NOAWAY_MAC_*_DMG / NOAWAY_WINDOWS_SETUP_EXE constants are ignored.
  */
+function noaway_mac_universal_url() {
+	return noaway_checkout_url();
+}
+
+function noaway_mac_arm64_url() {
+	return noaway_checkout_url();
+}
+
+/** Empty = theme templates must send visitors to checkout (not a public .exe). */
 function noaway_windows_setup_url() {
-	if ( defined( 'NOAWAY_WINDOWS_SETUP_EXE' ) && NOAWAY_WINDOWS_SETUP_EXE ) {
-		return NOAWAY_WINDOWS_SETUP_EXE;
-	}
 	return '';
 }
 

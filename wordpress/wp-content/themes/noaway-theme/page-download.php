@@ -3,17 +3,15 @@
  * Template Name: Download (macOS — universal & Apple Silicon)
  * Assign this template to your Download page in WordPress (Page → Template).
  *
- * Set real DMG URLs in wp-config.php:
- *   define('NOAWAY_MAC_UNIVERSAL_DMG', 'https://noaway.app/path/NoAway-x.y.z.dmg');
- *   define('NOAWAY_MAC_ARM64_DMG', 'https://noaway.app/path/NoAway-x.y.z-arm64.dmg');
+ * Public installers are not linked here. Buttons go to checkout; after payment
+ * the thank-you page and license email provide signed download links.
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-$mac_universal = function_exists('noaway_mac_universal_url') ? noaway_mac_universal_url() : 'https://noaway.app/downloads/';
-$mac_arm64 = function_exists('noaway_mac_arm64_url') ? noaway_mac_arm64_url() : 'https://noaway.app/downloads/';
+$checkout = function_exists('noaway_checkout_url') ? noaway_checkout_url() : 'https://license.noaway.app/create-checkout-session';
 
 get_header();
 ?>
@@ -21,7 +19,7 @@ get_header();
 <main class="noaway-download-wrap">
   <h1>Download NoAway for Mac</h1>
   <p class="lead">
-    Choose the build that matches your Mac. If you are not sure, follow the steps under <strong>Which Mac do I have?</strong> below.
+    Buy NoAway first. After payment you receive signed download links (Apple Silicon or Universal) by email and on the thank-you page.
   </p>
 
   <div class="noaway-download-cards">
@@ -29,24 +27,18 @@ get_header();
       <span class="badge">Recommended · Apple Silicon</span>
       <h2>Apple Silicon (M1, M2, M3, M4, …)</h2>
       <p>
-        Smaller download, native <strong>arm64</strong> app. Use this if your Mac has an <strong>Apple</strong> chip (any M-series).
+        Native <strong>arm64</strong> build for Macs with an <strong>Apple</strong> chip (any M-series). Available after purchase.
       </p>
-      <a class="noaway-btn" href="<?php echo esc_url($mac_arm64); ?>">Download (Apple Silicon)</a>
-      <p class="noaway-note" style="margin-top:1rem;margin-bottom:0;font-size:0.85rem;">
-        File name usually contains <code>arm64</code>.
-      </p>
+      <a class="noaway-btn" href="<?php echo esc_url($checkout); ?>"<?php echo function_exists('noaway_buy_cta_attrs') ? noaway_buy_cta_attrs('macos-arm64') : ''; ?>>Buy NoAway – then download Apple Silicon</a>
     </div>
 
     <div class="noaway-card">
       <span class="badge">Intel Mac · or unsure</span>
       <h2>Universal (Intel + Apple Silicon)</h2>
       <p>
-        One disk image with both Intel (<strong>x64</strong>) and Apple Silicon (<strong>arm64</strong>) slices. Use this if you have an <strong>Intel</strong> Mac, or you need a single installer for mixed environments.
+        One disk image with both Intel (<strong>x64</strong>) and Apple Silicon (<strong>arm64</strong>) slices. Available after purchase.
       </p>
-      <a class="noaway-btn" href="<?php echo esc_url($mac_universal); ?>">Download (Universal)</a>
-      <p class="noaway-note" style="margin-top:1rem;margin-bottom:0;font-size:0.85rem;">
-        Larger file; works on all supported Macs.
-      </p>
+      <a class="noaway-btn" href="<?php echo esc_url($checkout); ?>"<?php echo function_exists('noaway_buy_cta_attrs') ? noaway_buy_cta_attrs('macos-intel') : ''; ?>>Buy NoAway – then download Universal</a>
     </div>
   </div>
 
@@ -57,18 +49,18 @@ get_header();
       <li>Select <strong>About This Mac</strong> (or <strong>About This Mac → More Info</strong> on newer macOS).</li>
       <li>Look at <strong>Chip</strong> or <strong>Processor</strong>:
         <ul>
-          <li>If you see <strong>Apple M1</strong>, <strong>M2</strong>, <strong>M3</strong>, <strong>M4</strong>, or similar → your Mac is <strong>Apple Silicon</strong>. Download <strong>Apple Silicon (arm64)</strong>.</li>
-          <li>If you see <strong>Intel</strong> → choose <strong>Universal</strong> (the universal DMG includes the Intel build).</li>
+          <li>If you see <strong>Apple M1</strong>, <strong>M2</strong>, <strong>M3</strong>, <strong>M4</strong>, or similar → choose <strong>Apple Silicon (arm64)</strong> from your post-purchase links.</li>
+          <li>If you see <strong>Intel</strong> → choose <strong>Universal</strong>.</li>
         </ul>
       </li>
     </ol>
     <p class="noaway-note" style="margin-top:1rem;">
-      After purchase, your email may also include direct download links. Use the same rule: <strong>arm64</strong> for Apple Silicon, <strong>universal</strong> for Intel or if you prefer one installer for every Mac.
+      Already purchased? Use the links in your confirmation email (valid 7 days).
     </p>
   </section>
 
   <p class="noaway-note">
-    <strong>Windows:</strong> use the Windows download from this site or the link in your purchase email.
+    <strong>Windows:</strong> the Windows installer is included in the same purchase email and thank-you page.
   </p>
 </main>
 
