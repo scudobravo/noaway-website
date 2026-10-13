@@ -50,25 +50,15 @@ $download_url = noaway_downloads_page_url();
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="noaway-heading">
       <h2 id="noaway-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">How NoAway keeps your computer awake on Mac and Windows</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        NoAway runs in the menu bar (Mac) or system tray (Windows) and prevents your computer from going idle. It does not change your power settings; it keeps the system active so that your display and presence-based apps stay "on." One click and your computer stays awake during long builds, downloads, or deep work—and <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams away status</a>, <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Slack</a>, and similar apps continue to show you as available. <a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">Try NoAway free</a> on both <strong>keep computer awake Mac</strong> and <strong>keep computer awake Windows</strong> with a single purchase. No subscription, no browser window, minimal resources.
+        NoAway runs in the menu bar (Mac) or system tray (Windows) and prevents your computer from going idle. It does not change your power settings; it keeps the system active so that your display and presence-based apps stay "on." One click and your computer stays awake during long builds, downloads, or deep work—and <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams away status</a>, <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Slack</a>, and similar apps are less likely to show Away. Available is not guaranteed. <a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">Get NoAway</a> on both <strong>keep computer awake Mac</strong> and <strong>keep computer awake Windows</strong> with a single purchase. No subscription, no browser window, minimal resources.
       </p>
     </section>
 
     <?php
-    $faqs = array(
-      array(
-        'name' => 'How do I prevent my Mac from going to sleep?',
-        'text' => 'Lengthen the sleep timer in System Settings → Displays → Advanced, or use NoAway to keep the Mac awake on demand without a permanent power-plan change.',
-      ),
-      array(
-        'name' => 'How do I prevent my Windows PC from going to sleep?',
-        'text' => 'Set Sleep to Never under Settings → System → Power & sleep, or use NoAway to keep the PC awake only when you need it without a permanent setting change.',
-      ),
-      array(
-        'name' => 'Why does my computer sleep and make Teams show Away?',
-        'text' => 'Because Teams treats system idle as Away. When the computer sleeps or sits idle with no input, Teams changes your status; keeping the system active also keeps Teams and Slack Available.',
-      ),
-    );
+    $faqs = function_exists( 'noaway_seo_landing_faq_items' ) ? noaway_seo_landing_faq_items( 'page-prevent-computer-sleep.php' ) : array();
+    if ( ! is_array( $faqs ) ) {
+      $faqs = array();
+    }
     ?>
     <section class="mb-16" id="faq" aria-labelledby="faq-heading">
       <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8">Frequently asked questions about preventing computer sleep</h2>

@@ -111,6 +111,99 @@ function noaway_get_sitemap_urls() {
 /**
  * Output sitemap XML (formato standard per Google).
  */
+/**
+ * Template file for a public path, when one exists in the theme.
+ *
+ * @param string $path Path beginning with /.
+ * @return string Relative template filename or empty.
+ */
+function noaway_sitemap_template_for_path( $path ) {
+  $path = is_string( $path ) ? untrailingslashit( $path ) : '';
+  if ( $path === '' ) {
+    $path = '/';
+  }
+  $map = array(
+    '/'                         => 'front-page.php',
+    '/features'                 => 'page-features.php',
+    '/how-it-works'             => 'page-how-it-works.php',
+    '/keep-teams-active'        => 'page-keep-teams-active.php',
+    '/de/keep-teams-active'     => 'page-keep-teams-active.php',
+    '/es/keep-teams-active'     => 'page-keep-teams-active.php',
+    '/pt-br/keep-teams-active'  => 'page-keep-teams-active.php',
+    '/fr/keep-teams-active'     => 'page-keep-teams-active.php',
+    '/teams-away-status'        => 'page-teams-away-status.php',
+    '/keep-slack-active'        => 'page-keep-slack-active.php',
+    '/de/keep-slack-active'     => 'page-keep-slack-active.php',
+    '/es/keep-slack-active'     => 'page-keep-slack-active.php',
+    '/pt-br/keep-slack-active'  => 'page-keep-slack-active.php',
+    '/fr/keep-slack-active'     => 'page-keep-slack-active.php',
+    '/prevent-computer-sleep'   => 'page-prevent-computer-sleep.php',
+    '/is-noaway-safe'           => 'page-is-noaway-safe.php',
+    '/help'                     => 'page-help.php',
+    '/downloads'                => 'page-downloads.php',
+    '/faq'                      => 'page-faq.php',
+    '/contacts'                 => 'page-contatti.php',
+    '/sitemap'                  => 'page-sitemap.php',
+    '/privacy-policy'           => 'page-privacy-policy.php',
+    '/terms-of-service'         => 'page-terms-of-service.php',
+  );
+  return isset( $map[ $path ] ) ? $map[ $path ] : '';
+}
+
+/**
+ * lastmod from the page's post_modified and/or the template file mtime.
+ *
+ * @param string $loc Absolute URL.
+ * @return string Y-m-d or empty.
+ */
+function noaway_sitemap_lastmod( $loc ) {
+  $path = wp_parse_url( $loc, PHP_URL_PATH );
+  $path = is_string( $path ) ? '/' . trim( $path, '/' ) : '/';
+  if ( $path !== '/' ) {
+    $path = untrailingslashit( $path );
+  }
+  $stamps = array();
+  $template = noaway_sitemap_template_for_path( $path );
+  if ( $template !== '' ) {
+    $file = get_stylesheet_directory() . '/' . $template;
+    if ( file_exists( $file ) ) {
+      $stamps[] = (int) filemtime( $file );
+    }
+  }
+  if ( strpos( $path, 'keep-slack-active' ) !== false ) {
+    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-slack.php';
+    if ( file_exists( $i18n ) ) {
+      $stamps[] = (int) filemtime( $i18n );
+    }
+  }
+  if ( strpos( $path, 'keep-teams-active' ) !== false ) {
+    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-teams.php';
+    if ( file_exists( $i18n ) ) {
+      $stamps[] = (int) filemtime( $i18n );
+    }
+  }
+  $page = null;
+  if ( $path === '/' ) {
+    $front_id = (int) get_option( 'page_on_front' );
+    if ( $front_id > 0 ) {
+      $page = get_post( $front_id );
+    }
+  } else {
+    $page = get_page_by_path( trim( $path, '/' ) );
+  }
+  if ( $page instanceof WP_Post && ! empty( $page->post_modified_gmt ) ) {
+    $ts = strtotime( $page->post_modified_gmt . ' UTC' );
+    if ( $ts ) {
+      $stamps[] = (int) $ts;
+    }
+  }
+  $stamps = array_filter( $stamps );
+  if ( ! $stamps ) {
+    return '';
+  }
+  return gmdate( 'Y-m-d', max( $stamps ) );
+}
+
 function noaway_output_sitemap_xml() {
   $urls = noaway_get_sitemap_urls();
   header( 'Content-Type: application/xml; charset=UTF-8' );
@@ -126,7 +219,10 @@ function noaway_output_sitemap_xml() {
     $changefreq = isset( $entry['changefreq'] ) ? $entry['changefreq'] : 'monthly';
     echo "  <url>\n";
     echo "    <loc>" . esc_html( $loc ) . "</loc>\n";
-    echo "    <lastmod>" . gmdate( 'Y-m-d' ) . "</lastmod>\n";
+    $lastmod = noaway_sitemap_lastmod( $loc );
+    if ( $lastmod !== '' ) {
+      echo "    <lastmod>" . esc_html( $lastmod ) . "</lastmod>\n";
+    }
     echo "    <changefreq>" . esc_html( $changefreq ) . "</changefreq>\n";
     echo "    <priority>" . esc_html( $priority ) . "</priority>\n";
     if ( ! empty( $entry['alternates'] ) && is_array( $entry['alternates'] ) ) {

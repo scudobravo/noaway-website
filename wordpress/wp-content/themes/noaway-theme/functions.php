@@ -79,9 +79,9 @@ add_filter(
  * Legacy path (no trailing slash) => target path.
  * Add rows here. /noaway-releases/ is never redirected.
  *
- * /contacts/ is the live contact page (page-contatti.php).
- * Canonical download URL is /downloads/; /download/ 301s there.
- * /contact/ already 301s to /contacts/ at the server/WP level.
+ * /contacts/ is the canonical contact page (page-contatti.php).
+ * /contact/ 301s here. Canonical download URL is /downloads/; /download/ 301s there.
+ * /privacy-policy/ is canonical; /privacy-policy-2/ 301s there.
  */
 function noaway_legacy_redirects() {
 	return array(
@@ -94,6 +94,8 @@ function noaway_legacy_redirects() {
 		'/keep-testimonials'           => '/',
 		// Canonical download slug is /downloads/.
 		'/download'                    => '/downloads/',
+		'/contact'                     => '/contacts/',
+		'/privacy-policy-2'            => '/privacy-policy/',
 	);
 }
 

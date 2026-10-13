@@ -85,8 +85,8 @@ function noaway_seo_request_canonical_url() {
 function noaway_seo_get_page_data() {
   $base_url = noaway_seo_canonical_url( home_url( '/' ) );
   $default_image = noaway_seo_og_image_default();
-  $default_title = 'NoAway – Stay Active on Teams and Slack. Never appear Away again.';
-  $default_desc  = 'Keep your computer active automatically so your status stays Available during downloads, builds, and long tasks. Works with Microsoft Teams, Slack, Zoom.';
+  $default_title = 'NoAway – Keep Teams and Slack from going Away';
+  $default_desc  = 'NoAway keeps this computer from going idle so Teams and Slack are less likely to show Away. One-time purchase for Mac and Windows. Available is not guaranteed.';
 
   $data = array(
     'title'            => $default_title,
@@ -102,8 +102,8 @@ function noaway_seo_get_page_data() {
   }
 
   if ( is_front_page() ) {
-    $data['title']       = 'NoAway – Stop Teams Away, Keep Icon Green | Mac & Windows';
-    $data['description'] = 'NoAway keeps your computer active so Teams and Slack never show Away. One click from the tray—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
+    $data['title']       = 'Keep Teams and Slack from going Away | NoAway';
+    $data['description'] = 'NoAway for Mac and Windows keeps this computer from going idle so Teams and Slack are less likely to show Away. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. Available is not guaranteed.';
     $front = trailingslashit( is_string( $base_url ) ? $base_url : '' );
     if ( $front === '' || $front === '/' ) {
       $data['canonical']        = noaway_seo_request_canonical_url();
@@ -137,13 +137,13 @@ function noaway_seo_get_page_data() {
     $data['description'] = 'Install NoAway once, enable Keep Active from the tray, and your computer stays active automatically. No complicated setup. Works with Teams, Slack, Zoom.';
   } elseif ( $template === 'page-keep-teams-active.php' ) {
     $data['title']       = 'Stop Teams Showing Away After 5 Minutes – Keep Status Green | NoAway';
-    $data['description'] = 'Teams turns Away after about 5 minutes of no keyboard or mouse input. NoAway keeps your status green—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
+    $data['description'] = 'Teams can show Away after about 5 minutes without keyboard or mouse input. NoAway keeps this computer from going idle. It does not guarantee Available—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac and Windows.';
   } elseif ( $template === 'page-teams-away-status.php' ) {
-    $data['title']       = 'Why Does Teams Show Away? (After 5 Min) & How to Stop It | NoAway';
-    $data['description'] = 'Teams shows Away after about 5 minutes of no input. There is no always-available setting; NoAway stops it—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
+    $data['title']       = 'Why Teams Shows Away While You\'re Working | NoAway';
+    $data['description'] = 'Teams can show Away while you work: a locked screen, a calendar event or call, or idle time. Desktop, web, and mobile differ. Sleep settings alone do not keep you Available.';
   } elseif ( $template === 'page-keep-slack-active.php' ) {
-    $data['title']       = 'How to Keep Slack Active (Stop Away After 30 Min) – Mac & Windows | NoAway';
-    $data['description'] = 'Slack desktop goes Away after about 30 minutes of idle. See timing by platform, then keep Slack active on Mac & Windows with NoAway—no mouse jiggling.';
+    $data['title']       = 'How to Keep Slack Active (Away After 10 Min) – Mac & Windows | NoAway';
+    $data['description'] = 'Slack’s desktop app sets you to away after ten minutes of inactivity. Mobile apps do it when you leave or close the app. NoAway keeps this computer from going idle.';
   } elseif ( $template === 'page-prevent-computer-sleep.php' ) {
     $data['title']       = 'Prevent Computer Sleep on Mac & Windows (Without Admin Rights) | NoAway';
     $data['description'] = 'OS sleep settings keep the machine on but do not stop idle status. Prevent sleep without admin rights with NoAway—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
@@ -162,7 +162,7 @@ function noaway_seo_get_page_data() {
     }
   } elseif ( $template === 'page-downloads.php' || $template === 'page-download.php' ) {
     $data['title']       = 'Download NoAway – Keep Teams & Slack Active | Mac & Windows';
-    $data['description'] = 'Download NoAway for macOS or Windows. One-time purchase, €' . NOAWAY_SEO_PRICE_AMOUNT . ' launch price. Keeps Teams, Slack, and Zoom status green automatically. No subscription.';
+    $data['description'] = 'Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. Keeps this computer from going idle so Teams, Slack, and Zoom are less likely to show Away. Available is not guaranteed.';
   } elseif ( $template === 'page-thank-you.php' ) {
     $data['title']       = 'Thank You – Your NoAway Download | Purchase Confirmed';
     $data['description'] = 'Your NoAway purchase is confirmed. Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', lifetime updates. Need help? Visit Help or Contact.';
@@ -172,6 +172,7 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-contatti.php' ) {
     $data['title']       = 'Contact NoAway | Support & Help';
     $data['description'] = 'Get in touch with NoAway support. Questions about installation, licensing, or technical support? We\'re happy to help.';
+    $data['canonical']   = noaway_seo_canonical_url( home_url( '/contacts/' ) );
   } elseif ( $template === 'page-faq.php' ) {
     $data['title']       = 'FAQ – How NoAway Keeps Teams Active, Safety & Pricing | NoAway';
     $data['description'] = 'Common questions about NoAway: how it keeps Teams and Slack active, whether it\'s detectable by IT, how it handles privacy, pricing, and why alternatives like mouse jigglers don\'t work.';
@@ -181,6 +182,7 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-privacy-policy.php' ) {
     $data['title']       = 'Privacy Policy | NoAway';
     $data['description'] = 'NoAway privacy policy: what information we collect, how we use it, and how we protect your data.';
+    $data['canonical']   = noaway_seo_canonical_url( home_url( '/privacy-policy/' ) );
   } elseif ( $template === 'page-terms-of-service.php' ) {
     $data['title']       = 'Terms of Service | NoAway';
     $data['description'] = 'NoAway terms of service: license, use, and legal terms for the NoAway application.';
@@ -192,13 +194,11 @@ function noaway_seo_get_page_data() {
       $data['og_locale']   = noaway_i18n_og_locale( $landing['lang'] );
       $data['in_language'] = noaway_i18n_bcp47( $landing['lang'] );
       $copy = noaway_i18n_landing_copy( $landing['family'], $landing['lang'] );
-      if ( $landing['lang'] !== 'en' ) {
-        if ( ! empty( $copy['seo_title'] ) ) {
-          $data['title'] = $copy['seo_title'];
-        }
-        if ( ! empty( $copy['seo_description'] ) ) {
-          $data['description'] = $copy['seo_description'];
-        }
+      if ( ! empty( $copy['seo_title'] ) ) {
+        $data['title'] = $copy['seo_title'];
+      }
+      if ( ! empty( $copy['seo_description'] ) ) {
+        $data['description'] = $copy['seo_description'];
       }
       // Self-canonical for every language in the cluster (en + localized).
       $self_url = noaway_i18n_landing_url( $landing['family'], $landing['lang'] );
@@ -304,7 +304,7 @@ add_filter( 'document_title_parts', 'noaway_seo_document_title', 10, 1 );
  */
 function noaway_seo_faq_schema_entities() {
   $entities = array(
-    array( 'name' => 'Will I always appear Active on Teams or Slack?', 'text' => 'NoAway prevents your computer from entering an idle state while it is running. This helps your system remain active during long tasks such as downloads, builds, or presentations.' ),
+    array( 'name' => 'Will I always appear Active on Teams or Slack?', 'text' => 'No. NoAway prevents this computer from entering an idle state while it is running, which helps during long tasks such as downloads, builds, or presentations. It does not control calendar status, a locked screen, company policy, or other devices.' ),
     array( 'name' => 'Is using NoAway safe?', 'text' => 'Yes. NoAway is designed as a simple desktop utility that runs locally on your computer. It does not access your files, read messages, or track personal data. Its only function is preventing the system from entering an idle state while enabled. For a full breakdown (admin rights, company PCs, what it does not do), see the Is NoAway safe page at /is-noaway-safe/.' ),
     array( 'name' => 'Does NoAway slow down my computer?', 'text' => 'No. The application runs quietly in the background and is designed to use minimal system resources.' ),
     array( 'name' => 'Can I start NoAway automatically?', 'text' => 'Yes. NoAway can be configured to start automatically when your computer boots so it is ready whenever you need it.' ),
@@ -329,14 +329,14 @@ function noaway_seo_faq_schema_entities() {
     // Keyword "how to keep Teams stay active" + "app that keeps teams active" in answer.
     array( 'name' => 'How to keep Teams stay active?', 'text' => 'Use an app that keeps Teams active, such as NoAway: a lightweight app that simulates natural activity so your system never goes idle. One click and your Teams status stays Available during long tasks, builds, or downloads. It’s one of the most reliable ways to stay active on Microsoft Teams.' ),
     // Keyword "how to keep teams icon green" in answer (same query as "Teams turns yellow").
-    array( 'name' => 'How many minutes until Teams turns yellow?', 'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input. To keep the Teams icon green, use an app like NoAway that keeps your system active so your status stays green (Available).' ),
+    array( 'name' => 'How many minutes until Teams turns yellow?', 'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input. Keeping the system active is what stops that idle timer. Available is not guaranteed.' ),
     array( 'name' => 'How to keep Teams status active hack?', 'text' => 'So-called "hacks" like moving the mouse or running scripts are unreliable and can break after updates. NoAway is a proper solution: it runs in the tray, keeps your system active, and works consistently with Teams without hacks.' ),
-    array( 'name' => 'How do I stop my team from turning yellow?', 'text' => 'If you mean your own status in Microsoft Teams: Teams turns status yellow (Away) after about 5 minutes of inactivity. NoAway keeps your computer active so your status stays green (Available) during long tasks.' ),
+    array( 'name' => 'How do I stop my team from turning yellow?', 'text' => 'If you mean your own status in Microsoft Teams: Teams turns status yellow (Away) after about 5 minutes of inactivity. NoAway keeps this computer from going idle during long tasks. Available is not guaranteed.' ),
     array( 'name' => 'How to stay online on Teams without moving the mouse?', 'text' => 'NoAway simulates activity at the system level so you don\'t have to move the mouse or touch the keyboard. Just enable it from the tray and your status stays Available—no wiggling or scripts needed. It’s an app that keeps Teams active so you can stay active on Microsoft Teams without manual tricks.' ),
     // Keyword "app that keeps teams active" in answer.
-    array( 'name' => 'Forced to use Teams, how to avoid being \'away\'?', 'text' => 'Many workers are required to use Teams; appearing Away during long tasks can be misunderstood. Use an app that keeps Teams active, like NoAway: it keeps your computer active so your status stays Available and the Teams icon stays green during builds, downloads, or focused work—no mouse wiggling needed.' ),
+    array( 'name' => 'Forced to use Teams, how to avoid being \'away\'?', 'text' => 'Many workers are required to use Teams; appearing Away during long tasks can be misunderstood. NoAway keeps this computer from going idle during builds, downloads, or focused work. Available is not guaranteed: calendar, a locked screen, company policy, and other devices can still change presence.' ),
     // New FAQ for query "how to keep teams icon green" (distinct from "Teams turns yellow").
-    array( 'name' => 'How to keep the Teams icon green?', 'text' => 'The Teams icon turns green (Available) when Microsoft Teams detects system activity. To keep the Teams icon green, keep your computer active at the system level. NoAway is an app that keeps Teams active by preventing idle—one click and your icon stays green during long tasks.' ),
+    array( 'name' => 'How to keep the Teams icon green?', 'text' => 'The Teams icon turns green (Available) when Microsoft Teams detects system activity, and yellow after about 5 minutes without input. NoAway keeps this computer from going idle while Keep Active is on. A green icon is not guaranteed.' ),
     // Troubleshooting: what to do if Teams still shows Away
     array( 'name' => 'What should I do if Teams still shows Away?', 'text' => 'Make sure NoAway is running and Keep Active is enabled. Use the latest version of NoAway (updates improve timing so Teams does not go Away after a few minutes). After updating, use "Restart Activity Engine" from the tray menu. Check "Open Logs" in the menu: if you see "simulated" lines every few minutes, the app is working; if you see errors, contact support. On Windows, try running NoAway as Administrator once and ensure your antivirus is not blocking it.' ),
   );
@@ -344,42 +344,45 @@ function noaway_seo_faq_schema_entities() {
 }
 
 /**
- * FAQ presenti in front-page.php (sezione FAQ homepage). Testo allineato al contenuto visibile per FAQPage.
- * Separato da noaway_seo_faq_schema_entities() perché la pagina /faq/ ha elenco più ampio.
+ * Homepage FAQ. Visible markup and FAQPage JSON-LD both use this list.
+ *
+ * @return array<int, array{name:string,text:string}>
  */
-function noaway_seo_front_page_faq_schema_entities() {
-  $entities = array(
+function noaway_front_page_faqs() {
+  $teams = function_exists( 'noaway_keep_teams_active_page_url' ) ? noaway_keep_teams_active_page_url() : home_url( '/keep-teams-active/' );
+  $icon  = esc_url( $teams . '#keep-teams-icon-green' );
+  return array(
     array(
       'name' => 'How do I stop Microsoft Teams from showing away?',
-      'text' => 'Microsoft Teams switches to Away when it detects no keyboard or mouse activity. NoAway keeps your computer active automatically so your status stays Available during downloads, builds, or deep work—no need to move the mouse or use unreliable tricks.',
+      'text' => 'Microsoft Teams switches to Away when it detects no keyboard or mouse activity. NoAway keeps this computer from going idle, which is the signal Teams uses, during downloads, builds, or deep work. It does not guarantee Available.',
     ),
     array(
       'name' => 'How to keep Teams stay active? Is there an app that keeps Teams active?',
-      'text' => 'Use an app that keeps Teams active, like NoAway: it simulates natural activity so your system never goes idle. One click and your Teams status stays Available during long tasks, builds, or downloads. It’s a simple way to stay active on Microsoft Teams without mouse wiggling.',
+      'text' => 'Use an app that keeps the computer from going idle, like NoAway, so Teams is less likely to flip to Away during a long build, a render, or a large download. Presence on another device is separate.',
     ),
     array(
       'name' => 'How to keep the Teams icon green?',
-      'text' => 'Teams turns your icon yellow (Away) after about 5 minutes with no keyboard or mouse activity. To keep the Teams icon green, keep your computer active at the system level. NoAway does this automatically—one click and your status stays Available. The Mac and Windows steps are in the keep Teams active guide.',
+      'text' => 'Teams turns the icon yellow (Away) after about 5 minutes with no keyboard or mouse activity. Keeping this computer active is what the desktop app reads. NoAway does that while Keep Active is on. A locked screen, calendar, or company policy can still change the icon. <a href="' . $icon . '" class="text-primary font-semibold hover:underline">How to keep the Teams icon green on Mac and Windows</a>.',
     ),
     array(
       'name' => 'How many minutes until Teams turns yellow?',
-      'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input. NoAway prevents this by keeping your system active so your status stays green (Available).',
+      'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input on the desktop app. Keeping the system active is what stops that idle timer. It does not cover calendar, calls, or other devices.',
     ),
     array(
-      'name' => 'Will I always appear Active on Teams or Slack?',
-      'text' => 'Yes. NoAway simulates natural activity so your computer never goes idle. As long as NoAway is running, your status will remain Available on apps like Microsoft Teams or Slack. No more stress about suddenly appearing Away during work hours.',
+      'name' => 'Will my status stay Available while I am working?',
+      'text' => 'Not always. While NoAway is on, this computer does not go idle and does not sleep. Teams and Slack read that signal, so they are less likely to show Away during a build, a render, or a large download. Calendar, a locked screen, company policy, and other devices can still change presence.',
     ),
     array(
       'name' => 'Is using NoAway safe?',
-      'text' => 'Yes. NoAway is a simple desktop utility that runs locally. It does not access your files, read messages, or track personal data—it only prevents the system from going idle while enabled. More detail is on the Is NoAway safe page (/is-noaway-safe/).',
+      'text' => 'Yes. NoAway is a desktop utility. Keep Active runs on your computer and does not read files or messages. Activation and updates contact the license server. Details are on the Is NoAway safe page.',
     ),
     array(
       'name' => 'Does NoAway slow down my computer?',
       'text' => 'Not at all. NoAway is extremely lightweight and uses almost no CPU or memory.',
     ),
     array(
-      'name' => 'Will anyone know I\'m using NoAway?',
-      'text' => 'NoAway runs locally on your computer and does not collect or transmit activity data. It simply keeps your computer from becoming idle during long tasks such as downloads, builds, or presentations.',
+      'name' => 'Does NoAway send my activity anywhere?',
+      'text' => 'Keep Active does not upload keystrokes, screen contents, or chats. Activation sends the license key, purchase email, and a device id to the license server. License checks send the license key and device id, and can include app version and platform when the app sends them. See the privacy page for the full list.',
     ),
     array(
       'name' => 'Do I need to keep the app open?',
@@ -390,6 +393,21 @@ function noaway_seo_front_page_faq_schema_entities() {
       'text' => 'No. NoAway is a one-time purchase. You pay once and receive lifetime access, including future updates.',
     ),
   );
+}
+
+/**
+ * FAQPage entities for the homepage. Plain text of noaway_front_page_faqs().
+ *
+ * @return array<int, array{name:string,text:string}>
+ */
+function noaway_seo_front_page_faq_schema_entities() {
+  $entities = array();
+  foreach ( noaway_front_page_faqs() as $faq ) {
+    $entities[] = array(
+      'name' => $faq['name'],
+      'text' => wp_strip_all_tags( $faq['text'] ),
+    );
+  }
   return apply_filters( 'noaway_front_page_faq_schema_entities', $entities );
 }
 
@@ -397,8 +415,46 @@ function noaway_seo_front_page_faq_schema_entities() {
  * Versione app/tema per SoftwareApplication JSON-LD.
  */
 function noaway_seo_theme_version_for_schema() {
-  $v = wp_get_theme()->get( 'Version' );
-  return $v ? $v : '1.1.0';
+  // App version from installer filenames (NoAway-1.0.6-*). Not the theme version.
+  // The homepage badge "Anti-idle engine v2.0" is the idle-prevention engine, not this version.
+  if ( defined( 'NOAWAY_APP_VERSION' ) && is_string( NOAWAY_APP_VERSION ) && NOAWAY_APP_VERSION !== '' ) {
+    return NOAWAY_APP_VERSION;
+  }
+  return '1.0.6';
+}
+
+/**
+ * Article dates from the WordPress page, else the template file's mtime.
+ *
+ * @return array{0:string,1:string} datePublished, dateModified (Y-m-d).
+ */
+function noaway_seo_article_dates( $template_slug ) {
+  $published = '';
+  $modified  = '';
+  if ( is_singular() ) {
+    $post = get_queried_object();
+    if ( $post instanceof WP_Post ) {
+      $published = mysql2date( 'Y-m-d', $post->post_date_gmt, false );
+      $modified  = mysql2date( 'Y-m-d', $post->post_modified_gmt, false );
+    }
+  }
+  $file_day = '';
+  if ( is_string( $template_slug ) && $template_slug !== '' ) {
+    $file = get_stylesheet_directory() . '/' . ltrim( $template_slug, '/' );
+    if ( file_exists( $file ) ) {
+      $file_day = gmdate( 'Y-m-d', (int) filemtime( $file ) );
+    }
+  }
+  if ( ! is_string( $published ) || $published === '' ) {
+    $published = $file_day;
+  }
+  if ( ! is_string( $modified ) || $modified === '' ) {
+    $modified = $file_day;
+  }
+  if ( $published !== '' && $modified !== '' && $modified < $published ) {
+    $modified = $published;
+  }
+  return array( $published, $modified );
 }
 
 /**
@@ -407,25 +463,50 @@ function noaway_seo_theme_version_for_schema() {
  * @return array<int, array{name:string,text:string}>|null
  */
 function noaway_seo_landing_faq_items( $template_slug ) {
+  if ( $template_slug === 'page-keep-slack-active.php' && function_exists( 'noaway_i18n_landing_copy' ) ) {
+    $lang = 'en';
+    if ( function_exists( 'noaway_i18n_current_landing' ) ) {
+      $landing = noaway_i18n_current_landing();
+      if ( is_array( $landing ) && isset( $landing['family'], $landing['lang'] ) && $landing['family'] === 'slack' ) {
+        $lang = $landing['lang'];
+      }
+    }
+    $copy = noaway_i18n_landing_copy( 'slack', $lang );
+    if ( is_array( $copy ) && ! empty( $copy['faqs'] ) && is_array( $copy['faqs'] ) ) {
+      return $copy['faqs'];
+    }
+  }
   $map = array(
     'page-teams-away-status.php' => array(
       array(
-        'name' => 'How long before Teams shows Away?',
-        'text' => 'Microsoft Teams switches your status to Away after approximately 5 minutes of keyboard and mouse inactivity. This cannot be changed in Teams settings.',
+        'name' => 'Why does Teams show Away while I am working?',
+        'text' => 'Teams reads keyboard and mouse activity, and also calendar and call state. Reading, a locked screen, or a meeting can change presence even though you are still working.',
       ),
       array(
-        'name' => 'Why does Teams show Away when I am still working?',
-        'text' => 'Teams does not ask if you are at your desk. It reads keyboard and mouse activity from the operating system. Reading, a long call, or a build with no input looks idle, so the status turns Away.',
+        'name' => 'What is the difference between Away and Offline?',
+        'text' => 'Away means you are signed in and Teams treats the session as idle. Offline means the app is closed, you are signed out, or the client has no connection.',
       ),
       array(
-        'name' => 'Can Teams be set to stay Available permanently?',
-        'text' => 'No. Teams has no setting that forces Available. It overwrites a manual status when it detects inactivity. How to keep the status Available is covered in the keep Teams active guide.',
+        'name' => 'Does locking the screen make Teams show Away?',
+        'text' => 'A locked screen stops keyboard and mouse input. Teams can switch that device to Away.',
+      ),
+      array(
+        'name' => 'Can a meeting or calendar event change my status?',
+        'text' => 'Yes. A call or a calendar block can set Busy, In a meeting, or Out of office. NoAway does not change calendar or call presence.',
+      ),
+      array(
+        'name' => 'Do desktop, web, and mobile follow the same rule?',
+        'text' => 'No. The desktop app uses the computer idle timer, about 5 minutes. The browser follows that session. Mobile can go Away when you leave the app. Activity on one device does not keep the others Available.',
+      ),
+      array(
+        'name' => 'Why does changing sleep settings not keep me Available?',
+        'text' => 'Sleep settings decide when the display or the computer sleeps. Teams still looks for recent input. A machine that is awake but idle can still show Away.',
       ),
     ),
     'page-keep-slack-active.php' => array(
       array(
         'name' => 'How long before Slack shows Away?',
-        'text' => 'On the Slack desktop app, Slack marks you as Away after approximately 30 minutes of no keyboard or mouse activity. Browser and mobile clients follow different presence rules and are not tied to that same desktop idle window.',
+        'text' => 'On the Slack desktop app, Slack marks you as Away after approximately 10 minutes of no keyboard or mouse activity. Browser and mobile clients follow different presence rules and are not tied to that same desktop idle window.',
       ),
       array(
         'name' => 'How do I keep my Slack status active?',
@@ -437,11 +518,11 @@ function noaway_seo_landing_faq_items( $template_slug ) {
       ),
       array(
         'name' => 'How long does Slack stay active?',
-        'text' => 'On desktop, Slack keeps you Active until the idle window is reached—about 30 minutes without keyboard or mouse input. There is no setting that permanently extends that timer.',
+        'text' => 'On desktop, Slack keeps you Active until the idle window is reached—about 10 minutes without keyboard or mouse input. There is no setting that permanently extends that timer.',
       ),
       array(
         'name' => 'When does Slack show inactive or Away?',
-        'text' => 'Slack shows Away when it stops seeing recent user activity on that client. On desktop that is typically after about 30 minutes without input; web and mobile can change under different conditions.',
+        'text' => 'Slack shows Away when it stops seeing recent user activity on that client. On desktop that is typically after about 10 minutes without input; web and mobile can change under different conditions.',
       ),
       array(
         'name' => 'What is the difference between Slack Away, Do Not Disturb, and custom status?',
@@ -459,7 +540,7 @@ function noaway_seo_landing_faq_items( $template_slug ) {
       ),
       array(
         'name' => 'Why does my computer sleep and make Teams show Away?',
-        'text' => 'Because Teams treats system idle as Away. When the computer sleeps or sits idle with no input, Teams changes your status; keeping the system active also keeps Teams and Slack Available.',
+        'text' => 'Teams treats system idle as Away. Sleep settings keep the machine awake but do not create keyboard or mouse input, so Teams can still show Away. Keeping the system active is a separate step, and it does not guarantee Available.',
       ),
     ),
     'page-is-noaway-safe.php' => array(
@@ -531,9 +612,9 @@ function noaway_seo_howto_schema( $template_slug, $download_url ) {
     ),
     'page-keep-slack-active.php' => array(
       'name'        => 'How to keep Slack active and prevent Away status',
-      'description' => 'On the Slack desktop app, Away starts after about 30 minutes of inactivity. Here is how to keep your Slack status active automatically on Mac and Windows.',
+      'description' => 'On the Slack desktop app, Away starts after about 10 minutes of inactivity. Here is how to keep this computer from going idle on Mac and Windows. That does not guarantee an Active status.',
       'totalTime'   => 'PT2M',
-      'step3_text'  => 'Toggle Enable. NoAway keeps your system active so Slack continues to show your status as Active.',
+      'step3_text'  => 'Turn Keep Active on. NoAway keeps this computer from going idle, which is the signal Slack reads. An Active status is not guaranteed.',
     ),
     'page-prevent-computer-sleep.php' => array(
       'name'        => 'How to prevent computer sleep on Mac or Windows',
@@ -583,21 +664,26 @@ function noaway_seo_article_schema_for_template( $template_slug, $canonical_url,
   $canonical_url = noaway_seo_canonical_url( $canonical_url );
   $home_url      = noaway_seo_canonical_url( $home_url );
   $pub  = array( '@type' => 'Organization', 'name' => 'NoAway', 'url' => $home_url );
+  list( $date_published, $date_modified ) = noaway_seo_article_dates( $template_slug );
   $base = array(
     '@type'            => 'Article',
-    'datePublished'    => '2025-01-01',
-    'dateModified'     => gmdate( 'Y-m-d' ),
     'publisher'        => $pub,
     'mainEntityOfPage' => array( '@type' => 'WebPage', '@id' => $canonical_url ),
   );
+  if ( $date_published !== '' ) {
+    $base['datePublished'] = $date_published;
+  }
+  if ( $date_modified !== '' ) {
+    $base['dateModified'] = $date_modified;
+  }
   $by_template = array(
     'page-teams-away-status.php' => array(
-      'headline'    => 'Why Teams Shows Away, and After How Long',
-      'description' => 'Teams shows Away when it sees no keyboard or mouse input, usually after about 5 minutes. There is no always-available setting. This page explains how presence detection works.',
+      'headline'    => 'Why Teams shows Away while you\'re working',
+      'description' => 'Teams can show Away while you work because of a locked screen, a calendar event or call, or idle time. Desktop, web, and mobile differ. Sleep settings alone do not keep you Available.',
     ),
     'page-keep-slack-active.php' => array(
       'headline'    => 'How to Keep Slack Active and Prevent Away Status',
-      'description' => 'On the Slack desktop app, Away starts after about 30 minutes of no keyboard or mouse activity. Browser and mobile differ. Keep the computer active at the OS level—with NoAway—so Slack stays Active on Mac and Windows.',
+      'description' => 'On the Slack desktop app, Away starts after about 10 minutes of inactivity. Mobile apps set you to away when you leave or close the app. Keeping this computer active does not guarantee an Active status.',
     ),
     'page-prevent-computer-sleep.php' => array(
       'headline'    => 'How to Prevent Computer Sleep and Keep Your Computer Awake',
@@ -618,18 +704,6 @@ function noaway_seo_article_schema_for_template( $template_slug, $canonical_url,
     'page-how-it-works.php' => array(
       'headline'    => 'How NoAway Works — Install, Enable, Stay Available',
       'description' => 'Install NoAway once, enable Keep Active from the tray, and your computer stays active automatically. No complicated setup. Works with Teams, Slack, Zoom.',
-    ),
-    'page-help.php' => array(
-      'headline'    => 'NoAway Help Center — Installation, Activation, Troubleshooting',
-      'description' => 'Find quick answers about installing, activating, and using NoAway. Installation guide for macOS and Windows, license activation, and troubleshooting.',
-    ),
-    'page-downloads.php' => array(
-      'headline'    => 'Download NoAway for macOS and Windows',
-      'description' => 'Download NoAway for macOS or Windows. One-time purchase, €' . NOAWAY_SEO_PRICE_AMOUNT . ' launch price. Keeps Teams, Slack, and Zoom status green automatically. No subscription.',
-    ),
-    'page-download.php' => array(
-      'headline'    => 'Download NoAway for Mac',
-      'description' => 'Download NoAway for macOS or Windows. One-time purchase, €' . NOAWAY_SEO_PRICE_AMOUNT . ' launch price. Keeps Teams, Slack, and Zoom status green automatically. No subscription.',
     ),
     'page-thank-you.php' => array(
       'headline'    => 'Thank You — Your NoAway Purchase Is Confirmed',
@@ -667,6 +741,9 @@ function noaway_seo_webpage_supplemental_schema( $template_slug, $canonical_url,
     'page-sitemap.php',
     'page-contatti.php',
     'page-faq.php',
+    'page-help.php',
+    'page-downloads.php',
+    'page-download.php',
   );
   if ( ! in_array( $template_slug, $templates, true ) ) {
     return null;
@@ -750,7 +827,7 @@ function noaway_seo_software_application_node( $url ) {
     'name'                => 'NoAway',
     'applicationCategory' => 'ProductivityApplication',
     'operatingSystem'     => 'macOS, Windows',
-    'description'         => 'NoAway keeps your computer active so Microsoft Teams, Slack, and Zoom never show you as Away. One-time purchase (EUR) for Mac and Windows.',
+    'description'         => 'NoAway keeps this computer from going idle so Microsoft Teams, Slack, and Zoom are less likely to show you as Away. One-time purchase (EUR) for Mac and Windows. Available is not guaranteed.',
     'url'                 => $url,
     'downloadUrl'         => $download_url,
     'softwareVersion'     => noaway_seo_theme_version_for_schema(),
@@ -793,7 +870,6 @@ function noaway_seo_structured_data() {
         '@type' => 'ImageObject',
         'url'   => $logo,
       ),
-      'sameAs'       => noaway_seo_same_as_urls(),
       'contactPoint' => array(
         '@type'       => 'ContactPoint',
         'email'       => 'support@noaway.app',
@@ -804,11 +880,15 @@ function noaway_seo_structured_data() {
       '@type'       => 'WebSite',
       'name'        => 'NoAway',
       'url'         => $home,
-      'description' => 'NoAway keeps your computer active so Teams and Slack stay Available. Download for Mac and Windows; one-time purchase (€' . NOAWAY_SEO_PRICE_AMOUNT . ').',
+      'description' => 'NoAway keeps this computer from going idle so Teams and Slack are less likely to show Away. One-time purchase (€' . NOAWAY_SEO_PRICE_AMOUNT . ') for Mac and Windows. Available is not guaranteed.',
       'inLanguage'  => 'en',
       'publisher'   => array( '@type' => 'Organization', 'name' => 'NoAway', 'url' => $home ),
     ),
   );
+  $same_as = noaway_seo_same_as_urls();
+  if ( $same_as ) {
+    $graph[0]['sameAs'] = $same_as;
+  }
 
   $template = get_page_template_slug();
   $product_templates = array(

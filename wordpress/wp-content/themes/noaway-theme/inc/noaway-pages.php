@@ -307,23 +307,43 @@ function noaway_contact_page_url() {
  */
 function noaway_picture( $basename, $alt, $attrs = array() ) {
 	$basename = is_string( $basename ) ? basename( $basename ) : '';
-	$basename = preg_replace( '/\.(webp|png|jpe?g|gif|svg)$/i', '', $basename );
+	$basename = preg_replace( '/\.(webp|png|jpe?g|gif|svg|avif)$/i', '', $basename );
 	if ( ! is_string( $basename ) || $basename === '' ) {
 		return;
 	}
 	if ( ! is_array( $attrs ) ) {
 		$attrs = array();
 	}
-	$dir  = get_stylesheet_directory() . '/assets/images/';
-	$uri  = get_stylesheet_directory_uri() . '/assets/images/';
-	$webp = $dir . $basename . '.webp';
-	$png  = $dir . $basename . '.png';
+	$dir   = get_stylesheet_directory() . '/assets/images/';
+	$uri   = get_stylesheet_directory_uri() . '/assets/images/';
 	$class = isset( $attrs['class'] ) ? (string) $attrs['class'] : '';
 	$width = isset( $attrs['width'] ) ? (int) $attrs['width'] : 0;
 	$height = isset( $attrs['height'] ) ? (int) $attrs['height'] : 0;
 	$loading = isset( $attrs['loading'] ) ? (string) $attrs['loading'] : '';
 	$fetchpriority = isset( $attrs['fetchpriority'] ) ? (string) $attrs['fetchpriority'] : '';
 	$decoding = isset( $attrs['decoding'] ) ? (string) $attrs['decoding'] : 'async';
+	$sizes = isset( $attrs['sizes'] ) ? (string) $attrs['sizes'] : '';
+	$widths = array();
+	if ( ! empty( $attrs['widths'] ) && is_array( $attrs['widths'] ) ) {
+		foreach ( $attrs['widths'] as $candidate ) {
+			$candidate = (int) $candidate;
+			if ( $candidate > 0 ) {
+				$widths[] = $candidate;
+			}
+		}
+	}
+
+	$srcset_for = function ( $ext ) use ( $dir, $uri, $basename, $widths ) {
+		$parts = array();
+		foreach ( $widths as $w ) {
+			$file = $dir . $basename . '-' . $w . '.' . $ext;
+			if ( ! file_exists( $file ) ) {
+				continue;
+			}
+			$parts[] = esc_url( $uri . $basename . '-' . $w . '.' . $ext ) . ' ' . $w . 'w';
+		}
+		return implode( ', ', $parts );
+	};
 
 	$img_attrs = '';
 	if ( $class !== '' ) {
@@ -345,11 +365,172 @@ function noaway_picture( $basename, $alt, $attrs = array() ) {
 		$img_attrs .= ' decoding="' . esc_attr( $decoding ) . '"';
 	}
 
+	$png_srcset = $srcset_for( 'png' );
+	$webp_srcset = $srcset_for( 'webp' );
+	$avif_srcset = $srcset_for( 'avif' );
+	$png = $dir . $basename . '.png';
+	$webp = $dir . $basename . '.webp';
 	$fallback_src = file_exists( $png ) ? $uri . $basename . '.png' : $uri . $basename . '.webp';
+	if ( $png_srcset !== '' && ! empty( $widths ) ) {
+		$largest = max( $widths );
+		$sized_png = $dir . $basename . '-' . $largest . '.png';
+		if ( file_exists( $sized_png ) ) {
+			$fallback_src = $uri . $basename . '-' . $largest . '.png';
+		}
+	}
+
+	$sizes_attr = $sizes !== '' ? ' sizes="' . esc_attr( $sizes ) . '"' : '';
 	echo '<picture>';
-	if ( file_exists( $webp ) ) {
+	if ( $avif_srcset !== '' ) {
+		echo '<source type="image/avif" srcset="' . $avif_srcset . '"' . $sizes_attr . '>';
+	}
+	if ( $webp_srcset !== '' ) {
+		echo '<source type="image/webp" srcset="' . $webp_srcset . '"' . $sizes_attr . '>';
+	} elseif ( file_exists( $webp ) ) {
 		echo '<source type="image/webp" srcset="' . esc_url( $uri . $basename . '.webp' ) . '">';
+	}
+	if ( $png_srcset !== '' ) {
+		$img_attrs .= ' srcset="' . $png_srcset . '"' . $sizes_attr;
 	}
 	echo '<img' . $img_attrs . ' alt="' . esc_attr( $alt ) . '" src="' . esc_url( $fallback_src ) . '">';
 	echo '</picture>';
+}
+
+/**
+ * Short "what it controls / what it doesn't" block. Same limits as Help.
+ *
+ * @param string $lang en|de|es|pt-br|fr.
+ */
+function noaway_render_controls_note( $lang = 'en' ) {
+	$lang = is_string( $lang ) ? $lang : 'en';
+	$copy = array(
+		'en'    => array(
+			'h'   => 'What NoAway controls — and what it doesn’t',
+			'yes' => 'System activity and sleep on the computer where NoAway is running, while Keep Active is on.',
+			'no'  => 'Calendar status, a locked screen, company policy, and presence on other devices.',
+		),
+		'de'    => array(
+			'h'   => 'Was NoAway steuert — und was nicht',
+			'yes' => 'Systemaktivität und Ruhezustand auf dem Computer, auf dem NoAway läuft, solange Keep Active an ist.',
+			'no'  => 'Kalenderstatus, einen gesperrten Bildschirm, Unternehmensrichtlinien und die Anwesenheit auf anderen Geräten.',
+		),
+		'es'    => array(
+			'h'   => 'Qué controla NoAway — y qué no',
+			'yes' => 'La actividad del sistema y la suspensión en el equipo donde NoAway está en marcha, mientras Keep Active está activo.',
+			'no'  => 'El estado del calendario, una pantalla bloqueada, las políticas de la empresa y la presencia en otros dispositivos.',
+		),
+		'pt-br' => array(
+			'h'   => 'O que o NoAway controla — e o que não controla',
+			'yes' => 'A atividade do sistema e a suspensão no computador em que o NoAway está rodando, enquanto o Keep Active está ligado.',
+			'no'  => 'O status do calendário, uma tela bloqueada, as políticas da empresa e a presença em outros dispositivos.',
+		),
+		'fr'    => array(
+			'h'   => 'Ce que NoAway contrôle — et ce qu’il ne contrôle pas',
+			'yes' => 'L’activité du système et la veille sur l’ordinateur où NoAway tourne, tant que Keep Active est activé.',
+			'no'  => 'Le statut du calendrier, un écran verrouillé, les règles de l’entreprise et la présence sur d’autres appareils.',
+		),
+	);
+	$c = isset( $copy[ $lang ] ) ? $copy[ $lang ] : $copy['en'];
+	$yes_label = array(
+		'en'    => 'It controls',
+		'de'    => 'Es steuert',
+		'es'    => 'Controla',
+		'pt-br' => 'Controla',
+		'fr'    => 'Il contrôle',
+	);
+	$no_label = array(
+		'en'    => 'It doesn’t',
+		'de'    => 'Nicht',
+		'es'    => 'No controla',
+		'pt-br' => 'Não controla',
+		'fr'    => 'Il ne contrôle pas',
+	);
+	$yes = isset( $yes_label[ $lang ] ) ? $yes_label[ $lang ] : $yes_label['en'];
+	$no  = isset( $no_label[ $lang ] ) ? $no_label[ $lang ] : $no_label['en'];
+	?>
+	<section class="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 p-6" aria-labelledby="noaway-controls-heading">
+		<h2 id="noaway-controls-heading" class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3"><?php echo esc_html( $c['h'] ); ?></h2>
+		<ul class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed space-y-2">
+			<li><strong class="text-slate-800 dark:text-slate-200"><?php echo esc_html( $yes ); ?>:</strong> <?php echo esc_html( $c['yes'] ); ?></li>
+			<li><strong class="text-slate-800 dark:text-slate-200"><?php echo esc_html( $no ); ?>:</strong> <?php echo esc_html( $c['no'] ); ?></li>
+		</ul>
+	</section>
+	<?php
+}
+
+/**
+ * Data actually sent, from this repo. Unknown client fields stay as PHP TODOs.
+ *
+ * @return array<int, array{activity:string,where:string,data:string}>
+ */
+function noaway_privacy_transfer_rows() {
+	return array(
+		array(
+			'activity' => 'Keep Active',
+			'where'    => 'On your computer',
+			'data'     => 'Nothing for the idle and sleep prevention itself. It does not send keystrokes, screen contents, chats, or files.',
+		),
+		array(
+			'activity' => 'Activation',
+			'where'    => 'License server (license.noaway.app)',
+			'data'     => 'License key, the email used at purchase, and a device id.',
+		),
+		array(
+			'activity' => 'License check',
+			'where'    => 'License server',
+			'data'     => 'License key and device id. The server also accepts, when the app includes them, app version, platform, activity mode, detected app names (Teams, Slack, Zoom, or Discord), and seconds kept active that day.',
+			// TODO: Confirm which of those optional fields the shipping app actually sends.
+		),
+		array(
+			'activity' => 'Updates',
+			'where'    => 'License server',
+			'data'     => 'Updates contact the license server.',
+			// TODO: Confirm the update-check URL and the fields the app sends.
+		),
+		array(
+			'activity' => 'Purchase',
+			'where'    => 'Stripe, via the license server',
+			'data'     => 'Stripe collects the payment. This website only adds a landing reference (ref and client_reference_id) to the checkout URL.',
+			// TODO: Confirm which billing fields the license server stores after Stripe payment (email, order id).
+		),
+		array(
+			'activity' => 'Website',
+			'where'    => 'Google Analytics 4, only after analytics consent',
+			'data'     => 'Page views. Buy-button clicks record the page path, button position, and landing reference in this site’s analytics.',
+		),
+		array(
+			'activity' => 'Support',
+			'where'    => 'Email to support@noaway.app',
+			'data'     => 'Name, email, topic, subject, and message from the contact form. A reCAPTCHA token is included only if a site key is configured.',
+		),
+	);
+}
+
+/**
+ * Visible privacy table shared by /is-noaway-safe/ and /privacy-policy/.
+ */
+function noaway_render_privacy_transfer_table() {
+	$rows = noaway_privacy_transfer_rows();
+	?>
+	<div class="not-prose overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mb-6">
+		<table class="w-full text-left text-sm">
+			<thead>
+				<tr class="bg-slate-50 dark:bg-slate-900/60">
+					<th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">Activity</th>
+					<th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">Where</th>
+					<th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">Data sent</th>
+				</tr>
+			</thead>
+			<tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+				<?php foreach ( $rows as $row ) : ?>
+				<tr>
+					<td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top"><?php echo esc_html( $row['activity'] ); ?></td>
+					<td class="p-4 text-slate-600 dark:text-slate-400 align-top"><?php echo esc_html( $row['where'] ); ?></td>
+					<td class="p-4 text-slate-600 dark:text-slate-400 align-top"><?php echo esc_html( $row['data'] ); ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+	<?php
 }

@@ -160,9 +160,10 @@ $contact_url = noaway_contact_page_url();
   <section id="privacy-security" class="py-16 px-6 scroll-mt-24">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Privacy and security</h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
-        NoAway does not collect personal data and does not access your files or messages. The app runs locally on your computer and simply prevents the system from entering an idle state.
+      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+        Keep Active runs on your computer. It does not read your files or messages. Activation and updates contact the license server. The table of what is sent is on the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a>.
       </p>
+      <?php noaway_render_controls_note( 'en' ); ?>
     </div>
   </section>
 

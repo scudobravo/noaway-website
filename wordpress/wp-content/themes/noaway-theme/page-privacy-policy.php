@@ -9,7 +9,7 @@ get_header();
   <div class="max-w-[800px] mx-auto">
     <div class="mb-16">
       <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] mb-4">Privacy Policy</h1>
-      <p class="text-primary font-medium">Last Updated: <?php echo esc_html( wp_date('F j, Y') ); ?></p>
+      <p class="text-primary font-medium">Last Updated: <?php echo esc_html( wp_date( 'F j, Y', filemtime( __FILE__ ) ) ); ?></p>
     </div>
     <div class="prose-custom dark:prose-invert text-slate-700 dark:text-slate-300">
       <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
@@ -43,11 +43,8 @@ get_header();
           <li>Email address (if you create an account or contact us)</li>
           <li>Billing information (if applicable)</li>
         </ul>
-        <h3 class="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-3">3.2 Automatically Collected Data</h3>
-        <ul class="list-disc pl-6 mb-6 space-y-2">
-          <li>Basic technical information (e.g., device type, OS version)</li>
-          <li>Application usage data (limited and anonymized where possible)</li>
-        </ul>
+        <h3 class="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-3">3.2 What is sent, and where</h3>
+        <?php noaway_render_privacy_transfer_table(); ?>
         <h3 class="text-slate-900 dark:text-slate-100 font-semibold text-lg mb-3">3.3 Data We DO NOT Collect</h3>
         <p class="leading-relaxed mb-4">We explicitly do NOT collect:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">

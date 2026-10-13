@@ -80,6 +80,9 @@ get_header();
           </tbody>
         </table>
       </div>
+      <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+        <?php echo noaway_slack_presence_source_html( $noaway_landing_lang ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses'd in the helper. ?>
+      </p>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         <strong><?php echo noaway_i18n_plain( $t['q_stay'] ); ?></strong> <?php echo noaway_i18n_plain( $t['a_stay'] ); ?>
       </p>
@@ -142,6 +145,10 @@ get_header();
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         <?php echo noaway_i18n_html( $t['noaway_p'] ); ?>
       </p>
+    </section>
+
+    <section class="mb-16" aria-labelledby="noaway-controls-heading">
+      <?php noaway_render_controls_note( $noaway_landing_lang ); ?>
     </section>
 
     <section class="mb-16" id="faq" aria-labelledby="faq-heading">

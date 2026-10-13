@@ -70,10 +70,12 @@ get_header();
 				'landing-hero-section',
 				$t['hero_alt'],
 				array(
-					'class'   => 'w-full h-full object-cover',
-					'width'   => 1200,
-					'height'  => 630,
-					'loading' => 'eager',
+					'class'          => 'w-full h-full object-cover',
+					'width'          => 1200,
+					'height'         => 630,
+					'fetchpriority'  => 'high',
+					'widths'         => array( 640, 960, 1200 ),
+					'sizes'          => '(min-width: 1024px) 36rem, calc(100vw - 3rem)',
 				)
 			);
 			?>
@@ -178,6 +180,9 @@ get_header();
           </li>
           <?php endforeach; ?>
         </ul>
+        <div class="mt-8">
+          <?php noaway_render_controls_note( $noaway_landing_lang ); ?>
+        </div>
       </div>
     </div>
   </section>

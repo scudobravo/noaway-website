@@ -10,13 +10,14 @@ $checkout_url = noaway_checkout_url();
 <main>
   <article class="max-w-4xl mx-auto px-6 py-16 lg:py-24" itemscope itemtype="https://schema.org/Article">
     <?php
+    $article_dates  = function_exists( 'noaway_seo_article_dates' ) ? noaway_seo_article_dates( 'page-prevent-teams-away.php' ) : array( '', '' );
     $article_schema = array(
       '@context'        => 'https://schema.org',
       '@type'           => 'Article',
       'headline'        => 'How to Prevent Teams Away Status and Keep Teams Active',
-      'description'    => 'To prevent Teams away status, keep your computer active at the system level so Microsoft Teams continues to show you as Available. Microsoft Teams switches to Away after about 5 minutes of no keyboard or mouse activity; a lightweight app like NoAway prevents idle so your status stays green during downloads, builds, or deep work.',
-      'datePublished'  => '2025-01-01',
-      'dateModified'   => gmdate( 'Y-m-d' ),
+      'description'    => 'Teams switches to Away after about 5 minutes without keyboard or mouse input. Keeping this computer from going idle is the signal Teams uses. Available is not guaranteed.',
+      'datePublished'  => $article_dates[0],
+      'dateModified'   => $article_dates[1],
       'publisher'       => array(
         '@type' => 'Organization',
         'name'  => 'NoAway',

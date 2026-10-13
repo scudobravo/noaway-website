@@ -37,7 +37,7 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">What people ask: how to stop Teams showing Away</h3>
       <div class="space-y-4">
         <?php
-        $search_faqs = array_slice( $faq_schema_entities, 19, 8 );
+        $search_faqs = array_slice( $faq_schema_entities, 19 );
         foreach ( $search_faqs as $faq ) :
           ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">

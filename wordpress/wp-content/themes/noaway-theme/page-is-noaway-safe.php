@@ -61,6 +61,8 @@ $download_url = noaway_downloads_page_url();
           presence and idle prevention run locally. License activation and downloads require the network; everyday Keep Active does not need to stream your work activity off the device.
         </li>
       </ul>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">What is sent, and where</h3>
+      <?php noaway_render_privacy_transfer_table(); ?>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         For the formal list of what is and is not collected, see the <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="text-primary font-semibold hover:underline">Privacy Policy</a>.
       </p>
@@ -113,36 +115,10 @@ $download_url = noaway_downloads_page_url();
     </section>
 
     <?php
-    $faqs = array(
-      array(
-        'name' => 'Is NoAway safe to install?',
-        'text' => 'NoAway is a lightweight desktop utility that runs locally to prevent system idle. It does not keylog, capture your screen, or access Teams or Slack accounts or messages. Always download from the official NoAway site.',
-      ),
-      array(
-        'name' => 'Is NoAway a legit company product?',
-        'text' => 'Yes. NoAway is a commercial one-time-purchase app for Mac and Windows from OLIVEE SRLS, with published Privacy Policy and Terms of Service.',
-      ),
-      array(
-        'name' => 'Does NoAway need administrator rights?',
-        'text' => 'NoAway is designed to install and run without admin rights on a typical personal Mac or Windows PC. Company-managed devices may still block third-party apps through IT policy.',
-      ),
-      array(
-        'name' => 'Can I use NoAway on a work laptop?',
-        'text' => 'Only if your company policy allows it. Some managed devices block third-party software. Follow your IT rules; NoAway does not bypass MDM or endpoint protection.',
-      ),
-      array(
-        'name' => 'Does NoAway send my activity data anywhere?',
-        'text' => 'Keep Active runs locally and does not stream your work activity. License activation and downloading the app require a network connection. See the Privacy Policy for what is and is not collected.',
-      ),
-      array(
-        'name' => 'Do you offer refunds? How do I get support?',
-        'text' => 'No. All sales are final; we do not offer refunds. For purchase or activation help, use the contact page or Help Center with your order email. License terms are in the Terms of Service.',
-      ),
-      array(
-        'name' => 'Is NoAway code-signed on Mac and Windows?',
-        'text' => 'Yes. Official installers are signed in our GitHub Actions release pipeline: Developer ID and notarization on macOS, Authenticode on Windows. Download only from the official NoAway site.',
-      ),
-    );
+    $faqs = function_exists( 'noaway_seo_landing_faq_items' ) ? noaway_seo_landing_faq_items( 'page-is-noaway-safe.php' ) : array();
+    if ( ! is_array( $faqs ) ) {
+      $faqs = array();
+    }
     ?>
     <section class="mb-16" id="faq" aria-labelledby="faq-heading">
       <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8">Frequently asked questions about NoAway safety</h2>

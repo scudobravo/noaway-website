@@ -6,20 +6,19 @@
 get_header();
 ?>
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-32 overflow-hidden">
+    <section class="relative pt-8 pb-16 lg:pt-10 overflow-hidden">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div class="flex-1 text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 border border-primary/20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 border border-primary/20">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              NEW: AUTO-IDLE PROTECTION v2.0
+              Anti-idle engine v2.0
             </div>
-            <h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-tight mb-6">Keep Teams Active. Prevent Teams Away. Keep the Teams Icon Green.</h1>
-            <p class="text-xl lg:text-2xl font-medium text-slate-700 dark:text-slate-300 mb-2">How to keep Microsoft Teams active: NoAway prevents Teams from switching to Away and keeps the Teams icon green while you work. Your status stays Available during downloads, builds, meetings, or long tasks.</p>
-            <p class="text-slate-600 dark:text-slate-400 text-lg mb-6">Works with Microsoft Teams, Slack, Zoom and other apps. See how to <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">keep Teams active</a>, <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">why Teams shows Away</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">keep Slack active</a>, or <a href="<?php echo esc_url( noaway_prevent_computer_sleep_page_url() ); ?>" class="text-primary font-semibold hover:underline">prevent computer sleep</a>.</p>
+            <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4">Keep Teams and Slack from going Away</h1>
+            <p class="text-lg lg:text-xl font-medium text-slate-700 dark:text-slate-300 mb-5">NoAway for Mac and Windows. One-time <?php echo esc_html( noaway_price_label() ); ?> (regular <?php echo esc_html( noaway_regular_price_label() ); ?>) — keeps this computer from going idle so Teams and Slack are less likely to show Away.</p>
             <div class="flex flex-col items-start gap-3 w-full max-w-md">
               <?php noaway_render_mobile_email_link_box(); ?>
               <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-primary text-white px-8 py-4 rounded-xl font-bold inline-flex items-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-primary/25"<?php echo noaway_buy_cta_attrs( 'hero' ); ?>>
@@ -27,17 +26,9 @@ get_header();
               </a>
               <p class="text-slate-500 dark:text-slate-400 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
             </div>
-            <div class="inline-block px-4 py-2 rounded-lg bg-primary/10 text-primary font-bold text-sm mt-4 border border-primary/20">Launch price <?php echo esc_html( noaway_price_label() ); ?> (regular price <?php echo esc_html( noaway_regular_price_label() ); ?>)</div>
-            <p class="text-slate-600 dark:text-slate-400 font-semibold mt-2">Kill the stress—it's just five bucks!</p>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mt-4">One-time purchase. Lifetime updates.</p>
-            <p class="text-slate-600 dark:text-slate-400 font-medium mt-4">Used by remote workers, developers and IT pros<?php
-              $noaway_social_proof = noaway_social_proof_label();
-              if ( $noaway_social_proof !== '' ) {
-                echo '<span class="block text-sm font-normal mt-1">' . esc_html( $noaway_social_proof ) . '</span>';
-              }
-            ?></p>
+            <p class="text-slate-600 dark:text-slate-400 text-base mt-4">See <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams</a>, <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">why Teams shows Away</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Slack</a>, or <a href="<?php echo esc_url( noaway_prevent_computer_sleep_page_url() ); ?>" class="text-primary font-semibold hover:underline">sleep</a>.</p>
           </div>
-          <div class="flex-1 relative">
+          <div class="flex-1 relative w-full">
             <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
             <div class="relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-2xl">
               <div class="aspect-video rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
@@ -48,12 +39,14 @@ get_header();
                 <?php
 				noaway_picture(
 					'landing-hero-section',
-					'NoAway app to keep Teams active and keep Teams icon green—prevent Teams away status on screen',
+					'Desktop with the NoAway window open and a green Available indicator in the corner',
 					array(
-						'class'          => 'w-full h-full object-cover',
-						'width'          => 1200,
-						'height'         => 630,
-						'fetchpriority'  => 'high',
+						'class'         => 'w-full h-full object-cover',
+						'width'         => 1200,
+						'height'        => 630,
+						'fetchpriority' => 'high',
+						'widths'        => array( 640, 960, 1200 ),
+						'sizes'         => '(min-width: 1024px) 36rem, calc(100vw - 3rem)',
 					)
 				);
 				?>
@@ -63,6 +56,12 @@ get_header();
             <div class="absolute -z-10 -bottom-20 -left-20 w-64 h-64 bg-indigo-500/10 blur-3xl rounded-full"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="pb-12 px-6">
+      <div class="max-w-3xl mx-auto">
+        <?php noaway_render_controls_note( 'en' ); ?>
       </div>
     </section>
 
@@ -176,7 +175,7 @@ get_header();
               <div class="size-12 shrink-0 bg-white/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary">visibility</span></div>
               <div>
                 <h3 class="font-bold text-lg mb-1">Works with Teams, Slack and more</h3>
-                <p class="text-slate-400 text-sm">Keeps your presence Available in popular communication apps.</p>
+                <p class="text-slate-400 text-sm">Teams, Slack, and similar apps read that activity signal. It does not guarantee Available.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -219,8 +218,8 @@ get_header();
           </div>
           <div class="flex flex-col items-center text-center relative">
             <div class="size-24 rounded-3xl bg-white border-2 border-slate-100 flex items-center justify-center mb-8 shadow-sm z-10"><span class="material-symbols-outlined text-4xl text-primary">verified_user</span></div>
-            <h3 class="text-xl font-bold mb-3">3. Stay Available</h3>
-            <p class="text-slate-500 text-sm">Your status stays Active on Teams and Slack. No more Away when you're still working.</p>
+            <h3 class="text-xl font-bold mb-3">3. Keep this computer active</h3>
+            <p class="text-slate-500 text-sm">Teams and Slack are less likely to show Away while you are still working. Calendar, a locked screen, and other devices can still change presence.</p>
           </div>
         </div>
       </div>
@@ -279,76 +278,15 @@ get_header();
       <div class="max-w-3xl mx-auto px-6">
         <h2 class="text-3xl font-black mb-12 text-center">Frequently Asked Questions</h2>
         <div class="space-y-4">
+          <?php foreach ( noaway_front_page_faqs() as $faq ) : ?>
           <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
             <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">How do I stop Microsoft Teams from showing away?</span>
+              <span class="font-bold"><?php echo esc_html( $faq['name'] ); ?></span>
               <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
             </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Microsoft Teams switches to Away when it detects no keyboard or mouse activity. NoAway keeps your computer active automatically so your status stays Available during downloads, builds, or deep work—no need to move the mouse or use unreliable tricks.</div>
+            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed"><?php echo wp_kses_post( $faq['text'] ); ?></div>
           </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">How to keep Teams stay active? Is there an app that keeps Teams active?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Use an app that keeps Teams active, like NoAway: it keeps your computer from going idle, so your status does not flip to Away during a long build, a render, or a large download. One click, and you can keep reading or stay on a call on another device.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">How to keep the Teams icon green?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Teams turns your icon yellow (Away) after about 5 minutes with no keyboard or mouse activity. To keep the Teams icon green, keep your computer active at the system level. NoAway does this automatically—one click and your status stays Available. <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>#keep-teams-icon-green" class="text-primary font-semibold hover:underline">How to keep the Teams icon green on Mac and Windows</a>.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">How many minutes until Teams turns yellow?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input. NoAway prevents this by keeping your system active so your status stays green (Available).</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Will my status stay Available while I am working?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">While NoAway is on, your computer does not go idle. Teams and Slack stay Available during a build, a render, a large download, a presentation, or time spent reading a document.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Is using NoAway safe?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Yes. NoAway is a simple desktop utility that runs locally. It does not access your files, read messages, or track personal data—it only prevents the system from going idle while enabled.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Does NoAway slow down my computer?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Not at all. NoAway is extremely lightweight and uses almost no CPU or memory.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Does NoAway send my activity anywhere?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">No. NoAway runs on your computer and does not collect or transmit activity data. It only keeps the machine from going idle during long tasks such as downloads, builds, renders, or presentations.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Do I need to keep the app open?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">No. NoAway runs quietly in the background and can start automatically when your computer boots.</div>
-          </details>
-          <details class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
-            <summary class="flex cursor-pointer items-center justify-between p-6 list-none">
-              <span class="font-bold">Is this a subscription?</span>
-              <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-            </summary>
-            <div class="px-6 pb-6 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">No. NoAway is a one-time purchase. You pay once and receive lifetime access, including future updates.</div>
-          </details>
+          <?php endforeach; ?>
         </div>
       </div>
     </section>
