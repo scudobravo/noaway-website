@@ -77,6 +77,10 @@ get_header();
     </div>
   </section>
 
+  <?php noaway_render_app_screenshots(); ?>
+
+  <?php noaway_render_first_setup( noaway_help_page_url() . '#troubleshooting' ); ?>
+
   <!-- Under the Hood -->
   <section class="py-24 px-6">
     <div class="max-w-4xl mx-auto">

@@ -73,6 +73,9 @@ get_header();
         <li class="leading-relaxed">
           <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>">Is NoAway Safe?</a>
         </li>
+        <li class="leading-relaxed">
+          <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_releases_page_url() ); ?>">Releases</a>
+        </li>
       </ul>
       <h2 class="mt-2 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl flex items-center gap-2">
         <span class="material-symbols-outlined text-primary">download</span>

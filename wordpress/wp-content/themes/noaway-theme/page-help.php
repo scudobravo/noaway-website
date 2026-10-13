@@ -151,6 +151,8 @@ $contact_url = noaway_contact_page_url();
     </div>
   </section>
 
+  <?php noaway_render_first_setup( '#troubleshooting' ); ?>
+
   <!-- Troubleshooting / Common issues -->
   <section id="troubleshooting" class="py-16 px-6 bg-white dark:bg-slate-900/50 scroll-mt-24">
     <div class="max-w-3xl mx-auto">

@@ -530,3 +530,119 @@ function noaway_refund_near_price_html( $lang = 'en' ) {
 	$contact = function_exists( 'noaway_contact_page_url' ) ? noaway_contact_page_url() : home_url( '/contacts/' );
 	return '<a href="' . esc_url( $contact ) . '" class="text-primary font-semibold hover:underline">' . esc_html( $label ) . '</a>';
 }
+
+function noaway_releases_page_url() {
+	return noaway_page_url_by_template( 'page-releases.php', '/releases/' );
+}
+
+/**
+ * App screenshot slots. Each renders only if the file exists in assets/images/.
+ *
+ * @return array<int, array{file:string,alt:string,width:int,height:int,caption:string}>
+ */
+function noaway_app_screenshot_slots() {
+	return array(
+		array(
+			'file'    => 'app-mac-menu.webp',
+			'alt'     => 'NoAway menu bar menu on macOS showing the Keep Active toggle and status options',
+			'width'   => 800,
+			'height'  => 600,
+			'caption' => 'macOS: menu bar menu',
+		),
+		array(
+			'file'    => 'app-windows-tray.webp',
+			'alt'     => 'NoAway system tray menu on Windows showing the Keep Active toggle and status options',
+			'width'   => 800,
+			'height'  => 600,
+			'caption' => 'Windows: system tray menu',
+		),
+	);
+}
+
+/**
+ * Render app screenshots that exist on disk. Silent when none are present.
+ *
+ * @param string $heading Optional section heading.
+ */
+function noaway_render_app_screenshots( $heading = 'NoAway in your menu bar and system tray' ) {
+	$dir   = trailingslashit( get_template_directory() ) . 'assets/images/';
+	$uri   = trailingslashit( get_template_directory_uri() ) . 'assets/images/';
+	$items = array();
+	foreach ( noaway_app_screenshot_slots() as $slot ) {
+		if ( file_exists( $dir . $slot['file'] ) ) {
+			$items[] = $slot;
+		}
+	}
+	if ( ! $items ) {
+		return;
+	}
+	?>
+	<section class="py-16 px-6" aria-labelledby="noaway-app-screens-heading">
+		<div class="max-w-5xl mx-auto">
+			<h2 id="noaway-app-screens-heading" class="text-2xl md:text-3xl font-bold mb-8 text-center text-slate-900 dark:text-white"><?php echo esc_html( $heading ); ?></h2>
+			<div class="grid gap-8 sm:grid-cols-2 justify-items-center">
+				<?php foreach ( $items as $item ) : ?>
+				<figure class="w-full max-w-md">
+					<img src="<?php echo esc_url( $uri . $item['file'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" width="<?php echo (int) $item['width']; ?>" height="<?php echo (int) $item['height']; ?>" loading="lazy" decoding="async" class="w-full h-auto rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+					<figcaption class="mt-3 text-sm text-center text-slate-500 dark:text-slate-400"><?php echo esc_html( $item['caption'] ); ?></figcaption>
+				</figure>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</section>
+	<?php
+}
+
+/**
+ * Numbered "First setup" section (facts-driven). Place BEFORE troubleshooting.
+ *
+ * @param string $troubleshooting_url Link target for "not working".
+ */
+function noaway_render_first_setup( $troubleshooting_url = '' ) {
+	if ( $troubleshooting_url === '' ) {
+		$troubleshooting_url = noaway_help_page_url() . '#troubleshooting';
+	}
+	$steps = array(
+		array(
+			'title' => 'Install',
+			'text'  => 'Download the installer from your purchase email and install it. Requirements: ' . noaway_fact( 'requirements.macos_min' ) . '; ' . noaway_fact( 'requirements.windows_min' ) . '.',
+		),
+		array(
+			'title' => 'Activate your license',
+			'text'  => 'Launch NoAway and enter your license key. ' . noaway_fact( 'license.devices_label' ),
+		),
+		array(
+			'title' => 'Grant Accessibility (Mac only)',
+			'text'  => noaway_fact( 'requirements.accessibility' ),
+		),
+		array(
+			'title' => 'Enable Keep Active',
+			'text'  => 'Open NoAway from the menu bar or system tray and turn on Keep Active. ' . noaway_fact( 'requirements.process' ),
+		),
+		array(
+			'title' => 'Verify',
+			'text'  => 'Leave the computer untouched for about 15 minutes, then check your status in Teams or Slack.',
+		),
+	);
+	?>
+	<section id="first-setup" class="py-16 px-6 scroll-mt-24" aria-labelledby="first-setup-heading">
+		<div class="max-w-3xl mx-auto">
+			<h2 id="first-setup-heading" class="text-3xl font-bold mb-8 text-slate-900 dark:text-white">First setup</h2>
+			<ol class="space-y-4 list-none p-0 m-0">
+				<?php foreach ( $steps as $i => $step ) : ?>
+				<li class="flex gap-4 p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+					<span class="size-9 shrink-0 rounded-full bg-primary text-white font-bold flex items-center justify-center" aria-hidden="true"><?php echo (int) ( $i + 1 ); ?></span>
+					<div>
+						<h3 class="text-lg font-bold mb-1 text-slate-900 dark:text-white"><?php echo esc_html( $step['title'] ); ?></h3>
+						<p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-0"><?php echo esc_html( $step['text'] ); ?></p>
+					</div>
+				</li>
+				<?php endforeach; ?>
+			</ol>
+			<p class="mt-6 text-slate-600 dark:text-slate-400">
+				Not working? Go to <a href="<?php echo esc_url( $troubleshooting_url ); ?>" class="text-primary font-semibold hover:underline">Troubleshooting</a>.
+			</p>
+		</div>
+	</section>
+	<?php
+}

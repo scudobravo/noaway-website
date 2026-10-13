@@ -95,6 +95,7 @@ function noaway_get_sitemap_urls() {
     array( 'loc' => $base . 'is-noaway-safe/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     // Comparison landings (noaway-vs-*) intentionally omitted until competitor facts are verified.
     array( 'loc' => $base . 'help/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
+    array( 'loc' => $base . 'releases/', 'priority' => '0.6', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'downloads/', 'priority' => '0.9', 'changefreq' => 'weekly' ),
     array( 'loc' => $base . 'faq/', 'priority' => '0.8', 'changefreq' => 'monthly' ),
     array( 'loc' => $base . 'contacts/', 'priority' => '0.7', 'changefreq' => 'monthly' ),
@@ -140,6 +141,7 @@ function noaway_sitemap_template_for_path( $path ) {
     '/prevent-computer-sleep'   => 'page-prevent-computer-sleep.php',
     '/is-noaway-safe'           => 'page-is-noaway-safe.php',
     '/help'                     => 'page-help.php',
+    '/releases'                 => 'page-releases.php',
     '/downloads'                => 'page-downloads.php',
     '/faq'                      => 'page-faq.php',
     '/contacts'                 => 'page-contatti.php',

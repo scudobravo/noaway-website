@@ -68,6 +68,56 @@ get_header();
       </div>
     </section>
 
+    <!-- Why people use NoAway (situations, not reviews) -->
+    <section class="py-16 px-6" id="why-people-use-noaway" aria-labelledby="why-people-use-noaway-heading">
+      <div class="max-w-6xl mx-auto">
+        <h2 id="why-people-use-noaway-heading" class="text-3xl font-black mb-10 text-center">Why people use NoAway</h2>
+        <?php
+        $noaway_situations = array(
+          array( 'icon' => 'coffee',        'text' => 'Coffee break without the green-dot anxiety.' ),
+          array( 'icon' => 'description',   'text' => 'Reading a long doc without Teams thinking you left.' ),
+          array( 'icon' => 'terminal',      'text' => 'The 4-hour build finishes while you\'re in another meeting.' ),
+          array( 'icon' => 'lunch_dining',  'text' => 'Lunch is lunch. Your status stays put.' ),
+          array( 'icon' => 'mouse',         'text' => 'No more wiggling the mouse every few minutes.' ),
+        );
+        ?>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 list-none p-0 m-0">
+          <?php foreach ( $noaway_situations as $noaway_situation ) : ?>
+          <li class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true"><?php echo esc_html( $noaway_situation['icon'] ); ?></span>
+            <p class="text-slate-700 dark:text-slate-300 font-medium leading-snug m-0"><?php echo esc_html( $noaway_situation['text'] ); ?></p>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    </section>
+
+    <?php
+    // Real customer reviews: add verified entries only. Empty array = nothing is rendered.
+    // Each item: array( 'name' => '', 'role' => '', 'context' => '', 'date' => 'YYYY-MM-DD', 'text' => '' ).
+    $noaway_real_reviews = array();
+    if ( ! empty( $noaway_real_reviews ) ) :
+    ?>
+    <section class="py-12 px-6" id="customer-reviews" aria-labelledby="customer-reviews-heading">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="customer-reviews-heading" class="text-2xl font-black mb-8 text-center">What customers say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <?php foreach ( $noaway_real_reviews as $noaway_review ) : ?>
+          <figure class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <blockquote class="text-slate-700 dark:text-slate-300 leading-relaxed m-0"><?php echo esc_html( isset( $noaway_review['text'] ) ? $noaway_review['text'] : '' ); ?></blockquote>
+            <figcaption class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+              <span class="font-semibold text-slate-700 dark:text-slate-300"><?php echo esc_html( isset( $noaway_review['name'] ) ? $noaway_review['name'] : '' ); ?></span>
+              <?php if ( ! empty( $noaway_review['role'] ) ) : ?>, <?php echo esc_html( $noaway_review['role'] ); ?><?php endif; ?>
+              <?php if ( ! empty( $noaway_review['context'] ) ) : ?><span class="block"><?php echo esc_html( $noaway_review['context'] ); ?></span><?php endif; ?>
+              <?php if ( ! empty( $noaway_review['date'] ) ) : ?><time class="block" datetime="<?php echo esc_attr( $noaway_review['date'] ); ?>"><?php echo esc_html( $noaway_review['date'] ); ?></time><?php endif; ?>
+            </figcaption>
+          </figure>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
     <!-- Social Proof -->
     <section class="py-12 border-y border-slate-200/60 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50">
       <style>
@@ -227,6 +277,8 @@ get_header();
         </div>
       </div>
     </section>
+
+    <?php noaway_render_app_screenshots(); ?>
 
     <!-- Perfect for -->
     <section class="py-32 bg-white dark:bg-slate-900">

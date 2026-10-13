@@ -149,6 +149,7 @@ function noaway_seo_get_page_data() {
       'contact'                => 'page-contatti.php',
       'faq'                    => 'page-faq.php',
       'sitemap'                => 'page-sitemap.php',
+      'releases'               => 'page-releases.php',
     );
     foreach ( $page_slug_map as $slug => $tpl ) {
       if ( is_page( $slug ) ) {
@@ -211,6 +212,9 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-faq.php' ) {
     $data['title']       = 'FAQ – How NoAway Keeps Teams Active, Safety & Pricing | NoAway';
     $data['description'] = 'Common questions about NoAway: how it keeps Teams and Slack active, whether it\'s detectable by IT, how it handles privacy, pricing, and why alternatives like mouse jigglers don\'t work.';
+  } elseif ( $template === 'page-releases.php' ) {
+    $data['title']       = 'NoAway Releases | Current Version & Signed Installers';
+    $data['description'] = 'Current NoAway version ' . noaway_fact( 'publisher.app_version' ) . ' for Mac and Windows, release notes, and how to verify the signed installer from ' . noaway_fact( 'publisher.signer_display' ) . '.';
   } elseif ( $template === 'page-sitemap.php' ) {
     $data['title']       = 'Sitemap | NoAway';
     $data['description'] = 'Navigate all pages of the NoAway website: Features, How it works, Download, Help, Contacts, Privacy, Terms.';
@@ -346,6 +350,7 @@ function noaway_seo_faq_schema_entities() {
     array( 'name' => 'Is using NoAway safe?', 'text' => 'NoAway is a desktop utility that keeps the system from entering an idle state while enabled. It does not read your files or messages. ' . noaway_fact_data_sent_paragraph( false ) . ' For a full breakdown (admin rights, company PCs, what it does not do), see the Is NoAway safe page at /is-noaway-safe/.' ),
     array( 'name' => 'Does NoAway slow down my computer?', 'text' => 'No. The application runs quietly in the background and is designed to use minimal system resources.' ),
     array( 'name' => 'Can I start NoAway automatically?', 'text' => 'Yes. NoAway can be configured to start automatically when your computer boots so it is ready whenever you need it.' ),
+    array( 'name' => 'Do I need to keep the app open?', 'text' => 'No. ' . noaway_fact( 'requirements.process' ) . ' NoAway can also start automatically when your computer boots.' ),
     array( 'name' => 'Do I need an internet connection?', 'text' => 'Keep Active runs on your computer. A connection is needed to download the app and to activate your license. ' . noaway_fact( 'data_sent.when_label' ) ),
     array( 'name' => 'Is NoAway a subscription?', 'text' => 'No. NoAway is a one-time purchase. ' . noaway_fact( 'license.devices_label' ) . ' ' . noaway_fact( 'license.lifetime_updates' ) ),
     array( 'name' => 'Will my boss or IT department know I\'m using this?', 'text' => noaway_fact_data_sent_paragraph( false ) . ' While Keep Active is on, your operating system sees the computer as active. Every workplace has its own policies regarding software, so follow your company\'s guidelines.' ),
@@ -424,7 +429,7 @@ function noaway_front_page_faqs() {
     ),
     array(
       'name' => 'Do I need to keep the app open?',
-      'text' => 'No. NoAway runs quietly in the background and can start automatically when your computer boots.',
+      'text' => 'No. ' . noaway_fact( 'requirements.process' ) . ' NoAway can also start automatically when your computer boots.',
     ),
     array(
       'name' => 'Is this a subscription?',
@@ -786,6 +791,7 @@ function noaway_seo_webpage_supplemental_schema( $template_slug, $canonical_url,
     'page-contatti.php',
     'page-faq.php',
     'page-help.php',
+    'page-releases.php',
     'page-downloads.php',
     'page-download.php',
   );

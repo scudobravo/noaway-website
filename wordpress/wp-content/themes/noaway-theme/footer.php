@@ -41,6 +41,7 @@ $tagline  = __( 'Stay active on Teams and Slack during long tasks, builds, and r
 					<li><a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>"><?php esc_html_e( 'Is NoAway safe?', 'noaway' ); ?></a></li>
 					<li><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>"><?php esc_html_e( 'FAQ', 'noaway' ); ?></a></li>
 					<li><a href="<?php echo esc_url( noaway_help_page_url() ); ?>"><?php esc_html_e( 'Help', 'noaway' ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_releases_page_url() ); ?>"><?php esc_html_e( 'Releases', 'noaway' ); ?></a></li>
 				</ul>
 			</div>
 
