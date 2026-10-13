@@ -151,7 +151,9 @@ $email_link_totals = function_exists( 'noaway_analytics_email_link_totals' )
         </p>
     </div>
 
-XX, 'noaway-analytics'); ?></span>
+    <div class="noaway-analytics-cards">
+        <div class="noaway-card">
+            <span class="noaway-card-label"><?php esc_html_e('Licenses Sold', 'noaway-analytics'); ?></span>
             <span class="noaway-card-value"><?php echo esc_html((string) $licenses_sold); ?></span>
         </div>
         <div class="noaway-card">
