@@ -459,51 +459,15 @@ function noaway_render_controls_note( $lang = 'en' ) {
 }
 
 /**
- * Data actually sent, from this repo. Unknown client fields stay as PHP TODOs.
+ * Data actually sent — single source: inc/noaway-facts.php.
  *
  * @return array<int, array{activity:string,where:string,data:string}>
  */
 function noaway_privacy_transfer_rows() {
-	return array(
-		array(
-			'activity' => 'Keep Active',
-			'where'    => 'On your computer',
-			'data'     => 'Nothing for the idle and sleep prevention itself. It does not send keystrokes, screen contents, chats, or files.',
-		),
-		array(
-			'activity' => 'Activation',
-			'where'    => 'License server (license.noaway.app)',
-			'data'     => 'License key, the email used at purchase, and a device id.',
-		),
-		array(
-			'activity' => 'License check',
-			'where'    => 'License server',
-			'data'     => 'License key and device id. The server also accepts, when the app includes them, app version, platform, activity mode, detected app names (Teams, Slack, Zoom, or Discord), and seconds kept active that day.',
-			// TODO: Confirm which of those optional fields the shipping app actually sends.
-		),
-		array(
-			'activity' => 'Updates',
-			'where'    => 'License server',
-			'data'     => 'Updates contact the license server.',
-			// TODO: Confirm the update-check URL and the fields the app sends.
-		),
-		array(
-			'activity' => 'Purchase',
-			'where'    => 'Stripe, via the license server',
-			'data'     => 'Stripe collects the payment. This website only adds a landing reference (ref and client_reference_id) to the checkout URL.',
-			// TODO: Confirm which billing fields the license server stores after Stripe payment (email, order id).
-		),
-		array(
-			'activity' => 'Website',
-			'where'    => 'Google Analytics 4, only after analytics consent',
-			'data'     => 'Page views. Buy-button clicks record the page path, button position, and landing reference in this site’s analytics.',
-		),
-		array(
-			'activity' => 'Support',
-			'where'    => 'Email to support@noaway.app',
-			'data'     => 'Name, email, topic, subject, and message from the contact form. A reCAPTCHA token is included only if a site key is configured.',
-		),
-	);
+	if ( function_exists( 'noaway_facts_privacy_transfer_rows' ) ) {
+		return noaway_facts_privacy_transfer_rows();
+	}
+	return array();
 }
 
 /**
@@ -533,4 +497,36 @@ function noaway_render_privacy_transfer_table() {
 		</table>
 	</div>
 	<?php
+}
+
+/**
+ * “Before you buy” box under primary purchase CTAs.
+ *
+ * @param string $lang en|de|es|pt-br|fr
+ */
+function noaway_render_before_you_buy( $lang = 'en' ) {
+	get_template_part( 'template-parts/before-you-buy', null, array( 'lang' => $lang ) );
+}
+
+/**
+ * Short refund line next to price (HTML, already escaped).
+ *
+ * @param string $lang
+ * @return string
+ */
+function noaway_refund_near_price_html( $lang = 'en' ) {
+	$lang = is_string( $lang ) ? $lang : 'en';
+	if ( function_exists( 'noaway_i18n_normalize_lang' ) ) {
+		$lang = noaway_i18n_normalize_lang( $lang );
+	}
+	$labels = array(
+		'en'    => 'Not satisfied? Request a refund within 7 days',
+		'de'    => 'Nicht zufrieden? Rückerstattung innerhalb von 7 Tagen beantragen',
+		'es'    => '¿No estás satisfecho? Solicita un reembolso en 7 días',
+		'pt-br' => 'Não ficou satisfeito? Peça reembolso em até 7 dias',
+		'fr'    => 'Pas satisfait ? Demandez un remboursement sous 7 jours',
+	);
+	$label   = isset( $labels[ $lang ] ) ? $labels[ $lang ] : $labels['en'];
+	$contact = function_exists( 'noaway_contact_page_url' ) ? noaway_contact_page_url() : home_url( '/contacts/' );
+	return '<a href="' . esc_url( $contact ) . '" class="text-primary font-semibold hover:underline">' . esc_html( $label ) . '</a>';
 }

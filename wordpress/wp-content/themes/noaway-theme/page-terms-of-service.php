@@ -148,10 +148,10 @@ get_header();
       </section>
 
       <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">11-bis. PLATFORM DEPENDENCY AND NO REFUND FOR EXTERNAL CHANGES</h2>
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">11-bis. PLATFORM DEPENDENCY AND REFUNDS</h2>
         <p class="leading-relaxed mb-4">You acknowledge and agree that the Service depends on the behavior, availability, and technical constraints of:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
-          <li>operating systems (including but not limited to Windows, macOS, Linux),</li>
+          <li>operating systems (including but not limited to Windows and macOS),</li>
           <li>hardware environments,</li>
           <li>and third-party software platforms such as Microsoft Teams and Slack.</li>
         </ul>
@@ -161,13 +161,9 @@ get_header();
           <li>future updates to operating systems, security policies, or third-party applications may limit, degrade, or entirely prevent the functionality of the Service;</li>
           <li>the Company does not guarantee continued compatibility with any specific system, version, or platform.</li>
         </ul>
-        <p class="leading-relaxed mb-4">To the fullest extent permitted by applicable law, such changes shall not constitute a defect, failure of performance, or breach of contract.</p>
-        <p class="leading-relaxed mb-4">Accordingly:</p>
-        <ul class="list-disc pl-6 mb-4 space-y-2">
-          <li>you shall not be entitled to any refund, reimbursement, or compensation;</li>
-          <li>no claim may be made against the Company for loss of functionality resulting from such external changes.</li>
-        </ul>
-        <p class="leading-relaxed mb-0">Your continued use of the Service is at your own risk with respect to system compatibility.</p>
+        <p class="leading-relaxed mb-4">To the fullest extent permitted by applicable law, such external changes alone do not automatically extend refund rights beyond the policy below.</p>
+        <p class="leading-relaxed mb-4"><strong>Refunds:</strong> If you are not satisfied, you may request a refund through support within 7 days of purchase. When a refund is issued, the license is deactivated. Contact <a href="<?php echo esc_url( function_exists( 'noaway_contact_page_url' ) ? noaway_contact_page_url() : home_url( '/contacts/' ) ); ?>" class="text-primary font-semibold hover:underline">support</a> with your order email.</p>
+        <p class="leading-relaxed mb-0"><strong>Lifetime updates:</strong> <?php echo esc_html( function_exists( 'noaway_fact' ) ? noaway_fact( 'license.lifetime_updates' ) : 'Future versions are emailed to buyers with a direct download link.' ); ?></p>
       </section>
 
       <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">

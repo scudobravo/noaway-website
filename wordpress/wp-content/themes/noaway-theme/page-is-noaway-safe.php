@@ -21,7 +21,7 @@ $download_url = noaway_downloads_page_url();
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="In brief">
         <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
-          NoAway is a lightweight desktop utility from OLIVEE SRLS. It runs locally and is built to prevent system idle so apps like Teams and Slack can stay Available. It is not a keylogger, does not read your chat apps, and does not need to open Teams or Slack. Always follow your employer’s software policy on managed devices.
+          NoAway is a lightweight desktop utility from OLIVEE SRLS. It is built to prevent system idle. <?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">See Help for the full list of conditions.</a> It is not a keylogger, does not read your chat apps, and does not need to open Teams or Slack. Always follow your employer’s software policy on managed devices.
         </p>
       </div>
     </header>
@@ -40,7 +40,7 @@ $download_url = noaway_downloads_page_url();
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="what-it-does-heading">
       <h2 id="what-it-does-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">What exactly does NoAway do on my computer?</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        NoAway’s job is narrow: while Keep Active is enabled, it prevents your computer from entering an idle state at the operating-system level. Presence apps that read that signal—Microsoft Teams, Slack, and similar tools—can then continue to show you as Available during long builds, downloads, or deep work.
+        NoAway’s job is narrow: while Keep Active is enabled, it prevents your computer from entering an idle state at the operating-system level. Presence apps that read that signal—Microsoft Teams, Slack, and similar tools—are then less likely to show Away during long builds, downloads, or deep work.
       </p>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         <?php // TODO: Confirm exact OS APIs / idle-prevention mechanism for marketing accuracy (macOS vs Windows). ?>
@@ -56,9 +56,9 @@ $download_url = noaway_downloads_page_url();
         <li><strong>No access to Teams or Slack accounts or messages</strong> — it does not log into those apps, read chats, or modify their settings.</li>
         <li><strong>No browsing your personal files</strong> — it is not a file or document scanner.</li>
         <li>
-          <strong>No data sent about your activity</strong> —
+          <strong>What is sent</strong> —
           <?php // TODO: Confirm desktop-app network behavior: license activation, update checks, crash reports—list any exceptions explicitly. ?>
-          presence and idle prevention run locally. License activation and downloads require the network; everyday Keep Active does not need to stream your work activity off the device.
+          <?php echo esc_html( noaway_fact_data_sent_paragraph( true ) ); ?>
         </li>
       </ul>
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">What is sent, and where</h3>
@@ -107,7 +107,7 @@ $download_url = noaway_downloads_page_url();
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="refunds-heading">
       <h2 id="refunds-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Refunds and support</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        All sales are final: we do not offer refunds. The <a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>" class="text-primary font-semibold hover:underline">Terms of Service</a> also state that changes to operating systems or third-party apps (Teams, Slack, and similar) do not entitle you to a refund. Support for purchase or activation issues is still available through the <a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-primary font-semibold hover:underline">contact</a> page and the <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help Center</a>.
+        <?php echo esc_html( noaway_fact( 'license.refund' ) ); ?> See the <a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>" class="text-primary font-semibold hover:underline">Terms of Service</a> for details. Support for purchase or activation issues is still available through the <a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-primary font-semibold hover:underline">contact</a> page and the <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help Center</a>.
       </p>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
         If something goes wrong with purchase or activation, contact support with your order email—do not rely on unofficial resellers.
@@ -139,7 +139,7 @@ $download_url = noaway_downloads_page_url();
 
     <section class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 lg:p-12 text-center" aria-labelledby="cta-heading">
       <h2 id="cta-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Ready to try NoAway?</h2>
-      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto"><a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">Download for Mac and Windows</a> — one-time purchase, lifetime updates.</p>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto"><a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">Download for Mac and Windows</a> — one-time purchase. <?php echo esc_html( noaway_fact( 'license.lifetime_updates_short' ) ); ?></p>
       <div class="max-w-md mx-auto mb-4 text-left">
         <?php noaway_render_mobile_email_link_box(); ?>
       </div>

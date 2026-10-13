@@ -98,7 +98,7 @@ $checkout = noaway_checkout_url();
           <span class="text-slate-500 dark:text-slate-400 line-through text-lg"><?php echo esc_html( noaway_regular_price_label() ); ?></span>
         </div>
         <p class="text-slate-600 dark:text-slate-400 mb-6">
-          Includes lifetime access and future updates.
+          Includes <?php echo esc_html( function_exists( 'noaway_fact' ) ? noaway_fact( 'license.lifetime_updates_short' ) : 'updates emailed with a direct download link' ); ?>
         </p>
         <div class="mb-4 max-w-md text-left mx-auto lg:mx-0">
           <?php noaway_render_mobile_email_link_box(); ?>
@@ -107,6 +107,8 @@ $checkout = noaway_checkout_url();
           <span class="material-symbols-outlined">shopping_cart</span>
           Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
         </a>
+        <p class="mt-3 text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( 'en' ); ?></p>
+        <?php noaway_render_before_you_buy( 'en' ); ?>
         <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">Secure checkout.</p>
       </div>
     </div>

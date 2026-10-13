@@ -19,7 +19,7 @@ get_header();
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 max-w-2xl mx-auto text-left" role="complementary" aria-label="In brief">
         <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
-          NoAway is a tray app for Mac and Windows. Install it, enable Keep Active, and it prevents your computer from going idle so Teams and Slack stay Available. It does not open or modify those apps, and it does not access your files or messages.
+          NoAway is a tray app for Mac and Windows. Install it, enable Keep Active, and it prevents your computer from going idle. <?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">See Help for the full list of conditions.</a> It does not open or modify Teams or Slack, and it does not access your files or messages.
         </p>
       </div>
       <div class="mt-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
@@ -113,17 +113,17 @@ get_header();
       </div>
       <h2 class="text-3xl font-bold mb-6">Security and privacy first</h2>
       <p class="text-slate-400 text-lg leading-relaxed mb-8">
-        NoAway does not access your files, messages, or personal data.<br>
+        <?php echo esc_html( noaway_fact( 'data_sent.full' ) ); ?><br>
         The application simply prevents your computer from entering an idle state when the feature is enabled.
       </p>
       <div class="flex flex-wrap justify-center gap-6">
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-          No tracking
+          No activity or usage data sent
         </div>
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>
-          No personal data collection
+          Only network request: license check (key + device id)
         </div>
         <div class="flex items-center gap-2 text-sm text-slate-300">
           <span class="material-symbols-outlined text-emerald-400 text-sm">check_circle</span>

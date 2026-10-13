@@ -1,8 +1,8 @@
 <?php
 /**
- * NoAway API - Validazione licenza + scrittura statistiche
- * POST JSON: { license_key, device_id [, app_version, platform, activity_mode, detected_apps, active_seconds_today ] }
- * Verifica licenza/dispositivo e aggiorna le statistiche in noaway_licenses (stesso MySQL di WordPress).
+ * NoAway API - License validation (no activity/usage telemetry).
+ * POST JSON: { license_key, device_id }
+ * Optional ignored fields from older clients are not stored.
  * Solo POST, body JSON, max 2KB.
  */
 
@@ -73,60 +73,9 @@ try {
         }
     }
 
-    // Statistiche (opzionali): sanitize e aggiorna noaway_licenses
-    $app_version   = isset($body['app_version']) ? substr(trim((string) $body['app_version']), 0, 20) : null;
-    $platform      = isset($body['platform']) ? strtolower(trim((string) $body['platform'])) : null;
-    $activity_mode = isset($body['activity_mode']) ? strtolower(trim((string) $body['activity_mode'])) : null;
-    $detected_apps = null;
-    if (isset($body['detected_apps']) && is_array($body['detected_apps'])) {
-        $allowed = ['teams', 'slack', 'zoom', 'discord'];
-        $out     = [];
-        foreach (array_slice($body['detected_apps'], 0, 10) as $a) {
-            $a = strtolower(trim((string) $a));
-            if (in_array($a, $allowed, true)) {
-                $out[] = $a;
-            }
-        }
-        $detected_apps = $out === [] ? null : json_encode($out);
-    }
-    $active_seconds_today = null;
-    if (isset($body['active_seconds_today'])) {
-        $n = (int) $body['active_seconds_today'];
-        if ($n >= 0 && $n <= 86400) {
-            $active_seconds_today = $n;
-        }
-    }
-
     $now = date('Y-m-d H:i:s');
-
-    if ($app_version !== null && $platform !== null && $activity_mode !== null) {
-        $stmt = $pdo->prepare('
-            UPDATE noaway_licenses
-            SET last_validation = ?, last_device = ?, last_version = ?, last_platform = ?, last_activity_mode = ?, last_detected_apps = ?
-            WHERE license_key = ?
-        ');
-        $stmt->execute([
-            $now,
-            $device_id,
-            $app_version,
-            $platform,
-            $activity_mode,
-            $detected_apps,
-            $license_key,
-        ]);
-    } else {
-        $stmt = $pdo->prepare('UPDATE noaway_licenses SET last_validation = ?, last_device = ? WHERE license_key = ?');
-        $stmt->execute([$now, $device_id, $license_key]);
-    }
-
-    if ($active_seconds_today !== null) {
-        $stmt = $pdo->prepare('
-            UPDATE noaway_licenses
-            SET last_active_seconds = ?, total_active_seconds = COALESCE(total_active_seconds, 0) + ?
-            WHERE license_key = ?
-        ');
-        $stmt->execute([$active_seconds_today, $active_seconds_today, $license_key]);
-    }
+    $stmt = $pdo->prepare('UPDATE noaway_licenses SET last_validation = ?, last_device = ? WHERE license_key = ?');
+    $stmt->execute([$now, $device_id, $license_key]);
 
     echo json_encode(['status' => 'valid']);
 } catch (Exception $e) {

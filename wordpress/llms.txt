@@ -1,6 +1,6 @@
 # NoAway
 
-> NoAway is a desktop productivity app for macOS 11 (Big Sur) or later and Windows 10/11 (64-bit) that keeps your computer from entering an idle state so Microsoft Teams, Slack, and Zoom can stay Available. It prevents system idle at the OS level and does not interact with, inject into, or modify Teams or Slack. It does not keylog, capture your screen, access chat accounts or messages, or collect personal activity data. One-time launch price €4.99 (EUR)—no subscription, no free trial. Support: support@noaway.app
+> NoAway is a desktop productivity app for macOS 11 (Big Sur) or later and Windows 10/11 (64-bit). NoAway keeps your computer active while it is switched on. Whether Teams or Slack show you as Available also depends on permissions and on the conditions listed in Help. It prevents system idle at the OS level and does not interact with, inject into, or modify Teams or Slack. NoAway does not send activity, usage or personal data. The keep-active feature runs entirely on your computer. The only network request is the license check, which sends your license key and a device identifier so the license works on one device. One license works on one device. Updates are emailed to buyers with a direct download link. One-time launch price €4.99 (EUR)—no subscription, no free trial. Support: support@noaway.app
 
 Base-URL: https://noaway.app/
 
@@ -8,7 +8,7 @@ Base-URL: https://noaway.app/
 
 - https://noaway.app/ — Product overview: stay Available on Teams and Slack
 - https://noaway.app/keep-slack-active/ — Keep Slack Active on Mac and Windows (desktop away after 10 minutes; mobile when you leave or close the app)
-- https://noaway.app/keep-teams-active/ — Keep this computer from going idle for Teams (does not guarantee Available)
+- https://noaway.app/keep-teams-active/ — Keep this computer from going idle for Teams (see Help for conditions)
 - https://noaway.app/teams-away-status/ — Why Teams shows Away while you are working
 - https://noaway.app/prevent-computer-sleep/ — Prevent computer sleep and keep the machine awake
 - https://noaway.app/is-noaway-safe/ — Safety, privacy, admin rights, and what NoAway does not do

@@ -177,6 +177,10 @@ get_header();
       <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
         <?php echo noaway_i18n_plain( $t['buy'] ); ?>
       </a>
+      <p class="mt-3 text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( $noaway_landing_lang ); ?></p>
+      <div class="max-w-md mx-auto mt-2 text-left">
+        <?php noaway_render_before_you_buy( $noaway_landing_lang ); ?>
+      </div>
       <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['faq_link'] ); ?></a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['help_link'] ); ?></a></p>
     </section>
   </article>

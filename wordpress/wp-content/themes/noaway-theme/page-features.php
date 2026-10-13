@@ -223,7 +223,7 @@ get_header();
         </a>
         <p class="text-white/80 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
       </div>
-      <p class="mt-8 text-white/60 text-sm">One-time purchase. Lifetime updates.</p>
+      <p class="mt-8 text-white/60 text-sm">One-time purchase. <?php echo esc_html( noaway_fact( 'license.lifetime_updates_short' ) ); ?></p>
     </div>
   </section>
 </main>

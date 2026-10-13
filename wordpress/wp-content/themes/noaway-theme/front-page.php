@@ -19,12 +19,15 @@ get_header();
             </div>
             <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4">Keep Teams and Slack from going Away</h1>
             <p class="text-lg lg:text-xl font-medium text-slate-700 dark:text-slate-300 mb-5">NoAway for Mac and Windows. One-time <?php echo esc_html( noaway_price_label() ); ?> (regular <?php echo esc_html( noaway_regular_price_label() ); ?>) — keeps this computer from going idle so Teams and Slack are less likely to show Away.</p>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-5"><?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
             <div class="flex flex-col items-start gap-3 w-full max-w-md">
               <?php noaway_render_mobile_email_link_box(); ?>
               <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-primary text-white px-8 py-4 rounded-xl font-bold inline-flex items-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-primary/25"<?php echo noaway_buy_cta_attrs( 'hero' ); ?>>
                 Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
               </a>
               <p class="text-slate-500 dark:text-slate-400 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( 'en' ); ?></p>
+              <?php noaway_render_before_you_buy( 'en' ); ?>
             </div>
             <p class="text-slate-600 dark:text-slate-400 text-base mt-4">See <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams</a>, <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">why Teams shows Away</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Slack</a>, or <a href="<?php echo esc_url( noaway_prevent_computer_sleep_page_url() ); ?>" class="text-primary font-semibold hover:underline">sleep</a>.</p>
           </div>
@@ -153,7 +156,7 @@ get_header();
         <div class="flex flex-col lg:flex-row gap-20">
           <div class="lg:w-1/3">
             <h2 class="text-4xl lg:text-5xl font-black mb-8 leading-tight">Stay Active on Teams and Slack—automatically</h2>
-            <p class="text-slate-400 text-lg mb-12">A lightweight app that runs in the background so your status stays Available while you work. No mouse jiggling and no scripts—set it during a build, a render, or a large download.</p>
+            <p class="text-slate-400 text-lg mb-12">A lightweight app that runs in the background so your computer stays active while you work. No mouse jiggling and no scripts—set it during a build, a render, or a large download.</p>
             <a href="<?php echo esc_url( noaway_features_page_url() ); ?>" class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity inline-block">Explore all features</a>
           </div>
           <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -175,7 +178,7 @@ get_header();
               <div class="size-12 shrink-0 bg-white/10 rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-primary">visibility</span></div>
               <div>
                 <h3 class="font-bold text-lg mb-1">Works with Teams, Slack and more</h3>
-                <p class="text-slate-400 text-sm">Teams, Slack, and similar apps read that activity signal. It does not guarantee Available.</p>
+                <p class="text-slate-400 text-sm">Teams, Slack, and similar apps read that activity signal.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -266,7 +269,7 @@ get_header();
           </ul>
           <p class="mb-4">Even though you are still working, your status may appear as inactive.</p>
           <p class="mb-4">NoAway prevents this by keeping your computer active automatically. Keep Teams Web App status as Active and follow the best practice for staying active: prevent your system from going idle.</p>
-          <p class="mb-4">As long as NoAway is running, your system does not enter an idle state, helping your status remain Available on apps like Microsoft Teams or Slack.</p>
+          <p class="mb-4">As long as NoAway is running, your system does not enter an idle state, helping apps like Microsoft Teams or Slack show Away less often.</p>
           <p class="mb-4">This simple tool removes the stress of unexpectedly appearing Away during important work.</p>
           <p>If you're searching for how to keep your status always online in Microsoft Teams or how you actually set Teams to always available, NoAway provides a simple one-click solution.</p>
         </div>
@@ -302,7 +305,7 @@ get_header();
             <p class="text-xl text-white/80 mb-6 max-w-2xl mx-auto">A small tool that removes the stress of going Away during work.</p>
             <p class="text-white/90 font-bold">Launch price <?php echo esc_html( noaway_price_label() ); ?> — Regular price <?php echo esc_html( noaway_regular_price_label() ); ?>.</p>
             <p class="text-white/95 font-semibold mb-2">Kill the stress—it's just five bucks!</p>
-            <p class="text-white mb-8">One-time purchase. Lifetime updates.</p>
+            <p class="text-white mb-8">One-time purchase. <?php echo esc_html( noaway_fact( 'license.lifetime_updates_short' ) ); ?></p>
             <div class="flex flex-col items-center gap-4 mb-8">
               <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-white text-primary px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 transition-transform inline-flex items-center gap-3"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
                 Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>

@@ -615,6 +615,32 @@ function noaway_i18n_schema_shared( $lang ) {
 	);
 	$lang = noaway_i18n_normalize_lang( $lang );
 	$row  = isset( $all[ $lang ] ) ? $all[ $lang ] : $all['de'];
+
+	// Benefit and license wording come from inc/noaway-facts.php (single source of truth).
+	$fact_lang     = isset( $all[ $lang ] ) ? $lang : 'de';
+	$one_time      = array(
+		'de'    => 'Einmaliger Kauf (EUR) für Mac und Windows.',
+		'es'    => 'Compra única (EUR) para Mac y Windows.',
+		'pt-br' => 'Compra única (EUR) para Mac e Windows.',
+		'fr'    => 'Achat unique (EUR) pour Mac et Windows.',
+	);
+	$lifetime_short = array(
+		'de'    => 'Updates werden per E-Mail mit direktem Download-Link zugesandt.',
+		'es'    => 'Las actualizaciones se envían por correo con un enlace de descarga directa.',
+		'pt-br' => 'As atualizações são enviadas por e-mail com link de download direto.',
+		'fr'    => 'Les mises à jour sont envoyées par e-mail avec un lien de téléchargement direct.',
+	);
+	$launch_price   = array(
+		'de'    => 'Einführungspreis.',
+		'es'    => 'Precio de lanzamiento.',
+		'pt-br' => 'Preço de lançamento.',
+		'fr'    => 'Prix de lancement.',
+	);
+	if ( function_exists( 'noaway_fact_i18n' ) ) {
+		$benefit_short = noaway_fact_i18n( 'benefit.short', $fact_lang );
+		$row['app_description'] = trim( $benefit_short . ' ' . $one_time[ $fact_lang ] );
+		$row['offer']           = trim( $one_time[ $fact_lang ] . ' ' . $lifetime_short[ $fact_lang ] . ' ' . $launch_price[ $fact_lang ] );
+	}
 	return noaway_i18n_replace_price( $row );
 }
 

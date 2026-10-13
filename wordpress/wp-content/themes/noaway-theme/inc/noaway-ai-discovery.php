@@ -58,10 +58,17 @@ function noaway_output_llms_txt() {
 		? noaway_seo_canonical_url( home_url( '/sitemap.xml' ) )
 		: home_url( '/sitemap.xml' );
 
+	$blurb = 'NoAway is a desktop productivity app for ' . noaway_fact( 'requirements.macos_min' ) . ' and ' . noaway_fact( 'requirements.windows_min' ) . '. '
+		. noaway_fact( 'benefit.full' ) . ' '
+		. 'It prevents system idle at the OS level and does not interact with, inject into, or modify Teams or Slack. '
+		. noaway_fact( 'data_sent.full' ) . ' '
+		. noaway_fact( 'license.devices_label' ) . ' ' . noaway_fact( 'license.lifetime_updates_short' ) . ' '
+		. 'One-time launch price €' . $price . ' (EUR)—no subscription, no free trial. Support: ' . noaway_fact( 'publisher.support_email' );
+
 	$lines = array(
 		'# NoAway',
 		'',
-		'> NoAway is a desktop productivity app for macOS 11 (Big Sur) or later and Windows 10/11 (64-bit) that keeps your computer from entering an idle state so Microsoft Teams, Slack, and Zoom can stay Available. It prevents system idle at the OS level and does not interact with, inject into, or modify Teams or Slack. It does not keylog, capture your screen, access chat accounts or messages, or collect personal activity data. One-time launch price €' . $price . ' (EUR)—no subscription, no free trial. Support: support@noaway.app',
+		'> ' . $blurb,
 		'',
 		'Base-URL: ' . $base,
 		'',
@@ -69,7 +76,7 @@ function noaway_output_llms_txt() {
 		'',
 		'- ' . $base . ' — Product overview: stay Available on Teams and Slack',
 		'- ' . noaway_keep_slack_active_page_url() . ' — Keep Slack Active on Mac and Windows (desktop away after 10 minutes; mobile when you leave or close the app)',
-		'- ' . noaway_keep_teams_active_page_url() . ' — Keep this computer from going idle for Teams (does not guarantee Available)',
+		'- ' . noaway_keep_teams_active_page_url() . ' — Keep this computer from going idle for Teams (see Help for conditions)',
 		'- ' . noaway_teams_away_status_page_url() . ' — Why Teams shows Away while you are working',
 		'- ' . noaway_prevent_computer_sleep_page_url() . ' — Prevent computer sleep and keep the machine awake',
 		'- ' . noaway_is_noaway_safe_page_url() . ' — Safety, privacy, admin rights, and what NoAway does not do',

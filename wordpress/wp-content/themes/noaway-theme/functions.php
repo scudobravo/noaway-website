@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $noaway_inc = get_template_directory() . '/inc/';
+require_once $noaway_inc . 'noaway-facts.php';
 require_once $noaway_inc . 'noaway-pages.php';
 require_once $noaway_inc . 'noaway-i18n.php';
 require_once $noaway_inc . 'noaway-comparisons.php';

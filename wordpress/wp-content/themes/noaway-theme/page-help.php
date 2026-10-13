@@ -72,6 +72,30 @@ $contact_url = noaway_contact_page_url();
     </div>
   </section>
 
+  <!-- Requirements (compatibility check before purchase) -->
+  <section id="requirements" class="py-16 px-6 scroll-mt-24">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Requirements</h2>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 mb-6">
+        <li><?php echo esc_html( noaway_fact( 'requirements.macos_min' ) ); ?></li>
+        <li><?php echo esc_html( noaway_fact( 'requirements.windows_min' ) ); ?></li>
+        <li><?php echo esc_html( noaway_fact( 'requirements.accessibility' ) ); ?></li>
+        <li><?php echo esc_html( noaway_fact( 'requirements.process' ) ); ?></li>
+      </ul>
+      <?php
+		$limits = noaway_fact( 'requirements.known_limits', array() );
+		if ( is_array( $limits ) && $limits ) :
+			?>
+      <p class="font-semibold text-slate-900 dark:text-white mb-2">Known limits</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400">
+			<?php foreach ( $limits as $limit ) : ?>
+        <li><?php echo esc_html( $limit ); ?></li>
+			<?php endforeach; ?>
+      </ul>
+		<?php endif; ?>
+    </div>
+  </section>
+
   <!-- Installation Guide -->
   <section id="installation" class="py-16 px-6 bg-white dark:bg-slate-900/50 scroll-mt-24">
     <div class="max-w-6xl mx-auto">
