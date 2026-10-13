@@ -2,7 +2,7 @@
 /**
  * Plugin Name: NoAway Analytics
  * Description: Analytics dashboard for NoAway licenses, usage, and buy-CTA attribution
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: NoAway
  * Text Domain: noaway-analytics
  * Requires at least: 5.0
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'NOAWAY_ANALYTICS_VERSION', '1.1.0' );
+define( 'NOAWAY_ANALYTICS_VERSION', '1.2.0' );
 define( 'NOAWAY_ANALYTICS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'NOAWAY_ANALYTICS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

@@ -34,6 +34,13 @@ function noaway_email_link_downloads_url() {
 }
 
 /**
+ * Downloads URL used inside the email, tagged so buy clicks from the link can be attributed.
+ */
+function noaway_email_link_mail_url() {
+	return add_query_arg( 'ref', 'email-link', noaway_email_link_downloads_url() );
+}
+
+/**
  * Whether the current request should load the mobile email-link UI.
  */
 function noaway_email_link_should_load() {
@@ -191,7 +198,7 @@ function noaway_email_link_store( $email, $marketing, $ip_hash, $page_url, $ua )
  * @return bool
  */
 function noaway_email_link_send_mail( $email ) {
-	$downloads = noaway_email_link_downloads_url();
+	$downloads = noaway_email_link_mail_url();
 	$subject   = __( 'Your NoAway download link', 'noaway' );
 	$body      = sprintf(
 		/* translators: %s: downloads URL */
@@ -367,15 +374,20 @@ function noaway_email_link_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'noaway_email_link_enqueue_assets', 35 );
 
 /**
- * Render the mobile-only email link box (hidden from md and up).
+ * Render the mobile-only email link: a compact text toggle that expands into the form.
+ *
+ * Place this AFTER the primary Buy button so the purchase CTA always comes first on mobile.
  */
-function noaway_render_mobile_email_link_box() {
+function noaway_render_mobile_email_link_box( $args = array() ) {
 	if ( ! noaway_email_link_should_load() ) {
 		return;
 	}
+	$args    = wp_parse_args( is_array( $args ) ? $args : array(), array( 'on_primary' => false ) );
+	$classes = 'noaway-email-link md:hidden' . ( ! empty( $args['on_primary'] ) ? ' noaway-email-link--on-primary' : '' );
 	$privacy = home_url( '/privacy-policy/' );
 	$ui      = function_exists( 'noaway_i18n_ui' );
 	$aria    = $ui ? noaway_i18n_ui( 'email_aria' ) : __( 'Email yourself the download link', 'noaway' );
+	$toggle  = $ui ? noaway_i18n_ui( 'email_toggle' ) : __( 'Not on your computer? Email me the link', 'noaway' );
 	$title   = $ui ? noaway_i18n_ui( 'email_title' ) : __( 'On your phone? Email yourself the link and buy on your computer.', 'noaway' );
 	$label   = $ui ? noaway_i18n_ui( 'email_label' ) : __( 'Email address', 'noaway' );
 	$ph      = $ui ? noaway_i18n_ui( 'email_placeholder' ) : __( 'you@example.com', 'noaway' );
@@ -385,36 +397,39 @@ function noaway_render_mobile_email_link_box() {
 	$privacy_label = $ui ? noaway_i18n_ui( 'email_privacy' ) : __( 'Privacy Policy', 'noaway' );
 	$submit  = $ui ? noaway_i18n_ui( 'email_submit' ) : __( 'Email me the link', 'noaway' );
 	?>
-	<div class="noaway-email-link md:hidden" data-noaway-email-link role="region" aria-label="<?php echo esc_attr( $aria ); ?>">
-		<p class="noaway-email-link__title"><?php echo esc_html( $title ); ?></p>
-		<form class="noaway-email-link__form" data-noaway-email-link-form novalidate>
-			<label class="noaway-email-link__sr-only" for="noaway-email-link-input"><?php echo esc_html( $label ); ?></label>
-			<input
-				id="noaway-email-link-input"
-				class="noaway-email-link__input"
-				type="email"
-				name="email"
-				autocomplete="email"
-				inputmode="email"
-				required
-				placeholder="<?php echo esc_attr( $ph ); ?>"
-			>
-			<?php /* Honeypot — leave empty. */ ?>
-			<div class="noaway-email-link__hp" aria-hidden="true">
-				<label for="noaway-email-link-hp"><?php echo esc_html( $hp ); ?></label>
-				<input id="noaway-email-link-hp" type="text" name="website" tabindex="-1" autocomplete="off">
-			</div>
-			<label class="noaway-email-link__consent">
-				<input type="checkbox" name="marketing_opt_in" value="1">
-				<span><?php echo esc_html( $consent ); ?></span>
-			</label>
-			<p class="noaway-email-link__note">
-				<?php echo esc_html( $note ); ?>
-				<a href="<?php echo esc_url( $privacy ); ?>"><?php echo esc_html( $privacy_label ); ?></a>.
-			</p>
-			<button type="submit" class="noaway-email-link__submit"><?php echo esc_html( $submit ); ?></button>
-			<p class="noaway-email-link__status" data-noaway-email-link-status role="status" aria-live="polite" hidden></p>
-		</form>
+	<div class="<?php echo esc_attr( $classes ); ?>" data-noaway-email-link role="region" aria-label="<?php echo esc_attr( $aria ); ?>">
+		<button type="button" class="noaway-email-link__toggle" data-noaway-email-link-toggle aria-expanded="false" aria-controls="noaway-email-link-panel"><?php echo esc_html( $toggle ); ?></button>
+		<div class="noaway-email-link__panel" id="noaway-email-link-panel" data-noaway-email-link-panel hidden>
+			<p class="noaway-email-link__title"><?php echo esc_html( $title ); ?></p>
+			<form class="noaway-email-link__form" data-noaway-email-link-form novalidate>
+				<label class="noaway-email-link__sr-only" for="noaway-email-link-input"><?php echo esc_html( $label ); ?></label>
+				<input
+					id="noaway-email-link-input"
+					class="noaway-email-link__input"
+					type="email"
+					name="email"
+					autocomplete="email"
+					inputmode="email"
+					required
+					placeholder="<?php echo esc_attr( $ph ); ?>"
+				>
+				<?php /* Honeypot — leave empty. */ ?>
+				<div class="noaway-email-link__hp" aria-hidden="true">
+					<label for="noaway-email-link-hp"><?php echo esc_html( $hp ); ?></label>
+					<input id="noaway-email-link-hp" type="text" name="website" tabindex="-1" autocomplete="off">
+				</div>
+				<label class="noaway-email-link__consent">
+					<input type="checkbox" name="marketing_opt_in" value="1">
+					<span><?php echo esc_html( $consent ); ?></span>
+				</label>
+				<p class="noaway-email-link__note">
+					<?php echo esc_html( $note ); ?>
+					<a href="<?php echo esc_url( $privacy ); ?>"><?php echo esc_html( $privacy_label ); ?></a>.
+				</p>
+				<button type="submit" class="noaway-email-link__submit"><?php echo esc_html( $submit ); ?></button>
+				<p class="noaway-email-link__status" data-noaway-email-link-status role="status" aria-live="polite" hidden></p>
+			</form>
+		</div>
 	</div>
 	<?php
 }

@@ -145,12 +145,12 @@ get_header();
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-black mb-8">Ready to stay active?</h2>
       <div class="flex flex-col items-center gap-3">
-        <div class="max-w-md mx-auto mb-4 text-left">
-          <?php noaway_render_mobile_email_link_box(); ?>
-        </div>
         <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-primary text-white px-8 py-4 rounded-xl font-bold inline-flex items-center justify-center gap-3 hover:scale-105 transition-transform"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
           Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
         </a>
+        <div class="max-w-md mx-auto mt-4 text-left md:hidden">
+          <?php noaway_render_mobile_email_link_box(); ?>
+        </div>
         <p class="text-sm text-slate-500">Mac &amp; Windows · one-time payment · instant download after purchase</p>
       </div>
     </div>

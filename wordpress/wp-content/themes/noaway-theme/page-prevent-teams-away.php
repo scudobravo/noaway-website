@@ -61,9 +61,9 @@ $checkout_url = noaway_checkout_url();
     </section>
 
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="solutions-heading">
-      <h2 id="solutions-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Common solutions that do not work well</h2>
+      <h2 id="solutions-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Common approaches compared</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        Many people try workarounds to keep Teams active. Moving the mouse occasionally, putting a weight on the keyboard, or running scripts that simulate key presses are unreliable: they can break after updates, get blocked by security policies, or interfere with real work. Changing only Windows or Mac sleep settings does not fix Teams away status, because sleep settings control when the display or disk turns off—not how Teams decides you are idle. The only robust way to prevent Teams away is to keep the computer active at the system level with a dedicated, lightweight tool.
+        Many people try workarounds to keep Teams active, such as moving the mouse, putting a weight on a key, or running a script that simulates key presses. They differ in ways you can check. A hardware mouse jiggler is a USB device and needs no software on the computer. A script needs the same system permissions as any app that simulates input, plus your own upkeep. NoAway is software for Mac and Windows: it keeps the display awake, prevents sleep, and simulates input; on macOS it needs Accessibility permission, and it must keep running (menu bar or system tray). A locked screen, calendar status, company policy, and presence on other devices are outside what NoAway controls, and antivirus software on Windows can block simulated input. Changing only Windows or Mac sleep settings does not simulate input, because sleep settings control when the display or disk turns off, not how Teams decides you are idle.
       </p>
     </section>
 

@@ -71,10 +71,6 @@ get_header();
               <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['row_desktop_v'] ); ?></td>
             </tr>
             <tr>
-              <td class="p-4 font-semibold text-slate-800 dark:text-slate-200"><?php echo noaway_i18n_plain( $t['row_browser'] ); ?></td>
-              <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['row_browser_v'] ); ?></td>
-            </tr>
-            <tr>
               <td class="p-4 font-semibold text-slate-800 dark:text-slate-200"><?php echo noaway_i18n_plain( $t['row_mobile'] ); ?></td>
               <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['row_mobile_v'] ); ?></td>
             </tr>
@@ -172,12 +168,12 @@ get_header();
     <section class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 lg:p-12 text-center" aria-labelledby="cta-heading">
       <h2 id="cta-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['cta_h'] ); ?></h2>
       <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto"><?php echo noaway_i18n_html( $t['cta_p'] ); ?></p>
-      <div class="max-w-md mx-auto mb-4 text-left">
-        <?php noaway_render_mobile_email_link_box(); ?>
-      </div>
       <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
         <?php echo noaway_i18n_plain( $t['buy'] ); ?>
       </a>
+      <div class="max-w-md mx-auto mt-4 text-left md:hidden">
+        <?php noaway_render_mobile_email_link_box(); ?>
+      </div>
       <p class="mt-3 text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( $noaway_landing_lang ); ?></p>
       <div class="max-w-md mx-auto mt-2 text-left">
         <?php noaway_render_before_you_buy( $noaway_landing_lang ); ?>

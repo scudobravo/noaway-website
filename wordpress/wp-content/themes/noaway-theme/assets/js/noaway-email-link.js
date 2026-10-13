@@ -29,6 +29,20 @@
     var statusEl = root.querySelector("[data-noaway-email-link-status]");
     if (!form) return;
 
+    var toggle = root.querySelector("[data-noaway-email-link-toggle]");
+    var panel = root.querySelector("[data-noaway-email-link-panel]");
+    if (toggle && panel) {
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+        panel.hidden = open;
+        if (!open) {
+          var firstInput = panel.querySelector('input[name="email"]');
+          if (firstInput) firstInput.focus();
+        }
+      });
+    }
+
     var cfg = window.NoAwayEmailLink || {};
     var restUrl = cfg.restUrl || "";
     var nonce = cfg.nonce || "";

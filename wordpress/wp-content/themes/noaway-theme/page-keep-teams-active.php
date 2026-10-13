@@ -47,10 +47,10 @@ get_header();
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full max-w-xl">
           <div class="w-full sm:w-auto flex flex-col gap-3">
-            <?php noaway_render_mobile_email_link_box(); ?>
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="w-full sm:w-auto text-center bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"<?php echo noaway_buy_cta_attrs( 'hero' ); ?>>
               <?php echo noaway_i18n_plain( $t['buy'] ); ?>
             </a>
+            <?php noaway_render_mobile_email_link_box(); ?>
             <p class="text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( $noaway_landing_lang ); ?></p>
             <?php noaway_render_before_you_buy( $noaway_landing_lang ); ?>
           </div>

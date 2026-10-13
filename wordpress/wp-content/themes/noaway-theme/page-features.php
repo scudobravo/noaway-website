@@ -144,11 +144,6 @@ get_header();
             <td class="p-6 font-semibold">Always accessible while you work</td>
           </tr>
           <tr>
-            <td class="p-6">Startup</td>
-            <td class="p-6 text-slate-500">Usually needs manual adjustment</td>
-            <td class="p-6 font-semibold">Optional automatic startup</td>
-          </tr>
-          <tr>
             <td class="p-6">Daily workflow</td>
             <td class="p-6 text-slate-500">Built for system-wide settings</td>
             <td class="p-6 font-semibold">Built for work sessions, downloads, and long tasks</td>
@@ -215,12 +210,12 @@ get_header();
       </p>
       <p class="text-white/90 text-base mb-8 relative z-10">Launch price <?php echo esc_html( noaway_price_label() ); ?> — Regular price <?php echo esc_html( noaway_regular_price_label() ); ?></p>
       <div class="flex flex-col items-center justify-center gap-3 relative z-10">
-        <div class="max-w-md mx-auto mb-4 text-left">
-          <?php noaway_render_mobile_email_link_box(); ?>
-        </div>
         <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors shadow-xl inline-block text-center"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
           Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
         </a>
+        <div class="max-w-md mx-auto mt-4 text-left md:hidden">
+          <?php noaway_render_mobile_email_link_box( array( 'on_primary' => true ) ); ?>
+        </div>
         <p class="text-white/80 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
       </div>
       <p class="mt-8 text-white/60 text-sm">One-time purchase. <?php echo esc_html( noaway_fact( 'license.lifetime_updates_short' ) ); ?></p>

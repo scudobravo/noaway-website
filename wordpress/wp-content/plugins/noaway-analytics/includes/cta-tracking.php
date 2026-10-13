@@ -93,7 +93,8 @@ add_action( 'rest_api_init', 'noaway_analytics_cta_register_rest' );
  */
 function noaway_analytics_cta_rest_handler( WP_REST_Request $request ) {
 	$type = sanitize_key( (string) $request->get_param( 'event_type' ) );
-	if ( ! in_array( $type, array( 'click', 'purchase' ), true ) ) {
+	// `email_link_sent` is recorded server-side only (see noaway_analytics_email_link_sent_record()).
+	if ( ! in_array( $type, array( 'click', 'purchase', 'email_link_click' ), true ) ) {
 		return new WP_Error( 'invalid_type', 'Invalid event type.', array( 'status' => 400 ) );
 	}
 
@@ -147,6 +148,43 @@ function noaway_analytics_cta_rest_handler( WP_REST_Request $request ) {
 
 	return rest_ensure_response( array( 'ok' => true ) );
 }
+
+/**
+ * Record a successful "email me the link" send (server-side, no email address stored here).
+ *
+ * Hooked to `noaway_email_link_sent` from the theme. Counted as event_type `email_link_sent`.
+ *
+ * @param string $email     Unused (never stored in the CTA events table).
+ * @param bool   $marketing Unused.
+ * @param string $page_url  Page the visitor submitted the form from.
+ */
+function noaway_analytics_email_link_sent_record( $email = '', $marketing = false, $page_url = '' ) {
+	global $wpdb;
+	$path = '';
+	if ( is_string( $page_url ) && $page_url !== '' ) {
+		$parsed = wp_parse_url( $page_url );
+		$path   = isset( $parsed['path'] ) ? (string) $parsed['path'] : '';
+	}
+	$path = substr( sanitize_text_field( $path ), 0, 255 );
+	$trim = trim( $path, '/' );
+	$slug = $trim === '' ? 'home' : sanitize_title( basename( $trim ) );
+	if ( $slug === '' ) {
+		$slug = 'unknown';
+	}
+	$wpdb->insert(
+		noaway_analytics_cta_table(),
+		array(
+			'event_type' => 'email_link_sent',
+			'page_path'  => $path,
+			'page_slug'  => substr( $slug, 0, 191 ),
+			'position'   => 'email-link',
+			'session_id' => '',
+			'created_at' => current_time( 'mysql', true ),
+		),
+		array( '%s', '%s', '%s', '%s', '%s', '%s' )
+	);
+}
+add_action( 'noaway_email_link_sent', 'noaway_analytics_email_link_sent_record', 10, 3 );
 
 /**
  * Frontend assets for CTA click + thank-you purchase ping.
@@ -235,4 +273,39 @@ function noaway_analytics_cta_attribution_rows( $days = 30 ) {
 		);
 	}
 	return $rows;
+}
+
+/**
+ * Email-link funnel totals for the last N days.
+ *
+ * `sent` = emails sent from the mobile form; `clicks` = buy-CTA clicks made on a page
+ * opened from the emailed link (URL carries ref=email-link).
+ *
+ * @param int $days Days window.
+ * @return array{sent:int,clicks:int}
+ */
+function noaway_analytics_email_link_totals( $days = 30 ) {
+	global $wpdb;
+	$table = noaway_analytics_cta_table();
+	$days  = max( 1, (int) $days );
+
+	// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name is internal.
+	$exists = $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) );
+	if ( $exists !== $table ) {
+		return array( 'sent' => 0, 'clicks' => 0 );
+	}
+	$sql = $wpdb->prepare(
+		"SELECT
+			SUM(CASE WHEN event_type = 'email_link_sent' THEN 1 ELSE 0 END) AS sent,
+			SUM(CASE WHEN event_type = 'email_link_click' THEN 1 ELSE 0 END) AS clicks
+		FROM {$table}
+		WHERE created_at >= (UTC_TIMESTAMP() - INTERVAL %d DAY)",
+		$days
+	);
+	// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	$row = $wpdb->get_row( $sql, ARRAY_A );
+	return array(
+		'sent'   => isset( $row['sent'] ) ? (int) $row['sent'] : 0,
+		'clicks' => isset( $row['clicks'] ) ? (int) $row['clicks'] : 0,
+	);
 }

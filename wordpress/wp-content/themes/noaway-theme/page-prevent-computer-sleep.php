@@ -41,9 +41,9 @@ $download_url = noaway_downloads_page_url();
     </section>
 
     <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="solutions-heading">
-      <h2 id="solutions-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Common solutions that do not work well</h2>
+      <h2 id="solutions-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Common approaches compared</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        Turning off display sleep or system sleep in Settings helps with power but may not stop collaboration apps from marking you away, because they still see no user input. Putting a weight on the keyboard or wiggling the mouse is unreliable and gets in the way of real work. Scripts that simulate key presses can break after OS updates or be blocked by security. The reliable way to prevent computer sleep from affecting your presence is a lightweight utility that keeps the system active without opening extra windows or requiring admin rights.
+        Turning off display sleep or system sleep in Settings helps with power but may not stop collaboration apps from marking you away, because they still see no user input. A hardware mouse jiggler is a USB device and needs no software on the computer. A script needs the same system permissions as any app that simulates input, plus your own upkeep. NoAway is software for Mac and Windows: it keeps the display awake, prevents sleep, and simulates input; on macOS it needs Accessibility permission, and it must keep running (menu bar or system tray). A locked screen, calendar status, company policy, and presence on other devices are outside what NoAway controls, and antivirus software on Windows can block simulated input.
       </p>
     </section>
 
@@ -80,12 +80,12 @@ $download_url = noaway_downloads_page_url();
     <section class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 lg:p-12 text-center" aria-labelledby="cta-heading">
       <h2 id="cta-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Prevent computer sleep and keep your computer awake</h2>
       <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto"><a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">Get NoAway for Mac and Windows</a> — one-time purchase, lifetime updates.</p>
-      <div class="max-w-md mx-auto mb-4 text-left">
-        <?php noaway_render_mobile_email_link_box(); ?>
-      </div>
       <a href="<?php echo esc_url( $download_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all">
         Download NoAway
       </a>
+      <div class="max-w-md mx-auto mt-4 text-left md:hidden">
+        <?php noaway_render_mobile_email_link_box(); ?>
+      </div>
       <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
     </section>
   </article>

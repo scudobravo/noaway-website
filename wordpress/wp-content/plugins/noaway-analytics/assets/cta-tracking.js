@@ -66,6 +66,36 @@
     });
   }
 
+  var EMAIL_REF = "email-link";
+  var EMAIL_REF_KEY = "noawayEmailLinkRef";
+
+  function urlHasEmailRef() {
+    try {
+      return new URLSearchParams(window.location.search).get("ref") === EMAIL_REF;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  // Remember (session only, consent-gated) that this visit came from the emailed link.
+  function rememberEmailRef() {
+    if (!urlHasEmailRef() || !analyticsAllowed()) return;
+    try {
+      window.sessionStorage.setItem(EMAIL_REF_KEY, "1");
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  function cameFromEmailLink() {
+    if (urlHasEmailRef()) return true;
+    try {
+      return window.sessionStorage.getItem(EMAIL_REF_KEY) === "1";
+    } catch (err) {
+      return false;
+    }
+  }
+
   function trackClick(anchor) {
     var path = anchor.getAttribute("data-noaway-path") || window.location.pathname || "/";
     var position = anchor.getAttribute("data-noaway-position") || "cta";
@@ -83,6 +113,23 @@
     };
     saveAttribution(payload);
     postEvent(payload);
+
+    if (cameFromEmailLink()) {
+      postEvent({
+        event_type: "email_link_click",
+        page_path: path,
+        page_slug: slug,
+        position: position,
+        session_id: ""
+      });
+      if (analyticsAllowed() && typeof window.gtag === "function") {
+        window.gtag("event", "email_link_buy_click", {
+          page_path: path,
+          page_slug: slug,
+          button_position: position
+        });
+      }
+    }
 
     if (analyticsAllowed() && typeof window.gtag === "function") {
       window.gtag("event", "buy_cta_click", {
@@ -134,6 +181,7 @@
   }
 
   function init() {
+    rememberEmailRef();
     bindClicks();
     trackPurchaseIfThankYou();
   }

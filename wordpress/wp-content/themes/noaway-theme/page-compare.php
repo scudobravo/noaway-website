@@ -171,12 +171,12 @@ $verdict_words    = str_word_count( wp_strip_all_tags( isset( $cmp['verdict'] ) 
         for Mac and Windows — or read
         <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">how to keep Teams active</a>.
       </p>
-      <div class="max-w-md mx-auto mb-4 text-left">
-        <?php noaway_render_mobile_email_link_box(); ?>
-      </div>
       <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
         Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
       </a>
+      <div class="max-w-md mx-auto mt-4 text-left md:hidden">
+        <?php noaway_render_mobile_email_link_box(); ?>
+      </div>
     </section>
   </article>
 </main>

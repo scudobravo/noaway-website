@@ -328,7 +328,7 @@ function noaway_comparisons() {
 			'intro'            => 'Hardware and software jigglers fake movement. NoAway keeps the system active without nudging the cursor.',
 			'seo_title'        => 'NoAway vs Mouse Jiggler: Stay Available Without Wiggling | NoAway',
 			'seo_description'  => 'Mouse jigglers simulate movement. NoAway prevents idle on Mac & Windows so Teams/Slack stay Available—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.',
-			'verdict'          => 'Mouse jigglers (USB dongles or scripts) simulate movement so the PC looks busy. They can work, but they are blunt and sometimes blocked. NoAway keeps the system from going idle with a tray app on Mac and Windows—cleaner for Teams and Slack without moving your cursor.',
+			'verdict'          => 'A mouse jiggler is a USB device or a small program that simulates mouse movement. NoAway is software for Mac and Windows that keeps the display awake, prevents sleep, and simulates input. Differences you can check: a hardware jiggler needs a USB port and no software on the computer, while NoAway needs the app running (menu bar or system tray) and, on macOS, Accessibility permission.',
 			'rows'             => array(
 				array(
 					'label'           => 'Platforms',
@@ -338,7 +338,7 @@ function noaway_comparisons() {
 				),
 				array(
 					'label'           => 'Keeps Teams / Slack Available',
-					'competitor'      => 'Often yes, by faking input — reliability varies',
+					'competitor'      => 'Generates input, which can count as activity; results depend on the device and security software',
 					'competitor_todo' => 'Confirm common failure modes (security tools, remote desktop, multi-monitor).',
 					'noaway'          => $noaway['keeps_teams_slack'],
 				),
@@ -391,13 +391,13 @@ function noaway_comparisons() {
 				'points'  => array(
 					array( 'text' => 'You do not want the cursor drifting or a USB stick in the port.' ),
 					array( 'text' => 'You want the same Keep Active control on Mac and Windows.' ),
-					array( 'text' => 'You prefer a supported product over scripts that break after updates.' ),
+					array( 'text' => 'You want a supported desktop app rather than maintaining your own script.' ),
 				),
 			),
 			'faqs'             => array(
 				array(
 					'name'            => 'Do mouse jigglers keep Teams green?',
-					'text'            => 'They can, because they generate input. Results vary by device, security software, and remote-desktop setups. Many people switch to an app like NoAway for a cleaner approach.',
+					'text'            => 'They can, because they generate input. Results vary by device, security software, and remote-desktop setups. NoAway takes a software approach: it keeps the display awake, prevents sleep, and simulates input, and it needs Accessibility permission on macOS.',
 					'competitor_todo' => 'Confirm Teams still treats synthetic HID movement as activity in current desktop clients.',
 				),
 				array(

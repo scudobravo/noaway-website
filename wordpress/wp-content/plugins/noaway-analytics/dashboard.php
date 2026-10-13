@@ -97,6 +97,12 @@ $cta_rows = function_exists( 'noaway_analytics_cta_attribution_rows' )
 	} )
 	: array();
 
+$email_link_totals = function_exists( 'noaway_analytics_email_link_totals' )
+	? noaway_analytics_cached( 'email_link_30d', function () {
+		return noaway_analytics_email_link_totals( 30 );
+	} )
+	: array( 'sent' => 0, 'clicks' => 0 );
+
 ?>
 <div class="wrap noaway-analytics-wrap">
     <h1><?php esc_html_e('NoAway Analytics', 'noaway-analytics'); ?></h1>
@@ -133,11 +139,19 @@ $cta_rows = function_exists( 'noaway_analytics_cta_attribution_rows' )
                 ?>
             </tbody>
         </table>
+        <p class="description" style="margin-top:12px;">
+            <?php
+            printf(
+                /* translators: 1: emails sent, 2: buy clicks from emailed link */
+                esc_html__( 'Mobile email link (last 30 days): %1$s emails sent · %2$s buy clicks from the emailed link (ref=email-link, requires analytics consent).', 'noaway-analytics' ),
+                esc_html( (string) (int) $email_link_totals['sent'] ),
+                esc_html( (string) (int) $email_link_totals['clicks'] )
+            );
+            ?>
+        </p>
     </div>
 
-    <div class="noaway-analytics-cards">
-        <div class="noaway-card">
-            <span class="noaway-card-label"><?php esc_html_e('Licenses Sold', 'noaway-analytics'); ?></span>
+XX, 'noaway-analytics'); ?></span>
             <span class="noaway-card-value"><?php echo esc_html((string) $licenses_sold); ?></span>
         </div>
         <div class="noaway-card">

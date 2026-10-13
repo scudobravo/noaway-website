@@ -7,6 +7,17 @@
 get_header();
 
 $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noaway_seo_faq_schema_entities() : array();
+// Sections are chosen by each entry's `group` key, so the visible list and JSON-LD always come from the same array.
+$noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
+	return array_values(
+		array_filter(
+			$faq_schema_entities,
+			function ( $faq ) use ( $group ) {
+				return isset( $faq['group'] ) && $faq['group'] === $group;
+			}
+		)
+	);
+};
 ?>
 <main>
   <section class="relative pt-16 pb-20 overflow-hidden">
@@ -19,7 +30,7 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
         Frequently Asked Questions
       </h1>
       <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-        Quick answers about NoAway, how to keep your status always online in Microsoft Teams, and the best practice for staying active. Why common "stay active" tricks don't work.
+        Quick answers about NoAway, how to keep your status always online in Microsoft Teams, and the best practice for staying active. What helps, and how common workarounds differ.
       </p>
       <p class="mt-6 text-slate-600 dark:text-slate-400 text-base max-w-2xl mx-auto leading-relaxed">
         Asking about privacy or IT policy? Read <a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>" class="text-primary font-semibold hover:underline">Is NoAway safe?</a> for what the app does and does not do.
@@ -37,7 +48,7 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">What people ask: how to stop Teams showing Away</h3>
       <div class="space-y-4">
         <?php
-        $search_faqs = array_slice( $faq_schema_entities, 19 );
+        $search_faqs = $noaway_faq_group( 'search' );
         foreach ( $search_faqs as $faq ) :
           ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
@@ -58,7 +69,7 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">About NoAway</h3>
       <div class="space-y-4">
         <?php
-        $about_faqs = array_slice( $faq_schema_entities, 0, 6 );
+        $about_faqs = $noaway_faq_group( 'about' );
         foreach ( $about_faqs as $faq ) :
           ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
@@ -79,7 +90,7 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Privacy, detection &amp; compliance</h3>
       <div class="space-y-4">
         <?php
-        $privacy_faqs = array_slice( $faq_schema_entities, 6, 4 );
+        $privacy_faqs = $noaway_faq_group( 'privacy' );
         foreach ( $privacy_faqs as $faq ) :
           ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">
@@ -97,10 +108,10 @@ $faq_schema_entities = function_exists( 'noaway_seo_faq_schema_entities' ) ? noa
 
     <!-- Why common Teams "stay active" tricks don't work -->
     <div>
-      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Why common Teams "stay active" tricks don't work</h3>
+      <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Why Teams shows Away, and how common workarounds compare</h3>
       <div class="space-y-4">
         <?php
-        $teams_faqs = array_slice( $faq_schema_entities, 10, 9 );
+        $teams_faqs = $noaway_faq_group( 'teams' );
         foreach ( $teams_faqs as $faq ) :
           ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-hidden">

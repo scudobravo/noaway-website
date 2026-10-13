@@ -211,7 +211,7 @@ function noaway_seo_get_page_data() {
     $data['canonical']   = noaway_seo_canonical_url( home_url( '/contacts/' ) );
   } elseif ( $template === 'page-faq.php' ) {
     $data['title']       = 'FAQ – How NoAway Keeps Teams Active, Safety & Pricing | NoAway';
-    $data['description'] = 'Common questions about NoAway: how it keeps Teams and Slack active, whether it\'s detectable by IT, how it handles privacy, pricing, and why alternatives like mouse jigglers don\'t work.';
+    $data['description'] = 'Common questions about NoAway: how it keeps Teams and Slack active, whether it\'s detectable by IT, how it handles privacy, pricing, and how NoAway differs from mouse jigglers and scripts.';
   } elseif ( $template === 'page-releases.php' ) {
     $data['title']       = 'NoAway Releases | Current Version & Signed Installers';
     $data['description'] = 'Current NoAway version ' . noaway_fact( 'publisher.app_version' ) . ' for Mac and Windows, release notes, and how to verify the signed installer from ' . noaway_fact( 'publisher.signer_display' ) . '.';
@@ -343,47 +343,51 @@ add_filter( 'document_title_parts', 'noaway_seo_document_title', 10, 1 );
 /**
  * FAQ items per lo schema FAQPage (usato solo sulla pagina FAQ).
  * Fonte unica: evita "Campo duplicato FAQPage" nei risultati avanzati Google.
+ *
+ * Each item has a `group` key (about | privacy | teams | search) used by page-faq.php to lay out
+ * sections without relying on array offsets. JSON-LD only reads `name` and `text`.
  */
 function noaway_seo_faq_schema_entities() {
   $entities = array(
-    array( 'name' => 'Will I always appear Active on Teams or Slack?', 'text' => 'No. NoAway prevents this computer from entering an idle state while it is running, which helps during long tasks such as downloads, builds, or presentations. It does not control calendar status, a locked screen, company policy, or other devices.' ),
-    array( 'name' => 'Is using NoAway safe?', 'text' => 'NoAway is a desktop utility that keeps the system from entering an idle state while enabled. It does not read your files or messages. ' . noaway_fact_data_sent_paragraph( false ) . ' For a full breakdown (admin rights, company PCs, what it does not do), see the Is NoAway safe page at /is-noaway-safe/.' ),
-    array( 'name' => 'Does NoAway slow down my computer?', 'text' => 'No. The application runs quietly in the background and is designed to use minimal system resources.' ),
-    array( 'name' => 'Can I start NoAway automatically?', 'text' => 'Yes. NoAway can be configured to start automatically when your computer boots so it is ready whenever you need it.' ),
-    array( 'name' => 'Do I need to keep the app open?', 'text' => 'No. ' . noaway_fact( 'requirements.process' ) . ' NoAway can also start automatically when your computer boots.' ),
-    array( 'name' => 'Do I need an internet connection?', 'text' => 'Keep Active runs on your computer. A connection is needed to download the app and to activate your license. ' . noaway_fact( 'data_sent.when_label' ) ),
-    array( 'name' => 'Is NoAway a subscription?', 'text' => 'No. NoAway is a one-time purchase. ' . noaway_fact( 'license.devices_label' ) . ' ' . noaway_fact( 'license.lifetime_updates' ) ),
-    array( 'name' => 'Will my boss or IT department know I\'m using this?', 'text' => noaway_fact_data_sent_paragraph( false ) . ' While Keep Active is on, your operating system sees the computer as active. Every workplace has its own policies regarding software, so follow your company\'s guidelines.' ),
-    array( 'name' => 'Is NoAway detectable by Microsoft Teams?', 'text' => 'NoAway does not interact with Microsoft Teams directly. Instead, it prevents your computer from entering an idle state at the system level. Applications that rely on system activity signals may therefore continue to show an active status while the system is active.' ),
-    array( 'name' => 'Does NoAway interact with Microsoft Teams directly?', 'text' => 'No. NoAway does not modify or control Microsoft Teams. It simply keeps the operating system active while it runs, which may help prevent applications from detecting inactivity during long-running tasks.' ),
-    array( 'name' => 'Does NoAway collect any personal data?', 'text' => noaway_fact_data_sent_paragraph( true ) ),
-    array( 'name' => 'Why does Teams switch to Away after only a few minutes?', 'text' => 'Microsoft Teams automatically updates your presence based on system activity. If the system detects no keyboard or mouse input for a certain period of time, the status may change to Away. This can happen even when you\'re still working, such as during downloads, builds, or when reading documentation.' ),
-    array( 'name' => 'Why can\'t I just set my Teams status to "Available"?', 'text' => 'Setting your status to Available manually does not prevent Teams from changing it later. Microsoft Teams automatically updates your presence based on system activity. If your computer becomes idle for several minutes, Teams may switch your status to Away, even if you previously set it to Available.' ),
-    array( 'name' => 'Why does Teams show "Away" even when I\'m still working?', 'text' => 'Teams determines your status primarily from system activity, such as keyboard or mouse input. If you\'re reading documentation, watching dashboards, waiting for downloads, or monitoring builds, your computer may appear idle even though you\'re actively working. When this happens, Teams may automatically switch your status to Away.' ),
-    array( 'name' => 'Why doesn\'t changing Windows or macOS sleep settings fix the problem?', 'text' => 'Power or sleep settings control when your computer goes to sleep, but they do not control how Teams determines presence. Your system can remain fully awake while Teams still detects a period of inactivity and updates your status to Away.' ),
-    array( 'name' => 'Do tricks like moving the mouse slightly or using scripts work?', 'text' => 'Some people try small scripts or manual tricks to simulate activity, but these solutions are usually unreliable. They may stop working after system updates, require constant adjustment, or interfere with normal workflows. Most of these approaches were not designed for long-term use.' ),
-    array( 'name' => 'Why doesn\'t a simple setting exist in Teams to stay active?', 'text' => 'Presence status in Microsoft Teams is designed to reflect recent activity on the device, and much of this behavior is managed automatically by the application and system signals. Because of this design, there is no official setting that permanently forces a user\'s status to remain Available.' ),
-    array( 'name' => 'Is there a reliable way to keep Teams from switching to Away during long tasks?', 'text' => 'When your computer remains active, Teams typically continues to show your status as Available. Tools designed to prevent the system from becoming idle during long-running tasks can help maintain consistent activity while you work, download files, run builds, or attend meetings.' ),
-    array( 'name' => 'Does this only affect Microsoft Teams?', 'text' => 'No. Many communication tools determine presence based on system activity. Applications like Slack and others may behave similarly, switching to Away when the system detects no keyboard or mouse activity for a period of time.' ),
-    array( 'name' => 'Is keeping the computer active the same as faking activity?', 'text' => 'No. Preventing a computer from entering an idle state simply keeps the system active during long tasks. For example, developers running builds, designers rendering files, or professionals downloading large datasets may remain actively working while the computer shows little input activity.' ),
-    // Domande cercate su Google (ordine di ricerca) + Reddit – SEO long-tail
-    // Keyword "how to stay active on microsoft teams" integrated in question and answer.
-    array( 'name' => 'How do I stop Microsoft Teams from showing away?', 'text' => 'Microsoft Teams switches to Away when it detects no keyboard or mouse activity. To stay active on Microsoft Teams, use an app that keeps your computer active—like NoAway—so your status stays Available during downloads, builds, or deep work. No need to move the mouse or use unreliable tricks.' ),
-    // Keyword "how to keep Teams stay active" + "app that keeps teams active" in answer.
-    array( 'name' => 'How to keep Teams stay active?', 'text' => 'Use an app that keeps Teams active, such as NoAway: a lightweight app that simulates natural activity so your system never goes idle. One click and your Teams status stays Available during long tasks, builds, or downloads. It’s one of the most reliable ways to stay active on Microsoft Teams.' ),
-    // Keyword "how to keep teams icon green" in answer (same query as "Teams turns yellow").
-    array( 'name' => 'How many minutes until Teams turns yellow?', 'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input. Keeping the system active is what stops that idle timer. Whether Teams shows Available also depends on permissions and Help conditions.' ),
-    array( 'name' => 'How to keep Teams status active hack?', 'text' => 'So-called "hacks" like moving the mouse or running scripts are unreliable and can break after updates. NoAway is a proper solution: it runs in the tray, keeps your system active, and works consistently with Teams without hacks.' ),
-    array( 'name' => 'How do I stop my team from turning yellow?', 'text' => 'If you mean your own status in Microsoft Teams: Teams turns status yellow (Away) after about 5 minutes of inactivity. NoAway keeps this computer from going idle during long tasks. Whether Teams shows Available also depends on permissions and Help conditions.' ),
-    array( 'name' => 'How to stay online on Teams without moving the mouse?', 'text' => 'NoAway simulates activity at the system level so you don\'t have to move the mouse or touch the keyboard. Just enable it from the tray and your status stays Available—no wiggling or scripts needed. It’s an app that keeps Teams active so you can stay active on Microsoft Teams without manual tricks.' ),
-    // Keyword "app that keeps teams active" in answer.
-    array( 'name' => 'Forced to use Teams, how to avoid being \'away\'?', 'text' => 'Many workers are required to use Teams; appearing Away during long tasks can be misunderstood. NoAway keeps this computer from going idle during builds, downloads, or focused work. Calendar, a locked screen, company policy, and other devices can still change presence; see Help for the full list of conditions.' ),
-    // New FAQ for query "how to keep teams icon green" (distinct from "Teams turns yellow").
-    array( 'name' => 'How to keep the Teams icon green?', 'text' => 'The Teams icon turns green (Available) when Microsoft Teams detects system activity, and yellow after about 5 minutes without input. NoAway keeps this computer from going idle while Keep Active is on. Whether the icon stays green also depends on permissions and Help conditions.' ),
-    // Troubleshooting: what to do if Teams still shows Away
-    array( 'name' => 'What should I do if Teams still shows Away?', 'text' => 'Make sure NoAway is running and Keep Active is enabled. Use the latest version of NoAway (updates improve timing so Teams does not go Away after a few minutes). After updating, use "Restart Activity Engine" from the tray menu. Check "Open Logs" in the menu: if you see "simulated" lines every few minutes, the app is working; if you see errors, contact support. On Windows, try running NoAway as Administrator once and ensure your antivirus is not blocking it.' ),
+    // --- About NoAway ---
+    array( 'group' => 'about', 'name' => 'Will I always appear Active on Teams or Slack?', 'text' => 'No. NoAway prevents this computer from entering an idle state while it is running, which helps during long tasks such as downloads, builds, or presentations. It does not control calendar status, a locked screen, company policy, or other devices.' ),
+    array( 'group' => 'about', 'name' => 'Is using NoAway safe?', 'text' => 'NoAway is a desktop utility that keeps the system from entering an idle state while enabled. It does not read your files or messages. ' . noaway_fact_data_sent_paragraph( false ) . ' For a full breakdown (admin rights, company PCs, what it does not do), see the Is NoAway safe page at /is-noaway-safe/.' ),
+    array( 'group' => 'about', 'name' => 'Does NoAway slow down my computer?', 'text' => 'No. The application runs quietly in the background and is designed to use minimal system resources.' ),
+    array( 'group' => 'about', 'name' => 'Can I start NoAway automatically?', 'text' => 'Yes. NoAway can be configured to start automatically when your computer boots so it is ready whenever you need it.' ),
+    array( 'group' => 'about', 'name' => 'Do I need to keep the app open?', 'text' => 'No. ' . noaway_fact( 'requirements.process' ) . ' NoAway can also start automatically when your computer boots.' ),
+    array( 'group' => 'about', 'name' => 'Do I need an internet connection?', 'text' => 'Keep Active runs on your computer. A connection is needed to download the app and to activate your license. ' . noaway_fact( 'data_sent.when_label' ) ),
+    // --- Privacy, detection & compliance ---
+    array( 'group' => 'privacy', 'name' => 'Is NoAway a subscription?', 'text' => 'No. NoAway is a one-time purchase. ' . noaway_fact( 'license.devices_label' ) . ' ' . noaway_fact( 'license.lifetime_updates' ) ),
+    array( 'group' => 'privacy', 'name' => 'Will my boss or IT department know I\'m using this?', 'text' => noaway_fact_data_sent_paragraph( false ) . ' While Keep Active is on, your operating system sees the computer as active. Every workplace has its own policies regarding software, so follow your company\'s guidelines.' ),
+    array( 'group' => 'privacy', 'name' => 'Does NoAway interact with Microsoft Teams, and can Teams detect it?', 'text' => 'NoAway does not modify, control, or connect to Microsoft Teams. It keeps the operating system active while it runs, and Teams reads that system activity like any other. Whether your employer\'s own tools or policies can detect third-party software depends on your organisation, so follow your company\'s guidelines.' ),
+    array( 'group' => 'privacy', 'name' => 'Does NoAway collect any personal data?', 'text' => noaway_fact_data_sent_paragraph( true ) ),
+    // --- Why Teams shows Away / common workarounds ---
+    array( 'group' => 'teams', 'name' => 'Why does Teams show Away when I am still working?', 'text' => 'Microsoft Teams updates your presence from system activity. If the computer sees no keyboard or mouse input for a few minutes, the status can change to Away, even while you are reading documentation, watching dashboards, waiting for a download, or monitoring a build.' ),
+    array( 'group' => 'teams', 'name' => 'Why can\'t I just set my Teams status to "Available"?', 'text' => 'Setting your status to Available manually does not stop Teams from changing it later. If the computer becomes idle for several minutes, Teams can switch you to Away even if you set Available earlier.' ),
+    array( 'group' => 'teams', 'name' => 'Why doesn\'t changing Windows or macOS sleep settings fix the problem?', 'text' => 'Power and sleep settings control when your computer goes to sleep, but they do not control how Teams determines presence. Your system can stay fully awake while Teams still sees a period of inactivity and updates your status to Away.' ),
+    array( 'group' => 'teams', 'name' => 'How is NoAway different from a mouse jiggler or a script?', 'text' => noaway_alternatives_facts_text() ),
+    array( 'group' => 'teams', 'name' => 'Why isn\'t there a setting in Teams to stay active?', 'text' => 'Presence in Microsoft Teams is designed to reflect recent activity on the device, and much of it is managed automatically from application and system signals. There is no official setting that permanently forces your status to remain Available.' ),
+    array( 'group' => 'teams', 'name' => 'Does this only affect Microsoft Teams?', 'text' => 'No. Slack and other chat tools also change presence based on activity. Slack, for example, shows a filled green dot for active and an empty (hollow) dot for away. Each app has its own rules, so see the Slack guide for details.' ),
+    array( 'group' => 'teams', 'name' => 'Is keeping the computer active the same as faking activity?', 'text' => 'NoAway keeps the system from going idle while you are doing long tasks such as builds, renders, or large downloads, when the computer may see little input even though you are working. Whether that is acceptable at your workplace is up to your employer\'s policy.' ),
+    // --- Questions people search for ---
+    array( 'group' => 'search', 'name' => 'How do I stop Microsoft Teams from showing Away?', 'text' => 'Teams switches to Away when the computer has seen no keyboard or mouse activity for a few minutes. To stop that without moving the mouse yourself, keep the system from going idle for as long as you need, for example with NoAway, which you turn on from the menu bar (Mac) or system tray (Windows). Whether Teams shows Available also depends on permissions and the conditions listed in Help.' ),
+    array( 'group' => 'search', 'name' => 'Is there an app that keeps Microsoft Teams active?', 'text' => 'Yes. NoAway is a desktop app for Mac and Windows that keeps the computer from going idle, which is the signal the Teams desktop app reads. It does not open or change Teams. A locked screen, calendar status, company policy, and presence on other devices are outside what it controls.' ),
+    array( 'group' => 'search', 'name' => 'How many minutes until Teams turns yellow, and how do I keep the icon green?', 'text' => 'Microsoft Teams typically changes your status to Away (yellow) after about 5 minutes without keyboard or mouse input. Keeping this computer from going idle stops that idle timer. Whether the icon stays green also depends on permissions and the conditions listed in Help.' ),
+    array( 'group' => 'search', 'name' => 'My job requires Teams. How can I avoid showing Away during long tasks?', 'text' => 'Showing Away during a long build, download, or focused task can be misread. NoAway keeps this computer from going idle during those tasks. Calendar status, a locked screen, company policy, and other devices can still change presence; see Help for the full list of conditions.' ),
+    array( 'group' => 'search', 'name' => 'What should I do if Teams still shows Away?', 'text' => 'Make sure NoAway is running and Keep Active is enabled. Use the latest version of NoAway (updates improve timing so Teams does not go Away after a few minutes). After updating, use "Restart Activity Engine" from the tray menu. Check "Open Logs" in the menu: if you see "simulated" lines every few minutes, the app is working; if you see errors, contact support. On Windows, try running NoAway as Administrator once and ensure your antivirus is not blocking it.' ),
   );
   return apply_filters( 'noaway_faq_schema_entities', $entities );
+}
+
+/**
+ * Verifiable differences between NoAway and mouse jigglers / input scripts (facts-based; no "unreliable" claims).
+ *
+ * @return string Plain text.
+ */
+function noaway_alternatives_facts_text() {
+  $limits = noaway_fact( 'requirements.known_limits', array() );
+  $locked = ( is_array( $limits ) && isset( $limits[0] ) ) ? (string) $limits[0] : '';
+  return 'A mouse jiggler is either a USB hardware device or a small program that simulates mouse movement. NoAway is software for Mac and Windows: it keeps the display awake, prevents sleep, and simulates input so the system counts the computer as active. Differences you can check: a hardware jiggler needs a free USB port and no software on the computer, while NoAway needs the app to keep running (menu bar on Mac, system tray on Windows) and, on macOS, Accessibility permission. A script you write or download depends on the same system permissions and on your own maintenance. ' . $locked . ' Antivirus or security software on Windows can block simulated input, and company policy may restrict any of these tools.';
 }
 
 /**
@@ -396,20 +400,12 @@ function noaway_front_page_faqs() {
   $icon  = esc_url( $teams . '#keep-teams-icon-green' );
   return array(
     array(
-      'name' => 'How do I stop Microsoft Teams from showing away?',
-      'text' => 'Microsoft Teams switches to Away when it detects no keyboard or mouse activity. NoAway keeps this computer from going idle, which is the signal Teams uses, during downloads, builds, or deep work. Whether Teams shows Available also depends on permissions and Help conditions.',
+      'name' => 'How do I stop Microsoft Teams from showing Away?',
+      'text' => 'Teams switches to Away when the computer has seen no keyboard or mouse activity for a few minutes. NoAway is a Mac and Windows app that keeps this computer from going idle, which is the signal the Teams desktop app reads, during downloads, builds, or deep work. Whether Teams shows Available also depends on permissions and the conditions listed in Help.',
     ),
     array(
-      'name' => 'How to keep Teams stay active? Is there an app that keeps Teams active?',
-      'text' => 'Use an app that keeps the computer from going idle, like NoAway, so Teams is less likely to flip to Away during a long build, a render, or a large download. Presence on another device is separate.',
-    ),
-    array(
-      'name' => 'How to keep the Teams icon green?',
-      'text' => 'Teams turns the icon yellow (Away) after about 5 minutes with no keyboard or mouse activity. Keeping this computer active is what the desktop app reads. NoAway does that while Keep Active is on. A locked screen, calendar, or company policy can still change the icon. <a href="' . $icon . '" class="text-primary font-semibold hover:underline">How to keep the Teams icon green on Mac and Windows</a>.',
-    ),
-    array(
-      'name' => 'How many minutes until Teams turns yellow?',
-      'text' => 'Microsoft Teams typically turns your status to Away (yellow) after about 5 minutes of no keyboard or mouse input on the desktop app. Keeping the system active is what stops that idle timer. It does not cover calendar, calls, or other devices.',
+      'name' => 'How many minutes until Teams turns yellow, and how do I keep the icon green?',
+      'text' => 'Teams typically turns your status to Away (yellow) after about 5 minutes without keyboard or mouse input on the desktop app. Keeping this computer active stops that idle timer, and NoAway does that while Keep Active is on. A locked screen, calendar, calls, company policy, or another device can still change the icon. <a href="' . $icon . '" class="text-primary font-semibold hover:underline">How to keep the Teams icon green on Mac and Windows</a>.',
     ),
     array(
       'name' => 'Will my status stay Available while I am working?',
@@ -421,7 +417,7 @@ function noaway_front_page_faqs() {
     ),
     array(
       'name' => 'Does NoAway slow down my computer?',
-      'text' => 'Not at all. NoAway is extremely lightweight and uses almost no CPU or memory.',
+      'text' => 'No. NoAway runs quietly in the background and is designed to use minimal system resources.',
     ),
     array(
       'name' => 'Does NoAway send my activity anywhere?',
@@ -663,32 +659,8 @@ function noaway_seo_landing_faq_items( $template_slug ) {
         'text' => 'Sleep settings decide when the display or the computer sleeps. Teams still looks for recent input. A machine that is awake but idle can still show Away.',
       ),
     ),
-    'page-keep-slack-active.php' => array(
-      array(
-        'name' => 'How long before Slack shows Away?',
-        'text' => 'On the Slack desktop app, Slack marks you as Away after approximately 10 minutes of no keyboard or mouse activity. Browser and mobile clients follow different presence rules and are not tied to that same desktop idle window.',
-      ),
-      array(
-        'name' => 'How do I keep my Slack status active?',
-        'text' => 'Use a lightweight background app like NoAway that prevents your computer from going idle. Slack detects activity at the OS level, so keeping the system active keeps your Slack status active on Mac and Windows.',
-      ),
-      array(
-        'name' => 'Does Slack show how long you have been away?',
-        'text' => 'Slack shows a general Away status but does not display an exact duration to other users. It may still use last-active information internally for notification routing.',
-      ),
-      array(
-        'name' => 'How long does Slack stay active?',
-        'text' => 'On desktop, Slack keeps you Active until the idle window is reached—about 10 minutes without keyboard or mouse input. There is no setting that permanently extends that timer.',
-      ),
-      array(
-        'name' => 'When does Slack show inactive or Away?',
-        'text' => 'Slack shows Away when it stops seeing recent user activity on that client. On desktop that is typically after about 10 minutes without input; web and mobile can change under different conditions.',
-      ),
-      array(
-        'name' => 'What is the difference between Slack Away, Do Not Disturb, and custom status?',
-        'text' => 'Away is inferred presence after idle time. Do Not Disturb pauses notifications. A custom status is a message for teammates. Neither DND nor a custom status stops Slack from switching to Away after desktop inactivity.',
-      ),
-    ),
+    // Single source: the Slack landing copy (EN). Avoids a second, drifting copy of the Slack FAQ.
+    'page-keep-slack-active.php' => function_exists( 'noaway_i18n_slack_copies' ) && isset( noaway_i18n_slack_copies()['en']['faqs'] ) ? noaway_i18n_slack_copies()['en']['faqs'] : array(),
     'page-prevent-computer-sleep.php' => array(
       array(
         'name' => 'How do I prevent my Mac from going to sleep?',

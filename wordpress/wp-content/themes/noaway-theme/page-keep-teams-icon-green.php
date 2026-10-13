@@ -17,7 +17,7 @@ $checkout_url = noaway_checkout_url();
         How to Keep Microsoft Teams Icon Green
       </h1>
       <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-        Many people search for how to keep the Teams icon green. This guide explains why Teams changes your status, how inactivity detection works, why common methods are unreliable, and how NoAway keeps your computer active so your status stays Available.
+        Many people search for how to keep the Teams icon green. This guide explains why Teams changes your status, how inactivity detection works, how common methods differ, and how NoAway keeps your computer active so your status stays Available.
       </p>
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="In brief">
         <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
@@ -49,10 +49,10 @@ $checkout_url = noaway_checkout_url();
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="unreliable-heading">
-      <h2 id="unreliable-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">Why these methods are unreliable</h2>
+    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="alternatives-heading">
+      <h2 id="alternatives-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">How these methods differ from NoAway</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        Manual status in Teams gets overwritten when the app detects inactivity. Mouse jigglers and keyboard tricks can break after OS or app updates, get blocked by IT, or interfere with real work. Changing only sleep settings keeps the screen on but does not change how Teams detects idle time—so your icon can still turn yellow. Scripts that simulate key presses may be flagged by security tools. For a reliable way to keep the Teams icon green, you need something that keeps the system active consistently without hacks.
+        Manual status in Teams gets overwritten when the app detects inactivity. A hardware mouse jiggler is a USB device and needs no software on the computer. A script needs the same system permissions as any app that simulates input, plus your own upkeep. NoAway is software for Mac and Windows: it keeps the display awake, prevents sleep, and simulates input; on macOS it needs Accessibility permission, and it must keep running (menu bar or system tray). A locked screen, calendar status, company policy, and presence on other devices are outside what NoAway controls, and antivirus software on Windows can block simulated input. Changing only sleep settings keeps the screen on but does not simulate input, so your icon can still turn yellow.
       </p>
     </section>
 

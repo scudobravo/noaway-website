@@ -1,18 +1,75 @@
-/* Mobile email-link box — visible only below Tailwind md (768px). */
+/* Mobile email link — compact toggle, visible only below Tailwind md (768px). Render after the Buy CTA. */
 .noaway-email-link {
   width: 100%;
-  margin: 0 0 0.75rem;
+  margin: 0;
+  text-align: inherit;
+  box-sizing: border-box;
+}
+
+.noaway-email-link__toggle {
+  display: inline;
+  margin: 0;
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  color: #5851ec;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.dark .noaway-email-link__toggle {
+  color: #a5b4fc;
+}
+
+.noaway-email-link__toggle:focus-visible {
+  outline: 2px solid #5851ec;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.noaway-email-link__panel {
+  margin-top: 0.5rem;
   padding: 0.875rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(88, 81, 236, 0.25);
   background: rgba(88, 81, 236, 0.06);
   text-align: left;
-  box-sizing: border-box;
 }
 
-.dark .noaway-email-link {
+.noaway-email-link__panel[hidden] {
+  display: none;
+}
+
+.dark .noaway-email-link__panel {
   border-color: rgba(165, 180, 252, 0.25);
   background: rgba(88, 81, 236, 0.12);
+}
+
+/* Variant for sections with a solid primary background (e.g. features final CTA). */
+.noaway-email-link--on-primary .noaway-email-link__toggle,
+.dark .noaway-email-link--on-primary .noaway-email-link__toggle {
+  color: #fff;
+}
+
+.noaway-email-link--on-primary .noaway-email-link__panel,
+.dark .noaway-email-link--on-primary .noaway-email-link__panel {
+  border-color: #fff;
+  background: #fff;
+}
+
+.noaway-email-link--on-primary .noaway-email-link__title,
+.dark .noaway-email-link--on-primary .noaway-email-link__title {
+  color: #334155;
+}
+
+.noaway-email-link--on-primary .noaway-email-link__consent,
+.dark .noaway-email-link--on-primary .noaway-email-link__consent {
+  color: #64748b;
 }
 
 .noaway-email-link__title {

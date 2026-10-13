@@ -21,10 +21,10 @@ get_header();
             <p class="text-lg lg:text-xl font-medium text-slate-700 dark:text-slate-300 mb-5">NoAway for Mac and Windows. One-time <?php echo esc_html( noaway_price_label() ); ?> (regular <?php echo esc_html( noaway_regular_price_label() ); ?>) — keeps this computer from going idle so Teams and Slack are less likely to show Away.</p>
             <p class="text-slate-600 dark:text-slate-400 text-sm mb-5"><?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
             <div class="flex flex-col items-start gap-3 w-full max-w-md">
-              <?php noaway_render_mobile_email_link_box(); ?>
               <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="bg-primary text-white px-8 py-4 rounded-xl font-bold inline-flex items-center gap-3 hover:scale-105 transition-transform shadow-lg shadow-primary/25"<?php echo noaway_buy_cta_attrs( 'hero' ); ?>>
                 Buy NoAway – <?php echo esc_html( noaway_price_label() ); ?>
               </a>
+              <?php noaway_render_mobile_email_link_box(); ?>
               <p class="text-slate-500 dark:text-slate-400 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
               <p class="text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( 'en' ); ?></p>
               <?php noaway_render_before_you_buy( 'en' ); ?>
