@@ -36,21 +36,22 @@ function noaway_facts() {
 		),
 
 		'data_sent' => array(
-			'full' => 'NoAway does not send activity, usage or personal data. The keep-active feature runs entirely on your computer. The only network request is the license check, which sends your license key and a device identifier so the license works on one device.',
+			// Honest policy aligned with desktop app licenseManager.js (telemetry kept as shipped).
+			'full' => 'Keep Active runs on your computer and does not send keystrokes, screen contents, chats, or files. Network use is for licensing: activation sends your license key, purchase email, and a device id; periodic license checks also send app version, platform, activity mode, which of Teams/Slack/Zoom/Discord appear to be running, and how many seconds Keep Active was on that day—so we can validate the one-device license and understand product usage.',
 			'short' => array(
-				'en'    => 'NoAway does not send activity, usage or personal data. Keep Active runs on your computer. The only network request is the license check (license key + device id).',
-				'de'    => 'NoAway sendet keine Aktivitäts-, Nutzungs- oder personenbezogenen Daten. Keep Active läuft lokal. Die einzige Netzwerkanfrage ist die Lizenzprüfung (Lizenzschlüssel + Geräte-ID).',
-				'es'    => 'NoAway no envía datos de actividad, uso ni personales. Keep Active se ejecuta en tu equipo. La única petición de red es la comprobación de licencia (clave + id de dispositivo).',
-				'pt-br' => 'O NoAway não envia dados de atividade, uso ou pessoais. O Keep Active roda no seu computador. A única requisição de rede é a verificação de licença (chave + id do dispositivo).',
-				'fr'    => 'NoAway n’envoie pas de données d’activité, d’usage ou personnelles. Keep Active tourne sur votre ordinateur. La seule requête réseau est la vérification de licence (clé + identifiant appareil).',
+				'en'    => 'Keep Active runs locally (no keystrokes, screen, chats, or files). License checks send license key, device id, and limited usage fields (version, platform, activity mode, detected apps, active seconds).',
+				'de'    => 'Keep Active läuft lokal (keine Tastenanschläge, Bildschirm, Chats oder Dateien). Die Lizenzprüfung sendet Lizenzschlüssel, Geräte-ID und begrenzte Nutzungsfelder (Version, Plattform, Aktivitätsmodus, erkannte Apps, aktive Sekunden).',
+				'es'    => 'Keep Active se ejecuta en local (sin teclas, pantalla, chats ni archivos). La comprobación de licencia envía clave, id de dispositivo y campos de uso limitados (versión, plataforma, modo de actividad, apps detectadas, segundos activos).',
+				'pt-br' => 'O Keep Active roda localmente (sem teclas, tela, chats ou arquivos). A verificação de licença envia chave, id do dispositivo e campos limitados de uso (versão, plataforma, modo de atividade, apps detectados, segundos ativos).',
+				'fr'    => 'Keep Active tourne en local (pas de frappes, écran, chats ni fichiers). La vérification de licence envoie la clé, l’identifiant appareil et des champs d’usage limités (version, plateforme, mode d’activité, apps détectées, secondes actives).',
 			),
-			// Confirmed from desktop app licenseManager.js: POST /activate at activation; POST /validate at start and every 24h.
+			// From desktop app: POST /activate at activation; POST /validate at start and every 24h.
 			'when'           => 'at_activation_and_periodic',
-			'when_label'     => 'License check runs when you activate, and again periodically while the app is installed (about once every 24 hours) to confirm the license is still valid on this device.',
-			'activation'     => 'Activation also sends the purchase email with the license key and device id.',
-			'no_telemetry'   => true,
-			// Fields that must NOT appear in site copy (Andrea 13 Oct 2026): activity mode, detected app names, active seconds.
-			'not_sent'       => array( 'activity_mode', 'detected_apps', 'active_seconds_today', 'keystrokes', 'screen', 'chats', 'files' ),
+			'when_label'     => 'License check runs when you activate, and again periodically while the app is installed (about once every 24 hours).',
+			'activation'     => 'Activation sends the purchase email with the license key and device id.',
+			'validate_fields' => array( 'license_key', 'device_id', 'app_version', 'platform', 'activity_mode', 'detected_apps', 'active_seconds_today' ),
+			'no_telemetry'   => false,
+			'not_sent'       => array( 'keystrokes', 'screen', 'chats', 'files', 'message_content' ),
 		),
 
 		'license' => array(
@@ -162,12 +163,11 @@ function noaway_fact_benefit_with_help_plain() {
 }
 
 /**
- * Privacy transfer rows derived from facts (no activity/usage telemetry fields).
+ * Privacy transfer rows derived from facts (aligned with shipping app + license API).
  *
  * @return array<int, array{activity:string,where:string,data:string}>
  */
 function noaway_facts_privacy_transfer_rows() {
-	$data = (string) noaway_fact( 'data_sent.full', '' );
 	$when = (string) noaway_fact( 'data_sent.when_label', '' );
 	$act  = (string) noaway_fact( 'data_sent.activation', '' );
 
@@ -175,7 +175,7 @@ function noaway_facts_privacy_transfer_rows() {
 		array(
 			'activity' => 'Keep Active',
 			'where'    => 'On your computer',
-			'data'     => 'Nothing leaves your computer for idle and sleep prevention. NoAway does not send keystrokes, screen contents, chats, files, activity mode, detected app names, or active-time counters.',
+			'data'     => 'Idle and sleep prevention run locally. NoAway does not send keystrokes, screen contents, chats, or files.',
 		),
 		array(
 			'activity' => 'Activation',
@@ -185,7 +185,7 @@ function noaway_facts_privacy_transfer_rows() {
 		array(
 			'activity' => 'License check',
 			'where'    => 'License server (license.noaway.app)',
-			'data'     => trim( $data . ( $when !== '' ? ' ' . $when : '' ) ),
+			'data'     => 'License key and device id, plus app version, platform, activity mode, detected app names when present (Teams, Slack, Zoom, or Discord), and seconds Keep Active was on that day. ' . $when,
 		),
 		array(
 			'activity' => 'Updates',
