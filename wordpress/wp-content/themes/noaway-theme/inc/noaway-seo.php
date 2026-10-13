@@ -129,6 +129,41 @@ function noaway_seo_get_page_data() {
   }
 
   $template = get_page_template_slug();
+  // Fallback when get_page_template_slug() is empty (wrong Page Attributes template in wp-admin,
+  // or title filter runs without a resolved template): match page slug / request path.
+  // This fixes /teams-away-status/ falling through to the home default title.
+  if ( ( ! is_string( $template ) || $template === '' ) && ! is_front_page() ) {
+    $page_slug_map = array(
+      'features'               => 'page-features.php',
+      'how-it-works'           => 'page-how-it-works.php',
+      'keep-teams-active'      => 'page-keep-teams-active.php',
+      'teams-away-status'      => 'page-teams-away-status.php',
+      'keep-slack-active'      => 'page-keep-slack-active.php',
+      'prevent-computer-sleep' => 'page-prevent-computer-sleep.php',
+      'is-noaway-safe'         => 'page-is-noaway-safe.php',
+      'download'               => 'page-downloads.php',
+      'downloads'              => 'page-downloads.php',
+      'thank-you'              => 'page-thank-you.php',
+      'help'                   => 'page-help.php',
+      'contacts'               => 'page-contatti.php',
+      'contact'                => 'page-contatti.php',
+      'faq'                    => 'page-faq.php',
+      'sitemap'                => 'page-sitemap.php',
+    );
+    foreach ( $page_slug_map as $slug => $tpl ) {
+      if ( is_page( $slug ) ) {
+        $template = $tpl;
+        break;
+      }
+    }
+    if ( ! is_string( $template ) || $template === '' ) {
+      $req_path = (string) wp_parse_url( noaway_seo_request_canonical_url(), PHP_URL_PATH );
+      $req_path = trim( untrailingslashit( $req_path ), '/' );
+      if ( isset( $page_slug_map[ $req_path ] ) ) {
+        $template = $page_slug_map[ $req_path ];
+      }
+    }
+  }
   if ( $template === 'page-features.php' ) {
     $data['title']       = 'Features | NoAway – Lightweight App to Keep Teams & Slack Active';
     $data['description'] = 'NoAway features: lightweight tray app, Mac & Windows, minimal resources, simple setup, automatic startup, scheduled wake. Built to stay out of your way.';
@@ -139,8 +174,8 @@ function noaway_seo_get_page_data() {
     $data['title']       = 'Stop Teams Showing Away After 5 Minutes – Keep Status Green | NoAway';
     $data['description'] = 'Teams can show Away after about 5 minutes without keyboard or mouse input. ' . noaway_fact_i18n( 'benefit.short', 'en' ) . ' One-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac and Windows.';
   } elseif ( $template === 'page-teams-away-status.php' ) {
-    $data['title']       = 'Why Teams Shows Away While You\'re Working | NoAway';
-    $data['description'] = 'Teams can show Away while you work: a locked screen, a calendar event or call, or idle time. Desktop, web, and mobile differ. Sleep settings alone do not keep you Available.';
+    $data['title']       = 'Why Does Teams Show Away? Idle, Lock Screen & Status | NoAway';
+    $data['description'] = 'Diagnose why Microsoft Teams shows Away: idle, lock screen, sleep, calendar, calls, other devices, and company policy. Desktop, browser, and mobile differ. Link to Microsoft presence docs.';
   } elseif ( $template === 'page-keep-slack-active.php' ) {
     $data['title']       = 'How to Keep Slack Active (Away After 10 Min) – Mac & Windows | NoAway';
     $data['description'] = 'Slack’s desktop app sets you to away after ten minutes of inactivity. Mobile apps do it when you leave or close the app. NoAway keeps this computer from going idle.';
@@ -489,11 +524,11 @@ function noaway_seo_landing_faq_items( $template_slug ) {
     'page-teams-away-status.php' => array(
       array(
         'name' => 'Why does Teams show Away while I am working?',
-        'text' => 'Teams reads keyboard and mouse activity, and also calendar and call state. Reading, a locked screen, or a meeting can change presence even though you are still working.',
+        'text' => 'Teams sets presence from activity, calendar, calls, and which client you use. Reading without input, a locked screen, a meeting, or another device can change status even though you are still working. See Microsoft’s presence documentation for admin details.',
       ),
       array(
-        'name' => 'What is the difference between Away and Offline?',
-        'text' => 'Away means you are signed in and Teams treats the session as idle. Offline means the app is closed, you are signed out, or the client has no connection.',
+        'name' => 'What is the difference between Away, Offline, and Appear away?',
+        'text' => 'Away means you are signed in and Teams treats you as inactive or Away. Offline means that client is not showing you as present (closed, signed out, or disconnected). Appear away is a manual status you choose so others see Away even if you are active.',
       ),
       array(
         'name' => 'Does locking the screen make Teams show Away?',
@@ -501,11 +536,11 @@ function noaway_seo_landing_faq_items( $template_slug ) {
       ),
       array(
         'name' => 'Can a meeting or calendar event change my status?',
-        'text' => 'Yes. A call or a calendar block can set Busy, In a meeting, or Out of office. NoAway does not change calendar or call presence.',
+        'text' => 'Yes. A call or a calendar block can set Busy, In a meeting, or Out of office. Keeping the computer active does not override calendar or call presence.',
       ),
       array(
         'name' => 'Do desktop, web, and mobile follow the same rule?',
-        'text' => 'No. The desktop app uses the computer idle timer, about 5 minutes. The browser follows that session. Mobile can go Away when you leave the app. Activity on one device does not keep the others Available.',
+        'text' => 'No. The desktop app commonly follows the computer idle timer (about 5 minutes). The browser follows the browser session. Mobile can change when you leave the app or lock the phone. Activity on one device does not keep the others Available.',
       ),
       array(
         'name' => 'Why does changing sleep settings not keep me Available?',
