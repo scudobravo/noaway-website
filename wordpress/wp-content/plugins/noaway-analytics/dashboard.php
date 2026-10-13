@@ -10,13 +10,14 @@ if (!defined('ABSPATH') || !current_user_can('manage_options')) {
 }
 
 global $wpdb;
-$prefix   = $wpdb->prefix;
-$licenses = $prefix . 'noaway_licenses';
+// Stessa tabella usata dall'API (/api/validate, schema.sql): senza $wpdb->prefix.
+$licenses = 'noaway_licenses';
 $cache_ttl = 5 * MINUTE_IN_SECONDS;
 
 // Helper: get cached or run query and cache
 function noaway_analytics_cached($key, $callback) {
-    $full_key = 'noaway_analytics_' . $key;
+    // Prefisso v2: invalida transient vecchi (query su tabella con prefisso WP errata).
+    $full_key = 'noaway_analytics_v2_' . $key;
     $cached   = get_transient($full_key);
     if ($cached !== false) {
         return $cached;
