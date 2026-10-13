@@ -21,6 +21,7 @@ get_header();
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           NoAway is a tray app for Mac and Windows. Install it, enable Keep Active, and it prevents your computer from going idle. <?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">See Help for the full list of conditions.</a> It does not open or modify Teams or Slack, and it does not access your files or messages.
         </p>
+        <?php noaway_render_last_reviewed( 'page-how-it-works.php' ); ?>
       </div>
       <div class="mt-12 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
         <div class="w-full aspect-video bg-slate-100 dark:bg-slate-900 flex items-center justify-center relative">
@@ -33,6 +34,8 @@ get_header();
 					'width'   => 1200,
 					'height'  => 630,
 					'loading' => 'eager',
+					'widths'  => array( 640, 960, 1200 ),
+					'sizes'   => '(min-width: 1024px) 56rem, calc(100vw - 3rem)',
 				)
 			);
 			?>

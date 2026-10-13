@@ -473,37 +473,148 @@ function noaway_seo_theme_version_for_schema() {
 }
 
 /**
- * Article dates from the WordPress page, else the template file's mtime.
+ * Single source for content last-modified (sitemap lastmod + JSON-LD dateModified).
+ * Max of: WP post_modified, template filemtime, related i18n filemtime.
+ *
+ * @param string $page Template file (e.g. page-help.php), path slug (e.g. teams-away-status), or absolute URL.
+ * @return string Y-m-d or empty.
+ */
+function noaway_content_modified( $page ) {
+  $page = is_string( $page ) ? trim( $page ) : '';
+  if ( $page === '' ) {
+    return '';
+  }
+
+  $template = '';
+  $path     = '';
+  $post     = null;
+
+  if ( preg_match( '#^https?://#i', $page ) ) {
+    $path = (string) wp_parse_url( $page, PHP_URL_PATH );
+    $path = '/' . trim( $path, '/' );
+    if ( $path !== '/' ) {
+      $path = untrailingslashit( $path );
+    }
+    if ( function_exists( 'noaway_sitemap_template_for_path' ) ) {
+      $template = noaway_sitemap_template_for_path( $path );
+    }
+  } elseif ( substr( $page, -4 ) === '.php' ) {
+    $template = ltrim( $page, '/' );
+  } else {
+    $path     = '/' . trim( $page, '/' );
+    $path     = $path === '/' ? '/' : untrailingslashit( $path );
+    $template = function_exists( 'noaway_sitemap_template_for_path' ) ? noaway_sitemap_template_for_path( $path ) : '';
+    if ( $template === '' && $path !== '/' ) {
+      $candidate = 'page-' . trim( $path, '/' ) . '.php';
+      if ( file_exists( get_stylesheet_directory() . '/' . $candidate ) ) {
+        $template = $candidate;
+      }
+    }
+  }
+
+  $stamps = array();
+  if ( is_string( $template ) && $template !== '' ) {
+    $file = get_stylesheet_directory() . '/' . ltrim( $template, '/' );
+    if ( file_exists( $file ) ) {
+      $stamps[] = (int) filemtime( $file );
+    }
+  }
+
+  $check_path = $path;
+  if ( $check_path === '' && $template !== '' ) {
+    $check_path = '/' . str_replace( array( 'page-', '.php' ), '', $template );
+  }
+  if ( is_string( $check_path ) && strpos( $check_path, 'keep-slack-active' ) !== false ) {
+    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-slack.php';
+    if ( file_exists( $i18n ) ) {
+      $stamps[] = (int) filemtime( $i18n );
+    }
+  }
+  if ( is_string( $check_path ) && strpos( $check_path, 'keep-teams-active' ) !== false ) {
+    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-teams.php';
+    if ( file_exists( $i18n ) ) {
+      $stamps[] = (int) filemtime( $i18n );
+    }
+  }
+  $facts = get_stylesheet_directory() . '/inc/noaway-facts.php';
+  if ( file_exists( $facts ) ) {
+    $stamps[] = (int) filemtime( $facts );
+  }
+
+  if ( is_singular() ) {
+    $q = get_queried_object();
+    if ( $q instanceof WP_Post ) {
+      $post = $q;
+    }
+  }
+  if ( ! ( $post instanceof WP_Post ) && is_string( $check_path ) && $check_path !== '' ) {
+    if ( $check_path === '/' ) {
+      $front_id = (int) get_option( 'page_on_front' );
+      if ( $front_id > 0 ) {
+        $post = get_post( $front_id );
+      }
+    } else {
+      $post = get_page_by_path( trim( $check_path, '/' ) );
+    }
+  }
+  if ( $post instanceof WP_Post && ! empty( $post->post_modified_gmt ) ) {
+    $ts = strtotime( $post->post_modified_gmt . ' UTC' );
+    if ( $ts ) {
+      $stamps[] = (int) $ts;
+    }
+  }
+
+  $stamps = array_filter( $stamps );
+  if ( ! $stamps ) {
+    return '';
+  }
+  return gmdate( 'Y-m-d', max( $stamps ) );
+}
+
+/**
+ * Article dates: real datePublished from WP creation; dateModified via noaway_content_modified().
  *
  * @return array{0:string,1:string} datePublished, dateModified (Y-m-d).
  */
 function noaway_seo_article_dates( $template_slug ) {
   $published = '';
-  $modified  = '';
   if ( is_singular() ) {
     $post = get_queried_object();
     if ( $post instanceof WP_Post ) {
       $published = mysql2date( 'Y-m-d', $post->post_date_gmt, false );
-      $modified  = mysql2date( 'Y-m-d', $post->post_modified_gmt, false );
     }
   }
-  $file_day = '';
-  if ( is_string( $template_slug ) && $template_slug !== '' ) {
+  if ( ( ! is_string( $published ) || $published === '' ) && is_string( $template_slug ) && $template_slug !== '' ) {
     $file = get_stylesheet_directory() . '/' . ltrim( $template_slug, '/' );
     if ( file_exists( $file ) ) {
-      $file_day = gmdate( 'Y-m-d', (int) filemtime( $file ) );
+      $published = gmdate( 'Y-m-d', (int) filemtime( $file ) );
     }
   }
-  if ( ! is_string( $published ) || $published === '' ) {
-    $published = $file_day;
-  }
-  if ( ! is_string( $modified ) || $modified === '' ) {
-    $modified = $file_day;
-  }
+  $modified = noaway_content_modified( is_string( $template_slug ) ? $template_slug : '' );
   if ( $published !== '' && $modified !== '' && $modified < $published ) {
     $modified = $published;
   }
+  if ( $modified === '' ) {
+    $modified = $published;
+  }
   return array( $published, $modified );
+}
+
+/**
+ * Visible “Last reviewed” line for guides.
+ *
+ * @param string $template_slug
+ */
+function noaway_render_last_reviewed( $template_slug ) {
+  $day = noaway_content_modified( $template_slug );
+  if ( $day === '' ) {
+    return;
+  }
+  $ts = strtotime( $day . ' UTC' );
+  if ( ! $ts ) {
+    return;
+  }
+  echo '<p class="text-sm text-slate-500 dark:text-slate-400 mt-4">Last reviewed: ' . esc_html( gmdate( 'F j, Y', $ts ) ) . '</p>';
 }
 
 /**
@@ -712,11 +823,16 @@ function noaway_seo_howto_schema( $template_slug, $download_url ) {
 function noaway_seo_article_schema_for_template( $template_slug, $canonical_url, $home_url ) {
   $canonical_url = noaway_seo_canonical_url( $canonical_url );
   $home_url      = noaway_seo_canonical_url( $home_url );
-  $pub  = array( '@type' => 'Organization', 'name' => 'NoAway', 'url' => $home_url );
+  $org  = array(
+    '@type' => 'Organization',
+    'name'  => 'NoAway team – OLIVEE SRLS',
+    'url'   => $home_url,
+  );
   list( $date_published, $date_modified ) = noaway_seo_article_dates( $template_slug );
   $base = array(
     '@type'            => 'Article',
-    'publisher'        => $pub,
+    'author'           => $org,
+    'publisher'        => $org,
     'mainEntityOfPage' => array( '@type' => 'WebPage', '@id' => $canonical_url ),
   );
   if ( $date_published !== '' ) {

@@ -42,6 +42,7 @@ get_header();
             <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
               <?php echo noaway_i18n_plain( $t['brief'] ); ?>
             </p>
+            <?php noaway_render_last_reviewed( 'page-keep-teams-active.php' ); ?>
           </div>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full max-w-xl">

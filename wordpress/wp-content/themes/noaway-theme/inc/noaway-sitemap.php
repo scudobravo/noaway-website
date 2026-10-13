@@ -153,57 +153,13 @@ function noaway_sitemap_template_for_path( $path ) {
 }
 
 /**
- * lastmod from the page's post_modified and/or the template file mtime.
+ * lastmod — same source as JSON-LD dateModified.
  *
  * @param string $loc Absolute URL.
  * @return string Y-m-d or empty.
  */
 function noaway_sitemap_lastmod( $loc ) {
-  $path = wp_parse_url( $loc, PHP_URL_PATH );
-  $path = is_string( $path ) ? '/' . trim( $path, '/' ) : '/';
-  if ( $path !== '/' ) {
-    $path = untrailingslashit( $path );
-  }
-  $stamps = array();
-  $template = noaway_sitemap_template_for_path( $path );
-  if ( $template !== '' ) {
-    $file = get_stylesheet_directory() . '/' . $template;
-    if ( file_exists( $file ) ) {
-      $stamps[] = (int) filemtime( $file );
-    }
-  }
-  if ( strpos( $path, 'keep-slack-active' ) !== false ) {
-    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-slack.php';
-    if ( file_exists( $i18n ) ) {
-      $stamps[] = (int) filemtime( $i18n );
-    }
-  }
-  if ( strpos( $path, 'keep-teams-active' ) !== false ) {
-    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-teams.php';
-    if ( file_exists( $i18n ) ) {
-      $stamps[] = (int) filemtime( $i18n );
-    }
-  }
-  $page = null;
-  if ( $path === '/' ) {
-    $front_id = (int) get_option( 'page_on_front' );
-    if ( $front_id > 0 ) {
-      $page = get_post( $front_id );
-    }
-  } else {
-    $page = get_page_by_path( trim( $path, '/' ) );
-  }
-  if ( $page instanceof WP_Post && ! empty( $page->post_modified_gmt ) ) {
-    $ts = strtotime( $page->post_modified_gmt . ' UTC' );
-    if ( $ts ) {
-      $stamps[] = (int) $ts;
-    }
-  }
-  $stamps = array_filter( $stamps );
-  if ( ! $stamps ) {
-    return '';
-  }
-  return gmdate( 'Y-m-d', max( $stamps ) );
+  return function_exists( 'noaway_content_modified' ) ? noaway_content_modified( $loc ) : '';
 }
 
 function noaway_output_sitemap_xml() {

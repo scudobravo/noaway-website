@@ -48,7 +48,10 @@ add_action(
 		$ver = '1.1.2';
 		wp_enqueue_style( 'noaway-theme', get_stylesheet_uri(), array(), $ver );
 		wp_enqueue_style( 'noaway-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array( 'noaway-theme' ), $ver );
-		wp_enqueue_style( 'noaway-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800&display=swap', array(), null );
+		// Inter: medium/semibold/bold/extrabold/black used in templates (400 unused).
+		// Montserrat: logo wordmark (font-logo font-extrabold).
+		// Material Symbols: used widely across templates (not few icons — keep as webfont).
+		wp_enqueue_style( 'noaway-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Montserrat:wght@800&display=swap', array(), null );
 		wp_enqueue_style( 'noaway-material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0', array(), null );
 	}
 );

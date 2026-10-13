@@ -79,6 +79,7 @@ $rows = array(
         <a href="<?php echo esc_url( $ms_presence_url ); ?>" class="text-primary font-semibold hover:underline" rel="noopener noreferrer" target="_blank">User presence in Teams</a>.
         Use the table below to diagnose what you are seeing before changing settings.
       </p>
+      <?php noaway_render_last_reviewed( 'page-teams-away-status.php' ); ?>
     </header>
 
     <section class="mb-16" aria-labelledby="diag-heading">

@@ -23,6 +23,7 @@ $download_url = noaway_downloads_page_url();
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           NoAway is a lightweight desktop utility from OLIVEE SRLS. It is built to prevent system idle. <?php echo esc_html( noaway_fact( 'benefit.full' ) ); ?> <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">See Help for the full list of conditions.</a> It is not a keylogger, does not read your chat apps, and does not need to open Teams or Slack. Always follow your employer’s software policy on managed devices.
         </p>
+        <?php noaway_render_last_reviewed( 'page-is-noaway-safe.php' ); ?>
       </div>
     </header>
 

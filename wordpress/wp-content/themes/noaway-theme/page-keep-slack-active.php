@@ -34,6 +34,7 @@ get_header();
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           <?php echo noaway_i18n_html( $t['brief'] ); ?>
         </p>
+        <?php noaway_render_last_reviewed( 'page-keep-slack-active.php' ); ?>
       </div>
     </header>
 
