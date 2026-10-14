@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** Date prices/claims on this page were last checked (display string). */
-define( 'NOAWAY_MARKET_COMPARE_CHECKED', '13 October 2026' );
+define( 'NOAWAY_MARKET_COMPARE_CHECKED', '14 October 2026' );
 
 /**
  * Whether the current request is the /compare/ market page (not a noaway-vs-* landing).
@@ -167,9 +167,9 @@ function noaway_market_compare_cards() {
 			'name'         => 'Idle Pilot',
 			'highlight'    => false,
 			'badge'        => '',
-			'price'        => 'from $4',
-			'price_note'   => 'Billing period not stated · Slack only',
-			'scope'        => 'Slack only',
+			'price'        => '€6/month or €40/year',
+			'price_note'   => 'Freedom Pass · Slack or Microsoft Teams (one at a time)',
+			'scope'        => 'Slack or Microsoft Teams (one at a time)',
 			'source_url'   => 'https://idlepilot.com/pricing/',
 			'source_label' => 'idlepilot.com',
 			'cta_url'      => '',
@@ -201,7 +201,7 @@ function noaway_market_compare_two_year_costs() {
 		array( 'name' => 'NoAway', 'cost' => '€4.99' ),
 		array( 'name' => 'Slack Green', 'cost' => '$47.98 (yearly)' ),
 		array( 'name' => 'NotAway', 'cost' => '$59.98 (yearly)' ),
-		array( 'name' => 'Idle Pilot', 'cost' => 'not stated' ),
+		array( 'name' => 'Idle Pilot', 'cost' => '€80 (yearly)' ),
 		array( 'name' => 'USB jiggler', 'cost' => '€10–20' ),
 	);
 }
@@ -224,7 +224,7 @@ function noaway_market_compare_table() {
 					'€4.99 one-time',
 					'$3.99/month or $23.99/year; Lifetime CLI $79 one-time',
 					'$3.99/month or $29.99/year',
-					'from $4 (billing period not stated)',
+					'€6/month or €40/year (Freedom Pass; yearly saves 44%)',
 					'about €10–20',
 				),
 			),
@@ -235,7 +235,7 @@ function noaway_market_compare_table() {
 					'€4.99',
 					'$47.98 (yearly)',
 					'$59.98 (yearly)',
-					'not stated',
+					'€80 (yearly)',
 					'€10–20',
 				),
 			),
@@ -255,7 +255,7 @@ function noaway_market_compare_table() {
 					'Teams, Slack, Zoom and others',
 					'Slack only',
 					'Slack only',
-					'Slack only',
+					'Slack or Microsoft Teams (one at a time)',
 					'Any',
 				),
 			),
@@ -285,7 +285,7 @@ function noaway_market_compare_table() {
 					'7-day refund',
 					'14-day trial + 7-day refund',
 					'7-day trial',
-					'Free trial',
+					'3-day free trial (7 days if you connect within 3 hours of sign-up)',
 					'Depends on seller',
 				),
 			),
@@ -295,7 +295,7 @@ function noaway_market_compare_table() {
 					'1 device',
 					'Up to 3 workspaces (monthly)',
 					'Up to 7 workspaces',
-					'not stated',
+					'One Slack workspace or one Teams account at a time',
 					'—',
 				),
 			),
@@ -348,7 +348,7 @@ function noaway_market_compare_guidance() {
 			'heading'    => 'A cloud tool may suit you better if',
 			'points'     => array(
 				'You need an active status with the computer off',
-				'You use Slack only',
+				'You are fine with a cloud service holding your Slack or Teams session',
 			),
 			'note'       => 'Cloud services use your Slack session from their server. Slack Green states that on paid Slack plans, admins can see that IP in the access logs.',
 			'note_url'   => 'https://slack.green/en/blog/will-i-get-caught-using-slack-green',
