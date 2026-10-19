@@ -12,8 +12,12 @@ if ( $release_date === '' ) {
 	$release_date = 'TODO(Andrea)';
 }
 
-// Release notes: add real entries only. TODO(Andrea) is shown until provided.
-$release_notes = array();
+// Release notes for the current public version (source: noaway/CHANGELOG.md).
+$release_notes = array(
+	'macOS installers: universal or arm64-only builds, with optional Developer ID signing and notarization.',
+	'Windows installers remain Authenticode-signed via the release pipeline.',
+	'Idle / scheduler defaults aligned with earlier 1.0.x releases where applicable.',
+);
 ?>
 <main class="w-full">
   <section class="relative py-20 px-6 overflow-hidden">

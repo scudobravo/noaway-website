@@ -87,7 +87,7 @@ function noaway_facts() {
 			'brand'              => 'NoAway',
 			'signer_display'     => 'OLIVEE SRLS', // Name buyers should verify on the signed installer (Mac Developer ID / Windows Authenticode).
 			'app_version'        => '1.0.6', // From sibling app package.json in this workspace.
-			'release_date'       => 'TODO(Andrea)', // Last public release date.
+			'release_date'       => '20 March 2026', // Last public release date (app 1.0.6).
 			'support_email'      => 'support@noaway.app',
 		),
 	);
