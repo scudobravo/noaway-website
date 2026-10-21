@@ -51,8 +51,8 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
           <form action="<?php echo esc_url( get_permalink() ); ?>" method="post" class="relative space-y-6">
             <?php wp_nonce_field( 'noaway_contact', 'noaway_contact_nonce' ); ?>
             <input type="hidden" name="noaway_contact_form" value="1">
-            <?php /* Honeypot — leave empty; bots often fill it. */ ?>
-            <div class="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
+            <?php /* Honeypot — leave empty; bots often fill it. Inline styles so it works without Tailwind rebuild. */ ?>
+            <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
               <label for="contact-website">Website</label>
               <input id="contact-website" type="text" name="contact_website" value="" tabindex="-1" autocomplete="off">
             </div>
