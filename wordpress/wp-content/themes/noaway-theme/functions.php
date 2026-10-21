@@ -16,6 +16,7 @@ require_once $noaway_inc . 'noaway-market-compare.php';
 require_once $noaway_inc . 'noaway-analytics.php';
 require_once $noaway_inc . 'noaway-cookie-consent.php';
 require_once $noaway_inc . 'noaway-email-link.php';
+require_once $noaway_inc . 'noaway-contact.php';
 require_once $noaway_inc . 'noaway-seo.php';
 require_once $noaway_inc . 'noaway-sitemap.php';
 require_once $noaway_inc . 'noaway-ai-discovery.php';

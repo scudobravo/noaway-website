@@ -48,9 +48,14 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
             echo '<span>Something went wrong. Please try again or email us at support@noaway.app.</span></div>';
           }
           ?>
-          <form action="<?php echo esc_url( get_permalink() ); ?>" method="post" class="space-y-6">
+          <form action="<?php echo esc_url( get_permalink() ); ?>" method="post" class="relative space-y-6">
             <?php wp_nonce_field( 'noaway_contact', 'noaway_contact_nonce' ); ?>
             <input type="hidden" name="noaway_contact_form" value="1">
+            <?php /* Honeypot — leave empty; bots often fill it. */ ?>
+            <div class="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
+              <label for="contact-website">Website</label>
+              <input id="contact-website" type="text" name="contact_website" value="" tabindex="-1" autocomplete="off">
+            </div>
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <label class="text-sm font-semibold ml-1" for="contact-name">Full Name</label>
