@@ -42,11 +42,20 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
     <div class="absolute top-1/2 -left-24 size-64 bg-primary/10 rounded-full blur-3xl"></div>
   </section>
 
+  <nav class="sticky top-16 md:top-20 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur border-b border-slate-200/80 dark:border-slate-800 md:static md:bg-transparent md:border-0 md:backdrop-blur-none" aria-label="FAQ categories">
+    <div class="max-w-4xl mx-auto px-6 py-3 flex flex-wrap gap-2 justify-center md:justify-start">
+      <a href="#faq-search" class="inline-flex items-center min-h-[44px] px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-primary/40 hover:text-primary">What people ask: how to stop Teams showing Away</a>
+      <a href="#faq-about" class="inline-flex items-center min-h-[44px] px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-primary/40 hover:text-primary">About NoAway</a>
+      <a href="#faq-privacy" class="inline-flex items-center min-h-[44px] px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-primary/40 hover:text-primary">Privacy, detection &amp; compliance</a>
+      <a href="#faq-teams" class="inline-flex items-center min-h-[44px] px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-primary/40 hover:text-primary">Why Teams shows Away, and how common workarounds compare</a>
+    </div>
+  </nav>
+
   <section class="max-w-4xl mx-auto px-6 pb-24" aria-labelledby="faq-heading">
     <h2 id="faq-heading" class="sr-only">Common questions</h2>
 
     <!-- What people search for (Google / Reddit – SEO) -->
-    <div class="mb-12">
+    <div class="mb-12" id="faq-search">
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">What people ask: how to stop Teams showing Away</h3>
       <div class="space-y-4">
         <?php
@@ -67,7 +76,7 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
     </div>
 
     <!-- About NoAway -->
-    <div class="mb-12">
+    <div class="mb-12" id="faq-about">
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">About NoAway</h3>
       <div class="space-y-4">
         <?php
@@ -88,7 +97,7 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
     </div>
 
     <!-- Privacy, detection & compliance -->
-    <div class="mb-12">
+    <div class="mb-12" id="faq-privacy">
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Privacy, detection &amp; compliance</h3>
       <div class="space-y-4">
         <?php
@@ -109,7 +118,7 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
     </div>
 
     <!-- Why common Teams "stay active" tricks don't work -->
-    <div>
+    <div id="faq-teams">
       <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">Why Teams shows Away, and how common workarounds compare</h3>
       <div class="space-y-4">
         <?php
@@ -130,7 +139,7 @@ $noaway_faq_group = function ( $group ) use ( $faq_schema_entities ) {
     </div>
 
     <div class="mt-12 text-center">
-      <p class="text-slate-500 mb-4">Still didn't find what you're looking for?</p>
+      <p class="text-slate-600 mb-4">Still didn't find what you're looking for?</p>
       <a class="inline-flex items-center gap-2 font-bold text-primary group" href="<?php echo esc_url( noaway_contact_page_url() ); ?>">
         Contact support
         <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>

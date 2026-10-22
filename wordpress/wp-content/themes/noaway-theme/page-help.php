@@ -23,11 +23,11 @@ $contact_url = noaway_contact_page_url();
 
   <!-- Quick Help - 3 cards -->
   <section class="py-12 px-6">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl font-bold mb-8 text-center text-slate-900 dark:text-white">Quick help</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Card 1: Install NoAway -->
-        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow flex flex-col">
+        <a href="#installation" class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-primary/40 transition-all flex flex-col group no-underline text-inherit">
           <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
             <span class="material-symbols-outlined text-2xl">download_for_offline</span>
           </div>
@@ -35,13 +35,13 @@ $contact_url = noaway_contact_page_url();
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
             Download the installer for your operating system and follow the simple installation steps. NoAway works on both macOS and Windows.
           </p>
-          <a href="#installation" class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-5 py-3 text-sm font-bold hover:opacity-90 transition-opacity">
+          <span class="inline-flex items-center gap-2 text-sm font-bold text-primary min-h-[44px]">
             View installation guide
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
-        </div>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </span>
+        </a>
         <!-- Card 2: Activate your license -->
-        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow flex flex-col">
+        <a href="#license-activation" class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-primary/40 transition-all flex flex-col group no-underline text-inherit">
           <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
             <span class="material-symbols-outlined text-2xl">vpn_key</span>
           </div>
@@ -49,13 +49,13 @@ $contact_url = noaway_contact_page_url();
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
             Enter your license key the first time you launch NoAway to unlock the full version.
           </p>
-          <a href="#license-activation" class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-5 py-3 text-sm font-bold hover:opacity-90 transition-opacity">
+          <span class="inline-flex items-center gap-2 text-sm font-bold text-primary min-h-[44px]">
             Activation instructions
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
-        </div>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </span>
+        </a>
         <!-- Card 3: Troubleshooting -->
-        <div class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-shadow flex flex-col">
+        <a href="#troubleshooting" class="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:shadow-xl hover:border-primary/40 transition-all flex flex-col group no-underline text-inherit">
           <div class="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
             <span class="material-symbols-outlined text-2xl">build</span>
           </div>
@@ -63,18 +63,18 @@ $contact_url = noaway_contact_page_url();
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
             If NoAway doesn't behave as expected, check common solutions for typical issues.
           </p>
-          <a href="#troubleshooting" class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-white px-5 py-3 text-sm font-bold hover:opacity-90 transition-opacity">
+          <span class="inline-flex items-center gap-2 text-sm font-bold text-primary min-h-[44px]">
             Troubleshooting guide
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
-          </a>
-        </div>
+            <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Requirements (compatibility check before purchase) -->
   <section id="requirements" class="py-16 px-6 scroll-mt-24">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Requirements</h2>
       <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 mb-6">
         <li><?php echo esc_html( noaway_fact( 'requirements.macos_min' ) ); ?></li>
@@ -98,7 +98,7 @@ $contact_url = noaway_contact_page_url();
 
   <!-- Installation Guide -->
   <section id="installation" class="py-16 px-6 bg-white dark:bg-slate-900/50 scroll-mt-24">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-slate-900 dark:text-white">Installing NoAway</h2>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -133,7 +133,7 @@ $contact_url = noaway_contact_page_url();
 
   <!-- License Activation -->
   <section id="license-activation" class="py-16 px-6 scroll-mt-24">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Activating your license</h2>
       <ol class="list-decimal list-inside space-y-2 text-slate-600 dark:text-slate-400 mb-8">
         <li>Launch NoAway.</li>
@@ -155,7 +155,7 @@ $contact_url = noaway_contact_page_url();
 
   <!-- Troubleshooting / Common issues -->
   <section id="troubleshooting" class="py-16 px-6 bg-white dark:bg-slate-900/50 scroll-mt-24">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-slate-900 dark:text-white">Common issues</h2>
       <div class="space-y-6">
         <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700">
@@ -184,7 +184,7 @@ $contact_url = noaway_contact_page_url();
 
   <!-- Privacy and Security -->
   <section id="privacy-security" class="py-16 px-6 scroll-mt-24">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Privacy and security</h2>
       <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
         Keep Active runs on your computer. It does not read your files or messages. Activation and updates contact the license server. The table of what is sent is on the <a class="text-primary font-medium hover:underline" href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a>.
@@ -195,7 +195,7 @@ $contact_url = noaway_contact_page_url();
 
   <!-- Contact Support -->
   <section id="contact-support" class="py-20 px-6 bg-slate-100 dark:bg-slate-900/70 scroll-mt-24">
-    <div class="max-w-2xl mx-auto text-center">
+    <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Still need help?</h2>
       <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
         If you can't find the answer you're looking for, our support team will be happy to help.
@@ -207,7 +207,7 @@ $contact_url = noaway_contact_page_url();
       <p class="text-slate-600 dark:text-slate-400">
         <a class="text-primary font-medium hover:underline" href="mailto:support@noaway.app">support@noaway.app</a>
       </p>
-      <p class="text-sm text-slate-500 dark:text-slate-500 mt-4">We usually respond within 24 hours.</p>
+      <p class="text-sm text-slate-600 dark:text-slate-500 mt-4">We usually respond within 24 hours.</p>
     </div>
   </section>
 </main>

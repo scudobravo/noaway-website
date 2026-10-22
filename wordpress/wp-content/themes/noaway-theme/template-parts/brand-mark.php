@@ -53,7 +53,7 @@ $extra_class = (string) $p['extra_class'];
 		</a>
 	<?php endif; ?>
 	<?php if ( $tagline !== '' ) : ?>
-		<p class="noaway-brand-tagline mt-3 text-sm leading-relaxed text-slate-500 dark:text-slate-400 max-w-xs">
+		<p class="noaway-brand-tagline mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-xs">
 			<?php echo esc_html( $tagline ); ?>
 		</p>
 	<?php endif; ?>

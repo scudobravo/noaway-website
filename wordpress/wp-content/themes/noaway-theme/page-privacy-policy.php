@@ -6,14 +6,32 @@
 get_header();
 ?>
 <main class="flex-1 px-6 md:px-10 lg:px-40 py-12 md:py-20">
-  <div class="max-w-[800px] mx-auto">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-[220px_minmax(0,48rem)] gap-10 items-start">
+<aside class="hidden lg:block lg:sticky lg:top-28">
+<nav aria-label="On this page"><ul class="list-none m-0 p-0 space-y-0.5"><li><a class="na-toc-link" href="#legal-sec-1">1. INTRODUCTION</a></li>
+<li><a class="na-toc-link" href="#legal-sec-2">2. DATA CONTROLLER</a></li>
+<li><a class="na-toc-link" href="#legal-sec-3">3. DATA WE COLLECT</a></li>
+<li><a class="na-toc-link" href="#legal-sec-4">4. PURPOSE OF DATA PROCESSING</a></li>
+<li><a class="na-toc-link" href="#legal-sec-5">5. LEGAL BASIS FOR PROCESSING</a></li>
+<li><a class="na-toc-link" href="#legal-sec-6">6. DATA RETENTION</a></li>
+<li><a class="na-toc-link" href="#legal-sec-7">7. DATA SHARING</a></li>
+<li><a class="na-toc-link" href="#legal-sec-8">8. INTERNATIONAL DATA TRANSFERS</a></li>
+<li><a class="na-toc-link" href="#legal-sec-9">9. DATA SECURITY</a></li>
+<li><a class="na-toc-link" href="#legal-sec-10">10. YOUR RIGHTS (GDPR)</a></li>
+<li><a class="na-toc-link" href="#legal-sec-11">11. THIRD-PARTY SERVICES</a></li>
+<li><a class="na-toc-link" href="#legal-sec-12">12. CHILDREN'S PRIVACY</a></li>
+<li><a class="na-toc-link" href="#legal-sec-13">13. CHANGES TO THIS POLICY</a></li>
+<li><a class="na-toc-link" href="#legal-sec-14">14. CONTACT</a></li>
+</ul></nav>
+</aside>
+<div class="noaway-legal-sheet max-w-3xl rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 md:p-10">
     <div class="mb-16">
       <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] mb-4">Privacy Policy</h1>
       <p class="text-primary font-medium">Last Updated: <?php echo esc_html( wp_date( 'F j, Y', filemtime( __FILE__ ) ) ); ?></p>
     </div>
     <div class="prose-custom dark:prose-invert text-slate-700 dark:text-slate-300">
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">1. INTRODUCTION</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-1">1. INTRODUCTION</h2>
         <p class="leading-relaxed mb-4">
           This Privacy Policy explains how NoAway OLIVEE SRLS ("Company", "we", "us", or "our") collects, uses, and protects personal data when you access or use the NoAway application, website, and related services (the "Service").
         </p>
@@ -22,8 +40,8 @@ get_header();
         </p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">2. DATA CONTROLLER</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-2">2. DATA CONTROLLER</h2>
         <p class="leading-relaxed mb-4">The data controller responsible for your personal data is:</p>
         <p class="leading-relaxed mb-0">
           NoAway OLIVEE SRLS<br>
@@ -32,8 +50,8 @@ get_header();
         </p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">3. DATA WE COLLECT</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-3">3. DATA WE COLLECT</h2>
         <p class="leading-relaxed mb-4">We are committed to data minimization.</p>
         <p class="leading-relaxed mb-4">
           Depending on how you use the Service, we may collect the following categories of data:
@@ -58,8 +76,8 @@ get_header();
         </p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">4. PURPOSE OF DATA PROCESSING</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-4">4. PURPOSE OF DATA PROCESSING</h2>
         <p class="leading-relaxed mb-4">We process your data only for the following purposes:</p>
         <ul class="list-disc pl-6 mb-0 space-y-2">
           <li>providing and maintaining the Service</li>
@@ -70,8 +88,8 @@ get_header();
         </ul>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">5. LEGAL BASIS FOR PROCESSING</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-5">5. LEGAL BASIS FOR PROCESSING</h2>
         <p class="leading-relaxed mb-4">Under GDPR, we rely on the following legal bases:</p>
         <ul class="list-disc pl-6 mb-0 space-y-2">
           <li>Performance of a contract (to provide the Service)</li>
@@ -81,8 +99,8 @@ get_header();
         </ul>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">6. DATA RETENTION</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-6">6. DATA RETENTION</h2>
         <p class="leading-relaxed mb-4">We retain personal data only as long as necessary:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
           <li>Account data: for the duration of your account</li>
@@ -92,8 +110,8 @@ get_header();
         <p class="leading-relaxed mb-0">When no longer needed, data is securely deleted or anonymized.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">7. DATA SHARING</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-7">7. DATA SHARING</h2>
         <p class="leading-relaxed mb-4">We do NOT sell your personal data.</p>
         <p class="leading-relaxed mb-4">We may share data only with:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
@@ -104,8 +122,8 @@ get_header();
         <p class="leading-relaxed mb-0">All third parties are required to comply with applicable data protection laws.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">8. INTERNATIONAL DATA TRANSFERS</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-8">8. INTERNATIONAL DATA TRANSFERS</h2>
         <p class="leading-relaxed mb-4">Your data may be processed outside your country.</p>
         <p class="leading-relaxed mb-4">Where required, we ensure appropriate safeguards, such as:</p>
         <ul class="list-disc pl-6 mb-0 space-y-2">
@@ -114,8 +132,8 @@ get_header();
         </ul>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">9. DATA SECURITY</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-9">9. DATA SECURITY</h2>
         <p class="leading-relaxed mb-4">We implement appropriate technical and organizational measures to protect your data, including:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
           <li>encryption where appropriate</li>
@@ -125,8 +143,8 @@ get_header();
         <p class="leading-relaxed mb-0">However, no system is completely secure.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">10. YOUR RIGHTS (GDPR)</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-10">10. YOUR RIGHTS (GDPR)</h2>
         <p class="leading-relaxed mb-4">If you are in the European Economic Area, you have the right to:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
           <li>access your data</li>
@@ -139,8 +157,8 @@ get_header();
         <p class="leading-relaxed mb-0">To exercise your rights, contact us at: support@noaway.app</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">11. THIRD-PARTY SERVICES</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-11">11. THIRD-PARTY SERVICES</h2>
         <p class="leading-relaxed mb-4">The Service may interact with third-party software such as:</p>
         <ul class="list-disc pl-6 mb-4 space-y-2">
           <li>Microsoft Teams</li>
@@ -149,20 +167,20 @@ get_header();
         <p class="leading-relaxed mb-0">We are not responsible for their privacy practices. Please review their policies separately.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">12. CHILDREN'S PRIVACY</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-12">12. CHILDREN'S PRIVACY</h2>
         <p class="leading-relaxed mb-4">The Service is not intended for individuals under 18.</p>
         <p class="leading-relaxed mb-0">We do not knowingly collect data from children.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">13. CHANGES TO THIS POLICY</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-13">13. CHANGES TO THIS POLICY</h2>
         <p class="leading-relaxed mb-4">We may update this Privacy Policy from time to time.</p>
         <p class="leading-relaxed mb-0">Changes will be posted on this page with an updated "Last Updated" date.</p>
       </section>
 
-      <section class="mb-14 p-8 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200 dark:border-slate-800">
-        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold text-xl">14. CONTACT</h2>
+      <section class="mb-14 py-8 border-b border-slate-200 dark:border-slate-800 last:border-0">
+        <h2 class="!mt-0 mb-4 text-slate-900 dark:text-slate-100 font-bold na-h3 normal-case" id="legal-sec-14">14. CONTACT</h2>
         <p class="leading-relaxed mb-4">For any questions regarding this Privacy Policy:</p>
         <p class="leading-relaxed mb-0">
           Email: support@noaway.app<br>
@@ -172,5 +190,6 @@ get_header();
 
     </div>
   </div>
+</div></div>
 </main>
 <?php get_footer(); ?>

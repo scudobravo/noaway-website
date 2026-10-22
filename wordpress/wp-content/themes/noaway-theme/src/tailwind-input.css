@@ -1,3 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .na-h1 {
+    @apply text-4xl md:text-6xl font-black tracking-tight leading-[1.05] text-slate-900 dark:text-slate-100;
+  }
+  .na-h2 {
+    @apply text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100;
+  }
+  .na-h3 {
+    @apply text-xl font-bold text-slate-900 dark:text-slate-100;
+  }
+  .na-eyebrow {
+    @apply text-xs font-bold uppercase tracking-widest text-primary;
+  }
+  .na-lead {
+    @apply text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed;
+  }
+  .na-btn-primary {
+    @apply inline-flex items-center justify-center bg-primary text-white rounded-xl px-6 py-3.5 font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 min-h-[48px] transition-colors;
+  }
+  .na-btn-on-primary {
+    @apply inline-flex items-center justify-center bg-white text-primary rounded-xl px-6 py-3.5 font-bold shadow-lg min-h-[48px] hover:bg-slate-100 transition-colors;
+  }
+  .na-dark-section {
+    @apply max-w-7xl mx-auto bg-slate-900 text-white rounded-3xl;
+  }
+  .na-guide-prose p {
+    @apply text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4;
+  }
+  .na-guide-h2 {
+    @apply text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mt-16 mb-4;
+  }
+  /* Generic surfaces / icon chips */
+  .na-card {
+    @apply rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40;
+  }
+  .na-icon-box {
+    @apply inline-flex items-center justify-center shrink-0 size-11 rounded-xl bg-primary/10 text-primary;
+  }
+  /* Guide table of contents (sticky aside) */
+  .na-toc-link {
+    @apply flex items-center min-h-[44px] rounded-lg border-l-2 border-transparent px-3 py-2 text-sm font-medium leading-snug text-slate-600 dark:text-slate-400 hover:text-primary hover:bg-primary/5 transition-colors;
+  }
+  .na-toc-link.is-active {
+    @apply border-primary bg-primary/5 text-primary font-semibold;
+  }
+  /* Guide: tables (compare-style) */
+  .na-table-wrap {
+    @apply overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/40;
+  }
+  .na-table-wrap table {
+    @apply w-full text-left text-sm;
+  }
+  .na-table-wrap thead tr {
+    @apply bg-slate-50 dark:bg-slate-900/60;
+  }
+  .na-table-wrap th {
+    @apply p-3 sm:p-4 text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 whitespace-nowrap;
+  }
+  .na-table-wrap td {
+    @apply p-3 sm:p-4 align-top;
+  }
+  .na-table-wrap tbody tr {
+    @apply border-b border-slate-100 dark:border-slate-800 last:border-b-0 hover:bg-slate-50/70 dark:hover:bg-slate-800/40;
+  }
+  /* Sticky first column for horizontally scrolling tables on small screens */
+  .na-table-sticky-col thead th:first-child,
+  .na-table-sticky-col tbody td:first-child,
+  .na-table-sticky-col tbody th:first-child {
+    @apply sticky left-0 z-[1] bg-white dark:bg-slate-900 max-sm:shadow-[2px_0_0_0_theme(colors.slate.200)];
+  }
+  .na-table-sticky-col thead th:first-child {
+    @apply bg-slate-50 dark:bg-slate-900;
+  }
+}

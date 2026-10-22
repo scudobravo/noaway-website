@@ -1,0 +1,1162 @@
+{
+  "api/download.php": {
+    "mtime": 1774092201.985309,
+    "ast_hash": "93f28fcfe07c9a12b9d34ca3b998a68e",
+    "semantic_hash": ""
+  },
+  "wordpress/ai/faq.json": {
+    "mtime": 1791887038.1734087,
+    "ast_hash": "4fd9329f9dbe191c5bfee494c5f955ee",
+    "semantic_hash": ""
+  },
+  "wordpress/ai/service.json": {
+    "mtime": 1791817395.2588286,
+    "ast_hash": "82944fcbcf60ad469eddeac5ecfefc04",
+    "semantic_hash": ""
+  },
+  "wordpress/ai/summary.json": {
+    "mtime": 1791817395.2593253,
+    "ast_hash": "17f2fa0abfb283adcb391e31373b014e",
+    "semantic_hash": ""
+  },
+  "wordpress/api/activate.php": {
+    "mtime": 1772792345.8938944,
+    "ast_hash": "8b443f8c5e18dc02a2c6585957c160fb",
+    "semantic_hash": ""
+  },
+  "wordpress/api/config.php": {
+    "mtime": 1772792310.2705371,
+    "ast_hash": "f46ebafd16dcd4d9663a89c25b3a24be",
+    "semantic_hash": ""
+  },
+  "wordpress/api/db.php": {
+    "mtime": 1772792313.901375,
+    "ast_hash": "b9cc9ce55d8907fe1509a78d42384253",
+    "semantic_hash": ""
+  },
+  "wordpress/api/download.php": {
+    "mtime": 1772816809.7681043,
+    "ast_hash": "4b4ff73ea711ee476582d1f3aff4fc14",
+    "semantic_hash": ""
+  },
+  "wordpress/api/licenseKey.php": {
+    "mtime": 1772792320.6766028,
+    "ast_hash": "22e02558b3b2374724a354e358fa1306",
+    "semantic_hash": ""
+  },
+  "wordpress/api/rateLimit.php": {
+    "mtime": 1772792332.2339334,
+    "ast_hash": "53b83d4fc3f4e30abef063c376dd0c1a",
+    "semantic_hash": ""
+  },
+  "wordpress/api/schema.sql": {
+    "mtime": 1772792371.4522574,
+    "ast_hash": "c42738eab41ec285c705620e52f323c9",
+    "semantic_hash": ""
+  },
+  "wordpress/api/validate.php": {
+    "mtime": 1791894433.448063,
+    "ast_hash": "44f371910acaca8d276062e0b16ab323",
+    "semantic_hash": ""
+  },
+  "wordpress/init-db/01-native-password.sql": {
+    "mtime": 1772735267.9924078,
+    "ast_hash": "d94dae493d8f8be9e614c9c5d0726cc6",
+    "semantic_hash": ""
+  },
+  "wordpress/scripts/wp-cli.sh": {
+    "mtime": 1772735079.6380181,
+    "ast_hash": "4211e293c5b5237c99acccc924c61332",
+    "semantic_hash": ""
+  },
+  "wordpress/scripts/wp-install.sh": {
+    "mtime": 1772735437.0354698,
+    "ast_hash": "6c0a6d1b4de91e74aac513e0ffd57483",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-config.noaway-example.php": {
+    "mtime": 1791883660.731569,
+    "ast_hash": "e2ecad040d40cb84bc5bf86c01077088",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/plugins/noaway-analytics/assets/cta-tracking.js": {
+    "mtime": 1791893478.1121366,
+    "ast_hash": "744a824b19ae54bedc6e7a52c47c69d3",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/plugins/noaway-analytics/dashboard.php": {
+    "mtime": 1791919569.70756,
+    "ast_hash": "c4d75641f2f7c2f784e82f628e0f011e",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/plugins/noaway-analytics/includes/cta-tracking.php": {
+    "mtime": 1791893478.111587,
+    "ast_hash": "9a6f086c4da65aae770f65565413c129",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/plugins/noaway-analytics/noaway-analytics.php": {
+    "mtime": 1791893489.4255674,
+    "ast_hash": "de5a06ce9347be9839ad8f99d0d60514",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/js/noaway-cookie-consent.js": {
+    "mtime": 1776949227.6862636,
+    "ast_hash": "a92b545bc06a6b11c3a06b04364789a1",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/js/noaway-email-link.js": {
+    "mtime": 1791893422.3007731,
+    "ast_hash": "d321069283ceab0556238e0b8bedfae7",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/js/noaway-i18n-locale-banner.js": {
+    "mtime": 1791819196.5893767,
+    "ast_hash": "c3a39c66625951e8ffdd8d68b75ce592",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/footer.php": {
+    "mtime": 1792659101.873628,
+    "ast_hash": "be0ae9d832b0bfadbdbb12056b1bea31",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/front-page.php": {
+    "mtime": 1792659110.0400949,
+    "ast_hash": "f586c73ee3911f91f513ae1eeaf948c1",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/functions.php": {
+    "mtime": 1792659056.601472,
+    "ast_hash": "81a73a15fb3c8ca5a9ea4fdd165538bd",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/header.php": {
+    "mtime": 1792658834.2092724,
+    "ast_hash": "dd727efc52b0b9458e95243cc465ad11",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-ai-discovery.php": {
+    "mtime": 1791892526.806774,
+    "ast_hash": "3748b1d8e70103fe706fa1e9f18ef4ce",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-analytics.php": {
+    "mtime": 1776948638.6856506,
+    "ast_hash": "ebb453b200e0e82389de13795cd85d84",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-comparisons.php": {
+    "mtime": 1791893893.455857,
+    "ast_hash": "9f4259192144de65201380174a11470a",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-cookie-consent.php": {
+    "mtime": 1776949211.2869537,
+    "ast_hash": "e91fbce91a4af1ec1e167a60452e4249",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-email-link.php": {
+    "mtime": 1791893458.431309,
+    "ast_hash": "41401b51b82ae727e7e5364ebf6fc052",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-i18n-slack.php": {
+    "mtime": 1791893783.4407125,
+    "ast_hash": "4ace55b16aad10575c0b4ae57abb763d",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-i18n-teams.php": {
+    "mtime": 1791904221.2802489,
+    "ast_hash": "fcc193f27b7aadd058d8c6f273058b95",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-i18n.php": {
+    "mtime": 1791904217.5786583,
+    "ast_hash": "099f0a9a15b2e61fe3437333dc3fae57",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-pages.php": {
+    "mtime": 1792659458.8637545,
+    "ast_hash": "116482f100ef11536d4c967c185859bf",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-seo.php": {
+    "mtime": 1792658672.58252,
+    "ast_hash": "bce90da7c44a80e8185c0eae285ce6c2",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-sitemap.php": {
+    "mtime": 1791904166.4959826,
+    "ast_hash": "9dd00887b832c756f70af677de896df9",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/index.php": {
+    "mtime": 1774090453.6846192,
+    "ast_hash": "f39e6fb95427a4eff9c14d91fd6d640c",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/package.json": {
+    "mtime": 1774096590.423319,
+    "ast_hash": "76ff662a5ac690ac8c6fc5d2b42a149e",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-compare.php": {
+    "mtime": 1791904134.713246,
+    "ast_hash": "f140c29050d7beabff159e9dec9e3961",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-contatti.php": {
+    "mtime": 1792659239.8705418,
+    "ast_hash": "1efef2219e17a3d1606d003fedcc8ebf",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-download.php": {
+    "mtime": 1791883643.9229913,
+    "ast_hash": "ab8c023df7e5ebf09e8690028a8f03e4",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-downloads.php": {
+    "mtime": 1792659155.0185373,
+    "ast_hash": "be4ddbc38d37bcd9aa303652bc8165a0",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-faq.php": {
+    "mtime": 1792659172.0596929,
+    "ast_hash": "a789312807467ff7e7aba0830beddc71",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-features.php": {
+    "mtime": 1792659561.6561742,
+    "ast_hash": "45b4c455a57a27d7cdc58174ae2d1c7f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-help.php": {
+    "mtime": 1792659563.4265988,
+    "ast_hash": "e7ed2a781517fc2f1722c2bcfdecb634",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-how-it-works.php": {
+    "mtime": 1792659505.5522447,
+    "ast_hash": "c1bc4c506f562df951a1b29019e0efb6",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-is-noaway-safe.php": {
+    "mtime": 1792659458.8633523,
+    "ast_hash": "969432795fc054caff252b2d9c6e464e",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-slack-active-de.php": {
+    "mtime": 1791810655.4444396,
+    "ast_hash": "4acff29ba86a720ad6246a7e308b9ea7",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-slack-active-es.php": {
+    "mtime": 1791810655.4599106,
+    "ast_hash": "6043472ec5d50a2ec261042fd1db1129",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-slack-active-fr.php": {
+    "mtime": 1791810655.6705043,
+    "ast_hash": "cddb2856a6ae76f7d19e60e5b9522613",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-slack-active-pt-br.php": {
+    "mtime": 1791810655.4443388,
+    "ast_hash": "86c129767fb75ed872c79aba48e0dbe6",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-slack-active.php": {
+    "mtime": 1792659405.861344,
+    "ast_hash": "99fb934f562fec7a59d49d2507e9fb67",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-active-de.php": {
+    "mtime": 1791810656.6004567,
+    "ast_hash": "e5bb2b9dfc38033d11f900530e5b276d",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-active-es.php": {
+    "mtime": 1791810657.0314133,
+    "ast_hash": "25c8b329b03160c03928e72c7693ce42",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-active-fr.php": {
+    "mtime": 1791810658.3777683,
+    "ast_hash": "f88e1177d711f133958c532b6d8f6115",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-active-pt-br.php": {
+    "mtime": 1791810657.3849287,
+    "ast_hash": "1b16842c722627e8fcd073b0738a3609",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-active.php": {
+    "mtime": 1792659561.656532,
+    "ast_hash": "de634b8f64c4d4b19d6c31c530477401",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-keep-teams-icon-green.php": {
+    "mtime": 1792658672.5735452,
+    "ast_hash": "a31158ed75cb04ae0c064a467022b0bc",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-prevent-computer-sleep.php": {
+    "mtime": 1792659449.8136213,
+    "ast_hash": "42bfd8e249ff6609005ab84d3453263a",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-prevent-teams-away.php": {
+    "mtime": 1792658672.5702593,
+    "ast_hash": "cf55e5fd701231e7c7df711c648acb46",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-privacy-policy.php": {
+    "mtime": 1792659239.9140723,
+    "ast_hash": "f80cc47391840e134515159ba180765a",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-sitemap.php": {
+    "mtime": 1792659831.0481124,
+    "ast_hash": "0612f46b730700074eabc6a5a14d6bf1",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-teams-away-status.php": {
+    "mtime": 1792659635.862303,
+    "ast_hash": "6c40222f7a3839e9d38aa784ab4c2561",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-terms-of-service.php": {
+    "mtime": 1792659239.9152162,
+    "ast_hash": "7eca808204648128bef265fa749a6b34",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-thank-you.php": {
+    "mtime": 1792658672.5748754,
+    "ast_hash": "4be75b0785cc76fc4cebb99f5fcb5dde",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/tailwind.config.js": {
+    "mtime": 1774096555.9699478,
+    "ast_hash": "3782a88fd6461d051c6adb45e41f1b74",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/brand-mark.php": {
+    "mtime": 1792658672.5775144,
+    "ast_hash": "c923053d3e209a74347a4863e469795a",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-privacy-policy.php": {
+    "mtime": 1776947460.2063105,
+    "ast_hash": "a7d91bb0f6823b5cb5f4457d89dbf346",
+    "semantic_hash": ""
+  },
+  ".cpanel.yml": {
+    "mtime": 1791902751.7156672,
+    "ast_hash": "7f208ea436a2929b9042c09f4ba34d25",
+    "semantic_hash": ""
+  },
+  "RELEASE.md": {
+    "mtime": 1791817395.2571094,
+    "ast_hash": "1aefd39632dddf9c8f152aa22666cdce",
+    "semantic_hash": ""
+  },
+  "api/README.md": {
+    "mtime": 1774092215.2055678,
+    "ast_hash": "f554509fd0b3579c7214223b4f285aa6",
+    "semantic_hash": ""
+  },
+  "wordpress/.well-known/ai.txt": {
+    "mtime": 1774529635.0030992,
+    "ast_hash": "a15da08b21aa1e7bd60a97c5a30f50a9",
+    "semantic_hash": ""
+  },
+  "wordpress/README.md": {
+    "mtime": 1791883668.9326093,
+    "ast_hash": "f2da2be726663fd118147ded053be94d",
+    "semantic_hash": ""
+  },
+  "wordpress/api/README.md": {
+    "mtime": 1772792380.075459,
+    "ast_hash": "8166e54636d35b7dad880c282781b6c8",
+    "semantic_hash": ""
+  },
+  "wordpress/blocks/download-macos-section-en.html": {
+    "mtime": 1791883679.3582613,
+    "ast_hash": "6bb5c6f21c52a730b887d72725d10f5d",
+    "semantic_hash": ""
+  },
+  "wordpress/blocks/download-macos-section-it.html": {
+    "mtime": 1791883687.710747,
+    "ast_hash": "9a142c51ce4511a815389ff161873c81",
+    "semantic_hash": ""
+  },
+  "wordpress/docker-compose.yml": {
+    "mtime": 1772793007.223541,
+    "ast_hash": "547c964a24d20063c2123b73acce9df6",
+    "semantic_hash": ""
+  },
+  "wordpress/llms.txt": {
+    "mtime": 1791894443.601038,
+    "ast_hash": "8773b52cff2aba20bb5e86dc870f26ac",
+    "semantic_hash": ""
+  },
+  "wordpress/robots.txt": {
+    "mtime": 1791806361.1050732,
+    "ast_hash": "a3616ad9065a73e74453e30e872fe449",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/PERFORMANCE.md": {
+    "mtime": 1773168926.5520623,
+    "ast_hash": "b57560a7f8ac7f468ced58d1dade0d8c",
+    "semantic_hash": ""
+  },
+  "logo.svg": {
+    "mtime": 1772744473.9019175,
+    "ast_hash": "ffd4b7390c79f04a825dc7e6f860e8cc",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section.png": {
+    "mtime": 1772802302.6162229,
+    "ast_hash": "95d7f849e7c085c498b5af5926058937",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section.webp": {
+    "mtime": 1791893255.0686336,
+    "ast_hash": "a8673f66d0dbec99ff796298688a63aa",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section.png": {
+    "mtime": 1772801360.0486526,
+    "ast_hash": "611f6746ac2d4d9744496422eb0f7bbf",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section.webp": {
+    "mtime": 1791816537.5543804,
+    "ast_hash": "d7aeb43d233b5520e94e99e29c9bcbb6",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section.png": {
+    "mtime": 1772801693.795958,
+    "ast_hash": "3f1184a301b0264fa5c378bffde476af",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section.webp": {
+    "mtime": 1792658579.0651033,
+    "ast_hash": "91d11d1af225ce1f407e716ef435824f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section.png": {
+    "mtime": 1772801807.4109433,
+    "ast_hash": "45f562ec5724b44e8f149a84c096d72b",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section.webp": {
+    "mtime": 1792658579.6153555,
+    "ast_hash": "e4df950fb07000b5aa39bd8ab0e05f8f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/logo.svg": {
+    "mtime": 1772744658.2059782,
+    "ast_hash": "6c0ee229dd15389b7ed542efd5b904b0",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-1200.png": {
+    "mtime": 1791886446.7184467,
+    "ast_hash": "d94bcb510bfe34db5b111ee08c6d8fab",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-1200.webp": {
+    "mtime": 1791886446.5951972,
+    "ast_hash": "b0e9a9ca96772b798edd307a87f9be0f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-640.png": {
+    "mtime": 1791886446.0451689,
+    "ast_hash": "3dba5c13586fa61859298ae1e526d5dc",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-640.webp": {
+    "mtime": 1791886445.4814248,
+    "ast_hash": "279a647d1d98632ed52dfff5108c1f24",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-960.png": {
+    "mtime": 1791886446.357072,
+    "ast_hash": "316b595f29ac3781f49c899719f87c59",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-960.webp": {
+    "mtime": 1791886446.2589667,
+    "ast_hash": "400933c17f77e2acb287c2c3cc031873",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-facts.php": {
+    "mtime": 1792393738.1225467,
+    "ast_hash": "00150bc2b39b467f688e05c5b7b96d37",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/before-you-buy.php": {
+    "mtime": 1792658785.6188123,
+    "ast_hash": "7038eca507e4aa16b0b4be7b0d46ff9d",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/page-releases.php": {
+    "mtime": 1792658672.5697606,
+    "ast_hash": "b37ada2487810b8dfae95f261e7c3b0f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-1200.png": {
+    "mtime": 1791893254.9811234,
+    "ast_hash": "29ef607be55fe1219c86f0aaa108e12f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-1200.webp": {
+    "mtime": 1791893254.8575687,
+    "ast_hash": "aa8af2eabaa5e5b2fef3dd758b88c259",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-640.png": {
+    "mtime": 1791893254.3069077,
+    "ast_hash": "f6464cfc2315c29b3adb154ac4a1e0e7",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-640.webp": {
+    "mtime": 1791893254.2323735,
+    "ast_hash": "700adfbb484285173e6c4b13c564a67f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-960.png": {
+    "mtime": 1791893254.6095357,
+    "ast_hash": "271059d56e355f8328960e5b4b959dc5",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-960.webp": {
+    "mtime": 1791893254.5120442,
+    "ast_hash": "ae235262fda35382c661ec7a2179780f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/apple-touch-icon.png": {
+    "mtime": 1791902973.1209974,
+    "ast_hash": "a0f3b811be27628a1b744f67af5633af",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/favicon-192.png": {
+    "mtime": 1791902973.0782034,
+    "ast_hash": "086efc2d0ca17600a19a18d1bbec04d0",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/favicon-32.png": {
+    "mtime": 1791902973.0625715,
+    "ast_hash": "1b2a296883915dce090c7d6cb2cdb765",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/favicon-48.png": {
+    "mtime": 1791902973.0668683,
+    "ast_hash": "835c4d3af9838997b481aeae375e7063",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/favicon-512.png": {
+    "mtime": 1791902973.1113381,
+    "ast_hash": "2026ce667c9a67469e52280d17d10dc9",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-market-compare.php": {
+    "mtime": 1791962904.8888638,
+    "ast_hash": "83a5365a35a3424cdb6d7c9828f6993f",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/comparison-market.php": {
+    "mtime": 1792659222.9514508,
+    "ast_hash": "8e5d11051d919dee5db9528065ca1fd5",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/comparison-vs.php": {
+    "mtime": 1792658672.5781987,
+    "ast_hash": "be2766770950625689325f9895ff4e42",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-contact.php": {
+    "mtime": 1792594184.3650534,
+    "ast_hash": "feddec0635b46c391769d970c1d42a9c",
+    "semantic_hash": ""
+  },
+  "design-review/audit-l.py": {
+    "mtime": 1792659646.4816613,
+    "ast_hash": "9013a224c70df586ae4229f4677b9a3c",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/js/noaway-guide-toc.js": {
+    "mtime": 1792659050.692312,
+    "ast_hash": "b869210e8894f0b7f683c9fc9ffa544a",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/js/noaway-sticky-buy.js": {
+    "mtime": 1792659047.1753397,
+    "ast_hash": "5344410dec4a842b037fd441acaf32ef",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/inc/noaway-ui.php": {
+    "mtime": 1792659108.4368348,
+    "ast_hash": "0fc5b54f24ec095db57aafcd2aee1588",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/cta-final.php": {
+    "mtime": 1792659083.7767553,
+    "ast_hash": "50a000536d80f0f09d3080805eb336d7",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/template-parts/guide-toc.php": {
+    "mtime": 1792659079.5433812,
+    "ast_hash": "10bda97daa5d8b008a5ce0af31882d79",
+    "semantic_hash": ""
+  },
+  "design-review/reports/text-diff-git.md": {
+    "mtime": 1792659660.4768524,
+    "ast_hash": "cf6c55ca20ea7641b7af6fddfa72badb",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/firma-noaway.html": {
+    "mtime": 1792595032.960631,
+    "ast_hash": "56c30e6ab38a32d09e585bf79c8c645c",
+    "semantic_hash": ""
+  },
+  "design-review/screens/downloads-1024.png": {
+    "mtime": 1792659732.8216276,
+    "ast_hash": "d4e2a7aa97594c4d0a38106043872684",
+    "semantic_hash": ""
+  },
+  "design-review/screens/downloads-1440.png": {
+    "mtime": 1792659733.9543695,
+    "ast_hash": "35640245dfce73ed202c07ae6671a6bc",
+    "semantic_hash": ""
+  },
+  "design-review/screens/downloads-390.png": {
+    "mtime": 1792659730.5630615,
+    "ast_hash": "1721197cf5c24827d4c68a4e97de4611",
+    "semantic_hash": ""
+  },
+  "design-review/screens/downloads-768.png": {
+    "mtime": 1792659731.6768484,
+    "ast_hash": "2cdc56002165a4c2df64bd7f8b6f4fa5",
+    "semantic_hash": ""
+  },
+  "design-review/screens/faq-1024.png": {
+    "mtime": 1792659737.3217404,
+    "ast_hash": "845fcce0561f7379811988e6057f2cf1",
+    "semantic_hash": ""
+  },
+  "design-review/screens/faq-390.png": {
+    "mtime": 1792659735.04077,
+    "ast_hash": "1d654a8ad0160c662563a0e8a985d6a4",
+    "semantic_hash": ""
+  },
+  "design-review/screens/faq-768.png": {
+    "mtime": 1792659736.1600537,
+    "ast_hash": "d4fb34f44f3776579a2c27159ac3c8f1",
+    "semantic_hash": ""
+  },
+  "design-review/screens/features-1024.png": {
+    "mtime": 1792659697.6447861,
+    "ast_hash": "9d60fb8ffe7b62e5f69645e8b2574d42",
+    "semantic_hash": ""
+  },
+  "design-review/screens/features-1440.png": {
+    "mtime": 1792659698.864919,
+    "ast_hash": "fc78211b936510429cbd411c2ebd5f88",
+    "semantic_hash": ""
+  },
+  "design-review/screens/features-390.png": {
+    "mtime": 1792659695.1983678,
+    "ast_hash": "c16b0b79a225300915a09273644e363f",
+    "semantic_hash": ""
+  },
+  "design-review/screens/features-768.png": {
+    "mtime": 1792659696.3972857,
+    "ast_hash": "585d9e91ddfdeabf5e8f316c9b809bee",
+    "semantic_hash": ""
+  },
+  "design-review/screens/home-1024.png": {
+    "mtime": 1792659692.5912092,
+    "ast_hash": "b2928dbf080b98227f1e64819fa27fe7",
+    "semantic_hash": ""
+  },
+  "design-review/screens/home-1440.png": {
+    "mtime": 1792659694.0480917,
+    "ast_hash": "bdbeb052d521dfe2fe7b1793cb3a3156",
+    "semantic_hash": ""
+  },
+  "design-review/screens/home-390.png": {
+    "mtime": 1792659689.890009,
+    "ast_hash": "87fff5a622b4171ad1855ad4cd04d384",
+    "semantic_hash": ""
+  },
+  "design-review/screens/home-768.png": {
+    "mtime": 1792659691.2247167,
+    "ast_hash": "aa8fa8b916b9806939b861d2a5794ca3",
+    "semantic_hash": ""
+  },
+  "design-review/screens/how-it-works-1024.png": {
+    "mtime": 1792659702.4883664,
+    "ast_hash": "b2a2287b1ad653354db9785e9d61f8a4",
+    "semantic_hash": ""
+  },
+  "design-review/screens/how-it-works-1440.png": {
+    "mtime": 1792659703.8079762,
+    "ast_hash": "88904f91ccd8c5dee0e5302e08f75f6d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/how-it-works-390.png": {
+    "mtime": 1792659700.012919,
+    "ast_hash": "431a32b8e3ffb1387f6bcb8508e5c99d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/how-it-works-768.png": {
+    "mtime": 1792659701.2063751,
+    "ast_hash": "6da99d056185a0777743307619ea2bd5",
+    "semantic_hash": ""
+  },
+  "design-review/screens/is-noaway-safe-1024.png": {
+    "mtime": 1792659728.2360377,
+    "ast_hash": "bd26d5e7c1a5c56db979f7a1fddb5808",
+    "semantic_hash": ""
+  },
+  "design-review/screens/is-noaway-safe-1440.png": {
+    "mtime": 1792659729.484698,
+    "ast_hash": "000770454a999145677662f359710bac",
+    "semantic_hash": ""
+  },
+  "design-review/screens/is-noaway-safe-390.png": {
+    "mtime": 1792659725.8355434,
+    "ast_hash": "c2c649d22e30a56fa0596c30bc99f8ad",
+    "semantic_hash": ""
+  },
+  "design-review/screens/is-noaway-safe-768.png": {
+    "mtime": 1792659727.0274715,
+    "ast_hash": "3c2e46ba861cfb61840b67ac7c06042f",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-slack-active-1024.png": {
+    "mtime": 1792659714.0789745,
+    "ast_hash": "6ddd608ecd44774708fba0a8aabf4f35",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-slack-active-1440.png": {
+    "mtime": 1792659715.4969049,
+    "ast_hash": "b6c4590cf3976ac74490ed018b476bb0",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-slack-active-390.png": {
+    "mtime": 1792659711.3000932,
+    "ast_hash": "8b3d2e012e488a1c6080dc727f2112f4",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-slack-active-768.png": {
+    "mtime": 1792659712.676181,
+    "ast_hash": "98311182d9afe4c391d1b3dab782a455",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-teams-active-1024.png": {
+    "mtime": 1792659708.383951,
+    "ast_hash": "3385b5db00c06c9ea75236bac1e587ce",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-teams-active-1440.png": {
+    "mtime": 1792659709.9919748,
+    "ast_hash": "a31d1677deeb1fecff05a89a0305532d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-teams-active-390.png": {
+    "mtime": 1792659705.2335749,
+    "ast_hash": "ba632488d82ee6f4d3a61c891540fd87",
+    "semantic_hash": ""
+  },
+  "design-review/screens/keep-teams-active-768.png": {
+    "mtime": 1792659706.7852187,
+    "ast_hash": "2befb434018e1820e731beebdf39d3ac",
+    "semantic_hash": ""
+  },
+  "design-review/screens/prevent-computer-sleep-1024.png": {
+    "mtime": 1792659723.4875858,
+    "ast_hash": "9906d2d11dd591b4d8f8b62e6e2ede37",
+    "semantic_hash": ""
+  },
+  "design-review/screens/prevent-computer-sleep-1440.png": {
+    "mtime": 1792659724.6521714,
+    "ast_hash": "81d5f55272e82fb04bff9face048649a",
+    "semantic_hash": ""
+  },
+  "design-review/screens/prevent-computer-sleep-390.png": {
+    "mtime": 1792659721.2073612,
+    "ast_hash": "6c4723e668a4ec23e7f82b867cf62afe",
+    "semantic_hash": ""
+  },
+  "design-review/screens/prevent-computer-sleep-768.png": {
+    "mtime": 1792659722.3350637,
+    "ast_hash": "1c2fa8556791f8351c06264eeecdaf25",
+    "semantic_hash": ""
+  },
+  "design-review/screens/teams-away-status-1024.png": {
+    "mtime": 1792659718.8504484,
+    "ast_hash": "89ede98297a00d26b1910d1815686b31",
+    "semantic_hash": ""
+  },
+  "design-review/screens/teams-away-status-1440.png": {
+    "mtime": 1792659720.0364118,
+    "ast_hash": "38c9d913cc1118a98ec61d2c8122bbb3",
+    "semantic_hash": ""
+  },
+  "design-review/screens/teams-away-status-390.png": {
+    "mtime": 1792659716.5998657,
+    "ast_hash": "18ffe817f0038a48ac26d92f01ab891d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/teams-away-status-768.png": {
+    "mtime": 1792659717.6978962,
+    "ast_hash": "0e778e9dd0d2445c51b29734c3b53f0b",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/avatars/avatar-1.webp": {
+    "mtime": 1792658672.4874833,
+    "ast_hash": "6eb72d88edc3689577d6779b8ef92dc3",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/avatars/avatar-2.webp": {
+    "mtime": 1792658645.712839,
+    "ast_hash": "6eb72d88edc3689577d6779b8ef92dc3",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/avatars/avatar-3.webp": {
+    "mtime": 1792658645.9257843,
+    "ast_hash": "e1e08ab83464d9f6aebea84a5f7bc00b",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/avatars/avatar-4.webp": {
+    "mtime": 1792658646.1258967,
+    "ast_hash": "b07801851cc37460ad674285e738340c",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-600.png": {
+    "mtime": 1792658584.4713173,
+    "ast_hash": "2867580193156e554fe4a526f2ec0935",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/how-it-works-hero-section-600.webp": {
+    "mtime": 1792658584.497766,
+    "ast_hash": "74476169430fda2c5ab1c8cc2593da9d",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-600.png": {
+    "mtime": 1792658579.6834269,
+    "ast_hash": "9a4c9e5b8db768cf563f6b4c37d77acd",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-hero-section-600.webp": {
+    "mtime": 1792658579.7084749,
+    "ast_hash": "7cf3cb796f9db93475c7453533d898ec",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section-1200.png": {
+    "mtime": 1792658578.8120878,
+    "ast_hash": "e98bbee1be8d79c7f12ff0b1fedbd015",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section-1200.webp": {
+    "mtime": 1792658578.8765934,
+    "ast_hash": "27596ec66c6e4bdf59c00ea7f5e98a98",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section-600.png": {
+    "mtime": 1792658578.596973,
+    "ast_hash": "27ea9e92188fdcd9679e10c4f6bfe4f1",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-problem-section-600.webp": {
+    "mtime": 1792658578.6503844,
+    "ast_hash": "c0f3fa050db5f397432e58d687bc6ea3",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section-1200.png": {
+    "mtime": 1792658579.3134413,
+    "ast_hash": "109eb83e859a04bef51f0ac99ac381f3",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section-1200.webp": {
+    "mtime": 1792658579.3934262,
+    "ast_hash": "e69b9926da985d1ca47777ad2c02a767",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section-600.png": {
+    "mtime": 1792658579.15758,
+    "ast_hash": "0b5070a035464a340a76f53b18f5f761",
+    "semantic_hash": ""
+  },
+  "wordpress/wp-content/themes/noaway-theme/assets/images/landing-solution-section-600.webp": {
+    "mtime": 1792658579.1832273,
+    "ast_hash": "2121e3a99f3910b9ca7aa33df0fb1b6f",
+    "semantic_hash": ""
+  },
+  "design-review/reports/audit-live.json": {
+    "mtime": 1792659804.4491453,
+    "ast_hash": "a052701c0be771e784719ce7328287f3",
+    "semantic_hash": ""
+  },
+  "design-review/reports/innertext-live.json": {
+    "mtime": 1792659804.449852,
+    "ast_hash": "302f25d4301e611686d506bb79d413a8",
+    "semantic_hash": ""
+  },
+  "design-review/reports/AUDIT_L.md": {
+    "mtime": 1792659804.4500723,
+    "ast_hash": "bcd97320ba5e8783314d61045d44b8bb",
+    "semantic_hash": ""
+  },
+  "design-review/reports/PROMPT_L_SUMMARY.md": {
+    "mtime": 1792659842.9892855,
+    "ast_hash": "d2e87cfa615a116a25108cd2d7e176d7",
+    "semantic_hash": ""
+  },
+  "design-review/screens/compare-1024.png": {
+    "mtime": 1792659746.8274467,
+    "ast_hash": "fb546f290576cc49236daa9e1ce27780",
+    "semantic_hash": ""
+  },
+  "design-review/screens/compare-1440.png": {
+    "mtime": 1792659747.9671075,
+    "ast_hash": "e7ebce1631bdfd1f6cd2ecbfe2b1447b",
+    "semantic_hash": ""
+  },
+  "design-review/screens/compare-390.png": {
+    "mtime": 1792659744.578093,
+    "ast_hash": "9282bcf819d5ed26d8a437b1201a87f0",
+    "semantic_hash": ""
+  },
+  "design-review/screens/compare-768.png": {
+    "mtime": 1792659745.6996179,
+    "ast_hash": "96ba3e83cedbcedfe7ce694cbd75d49c",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-slack-active-1024.png": {
+    "mtime": 1792659791.4253166,
+    "ast_hash": "a8258dd7cb4aa22e7783cb7acb4432a7",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-slack-active-1440.png": {
+    "mtime": 1792659792.9522557,
+    "ast_hash": "d79ac9881943c636fe2185ffcbf2039a",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-slack-active-390.png": {
+    "mtime": 1792659788.2720158,
+    "ast_hash": "6ed53bcb4484b2c3dcde5e549c51e679",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-slack-active-768.png": {
+    "mtime": 1792659789.72725,
+    "ast_hash": "3990930d6d894cd264eb8937773e5905",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-teams-active-1024.png": {
+    "mtime": 1792659766.810319,
+    "ast_hash": "1fa5679455dc90876239129811322f9d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-teams-active-1440.png": {
+    "mtime": 1792659768.4316173,
+    "ast_hash": "f93e1467ccd8935ec4fb1b2c8e8922fa",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-teams-active-390.png": {
+    "mtime": 1792659763.7052064,
+    "ast_hash": "b33a759d9259edcbd406cea74e69b99a",
+    "semantic_hash": ""
+  },
+  "design-review/screens/de-keep-teams-active-768.png": {
+    "mtime": 1792659765.2591183,
+    "ast_hash": "5865ec8d90a901e56770540aac27b8bd",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-slack-active-1024.png": {
+    "mtime": 1792659797.144764,
+    "ast_hash": "97bfa5e23f8bbd23c82b38f6e714517f",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-slack-active-1440.png": {
+    "mtime": 1792659798.5974646,
+    "ast_hash": "4525c2dbb65fde16f12d743f9e0e5c35",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-slack-active-390.png": {
+    "mtime": 1792659794.3474126,
+    "ast_hash": "83ad129ded03b141ce2c487c3d2aafe7",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-slack-active-768.png": {
+    "mtime": 1792659795.7410333,
+    "ast_hash": "3bf5697aa3790940c0861c4cff50de4d",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-teams-active-1024.png": {
+    "mtime": 1792659772.6974316,
+    "ast_hash": "32e5368bbfdf89970c444375db7291c2",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-teams-active-1440.png": {
+    "mtime": 1792659774.305129,
+    "ast_hash": "be10ad61caa7739551a647a11dc6d372",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-teams-active-390.png": {
+    "mtime": 1792659769.7874699,
+    "ast_hash": "3bf642d42646ec3904fac332d5032a89",
+    "semantic_hash": ""
+  },
+  "design-review/screens/es-keep-teams-active-768.png": {
+    "mtime": 1792659771.1604953,
+    "ast_hash": "b848ef186718d02894e25a78cfbcd77a",
+    "semantic_hash": ""
+  },
+  "design-review/screens/faq-1440.png": {
+    "mtime": 1792659738.5426877,
+    "ast_hash": "fd4e9ce417cc14e6b2cb56e2e1fdcff2",
+    "semantic_hash": ""
+  },
+  "design-review/screens/fr-keep-teams-active-1024.png": {
+    "mtime": 1792659785.2522757,
+    "ast_hash": "47e2a03b7650e42976751084bbf7d981",
+    "semantic_hash": ""
+  },
+  "design-review/screens/fr-keep-teams-active-1440.png": {
+    "mtime": 1792659786.9322987,
+    "ast_hash": "173f33e53d28bb9e378be9aaa817cfb9",
+    "semantic_hash": ""
+  },
+  "design-review/screens/fr-keep-teams-active-390.png": {
+    "mtime": 1792659781.8895085,
+    "ast_hash": "1b928a6104fdf124ada64410620278d0",
+    "semantic_hash": ""
+  },
+  "design-review/screens/fr-keep-teams-active-768.png": {
+    "mtime": 1792659783.4720504,
+    "ast_hash": "dcc1516f7d3fbc983821f0f30eac9f5b",
+    "semantic_hash": ""
+  },
+  "design-review/screens/help-1024.png": {
+    "mtime": 1792659742.1505125,
+    "ast_hash": "81fce37a9d2da6b27bf3960513a7fbb2",
+    "semantic_hash": ""
+  },
+  "design-review/screens/help-1440.png": {
+    "mtime": 1792659743.4618583,
+    "ast_hash": "339b7e8466bc92c271d3e80c25e3e6f8",
+    "semantic_hash": ""
+  },
+  "design-review/screens/help-390.png": {
+    "mtime": 1792659739.7175295,
+    "ast_hash": "1203aafc49d7255e35584293de3ffddf",
+    "semantic_hash": ""
+  },
+  "design-review/screens/help-768.png": {
+    "mtime": 1792659740.909533,
+    "ast_hash": "7b91e825128984651cbe2a8061d578eb",
+    "semantic_hash": ""
+  },
+  "design-review/screens/privacy-policy-1024.png": {
+    "mtime": 1792659755.8469663,
+    "ast_hash": "6d9d64a0114a4e6723780fab34352dd8",
+    "semantic_hash": ""
+  },
+  "design-review/screens/privacy-policy-1440.png": {
+    "mtime": 1792659757.1260478,
+    "ast_hash": "2f60e2fb906915b06c01fe0d68628295",
+    "semantic_hash": ""
+  },
+  "design-review/screens/privacy-policy-390.png": {
+    "mtime": 1792659753.464297,
+    "ast_hash": "a84d3e497bc44c0de4fb7ff10c204b9e",
+    "semantic_hash": ""
+  },
+  "design-review/screens/privacy-policy-768.png": {
+    "mtime": 1792659754.6393363,
+    "ast_hash": "4bb8790952be29bd47c3430c1e34dac1",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-slack-active-1024.png": {
+    "mtime": 1792659802.831385,
+    "ast_hash": "2d890c37d5608f77d47efc39f4f9ac24",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-slack-active-1440.png": {
+    "mtime": 1792659804.3141093,
+    "ast_hash": "ccdcebbe15b02261ff616470b0417355",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-slack-active-390.png": {
+    "mtime": 1792659799.9708884,
+    "ast_hash": "988cf2b6a7882d996bc0fc1dbcaa6202",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-slack-active-768.png": {
+    "mtime": 1792659801.398653,
+    "ast_hash": "2acb0ec8f6eef8d3aa3106fd4c55e1a4",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-teams-active-1024.png": {
+    "mtime": 1792659778.7467582,
+    "ast_hash": "f35a72a7df5ea6d08ecf2329d17f8081",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-teams-active-1440.png": {
+    "mtime": 1792659780.5233588,
+    "ast_hash": "ba29641a7aeff1ea277d069c33e33f25",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-teams-active-390.png": {
+    "mtime": 1792659775.6451392,
+    "ast_hash": "0c1a44f0a1e50096cf115c6754c115a5",
+    "semantic_hash": ""
+  },
+  "design-review/screens/pt-br-keep-teams-active-768.png": {
+    "mtime": 1792659777.1390712,
+    "ast_hash": "46f75f91b0544c798eeb2c6af964470b",
+    "semantic_hash": ""
+  },
+  "design-review/screens/sitemap-1024.png": {
+    "mtime": 1792659751.190748,
+    "ast_hash": "b043fc2485f00701f2a19ad537fe4e10",
+    "semantic_hash": ""
+  },
+  "design-review/screens/sitemap-1440.png": {
+    "mtime": 1792659752.3078933,
+    "ast_hash": "16ab606f9a0d53162a6a7c4f35310cae",
+    "semantic_hash": ""
+  },
+  "design-review/screens/sitemap-390.png": {
+    "mtime": 1792659749.0263352,
+    "ast_hash": "82aa357e07e9ba9f071d266a18f695d4",
+    "semantic_hash": ""
+  },
+  "design-review/screens/sitemap-768.png": {
+    "mtime": 1792659750.1133945,
+    "ast_hash": "9cac1bd0372cc20f94fff1a303458eb2",
+    "semantic_hash": ""
+  },
+  "design-review/screens/terms-of-service-1024.png": {
+    "mtime": 1792659760.953165,
+    "ast_hash": "8ee505d4cc7897d518bd4238d1b55beb",
+    "semantic_hash": ""
+  },
+  "design-review/screens/terms-of-service-1440.png": {
+    "mtime": 1792659762.3061972,
+    "ast_hash": "89a5cf6b0e3e5bb107bf149f68462afd",
+    "semantic_hash": ""
+  },
+  "design-review/screens/terms-of-service-390.png": {
+    "mtime": 1792659758.3118198,
+    "ast_hash": "e89c581a70dd33ef42c61ab114ef80d6",
+    "semantic_hash": ""
+  },
+  "design-review/screens/terms-of-service-768.png": {
+    "mtime": 1792659759.6753497,
+    "ast_hash": "a0cbe1e425f7059438b23ef8d276712e",
+    "semantic_hash": ""
+  }
+}

@@ -38,7 +38,7 @@ $checkout_url = noaway_checkout_url();
         Prevent Teams away status by keeping your computer active so Microsoft Teams shows you as Available. Learn why Teams turns you away, what does not work, and how NoAway keeps your status green during long tasks.
       </p>
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="In brief">
-        <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
+        <p class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           <strong>To prevent Teams away:</strong> Microsoft Teams sets your status to Away after about 5 minutes with no keyboard or mouse activity. Keep your computer active at the system level (for example with NoAway) so your status stays Available—no mouse wiggling or sleep-setting changes required.
         </p>
@@ -130,7 +130,7 @@ $checkout_url = noaway_checkout_url();
       <a href="<?php echo esc_url( $download_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all">
         Download NoAway
       </a>
-      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
+      <p class="mt-4 text-sm text-slate-600 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
     </section>
   </article>
 </main>

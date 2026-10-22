@@ -51,7 +51,7 @@ $verdict_words    = str_word_count( wp_strip_all_tags( isset( $cmp['verdict'] ) 
       </p>
       <?php endif; ?>
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="Verdict">
-        <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Verdict</p>
+        <p class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">Verdict</p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           <?php echo esc_html( isset( $cmp['verdict'] ) ? $cmp['verdict'] : '' ); ?>
         </p>
@@ -64,11 +64,11 @@ $verdict_words    = str_word_count( wp_strip_all_tags( isset( $cmp['verdict'] ) 
     <?php if ( ! empty( $cmp['rows'] ) && is_array( $cmp['rows'] ) ) : ?>
     <section class="mb-16" aria-labelledby="table-heading">
       <h2 id="table-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Quick comparison</h2>
-      <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
-        <table class="w-full text-left text-sm">
+      <div class="noaway-compare-scroll relative overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
+        <table class="w-full text-left text-sm min-w-[560px]">
           <thead>
             <tr class="bg-slate-50 dark:bg-slate-900/60">
-              <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">Feature</th>
+              <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 sticky left-0 z-10 bg-slate-50 dark:bg-slate-900 shadow-[2px_0_8px_-2px_rgba(15,23,42,0.12)]">Feature</th>
               <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700"><?php echo esc_html( $competitor_short ); ?></th>
               <th class="p-4 font-bold text-primary border-b border-slate-200 dark:border-slate-700">NoAway</th>
             </tr>
@@ -76,14 +76,34 @@ $verdict_words    = str_word_count( wp_strip_all_tags( isset( $cmp['verdict'] ) 
           <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
             <?php foreach ( $cmp['rows'] as $row ) : ?>
             <tr>
-              <td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top"><?php echo esc_html( isset( $row['label'] ) ? $row['label'] : '' ); ?></td>
+              <td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top sticky left-0 z-10 bg-white dark:bg-slate-900 shadow-[2px_0_8px_-2px_rgba(15,23,42,0.12)]"><?php echo esc_html( isset( $row['label'] ) ? $row['label'] : '' ); ?></td>
               <td class="p-4 text-slate-600 dark:text-slate-400 align-top">
                 <?php if ( ! empty( $row['competitor_todo'] ) ) : ?>
                 <!-- TODO: <?php echo esc_html( (string) $row['competitor_todo'] ); ?> -->
                 <?php endif; ?>
-                <?php echo esc_html( isset( $row['competitor'] ) ? $row['competitor'] : '' ); ?>
+                <?php
+                $comp_str = isset( $row['competitor'] ) ? (string) $row['competitor'] : '';
+                if ( 0 === stripos( $comp_str, 'Yes' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-base" aria-hidden="true">check_circle</span>' . esc_html( $comp_str ) . '</span>';
+                } elseif ( 0 === stripos( $comp_str, 'No' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-400 text-base" aria-hidden="true">cancel</span>' . esc_html( $comp_str ) . '</span>';
+                } else {
+                  echo esc_html( $comp_str );
+                }
+                ?>
               </td>
-              <td class="p-4 text-slate-700 dark:text-slate-300 font-medium align-top"><?php echo esc_html( isset( $row['noaway'] ) ? $row['noaway'] : '' ); ?></td>
+              <td class="p-4 text-slate-700 dark:text-slate-300 font-medium align-top">
+                <?php
+                $na_str = isset( $row['noaway'] ) ? (string) $row['noaway'] : '';
+                if ( 0 === stripos( $na_str, 'Yes' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-base" aria-hidden="true">check_circle</span>' . esc_html( $na_str ) . '</span>';
+                } elseif ( 0 === stripos( $na_str, 'No' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-400 text-base" aria-hidden="true">cancel</span>' . esc_html( $na_str ) . '</span>';
+                } else {
+                  echo esc_html( $na_str );
+                }
+                ?>
+              </td>
             </tr>
             <?php endforeach; ?>
           </tbody>

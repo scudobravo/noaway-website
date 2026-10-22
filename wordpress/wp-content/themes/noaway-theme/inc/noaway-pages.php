@@ -448,12 +448,24 @@ function noaway_render_controls_note( $lang = 'en' ) {
 	$yes = isset( $yes_label[ $lang ] ) ? $yes_label[ $lang ] : $yes_label['en'];
 	$no  = isset( $no_label[ $lang ] ) ? $no_label[ $lang ] : $no_label['en'];
 	?>
-	<section class="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 p-6" aria-labelledby="noaway-controls-heading">
-		<h2 id="noaway-controls-heading" class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3"><?php echo esc_html( $c['h'] ); ?></h2>
-		<ul class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed space-y-2">
-			<li><strong class="text-slate-800 dark:text-slate-200"><?php echo esc_html( $yes ); ?>:</strong> <?php echo esc_html( $c['yes'] ); ?></li>
-			<li><strong class="text-slate-800 dark:text-slate-200"><?php echo esc_html( $no ); ?>:</strong> <?php echo esc_html( $c['no'] ); ?></li>
-		</ul>
+	<section class="noaway-controls-note w-full max-w-3xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/40 p-6" aria-labelledby="noaway-controls-heading">
+		<h2 id="noaway-controls-heading" class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo esc_html( $c['h'] ); ?></h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+			<div class="flex items-start gap-2">
+				<span class="material-symbols-outlined text-emerald-600 shrink-0" aria-hidden="true">check_circle</span>
+				<div>
+					<p class="font-bold text-slate-800 dark:text-slate-200 mb-1"><?php echo esc_html( $yes ); ?></p>
+					<p class="m-0"><?php echo esc_html( $c['yes'] ); ?></p>
+				</div>
+			</div>
+			<div class="flex items-start gap-2">
+				<span class="material-symbols-outlined text-slate-500 shrink-0" aria-hidden="true">cancel</span>
+				<div>
+					<p class="font-bold text-slate-800 dark:text-slate-200 mb-1"><?php echo esc_html( $no ); ?></p>
+					<p class="m-0"><?php echo esc_html( $c['no'] ); ?></p>
+				</div>
+			</div>
+		</div>
 	</section>
 	<?php
 }
@@ -486,8 +498,8 @@ function noaway_render_privacy_transfer_table() {
 				</tr>
 			</thead>
 			<tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-				<?php foreach ( $rows as $row ) : ?>
-				<tr>
+				<?php foreach ( $rows as $row_index => $row ) : ?>
+				<tr class="<?php echo ( 0 === $row_index % 2 ) ? 'bg-white dark:bg-slate-900/20' : 'bg-slate-50/70 dark:bg-slate-800/30'; ?>">
 					<td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top"><?php echo esc_html( $row['activity'] ); ?></td>
 					<td class="p-4 text-slate-600 dark:text-slate-400 align-top"><?php echo esc_html( $row['where'] ); ?></td>
 					<td class="p-4 text-slate-600 dark:text-slate-400 align-top"><?php echo esc_html( $row['data'] ); ?></td>
@@ -502,19 +514,28 @@ function noaway_render_privacy_transfer_table() {
 /**
  * “Before you buy” box under primary purchase CTAs.
  *
- * @param string $lang en|de|es|pt-br|fr
+ * @param string $lang    en|de|es|pt-br|fr
+ * @param string $variant compact|horizontal
  */
-function noaway_render_before_you_buy( $lang = 'en' ) {
-	get_template_part( 'template-parts/before-you-buy', null, array( 'lang' => $lang ) );
+function noaway_render_before_you_buy( $lang = 'en', $variant = 'compact' ) {
+	get_template_part(
+		'template-parts/before-you-buy',
+		null,
+		array(
+			'lang'    => $lang,
+			'variant' => $variant,
+		)
+	);
 }
 
 /**
  * Short refund line next to price (HTML, already escaped).
  *
  * @param string $lang
+ * @param bool   $on_primary White link style for use on the primary-colour card.
  * @return string
  */
-function noaway_refund_near_price_html( $lang = 'en' ) {
+function noaway_refund_near_price_html( $lang = 'en', $on_primary = false ) {
 	$lang = is_string( $lang ) ? $lang : 'en';
 	if ( function_exists( 'noaway_i18n_normalize_lang' ) ) {
 		$lang = noaway_i18n_normalize_lang( $lang );
@@ -528,7 +549,10 @@ function noaway_refund_near_price_html( $lang = 'en' ) {
 	);
 	$label   = isset( $labels[ $lang ] ) ? $labels[ $lang ] : $labels['en'];
 	$contact = function_exists( 'noaway_contact_page_url' ) ? noaway_contact_page_url() : home_url( '/contacts/' );
-	return '<a href="' . esc_url( $contact ) . '" class="text-primary font-semibold hover:underline">' . esc_html( $label ) . '</a>';
+	$cls = $on_primary
+		? 'text-white font-semibold underline underline-offset-2 hover:no-underline'
+		: 'text-primary font-semibold hover:underline';
+	return '<a href="' . esc_url( $contact ) . '" class="inline-flex items-center min-h-[44px] ' . $cls . '">' . esc_html( $label ) . '</a>';
 }
 
 function noaway_releases_page_url() {
@@ -584,7 +608,7 @@ function noaway_render_app_screenshots( $heading = 'NoAway in your menu bar and 
 				<?php foreach ( $items as $item ) : ?>
 				<figure class="w-full max-w-md">
 					<img src="<?php echo esc_url( $uri . $item['file'] ); ?>" alt="<?php echo esc_attr( $item['alt'] ); ?>" width="<?php echo (int) $item['width']; ?>" height="<?php echo (int) $item['height']; ?>" loading="lazy" decoding="async" class="w-full h-auto rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
-					<figcaption class="mt-3 text-sm text-center text-slate-500 dark:text-slate-400"><?php echo esc_html( $item['caption'] ); ?></figcaption>
+					<figcaption class="mt-3 text-sm text-center text-slate-600 dark:text-slate-400"><?php echo esc_html( $item['caption'] ); ?></figcaption>
 				</figure>
 				<?php endforeach; ?>
 			</div>
@@ -597,8 +621,9 @@ function noaway_render_app_screenshots( $heading = 'NoAway in your menu bar and 
  * Numbered "First setup" section (facts-driven). Place BEFORE troubleshooting.
  *
  * @param string $troubleshooting_url Link target for "not working".
+ * @param bool   $embedded            True: render a vertical timeline without the outer <section> (for use inside another section).
  */
-function noaway_render_first_setup( $troubleshooting_url = '' ) {
+function noaway_render_first_setup( $troubleshooting_url = '', $embedded = false ) {
 	if ( $troubleshooting_url === '' ) {
 		$troubleshooting_url = noaway_help_page_url() . '#troubleshooting';
 	}
@@ -624,6 +649,28 @@ function noaway_render_first_setup( $troubleshooting_url = '' ) {
 			'text'  => 'Leave the computer untouched for about 15 minutes, then check your status in Teams or Slack.',
 		),
 	);
+	if ( $embedded ) :
+		?>
+	<div id="first-setup" class="scroll-mt-24" aria-labelledby="first-setup-heading">
+		<h2 id="first-setup-heading" class="na-h2 mb-8 text-center md:text-left">First setup</h2>
+		<ol class="relative list-none p-0 m-0 max-w-3xl before:content-[''] before:absolute before:left-[17px] before:top-2 before:bottom-2 before:w-px before:bg-slate-200 dark:before:bg-slate-700">
+			<?php foreach ( $steps as $i => $step ) : ?>
+			<li class="relative flex gap-5 pb-8 last:pb-0">
+				<span class="relative z-[1] size-9 shrink-0 rounded-full bg-primary text-white font-bold flex items-center justify-center ring-4 ring-white dark:ring-slate-900" aria-hidden="true"><?php echo (int) ( $i + 1 ); ?></span>
+				<div class="pt-0.5">
+					<h3 class="na-h3 !text-lg mb-1"><?php echo esc_html( $step['title'] ); ?></h3>
+					<p class="text-[15px] text-slate-600 dark:text-slate-400 leading-relaxed mb-0"><?php echo esc_html( $step['text'] ); ?></p>
+				</div>
+			</li>
+			<?php endforeach; ?>
+		</ol>
+		<p class="mt-6 text-slate-600 dark:text-slate-400">
+			Not working? Go to <a href="<?php echo esc_url( $troubleshooting_url ); ?>" class="text-primary font-semibold hover:underline inline-flex items-center min-h-[44px]">Troubleshooting</a>.
+		</p>
+	</div>
+		<?php
+		return;
+	endif;
 	?>
 	<section id="first-setup" class="py-16 px-6 scroll-mt-24" aria-labelledby="first-setup-heading">
 		<div class="max-w-3xl mx-auto">

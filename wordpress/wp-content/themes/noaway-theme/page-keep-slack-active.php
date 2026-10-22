@@ -16,21 +16,21 @@ get_header();
 ?>
 <main>
   <?php noaway_i18n_render_locale_banner( 'slack', $noaway_landing_lang ); ?>
-  <article class="max-w-4xl mx-auto px-6 py-16 lg:py-24" itemscope itemtype="https://schema.org/Article">
-    <header class="mb-12">
+  <article class="max-w-6xl mx-auto px-6 pt-12 lg:pt-20 pb-12" itemscope itemtype="https://schema.org/Article">
+    <header class="max-w-3xl mb-12 lg:mb-16" data-noaway-sticky-after>
       <?php noaway_i18n_language_switcher( 'slack', 'header' ); ?>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit mb-6">
-        <span class="text-primary text-xs font-bold uppercase tracking-wider"><?php echo noaway_i18n_plain( $t['badge'] ); ?></span>
+        <span class="na-eyebrow"><?php echo noaway_i18n_plain( $t['badge'] ); ?></span>
       </div>
-      <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-slate-100 mb-2">
+      <h1 class="na-h1 mb-4" style="text-wrap:balance">
         <?php echo noaway_i18n_plain( $t['h1'] ); ?>
       </h1>
       <?php noaway_i18n_language_switcher( 'slack', 'under-title' ); ?>
-      <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+      <p class="na-lead">
         <?php echo noaway_i18n_plain( $t['lead'] ); ?>
       </p>
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="<?php echo esc_attr( $t['aria_brief'] ); ?>">
-        <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2"><?php echo noaway_i18n_plain( $t['brief_label'] ); ?></p>
+        <p class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2"><?php echo noaway_i18n_plain( $t['brief_label'] ); ?></p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           <?php echo noaway_i18n_html( $t['brief'] ); ?>
         </p>
@@ -38,26 +38,27 @@ get_header();
       </div>
     </header>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="problem-heading">
-      <h2 id="problem-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['problem_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+    <?php ob_start(); ?>
+    <section class="mb-14" aria-labelledby="problem-heading">
+      <h2 id="problem-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['problem_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_plain( $t['problem_p'] ); ?>
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="why-heading">
-      <h2 id="why-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['why_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+    <section class="mb-14" aria-labelledby="why-heading">
+      <h2 id="why-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['why_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_plain( $t['why_p'] ); ?>
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="how-long-heading">
-      <h2 id="how-long-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['how_long_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+    <section class="mb-14" aria-labelledby="how-long-heading">
+      <h2 id="how-long-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['how_long_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-6">
         <?php echo noaway_i18n_plain( $t['how_long_p'] ); ?>
       </p>
-      <div class="not-prose overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 mb-6">
+      <div class="not-prose overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/40 mb-6">
         <table class="w-full text-left text-sm">
           <thead>
             <tr class="bg-slate-50 dark:bg-slate-900/60">
@@ -66,11 +67,11 @@ get_header();
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-            <tr>
+            <tr class="bg-white dark:bg-slate-900/20">
               <td class="p-4 font-semibold text-slate-800 dark:text-slate-200"><?php echo noaway_i18n_plain( $t['row_desktop'] ); ?></td>
               <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['row_desktop_v'] ); ?></td>
             </tr>
-            <tr>
+            <tr class="bg-slate-50/70 dark:bg-slate-800/30">
               <td class="p-4 font-semibold text-slate-800 dark:text-slate-200"><?php echo noaway_i18n_plain( $t['row_mobile'] ); ?></td>
               <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $t['row_mobile_v'] ); ?></td>
             </tr>
@@ -80,106 +81,148 @@ get_header();
       <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
         <?php echo noaway_slack_presence_source_html( $noaway_landing_lang ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- kses'd in the helper. ?>
       </p>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <strong><?php echo noaway_i18n_plain( $t['q_stay'] ); ?></strong> <?php echo noaway_i18n_plain( $t['a_stay'] ); ?>
       </p>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <strong><?php echo noaway_i18n_plain( $t['q_inactive'] ); ?></strong> <?php echo noaway_i18n_plain( $t['a_inactive'] ); ?>
       </p>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <strong><?php echo noaway_i18n_plain( $t['q_duration'] ); ?></strong> <?php echo noaway_i18n_plain( $t['a_duration'] ); ?>
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="solutions-heading">
-      <h2 id="solutions-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['solutions_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+    <section class="mb-14" aria-labelledby="solutions-heading">
+      <h2 id="solutions-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['solutions_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_html( $t['solutions_p'] ); ?>
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="mac-heading">
-      <h2 id="mac-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['mac_h'] ); ?></h2>
-      <ol class="list-decimal pl-5 text-slate-600 dark:text-slate-400 leading-relaxed space-y-3 mb-4">
-        <?php foreach ( $t['mac_steps'] as $step ) : ?>
-        <li><?php echo noaway_i18n_html( $step ); ?></li>
+    <?php
+    $noaway_slack_platforms = array(
+      array(
+        'section_id' => 'mac-heading',
+        'heading'    => $t['mac_h'],
+        'steps'      => $t['mac_steps'],
+        'note'       => $t['mac_note'],
+      ),
+      array(
+        'section_id' => 'windows-heading',
+        'heading'    => $t['win_h'],
+        'steps'      => $t['win_steps'],
+        'note'       => $t['win_note'],
+      ),
+    );
+    foreach ( $noaway_slack_platforms as $platform ) :
+      ?>
+    <section class="mb-14" aria-labelledby="<?php echo esc_attr( $platform['section_id'] ); ?>">
+      <h2 id="<?php echo esc_attr( $platform['section_id'] ); ?>" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $platform['heading'] ); ?></h2>
+      <ol class="list-none p-0 m-0 mb-6 flex flex-col gap-4">
+        <?php foreach ( $platform['steps'] as $i => $step ) : ?>
+        <li class="na-card p-5 flex items-start gap-4">
+          <span class="size-9 shrink-0 rounded-full bg-primary text-white font-bold flex items-center justify-center" aria-hidden="true"><?php echo (int) ( $i + 1 ); ?></span>
+          <p class="m-0 pt-1 text-[15px] text-slate-700 dark:text-slate-300 leading-relaxed"><?php echo noaway_i18n_html( $step ); ?></p>
+        </li>
         <?php endforeach; ?>
       </ol>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        <?php echo noaway_i18n_html( $t['mac_note'] ); ?>
-      </p>
+      <div class="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-700/60 p-4 sm:p-5" role="note">
+        <span class="material-symbols-outlined text-amber-700 dark:text-amber-400 shrink-0" aria-hidden="true">info</span>
+        <p class="m-0 text-[15px] text-amber-900 dark:text-amber-100 leading-relaxed">
+          <?php echo noaway_i18n_html( $platform['note'] ); ?>
+        </p>
+      </div>
     </section>
+    <?php endforeach; ?>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="windows-heading">
-      <h2 id="windows-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['win_h'] ); ?></h2>
-      <ol class="list-decimal pl-5 text-slate-600 dark:text-slate-400 leading-relaxed space-y-3 mb-4">
-        <?php foreach ( $t['win_steps'] as $step ) : ?>
-        <li><?php echo noaway_i18n_html( $step ); ?></li>
-        <?php endforeach; ?>
-      </ol>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-        <?php echo noaway_i18n_html( $t['win_note'] ); ?>
-      </p>
-    </section>
-
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="status-types-heading">
-      <h2 id="status-types-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['status_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+    <section class="mb-14" aria-labelledby="status-types-heading">
+      <h2 id="status-types-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['status_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_plain( $t['status_intro'] ); ?>
       </p>
-      <ul class="list-disc pl-5 text-slate-600 dark:text-slate-400 leading-relaxed space-y-3 mb-4">
+      <ul class="list-disc pl-5 text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] space-y-3 mb-4">
         <?php foreach ( $t['status_items'] as $item ) : ?>
         <li><?php echo noaway_i18n_html( $item ); ?></li>
         <?php endforeach; ?>
       </ul>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_plain( $t['status_close'] ); ?>
       </p>
     </section>
 
-    <section class="prose prose-slate dark:prose-invert max-w-none mb-16" aria-labelledby="noaway-heading">
-      <h2 id="noaway-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['noaway_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+    <section class="mb-14" aria-labelledby="noaway-heading">
+      <h2 id="noaway-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['noaway_h'] ); ?></h2>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         <?php echo noaway_i18n_html( $t['noaway_p'] ); ?>
       </p>
     </section>
 
-    <section class="mb-16" aria-labelledby="noaway-controls-heading">
+    <section class="mb-14" aria-labelledby="noaway-controls-heading">
       <?php noaway_render_controls_note( $noaway_landing_lang ); ?>
     </section>
 
-    <section class="mb-16" id="faq" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8"><?php echo noaway_i18n_plain( $t['faq_h'] ); ?></h2>
+    <section class="mb-6" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="na-guide-h2 !mt-0"><?php echo noaway_i18n_plain( $t['faq_h'] ); ?></h2>
       <div class="space-y-4">
         <?php foreach ( $t['faqs'] as $faq ) : ?>
         <details class="group rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 overflow-hidden">
-          <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-5 sm:p-6 min-h-[44px] list-none text-left font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
             <span><?php echo esc_html( $faq['name'] ); ?></span>
             <span class="material-symbols-outlined text-slate-400 shrink-0 transition-transform group-open:rotate-180">expand_more</span>
           </summary>
-          <div class="px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400">
+          <div class="px-5 sm:px-6 pb-6 pt-0 text-slate-600 dark:text-slate-400">
             <p class="text-sm leading-relaxed"><?php echo esc_html( $faq['text'] ); ?></p>
           </div>
         </details>
         <?php endforeach; ?>
       </div>
     </section>
-
-    <section class="rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 lg:p-12 text-center" aria-labelledby="cta-heading">
-      <h2 id="cta-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['cta_h'] ); ?></h2>
-      <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto"><?php echo noaway_i18n_html( $t['cta_p'] ); ?></p>
-      <a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all"<?php echo noaway_buy_cta_attrs( 'footer-cta' ); ?>>
-        <?php echo noaway_i18n_plain( $t['buy'] ); ?>
-      </a>
-      <div class="max-w-md mx-auto mt-4 text-left md:hidden">
-        <?php noaway_render_mobile_email_link_box(); ?>
-      </div>
-      <p class="mt-3 text-sm text-slate-500 dark:text-slate-400"><?php echo noaway_refund_near_price_html( $noaway_landing_lang ); ?></p>
-      <div class="max-w-md mx-auto mt-2 text-left">
-        <?php noaway_render_before_you_buy( $noaway_landing_lang ); ?>
-      </div>
-      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['faq_link'] ); ?></a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline"><?php echo noaway_i18n_plain( $t['help_link'] ); ?></a> · <a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="text-primary font-semibold hover:underline">Compare prices</a></p>
-    </section>
+    <?php
+    $noaway_guide_body = ob_get_clean();
+    $noaway_checkout_url = noaway_checkout_url();
+    noaway_render_guide_layout(
+      $noaway_guide_body,
+      array(
+        'buy_url'   => $noaway_checkout_url,
+        'buy_label' => 'Buy NoAway – ' . noaway_price_label(),
+        'tracked'   => true,
+        'position'  => 'guide-toc',
+      )
+    );
+    ?>
   </article>
+
+  <?php
+  $noaway_cta_link_class = 'text-white font-semibold underline underline-offset-2 hover:no-underline inline-flex items-center min-h-[44px]';
+  $noaway_compare_url    = function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' );
+  get_template_part(
+    'template-parts/cta-final',
+    null,
+    array(
+      'section_id'         => 'download',
+      'title'              => noaway_i18n_raw( $t['cta_h'] ),
+      'lines'              => array( noaway_i18n_html( $t['cta_p'] ) ),
+      'button_url'         => $noaway_checkout_url,
+      'button_label'       => noaway_i18n_raw( $t['buy'] ),
+      'cta_position'       => 'footer-cta',
+      'before_button_html' => noaway_capture_mobile_email_box( true ),
+      'secondary_html'     => '<p class="mb-2">' . noaway_refund_near_price_html( $noaway_landing_lang, true ) . '</p><p class="flex flex-wrap justify-center items-center gap-x-2"><a href="' . esc_url( noaway_faq_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['faq_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( noaway_help_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['help_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( $noaway_compare_url ) . '" class="' . $noaway_cta_link_class . '">Compare prices</a></p>',
+    )
+  );
+  ?>
+  <section class="px-6 pb-12 md:pb-16">
+    <div class="max-w-5xl mx-auto">
+      <?php noaway_render_before_you_buy( $noaway_landing_lang, 'horizontal' ); ?>
+    </div>
+  </section>
 </main>
-<?php get_footer(); ?>
+<?php
+if ( function_exists( 'noaway_render_sticky_buy_bar' ) ) {
+  noaway_render_sticky_buy_bar(
+    array(
+      'label' => noaway_i18n_raw( $t['buy'] ),
+      'url'   => $noaway_checkout_url,
+    )
+  );
+}
+get_footer();

@@ -16,39 +16,57 @@
   border: 1px solid #dbe3ee;
   border-radius: 0.95rem;
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
-  padding: 1rem;
+  padding: 16px;
+  font-size: 14px;
+  /* Keep the bar from covering the page on small screens (respect iOS home indicator). */
+  bottom: max(1rem, env(safe-area-inset-bottom));
 }
 
-@media (min-width: 960px) {
+/* Text block scrolls instead of growing past 40vh. */
+.noaway-cookie-consent__content {
+  max-height: 40vh;
+  overflow-y: auto;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tablet: narrower card centered at the bottom. */
+@media (min-width: 640px) {
   .noaway-cookie-consent__banner {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
+    width: min(640px, calc(100vw - 2rem));
+  }
+}
+
+@media (min-width: 960px) {
+  .noaway-cookie-consent__banner {
     width: min(980px, calc(100vw - 2rem));
     grid-template-columns: 1fr auto;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.25rem;
+    padding: 20px;
   }
 }
 
 .noaway-cookie-consent__title {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.3;
 }
 
 .noaway-cookie-consent__text {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 14px;
+  line-height: 1.5;
   color: #334155;
 }
 
 .noaway-cookie-consent__policy {
-  margin: 0.65rem 0 0;
-  font-size: 0.875rem;
+  margin: 0.5rem 0 0;
+  font-size: 14px;
 }
 
 .noaway-cookie-consent__policy a,
@@ -61,15 +79,21 @@
 .noaway-cookie-consent__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 8px;
+}
+
+/* Three buttons share one row when they fit (banner copy: Accept / Reject / Preferences). */
+.noaway-cookie-consent__banner .noaway-cookie-consent__actions .noaway-cc-btn {
+  flex: 1 1 auto;
 }
 
 .noaway-cc-btn {
   appearance: none;
   border-radius: 0.65rem;
   border: 1px solid transparent;
-  padding: 0.65rem 0.95rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
   cursor: pointer;

@@ -38,18 +38,18 @@ get_header();
         An objective look at NoAway next to Slack Green, NotAway, Idle Pilot, and generic USB mouse jigglers. Figures below are taken from each competitor’s public site where available; otherwise we write <em>not stated</em>.
       </p>
       <?php if ( $checked !== '' ) : ?>
-      <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">Prices checked on <?php echo esc_html( $checked ); ?></p>
+      <p class="mt-4 text-sm font-medium text-slate-600 dark:text-slate-400">Prices checked on <?php echo esc_html( $checked ); ?></p>
       <?php endif; ?>
     </header>
 
     <?php if ( ! empty( $table['rows'] ) ) : ?>
     <section class="mb-16" aria-labelledby="detail-table-heading">
       <h2 id="detail-table-heading" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6">Detailed comparison</h2>
-      <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
+      <div class="noaway-compare-scroll relative overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
         <table class="w-full text-left text-sm min-w-[720px]">
           <thead>
             <tr class="bg-slate-50 dark:bg-slate-900/60">
-              <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">Feature</th>
+              <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 sticky left-0 z-10 bg-slate-50 dark:bg-slate-900 shadow-[2px_0_8px_-2px_rgba(15,23,42,0.12)]">Feature</th>
               <?php foreach ( $table['headers'] as $i => $header ) : ?>
               <th class="p-4 font-bold border-b border-slate-200 dark:border-slate-700 align-bottom <?php echo $i === 0 ? 'text-primary bg-primary/5 dark:bg-primary/10' : 'text-slate-900 dark:text-slate-100'; ?>">
                 <?php if ( $i === 0 && $badge !== '' ) : ?>
@@ -67,7 +67,7 @@ get_header();
               $emphasize = ! empty( $row['emphasize'] );
               ?>
             <tr class="<?php echo $emphasize ? 'bg-slate-50/80 dark:bg-slate-900/40' : ''; ?>">
-              <td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top <?php echo $emphasize ? 'text-base' : ''; ?>"><?php echo esc_html( $row['label'] ); ?></td>
+              <td class="p-4 font-semibold text-slate-800 dark:text-slate-200 align-top sticky left-0 z-10 bg-white dark:bg-slate-900 shadow-[2px_0_8px_-2px_rgba(15,23,42,0.12)] <?php echo $emphasize ? 'text-base bg-slate-50/80 dark:bg-slate-900/40' : ''; ?>"><?php echo esc_html( $row['label'] ); ?></td>
               <?php foreach ( $row['cells'] as $i => $cell ) :
                 $cell_class = $i === 0
                   ? 'text-slate-800 dark:text-slate-200 font-medium bg-primary/5 dark:bg-primary/10'
@@ -78,7 +78,18 @@ get_header();
                     : ' text-base font-semibold text-slate-800 dark:text-slate-200';
                 }
                 ?>
-              <td class="p-4 align-top <?php echo esc_attr( $cell_class ); ?>"><?php echo esc_html( $cell ); ?></td>
+              <td class="p-4 align-top <?php echo esc_attr( $cell_class ); ?>">
+                <?php
+                $cell_str = (string) $cell;
+                if ( 0 === stripos( $cell_str, 'Yes' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-base" aria-hidden="true">check_circle</span>' . esc_html( $cell_str ) . '</span>';
+                } elseif ( 0 === stripos( $cell_str, 'No' ) ) {
+                  echo '<span class="inline-flex items-center gap-1.5"><span class="material-symbols-outlined text-slate-400 text-base" aria-hidden="true">cancel</span>' . esc_html( $cell_str ) . '</span>';
+                } else {
+                  echo esc_html( $cell_str );
+                }
+                ?>
+              </td>
               <?php endforeach; ?>
             </tr>
             <?php endforeach; ?>
@@ -86,7 +97,7 @@ get_header();
         </table>
       </div>
       <?php if ( $sources ) : ?>
-      <p class="mt-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+      <p class="mt-4 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
         <span class="font-semibold text-slate-600 dark:text-slate-300">Sources:</span>
         <?php
         $source_parts = array();
@@ -156,7 +167,7 @@ get_header();
         </details>
         <?php endforeach; ?>
       </div>
-      <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+      <p class="mt-6 text-sm text-slate-600 dark:text-slate-400">
         More questions:
         <a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a>
       </p>

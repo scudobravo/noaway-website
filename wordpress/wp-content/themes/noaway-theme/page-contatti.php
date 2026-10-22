@@ -59,16 +59,16 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <label class="text-sm font-semibold ml-1" for="contact-name">Full Name</label>
-                <input id="contact-name" name="contact_name" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="John Doe" type="text" value="<?php echo esc_attr( isset( $_POST['contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) : '' ); ?>" required>
+                <input id="contact-name" name="contact_name" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="John Doe" type="text" value="<?php echo esc_attr( isset( $_POST['contact_name'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_name'] ) ) : '' ); ?>" required>
               </div>
               <div class="space-y-2">
                 <label class="text-sm font-semibold ml-1" for="contact-email">Email Address</label>
-                <input id="contact-email" name="contact_email" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="john@example.com" type="email" value="<?php echo esc_attr( isset( $_POST['contact_email'] ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : '' ); ?>" required>
+                <input id="contact-email" name="contact_email" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="john@example.com" type="email" value="<?php echo esc_attr( isset( $_POST['contact_email'] ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : '' ); ?>" required>
               </div>
             </div>
             <div class="space-y-2">
               <label class="text-sm font-semibold ml-1" for="contact-topic">Contact Reason</label>
-              <select id="contact-topic" name="contact_topic" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all text-slate-900 dark:text-slate-100 appearance-none cursor-pointer" required>
+              <select id="contact-topic" name="contact_topic" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all text-slate-900 dark:text-slate-100 appearance-none cursor-pointer" required>
                 <option value="">Choose a topic...</option>
                 <option value="General Question" <?php selected( isset( $_POST['contact_topic'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_topic'] ) ) : '', 'General Question' ); ?>>General Question</option>
                 <option value="Technical Support" <?php selected( isset( $_POST['contact_topic'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_topic'] ) ) : '', 'Technical Support' ); ?>>Technical Support</option>
@@ -79,11 +79,11 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
             </div>
             <div class="space-y-2">
               <label class="text-sm font-semibold ml-1" for="contact-subject">Subject</label>
-              <input id="contact-subject" name="contact_subject" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="How can we help?" type="text" value="<?php echo esc_attr( isset( $_POST['contact_subject'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_subject'] ) ) : '' ); ?>">
+              <input id="contact-subject" name="contact_subject" class="w-full h-14 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl px-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400" placeholder="How can we help?" type="text" value="<?php echo esc_attr( isset( $_POST['contact_subject'] ) ? sanitize_text_field( wp_unslash( $_POST['contact_subject'] ) ) : '' ); ?>">
             </div>
             <div class="space-y-2">
               <label class="text-sm font-semibold ml-1" for="contact-message">Message</label>
-              <textarea id="contact-message" name="contact_message" class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 resize-none" placeholder="Tell us more about your request..." rows="5" required><?php echo esc_textarea( isset( $_POST['contact_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ) ) : '' ); ?></textarea>
+              <textarea id="contact-message" name="contact_message" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-xl p-5 focus:ring-2 focus:ring-primary transition-all placeholder:text-slate-400 resize-none" placeholder="Tell us more about your request..." rows="5" required><?php echo esc_textarea( isset( $_POST['contact_message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['contact_message'] ) ) : '' ); ?></textarea>
             </div>
             <?php if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) : ?>
             <div class="g-recaptcha" data-sitekey="<?php echo esc_attr( NOAWAY_RECAPTCHA_SITE_KEY ); ?>"></div>
@@ -97,7 +97,7 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
       </div>
 
       <!-- Sidebar Info -->
-      <div class="lg:col-span-5 space-y-8">
+      <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-28 self-start">
         <div class="space-y-6">
           <h3 class="text-2xl font-bold">Other ways to connect</h3>
           <!-- Contact Card 1 -->
@@ -107,7 +107,7 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
             </div>
             <div>
               <h4 class="font-bold mb-1">Email Support</h4>
-              <p class="text-slate-500 text-sm mb-3">For technical questions, license issues, or general support.</p>
+              <p class="text-slate-600 text-sm mb-3">For technical questions, license issues, or general support.</p>
               <a class="text-primary font-semibold hover:underline" href="mailto:support@noaway.app">support@noaway.app</a>
             </div>
           </div>
@@ -118,7 +118,7 @@ if ( defined( 'NOAWAY_RECAPTCHA_SITE_KEY' ) && NOAWAY_RECAPTCHA_SITE_KEY ) {
             </div>
             <div>
               <h4 class="font-bold mb-1">Help Center</h4>
-              <p class="text-slate-500 text-sm mb-3">Browse documentation and tutorials for quick answers.</p>
+              <p class="text-slate-600 text-sm mb-3">Browse documentation and tutorials for quick answers.</p>
               <a class="inline-flex items-center gap-1 text-primary font-semibold hover:underline" href="<?php echo esc_url( home_url( '/help' ) ); ?>">
                 Visit Knowledge Base
                 <span class="material-symbols-outlined text-sm">open_in_new</span>

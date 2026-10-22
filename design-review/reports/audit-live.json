@@ -1,0 +1,7348 @@
+{
+  "note": "Screenshots in design-review/screens/ are LIVE (pre-deploy) baseline. Theme changes are local-only until deploy; re-run into design-review/after/ after deploy or against local WP.",
+  "pages": 22,
+  "overflow": [],
+  "homeHeight390": 12424,
+  "reports": [
+    {
+      "url": "https://noaway.app/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 12424,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "Mac & Windows \u00b7 one-time payment \u00b7 insta",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "AVAILABLE",
+          "ratio": 2.28,
+          "color": "rgb(34, 197, 94)",
+          "bg": "rgba(255, 255, 255, 0.8)",
+          "fontSize": 10
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 17,
+          "w": 305,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Check requirements",
+          "h": 17,
+          "w": 137,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 37,
+          "w": 254,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Teams",
+          "h": 20,
+          "w": 51,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "why Teams shows Away",
+          "h": 20,
+          "w": 188,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack",
+          "h": 20,
+          "w": 42,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "sleep",
+          "h": 20,
+          "w": 42,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "get help",
+          "h": 21,
+          "w": 70,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 9157,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "Mac & Windows \u00b7 one-time payment \u00b7 insta",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8089,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "Mac & Windows \u00b7 one-time payment \u00b7 insta",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 7864,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "Mac & Windows \u00b7 one-time payment \u00b7 insta",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/features/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 7349,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "settings_suggest",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "Requires opening system settings",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 16
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "keep Teams active",
+          "h": 21,
+          "w": 162,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 53,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/features/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 5220,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "settings_suggest",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/features/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 4206,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "settings_suggest",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/features/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 4131,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "settings_suggest",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/how-it-works/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 6767,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "ads_click",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "bolt",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "shield_lock",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.2)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Troubleshooting",
+          "h": 20,
+          "w": 127,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 53,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/how-it-works/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 5007,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "ads_click",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "bolt",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/how-it-works/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 4790,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "ads_click",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "bolt",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/how-it-works/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 4764,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "ads_click",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "bolt",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-teams-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11082,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "STAYS AVAILABLE WHILE YOU WORK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 17,
+          "w": 305,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Check requirements",
+          "h": 17,
+          "w": 137,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 37,
+          "w": 254,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Teams presence and status",
+          "h": 20,
+          "w": 213,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "changing your status in Teams",
+          "h": 20,
+          "w": 236,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "More FAQ",
+          "h": 17,
+          "w": 66,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 17,
+          "w": 108,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download NoAway",
+          "h": 37,
+          "w": 300,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/keep-teams-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8877,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "STAYS AVAILABLE WHILE YOU WORK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-teams-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8672,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "STAYS AVAILABLE WHILE YOU WORK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-teams-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8143,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "STAYS AVAILABLE WHILE YOU WORK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-slack-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 10105,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack\u2019s help article says the desktop ap",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 20,
+          "w": 64,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack\u2019s help article",
+          "h": 17,
+          "w": 127,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 20,
+          "w": 36,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download and enable NoAway",
+          "h": 20,
+          "w": 234,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Install NoAway",
+          "h": 20,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 20,
+          "w": 36,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway FAQ",
+          "h": 20,
+          "w": 99,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Get NoAway for Mac and Windows",
+          "h": 20,
+          "w": 267,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 37,
+          "w": 269,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Check requirements",
+          "h": 17,
+          "w": 137,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/keep-slack-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6625,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack\u2019s help article says the desktop ap",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-slack-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 6218,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack\u2019s help article says the desktop ap",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/keep-slack-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 6218,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack\u2019s help article says the desktop ap",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/teams-away-status/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 5477,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MICROSOFT TEAMS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Download NoAway for Mac or Windows. One-",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack",
+          "h": 20,
+          "w": 42,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "keep Teams active",
+          "h": 20,
+          "w": 144,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "how to keep the Teams icon green",
+          "h": 20,
+          "w": 264,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/teams-away-status/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 3558,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MICROSOFT TEAMS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Download NoAway for Mac or Windows. One-",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/teams-away-status/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 3208,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MICROSOFT TEAMS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Download NoAway for Mac or Windows. One-",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/teams-away-status/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 3208,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MICROSOFT TEAMS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Download NoAway for Mac or Windows. One-",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/prevent-computer-sleep/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 5412,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MAC & WINDOWS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Get NoAway for Mac and Windows \u2014 one-tim",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Get NoAway for Mac and Windows",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Not on your computer? Email me the link",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 20,
+          "w": 64,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Teams away status",
+          "h": 20,
+          "w": 148,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Teams",
+          "h": 20,
+          "w": 51,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack",
+          "h": 20,
+          "w": 42,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "See Help",
+          "h": 20,
+          "w": 69,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Get NoAway",
+          "h": 20,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Get NoAway for Mac and Windows",
+          "h": 20,
+          "w": 267,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/prevent-computer-sleep/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 3479,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MAC & WINDOWS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Get NoAway for Mac and Windows \u2014 one-tim",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Get NoAway for Mac and Windows",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/prevent-computer-sleep/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 3100,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MAC & WINDOWS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Get NoAway for Mac and Windows \u2014 one-tim",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Get NoAway for Mac and Windows",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/prevent-computer-sleep/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 3100,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "MAC & WINDOWS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "Get NoAway for Mac and Windows \u2014 one-tim",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Get NoAway for Mac and Windows",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "FAQ \u00b7 Help",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "FAQ",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "PRODUCT",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 12
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/is-noaway-safe/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 8562,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "TRUST & SAFETY",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 21,
+          "w": 35,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 21,
+          "w": 122,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 20,
+          "w": 109,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 20,
+          "w": 131,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "contact",
+          "h": 20,
+          "w": 59,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 20,
+          "w": 109,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "contact",
+          "h": 20,
+          "w": 59,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help Center",
+          "h": 20,
+          "w": 92,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download for Mac and Windows",
+          "h": 20,
+          "w": 250,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 54,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/is-noaway-safe/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 5614,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "TRUST & SAFETY",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/is-noaway-safe/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 5216,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "TRUST & SAFETY",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/is-noaway-safe/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 5216,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "TRUST & SAFETY",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "IN BRIEF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 21, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/downloads/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 5032,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "LATEST VERSION",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "One-time purchase. No subscriptions and ",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Launch price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Regular price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac9.99",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 18
+        },
+        {
+          "text": "Includes Updates are emailed to buyers w",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Not on your computer? Email me the link",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Not satisfied? Request a refund within 7 days",
+          "h": 37,
+          "w": 269,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Check requirements",
+          "h": 17,
+          "w": 137,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "help\nHelp Center",
+          "h": 24,
+          "w": 113,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "mail\nContact Support",
+          "h": 24,
+          "w": 145,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/downloads/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 3783,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "LATEST VERSION",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "One-time purchase. No subscriptions and ",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Launch price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Regular price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac9.99",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 18
+        },
+        {
+          "text": "Includes Updates are emailed to buyers w",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/downloads/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 3431,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "LATEST VERSION",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "One-time purchase. No subscriptions and ",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Launch price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Regular price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac9.99",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 18
+        },
+        {
+          "text": "Includes Updates are emailed to buyers w",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/downloads/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 3447,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "LATEST VERSION",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "One-time purchase. No subscriptions and ",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Launch price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Regular price:",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac9.99",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 18
+        },
+        {
+          "text": "Includes Updates are emailed to buyers w",
+          "ratio": 1.37,
+          "color": "rgb(71, 85, 105)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.16,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Not satisfied? Request a refund within 7",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/faq/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 4977,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 20,
+          "w": 71,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact support\narrow_forward",
+          "h": 24,
+          "w": 160,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 53,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/faq/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 3887,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.45,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(248, 250, 252)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/faq/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 3621,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/faq/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 3621,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "help",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        },
+        {
+          "text": "expand_more",
+          "ratio": 2.56,
+          "color": "rgb(148, 163, 184)",
+          "bg": "rgb(255, 255, 255)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/help/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 9262,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "vpn_key",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "build",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download page",
+          "h": 20,
+          "w": 119,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download page",
+          "h": 20,
+          "w": 119,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Troubleshooting",
+          "h": 20,
+          "w": 127,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download page",
+          "h": 20,
+          "w": 119,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "contact page",
+          "h": 20,
+          "w": 101,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 20,
+          "w": 107,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "support@noaway.app",
+          "h": 20,
+          "w": 168,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/help/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6255,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "vpn_key",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "build",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/help/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 5872,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "vpn_key",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "build",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/help/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 5802,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "download_for_offline",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "vpn_key",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        },
+        {
+          "text": "build",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 24
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/compare/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 4671,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "PRICE COMPARISON",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "Prices checked on 14 October 2026",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "BEST VALUE\nNoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "NoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac4.99 one-time",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "\u20ac4.99",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Local desktop app",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Teams, Slack, Zoom and others",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "No",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "No",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "noaway.app",
+          "h": 15,
+          "w": 71,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "slack.green",
+          "h": 15,
+          "w": 68,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "notaway.app",
+          "h": 15,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "idlepilot.com",
+          "h": 15,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack Green: what admins see",
+          "h": 17,
+          "w": 203,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Download NoAway",
+          "h": 20,
+          "w": 145,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Not on your computer? Email me the link",
+          "h": 27,
+          "w": 272,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/compare/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 3694,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "PRICE COMPARISON",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "Prices checked on 14 October 2026",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "BEST VALUE\nNoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "NoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac4.99 one-time",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "\u20ac4.99",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Local desktop app",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Teams, Slack, Zoom and others",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "No",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/compare/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 3062,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "PRICE COMPARISON",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "Prices checked on 14 October 2026",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "BEST VALUE\nNoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "NoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac4.99 one-time",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "\u20ac4.99",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Local desktop app",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Teams, Slack, Zoom and others",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "No",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/compare/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 2915,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "PRICE COMPARISON",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "Prices checked on 14 October 2026",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        },
+        {
+          "text": "BEST VALUE\nNoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "NoAway",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u20ac4.99 one-time",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "\u20ac4.99",
+          "ratio": 3.23,
+          "color": "rgb(15, 23, 42)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 16
+        },
+        {
+          "text": "Local desktop app",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "Teams, Slack, Zoom and others",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        },
+        {
+          "text": "No",
+          "ratio": 2.65,
+          "color": "rgb(30, 41, 59)",
+          "bg": "rgba(88, 81, 236, 0.05)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/sitemap/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 2698,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Home (Landing)",
+          "h": 20,
+          "w": 122,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 20,
+          "w": 66,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 20,
+          "w": 99,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 20,
+          "w": 122,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Keep Teams Active",
+          "h": 20,
+          "w": 146,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 20,
+          "w": 63,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 20,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 20,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 20,
+          "w": 65,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help Center",
+          "h": 20,
+          "w": 91,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Sitemap",
+          "h": 20,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Why Teams Shows Away",
+          "h": 20,
+          "w": 191,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Keep Slack Active",
+          "h": 20,
+          "w": 137,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 20,
+          "w": 63,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 20,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 20,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 20,
+          "w": 65,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Prevent Computer Sleep",
+          "h": 20,
+          "w": 186,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway Safe?",
+          "h": 20,
+          "w": 127,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/sitemap/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 2367,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/sitemap/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 2161,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/sitemap/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 2161,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/privacy-policy/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 9091,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 53,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/privacy-policy/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6812,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/privacy-policy/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 6586,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/privacy-policy/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 6448,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/terms-of-service/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11708,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "support",
+          "h": 20,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare",
+          "h": 17,
+          "w": 61,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Help",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Releases",
+          "h": 17,
+          "w": 60,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "macOS",
+          "h": 17,
+          "w": 48,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Windows",
+          "h": 17,
+          "w": 62,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Buy NoAway \u2013 \u20ac4.99",
+          "h": 17,
+          "w": 139,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Privacy Policy",
+          "h": 17,
+          "w": 94,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Terms of Service",
+          "h": 17,
+          "w": 114,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Cookie Settings",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Contact",
+          "h": 17,
+          "w": 53,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/terms-of-service/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8719,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/terms-of-service/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8487,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/terms-of-service/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8287,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-teams-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11548,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "BLEIBT VERF\u00dcGBAR, W\u00c4HREND DU ARBEITEST",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhal",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Nicht am Computer? Link per E-Mail senden",
+          "h": 27,
+          "w": 297,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhalb von 7 Tagen beantr",
+          "h": 37,
+          "w": 327,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Anforderungen pr\u00fcfen",
+          "h": 17,
+          "w": 151,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Teams-Anwesenheit und Status",
+          "h": 20,
+          "w": 247,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Status in Teams \u00e4ndern",
+          "h": 20,
+          "w": 182,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Weitere FAQ",
+          "h": 17,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 17,
+          "w": 108,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway herunterladen",
+          "h": 37,
+          "w": 294,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/de/keep-teams-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8806,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "BLEIBT VERF\u00dcGBAR, W\u00c4HREND DU ARBEITEST",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhal",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-teams-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8662,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "BLEIBT VERF\u00dcGBAR, W\u00c4HREND DU ARBEITEST",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhal",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-teams-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8210,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "BLEIBT VERF\u00dcGBAR, W\u00c4HREND DU ARBEITEST",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhal",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-teams-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11180,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SIGUES DISPONIBLE MIENTRAS TRABAJAS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembo",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "\u00bfNo est\u00e1s en el ordenador? Env\u00edame el enlace",
+          "h": 27,
+          "w": 309,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembolso en 7 d\u00edas",
+          "h": 37,
+          "w": 330,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Comprobar requisitos",
+          "h": 17,
+          "w": 147,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembolso en 7 d\u00edas",
+          "h": 37,
+          "w": 291,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "presencia y estado en Teams",
+          "h": 20,
+          "w": 225,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "cambiar el estado en Teams",
+          "h": 20,
+          "w": 216,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "M\u00e1s preguntas",
+          "h": 17,
+          "w": 101,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 17,
+          "w": 108,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Descargar NoAway",
+          "h": 37,
+          "w": 326,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/es/keep-teams-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8771,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SIGUES DISPONIBLE MIENTRAS TRABAJAS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembo",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-teams-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8549,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SIGUES DISPONIBLE MIENTRAS TRABAJAS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembo",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-teams-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8039,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SIGUES DISPONIBLE MIENTRAS TRABAJAS",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembo",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-teams-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11170,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "CONTINUA DISPON\u00cdVEL ENQUANTO VOC\u00ca TRABAL",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em ",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "N\u00e3o est\u00e1 no computador? Envie o link por e-mail",
+          "h": 27,
+          "w": 327,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em at\u00e9 7 dias",
+          "h": 37,
+          "w": 311,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Verificar requisitos",
+          "h": 17,
+          "w": 128,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em at\u00e9 7 dias",
+          "h": 37,
+          "w": 291,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "presen\u00e7a e status no Teams",
+          "h": 20,
+          "w": 217,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "alterar o status no Teams",
+          "h": 20,
+          "w": 195,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Mais perguntas",
+          "h": 17,
+          "w": 105,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 17,
+          "w": 108,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Baixar o NoAway",
+          "h": 37,
+          "w": 302,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-teams-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8816,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "CONTINUA DISPON\u00cdVEL ENQUANTO VOC\u00ca TRABAL",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em ",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-teams-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8535,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "CONTINUA DISPON\u00cdVEL ENQUANTO VOC\u00ca TRABAL",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em ",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-teams-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8120,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "CONTINUA DISPON\u00cdVEL ENQUANTO VOC\u00ca TRABAL",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em ",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/fr/keep-teams-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 11399,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "RESTE DISPONIBLE PENDANT QUE VOUS TRAVAI",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Pas satisfait ? Demandez un remboursemen",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "button",
+          "text": "Pas sur votre ordinateur ? Envoyez-moi le lien",
+          "h": 27,
+          "w": 308,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Pas satisfait ? Demandez un remboursement sous 7 jours",
+          "h": 37,
+          "w": 337,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "V\u00e9rifier les pr\u00e9requis",
+          "h": 17,
+          "w": 141,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Pas satisfait ? Demandez un remboursement sous 7 jours",
+          "h": 37,
+          "w": 290,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Plus de questions",
+          "h": 17,
+          "w": 120,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Compare prices",
+          "h": 17,
+          "w": 108,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "T\u00e9l\u00e9charger NoAway",
+          "h": 17,
+          "w": 140,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 40,
+          "w": 342,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Features",
+          "h": 17,
+          "w": 58,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "How it works",
+          "h": 17,
+          "w": 87,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Is NoAway safe?",
+          "h": 17,
+          "w": 110,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/fr/keep-teams-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 8899,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "RESTE DISPONIBLE PENDANT QUE VOUS TRAVAI",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Pas satisfait ? Demandez un remboursemen",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/fr/keep-teams-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 8634,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "RESTE DISPONIBLE PENDANT QUE VOUS TRAVAI",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Pas satisfait ? Demandez un remboursemen",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/fr/keep-teams-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 8043,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "RESTE DISPONIBLE PENDANT QUE VOUS TRAVAI",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREF",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Pas satisfait ? Demandez un remboursemen",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-slack-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 10737,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack-Hilfeartikel: Die Desktop-App setz",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 20,
+          "w": 64,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Slack-Hilfeartikel",
+          "h": 17,
+          "w": 116,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Hilfe",
+          "h": 20,
+          "w": 36,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway laden und einschalten",
+          "h": 20,
+          "w": 238,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway installieren",
+          "h": 20,
+          "w": 153,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Hilfe",
+          "h": 20,
+          "w": 36,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway-FAQ",
+          "h": 20,
+          "w": 102,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Nicht zufrieden? R\u00fcckerstattung innerhalb von 7 Tagen beantr",
+          "h": 37,
+          "w": 231,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Anforderungen pr\u00fcfen",
+          "h": 17,
+          "w": 151,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Hilfe",
+          "h": 17,
+          "w": 31,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/de/keep-slack-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6893,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack-Hilfeartikel: Die Desktop-App setz",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-slack-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 6467,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack-Hilfeartikel: Die Desktop-App setz",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/de/keep-slack-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 6467,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "KURZ GESAGT",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Slack-Hilfeartikel: Die Desktop-App setz",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-slack-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 10617,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Art\u00edculo de ayuda de Slack: la app de es",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Portugu\u00eas",
+          "h": 32,
+          "w": 95,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 20,
+          "w": 64,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Art\u00edculo de ayuda de Slack",
+          "h": 17,
+          "w": 180,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ayuda",
+          "h": 20,
+          "w": 49,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Descarga y activa NoAway",
+          "h": 20,
+          "w": 206,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Instala NoAway",
+          "h": 20,
+          "w": 119,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ayuda",
+          "h": 20,
+          "w": 49,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Descarga NoAway",
+          "h": 20,
+          "w": 141,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "\u00bfNo est\u00e1s satisfecho? Solicita un reembolso en 7 d\u00edas",
+          "h": 37,
+          "w": 223,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Comprobar requisitos",
+          "h": 17,
+          "w": 147,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ayuda",
+          "h": 17,
+          "w": 43,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/es/keep-slack-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6814,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Art\u00edculo de ayuda de Slack: la app de es",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-slack-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 6320,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Art\u00edculo de ayuda de Slack: la app de es",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/es/keep-slack-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 6320,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EN BREVE",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Art\u00edculo de ayuda de Slack: la app de es",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-slack-active/",
+      "width": 390,
+      "overflowX": 0,
+      "scrollHeight": 10668,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Artigo de ajuda do Slack: o app para com",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": [
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 36,
+          "w": 130,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "English",
+          "h": 32,
+          "w": 75,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Deutsch",
+          "h": 32,
+          "w": 81,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Espa\u00f1ol",
+          "h": 32,
+          "w": 79,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Fran\u00e7ais",
+          "h": 32,
+          "w": 83,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "NoAway",
+          "h": 20,
+          "w": 64,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Artigo de ajuda do Slack",
+          "h": 17,
+          "w": 164,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ajuda",
+          "h": 20,
+          "w": 45,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Baixe e ative o NoAway",
+          "h": 20,
+          "w": 179,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Instale o NoAway",
+          "h": 20,
+          "w": 133,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ajuda",
+          "h": 20,
+          "w": 45,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ do NoAway",
+          "h": 20,
+          "w": 123,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "N\u00e3o ficou satisfeito? Pe\u00e7a reembolso em at\u00e9 7 dias",
+          "h": 37,
+          "w": 275,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Verificar requisitos",
+          "h": 17,
+          "w": 128,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "FAQ",
+          "h": 17,
+          "w": 27,
+          "outline": "none",
+          "outlineWidth": "0px"
+        },
+        {
+          "tag": "a",
+          "text": "Ajuda",
+          "h": 17,
+          "w": 39,
+          "outline": "none",
+          "outlineWidth": "0px"
+        }
+      ]
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-slack-active/",
+      "width": 768,
+      "overflowX": 0,
+      "scrollHeight": 6782,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Artigo de ajuda do Slack: o app para com",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-slack-active/",
+      "width": 1024,
+      "overflowX": 0,
+      "scrollHeight": 6418,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Artigo de ajuda do Slack: o app para com",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    },
+    {
+      "url": "https://noaway.app/pt-br/keep-slack-active/",
+      "width": 1440,
+      "overflowX": 0,
+      "scrollHeight": 6418,
+      "imgsMissingDims": 0,
+      "imgsMissingSample": [],
+      "lowContrast": [
+        {
+          "text": "SLACK",
+          "ratio": 1.0,
+          "color": "rgb(88, 81, 236)",
+          "bg": "rgba(88, 81, 236, 0.1)",
+          "fontSize": 12
+        },
+        {
+          "text": "EM RESUMO",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Last reviewed: October 22, 2026",
+          "ratio": 4.34,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(241, 245, 249)",
+          "fontSize": 14
+        },
+        {
+          "text": "Artigo de ajuda do Slack: o app para com",
+          "ratio": 4.41,
+          "color": "rgb(100, 116, 139)",
+          "bg": "rgb(246, 246, 248)",
+          "fontSize": 14
+        }
+      ],
+      "smallTouch": []
+    }
+  ]
+}

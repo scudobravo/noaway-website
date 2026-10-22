@@ -1,11 +1,11 @@
 <?php
 /**
- * Compact “Before you buy” summary under purchase CTAs.
+ * Compact / horizontal “Before you buy” summary under purchase CTAs.
  * Data from inc/noaway-facts.php (license + requirements).
  *
  * @package NoAway
  *
- * @var array{lang?:string} $args
+ * @var array{lang?:string,variant?:string} $args
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,6 +18,14 @@ if ( isset( $args ) && is_array( $args ) && ! empty( $args['lang'] ) ) {
 }
 if ( function_exists( 'noaway_i18n_normalize_lang' ) ) {
 	$lang = noaway_i18n_normalize_lang( $lang );
+}
+
+$variant = 'compact';
+if ( isset( $args ) && is_array( $args ) && ! empty( $args['variant'] ) ) {
+	$variant = sanitize_key( (string) $args['variant'] );
+}
+if ( ! in_array( $variant, array( 'compact', 'horizontal' ), true ) ) {
+	$variant = 'compact';
 }
 
 $price = function_exists( 'noaway_price_label' ) ? noaway_price_label() : (string) noaway_fact( 'license.price_label_current', '€4.99' );
@@ -100,9 +108,29 @@ $rows = array(
 	array( 'icon' => 'support_agent', 'text' => $c['support'] ),
 	array( 'icon' => 'payments', 'text' => $c['price'] ),
 );
+
+$heading_id = 'noaway-before-buy-heading-' . $variant;
 ?>
-<aside class="noaway-before-you-buy mt-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 p-4 sm:p-5 text-left max-w-md" aria-labelledby="noaway-before-buy-heading">
-	<h2 id="noaway-before-buy-heading" class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3"><?php echo esc_html( $c['title'] ); ?></h2>
+<?php if ( 'horizontal' === $variant ) : ?>
+<aside class="noaway-before-you-buy noaway-before-you-buy--horizontal w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 sm:p-6 text-left" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
+	<h2 id="<?php echo esc_attr( $heading_id ); ?>" class="na-eyebrow mb-4"><?php echo esc_html( $c['title'] ); ?></h2>
+	<ul class="grid grid-cols-1 lg:grid-cols-3 gap-2.5 lg:gap-4 text-sm text-slate-700 dark:text-slate-300 leading-snug list-none p-0 m-0">
+		<?php foreach ( $rows as $row ) : ?>
+		<li class="flex items-start gap-2.5 min-h-[44px]">
+			<span class="material-symbols-outlined text-primary shrink-0 mt-0.5" style="font-size:18px" aria-hidden="true"><?php echo esc_html( $row['icon'] ); ?></span>
+			<span><?php echo esc_html( $row['text'] ); ?></span>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	<p class="mt-4 text-sm flex flex-wrap items-center justify-end gap-x-2 gap-y-1">
+		<a href="<?php echo esc_url( $help_req ); ?>" class="text-primary font-semibold hover:underline inline-flex items-center min-h-[44px]"><?php echo esc_html( $c['check_req'] ); ?></a>
+		<span class="text-slate-400" aria-hidden="true">·</span>
+		<a href="<?php echo esc_url( $contact ); ?>" class="text-primary font-semibold hover:underline inline-flex items-center min-h-[44px]"><?php echo esc_html( $c['refund'] ); ?></a>
+	</p>
+</aside>
+<?php else : ?>
+<aside class="noaway-before-you-buy mt-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 p-4 sm:p-5 text-left max-w-md" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
+	<h2 id="<?php echo esc_attr( $heading_id ); ?>" class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-3"><?php echo esc_html( $c['title'] ); ?></h2>
 	<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 leading-snug">
 		<?php foreach ( $rows as $row ) : ?>
 		<li class="flex items-start gap-2">
@@ -117,3 +145,4 @@ $rows = array(
 		<a href="<?php echo esc_url( $contact ); ?>" class="text-primary font-semibold hover:underline"><?php echo esc_html( $c['refund'] ); ?></a>
 	</p>
 </aside>
+<?php endif; ?>

@@ -20,6 +20,7 @@ require_once $noaway_inc . 'noaway-contact.php';
 require_once $noaway_inc . 'noaway-seo.php';
 require_once $noaway_inc . 'noaway-sitemap.php';
 require_once $noaway_inc . 'noaway-ai-discovery.php';
+require_once $noaway_inc . 'noaway-ui.php';
 
 /**
  * Redirect host/protocol are enforced at web-server level to keep one-hop 301.
@@ -93,6 +94,27 @@ add_action(
 		wp_enqueue_style( 'noaway-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Montserrat:wght@800&display=swap', array(), null );
 		wp_enqueue_style( 'noaway-material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0', array(), null );
 	}
+);
+
+/**
+ * Register (not enqueue) small UI scripts. They are enqueued on demand by
+ * noaway_render_sticky_buy_bar() and template-parts/guide-toc.php.
+ */
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		$dir = get_template_directory();
+		$uri = get_template_directory_uri();
+		foreach ( array(
+			'noaway-sticky-buy' => 'noaway-sticky-buy.js',
+			'noaway-guide-toc'  => 'noaway-guide-toc.js',
+		) as $handle => $file ) {
+			$abs = $dir . '/assets/js/' . $file;
+			$ver = file_exists( $abs ) ? (string) filemtime( $abs ) : '1.0.0';
+			wp_register_script( $handle, $uri . '/assets/js/' . $file, array(), $ver, true );
+		}
+	},
+	5
 );
 
 /**

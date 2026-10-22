@@ -20,7 +20,7 @@ $checkout_url = noaway_checkout_url();
         Many people search for how to keep the Teams icon green. This guide explains why Teams changes your status, how inactivity detection works, how common methods differ, and how NoAway keeps your computer active so your status stays Available.
       </p>
       <div class="mt-8 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700" role="complementary" aria-label="In brief">
-        <p class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
+        <p class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">In brief</p>
         <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
           The Teams icon turns green when your status is Available and yellow when Away. To keep it green, prevent your computer from going idle. <a href="<?php echo esc_url( $download_url ); ?>" class="text-primary font-semibold hover:underline">NoAway</a> does this automatically in the background — no mouse wiggling, no manual status changes. Read <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams away status explained</a> and <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">how to keep Teams active</a>.
         </p>
@@ -114,7 +114,7 @@ $checkout_url = noaway_checkout_url();
       <a href="<?php echo esc_url( $download_url ); ?>" class="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl text-lg font-bold hover:scale-[1.02] active:scale-[0.98] transition-all">
         Get NoAway for Mac and Windows
       </a>
-      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
+      <p class="mt-4 text-sm text-slate-600 dark:text-slate-400"><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="text-primary font-semibold hover:underline">FAQ</a> · <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-semibold hover:underline">Help</a></p>
     </section>
   </article>
 </main>

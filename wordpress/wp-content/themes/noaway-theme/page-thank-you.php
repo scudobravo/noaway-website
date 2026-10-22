@@ -61,7 +61,7 @@ $has_session = $session_id !== '' && preg_match( '/^cs_[a-zA-Z0-9]+$/', $session
             </a>
           </div>
           <div class="pt-4 border-t border-slate-200 dark:border-slate-700">
-            <p class="text-sm text-slate-500 dark:text-slate-400 mb-1">Your license key (also in your email):</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-1">Your license key (also in your email):</p>
             <p id="noaway-license-key" class="font-mono text-base bg-slate-200 dark:bg-slate-700 px-3 py-2 rounded break-all"></p>
           </div>
         </div>

@@ -35,11 +35,11 @@ $release_notes = array(
       <h2 id="current-version-heading" class="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Current version</h2>
       <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-          <dt class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">Version</dt>
+          <dt class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1">Version</dt>
           <dd class="text-2xl font-black text-slate-900 dark:text-white m-0"><?php echo esc_html( $version ); ?></dd>
         </div>
         <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-          <dt class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">Release date</dt>
+          <dt class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1">Release date</dt>
           <dd class="text-2xl font-black text-slate-900 dark:text-white m-0"><?php echo esc_html( $release_date ); ?></dd>
         </div>
       </dl>
