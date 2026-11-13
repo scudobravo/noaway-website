@@ -10,7 +10,8 @@ get_header();
 
 $session_id = isset( $_GET['session_id'] ) ? sanitize_text_field( wp_unslash( $_GET['session_id'] ) ) : '';
 $license_api_url = noaway_license_api_url();
-$has_session = $session_id !== '' && preg_match( '/^cs_[a-zA-Z0-9]+$/', $session_id );
+// Stripe Checkout IDs: cs_live_… / cs_test_… (underscores in the mode segment).
+$has_session = $session_id !== '' && preg_match( '/^cs_(test|live)_[a-zA-Z0-9]+$/', $session_id );
 ?>
 <main class="max-w-7xl mx-auto px-6 py-20">
   <div class="max-w-2xl mx-auto text-center">
