@@ -1,89 +1,163 @@
 <?php
 /**
- * NoAway API - Download protetto installer (mac/win)
- * GET ?t=TOKEN&p=mac|win&e=EXPIRY
- * Token = HMAC-SHA256(license_key|email|platform|expiry, NOAWAY_DOWNLOAD_SECRET) in hex.
- * Config: NOAWAY_DOWNLOAD_SECRET, NOAWAY_RELEASES_PATH, NOAWAY_RELEASE_MACOS, NOAWAY_RELEASE_WINDOWS in wp-config.
+ * Protected download endpoint (HMAC must match license-server/downloadLinks.js).
+ * Prefer deploying website/api/download.php to public_html/api/download.php.
+ * URL: https://noaway.app/api/download.php?t=...&p=...&e=...&id=...
  */
 
-if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    http_response_code(405);
-    exit('Method not allowed');
+declare(strict_types=1);
+
+if (! defined('ABSPATH')) {
+	$wp_load = dirname(__DIR__) . '/wp-load.php';
+	if (is_readable($wp_load)) {
+		require_once $wp_load;
+	} else {
+		// Fallback when this file lives under wordpress/api in the repo but
+		// is copied next to wp-load on the server.
+		$alt = dirname(__DIR__, 2) . '/wp-load.php';
+		if (is_readable($alt)) {
+			require_once $alt;
+		} else {
+			http_response_code(500);
+			header('Content-Type: text/plain; charset=utf-8');
+			echo 'Server misconfiguration: wp-load.php not found.';
+			exit;
+		}
+	}
 }
 
-$token = isset($_GET['t']) ? trim($_GET['t']) : '';
-$platform = isset($_GET['p']) ? strtolower(trim($_GET['p'])) : '';
-$expiry = isset($_GET['e']) ? (int) $_GET['e'] : 0;
-
-if ($token === '' || $platform === '' || $expiry <= 0) {
-    http_response_code(400);
-    exit('Invalid parameters');
+if (! defined('NOAWAY_DOWNLOAD_SECRET') || ! NOAWAY_DOWNLOAD_SECRET) {
+	http_response_code(503);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'Downloads are not configured.';
+	exit;
 }
 
-if ($platform !== 'mac' && $platform !== 'win') {
-    http_response_code(400);
-    exit('Invalid platform');
+if (! defined('NOAWAY_RELEASES_PATH') || ! NOAWAY_RELEASES_PATH) {
+	http_response_code(503);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'Release path not configured.';
+	exit;
 }
 
-// Carica wp-config per le costanti (NOAWAY_DOWNLOAD_SECRET, NOAWAY_RELEASES_PATH, ecc.)
-$wp_config_paths = [
-    __DIR__ . '/../wp-config.php',
-    __DIR__ . '/../../wp-config.php',
-];
-$wp_loaded = false;
-foreach ($wp_config_paths as $path) {
-    if (file_exists($path)) {
-        require_once $path;
-        $wp_loaded = true;
-        break;
-    }
+$token = isset($_GET['t']) ? (string) $_GET['t'] : '';
+$platform = isset($_GET['p']) ? (string) $_GET['p'] : '';
+$expiry = isset($_GET['e']) ? (string) $_GET['e'] : '';
+$id = isset($_GET['id']) ? (string) $_GET['id'] : '';
+
+$allowed = array( 'mac', 'mac_universal', 'mac_arm64', 'win' );
+if ($token === '' || $expiry === '' || $id === '' || ! in_array($platform, $allowed, true)) {
+	http_response_code(400);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'Invalid request.';
+	exit;
 }
 
-if (!$wp_loaded || !defined('NOAWAY_DOWNLOAD_SECRET') || NOAWAY_DOWNLOAD_SECRET === '') {
-    http_response_code(503);
-    exit('Download not configured');
-}
-
-if (time() > $expiry) {
-    http_response_code(403);
-    exit('Download link expired');
-}
-
-// Il token è generato dal License Server: HMAC-SHA256(platform + "|" + expiry + "|" + id, secret)
-// con id = hash(license_key|email) per legare il link alla licenza senza esporre dati in URL.
-$id = isset($_GET['id']) ? trim($_GET['id']) : '';
-if ($id === '' || strlen($id) > 128 || !preg_match('/^[a-f0-9]+$/', $id)) {
-    http_response_code(400);
-    exit('Invalid link');
+$exp = (int) $expiry;
+if ($exp < time()) {
+	http_response_code(403);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'This download link has expired.';
+	exit;
 }
 
 $payload = $platform . '|' . $expiry . '|' . $id;
 $expected = hash_hmac('sha256', $payload, NOAWAY_DOWNLOAD_SECRET);
-if (!hash_equals($expected, $token)) {
-    http_response_code(403);
-    exit('Invalid token');
+
+if (! hash_equals($expected, $token)) {
+	http_response_code(403);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'Invalid or tampered link.';
+	exit;
 }
 
-$basePath = defined('NOAWAY_RELEASES_PATH') ? rtrim(NOAWAY_RELEASES_PATH, '/') : '';
-$fileName = $platform === 'mac'
-    ? (defined('NOAWAY_RELEASE_MACOS') ? NOAWAY_RELEASE_MACOS : 'NoAway.dmg')
-    : (defined('NOAWAY_RELEASE_WINDOWS') ? NOAWAY_RELEASE_WINDOWS : 'NoAway-Setup.exe');
-
-if ($basePath === '') {
-    http_response_code(503);
-    exit('Releases path not configured');
+/**
+ * @return string[]
+ */
+function noaway_release_filename_candidates(string $platform): array {
+	$candidates = array();
+	switch ($platform) {
+		case 'mac':
+		case 'mac_universal':
+			if (defined('NOAWAY_RELEASE_MACOS_UNIVERSAL') && NOAWAY_RELEASE_MACOS_UNIVERSAL) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_UNIVERSAL;
+			}
+			if (defined('NOAWAY_RELEASE_MACOS') && NOAWAY_RELEASE_MACOS) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS;
+			}
+			if (defined('NOAWAY_RELEASE_MACOS_ARM64') && NOAWAY_RELEASE_MACOS_ARM64) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_ARM64;
+			}
+			break;
+		case 'mac_arm64':
+			if (defined('NOAWAY_RELEASE_MACOS_ARM64') && NOAWAY_RELEASE_MACOS_ARM64) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_ARM64;
+			}
+			if (defined('NOAWAY_RELEASE_MACOS_UNIVERSAL') && NOAWAY_RELEASE_MACOS_UNIVERSAL) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_UNIVERSAL;
+			}
+			if (defined('NOAWAY_RELEASE_MACOS') && NOAWAY_RELEASE_MACOS) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS;
+			}
+			break;
+		case 'win':
+			if (defined('NOAWAY_RELEASE_WINDOWS') && NOAWAY_RELEASE_WINDOWS) {
+				$candidates[] = (string) NOAWAY_RELEASE_WINDOWS;
+			}
+			break;
+	}
+	return array_values(array_unique(array_filter($candidates)));
 }
 
-$filePath = $basePath . '/' . $fileName;
-if (!is_file($filePath) || !is_readable($filePath)) {
-    http_response_code(404);
-    exit('File not found');
+$base = rtrim((string) NOAWAY_RELEASES_PATH, '/\\');
+$candidates = noaway_release_filename_candidates($platform);
+if ($candidates === array()) {
+	http_response_code(503);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'Installer not configured for this platform.';
+	exit;
 }
 
-$mime = $platform === 'mac' ? 'application/octet-stream' : 'application/octet-stream';
+$filename = '';
+$path = '';
+foreach ($candidates as $candidate) {
+	$try = $base . DIRECTORY_SEPARATOR . $candidate;
+	if (is_readable($try) && is_file($try)) {
+		$filename = $candidate;
+		$path = $try;
+		break;
+	}
+}
+
+if ($filename === '' || $path === '') {
+	http_response_code(404);
+	header('Content-Type: text/plain; charset=utf-8');
+	echo 'File not found.';
+	exit;
+}
+
+$size = filesize($path);
+$mime = 'application/octet-stream';
+$low = strtolower($filename);
+if (substr($low, -4) === '.dmg') {
+	$mime = 'application/x-apple-diskimage';
+} elseif (substr($low, -4) === '.exe') {
+	$mime = 'application/vnd.microsoft.portable-executable';
+}
+
 header('Content-Type: ' . $mime);
-header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
-header('Content-Length: ' . filesize($filePath));
-header('Cache-Control: no-store');
-readfile($filePath);
+header('Content-Length: ' . (string) $size);
+header('Content-Disposition: attachment; filename="' . str_replace('"', '', $filename) . '"');
+header('X-Content-Type-Options: nosniff');
+header('Cache-Control: private, no-store');
+
+$fh = fopen($path, 'rb');
+if ($fh === false) {
+	http_response_code(500);
+	exit;
+}
+while (! feof($fh)) {
+	echo fread($fh, 65536);
+}
+fclose($fh);
 exit;

@@ -15,6 +15,9 @@ define( 'NOAWAY_STRIPE_CHECKOUT_URL', 'https://license.noaway.app/create-checkou
 define( 'NOAWAY_LICENSE_API_URL', 'https://license.noaway.app' );
 
 // Protected downloads: same secret as license-server .env DOWNLOAD_SECRET
+// License email + thank-you use signed /api/download.php links (HMAC).
+// Stripe success URL on the license-server must include:
+//   STRIPE_SUCCESS_URL=https://noaway.app/thank-you?session_id={CHECKOUT_SESSION_ID}
 define( 'NOAWAY_DOWNLOAD_SECRET', 'GENERATE_A_LONG_RANDOM_STRING' );
 
 // Absolute path to installers for api/download.php (signed post-purchase links only).
@@ -40,4 +43,7 @@ define( 'NOAWAY_RELEASE_WINDOWS', 'NoAway Setup 1.0.6.exe' );
 // Optional: contact form reCAPTCHA
 // define( 'NOAWAY_RECAPTCHA_SITE_KEY', '...' );
 // define( 'NOAWAY_RECAPTCHA_SECRET_KEY', '...' );
+
+// Post-purchase invoice form (/invoice-details/): MUST match license-server BILLING_FORM_SECRET
+define( 'NOAWAY_BILLING_FORM_SECRET', 'SAME_LONG_RANDOM_STRING_AS_LICENSE_SERVER' );
 // --- NoAway block end ---

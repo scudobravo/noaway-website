@@ -144,6 +144,7 @@ function noaway_seo_get_page_data() {
       'download'               => 'page-downloads.php',
       'downloads'              => 'page-downloads.php',
       'thank-you'              => 'page-thank-you.php',
+      'invoice-details'        => 'page-invoice-details.php',
       'help'                   => 'page-help.php',
       'contacts'               => 'page-contatti.php',
       'contact'                => 'page-contatti.php',
@@ -210,6 +211,10 @@ function noaway_seo_get_page_data() {
   } elseif ( $template === 'page-thank-you.php' ) {
     $data['title']       = 'Thank You – Your NoAway Download | Purchase Confirmed';
     $data['description'] = 'Your NoAway purchase is confirmed. Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. ' . noaway_fact( 'license.lifetime_updates_short' ) . ' Need help? Visit Help or Contact.';
+  } elseif ( $template === 'page-invoice-details.php' ) {
+    $data['title']       = 'Invoice billing details | NoAway';
+    $data['description'] = 'Submit your personal billing address so NoAway can issue the Italian electronic invoice for your purchase.';
+    $data['canonical']   = noaway_seo_canonical_url( home_url( '/invoice-details/' ) );
   } elseif ( $template === 'page-help.php' ) {
     $data['title']       = 'Help Center | NoAway – Installation, Activation, Troubleshooting';
     $data['description'] = 'Find quick answers about installing, activating, and using NoAway. Installation guide for macOS and Windows, license activation, and troubleshooting.';

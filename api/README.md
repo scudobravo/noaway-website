@@ -13,9 +13,9 @@ Place **both** macOS DMGs and the Windows installer in the directory set as **`N
 
 | `p`             | Constant / behaviour                                      |
 |-----------------|-----------------------------------------------------------|
-| `mac`           | Legacy; same file as universal                          |
-| `mac_universal` | `NOAWAY_RELEASE_MACOS` or `NOAWAY_RELEASE_MACOS_UNIVERSAL` |
-| `mac_arm64`     | `NOAWAY_RELEASE_MACOS_ARM64` (falls back to universal if unset) |
+| `mac`           | Legacy; tries universal then macOS then arm64 filename    |
+| `mac_universal` | Universal / macOS / arm64 (first readable file on disk)   |
+| `mac_arm64`     | Arm64 / universal / macOS (first readable file on disk)   |
 | `win`           | `NOAWAY_RELEASE_WINDOWS`                                |
 
 ## Nginx

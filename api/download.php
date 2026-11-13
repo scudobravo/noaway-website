@@ -76,47 +76,68 @@ if (! hash_equals($expected, $token)) {
 /**
  * Resolve installer filename for signed platform key.
  */
-function noaway_release_filename(string $platform): string {
+/**
+ * Candidate installer filenames for a platform (first readable file wins).
+ *
+ * @return string[]
+ */
+function noaway_release_filename_candidates(string $platform): array {
+	$candidates = array();
 	switch ($platform) {
 		case 'mac':
 		case 'mac_universal':
 			if (defined('NOAWAY_RELEASE_MACOS_UNIVERSAL') && NOAWAY_RELEASE_MACOS_UNIVERSAL) {
-				return (string) NOAWAY_RELEASE_MACOS_UNIVERSAL;
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_UNIVERSAL;
 			}
 			if (defined('NOAWAY_RELEASE_MACOS') && NOAWAY_RELEASE_MACOS) {
-				return (string) NOAWAY_RELEASE_MACOS;
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS;
 			}
-			return '';
+			// Production may only have the arm64/universal file configured under ARM64.
+			if (defined('NOAWAY_RELEASE_MACOS_ARM64') && NOAWAY_RELEASE_MACOS_ARM64) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_ARM64;
+			}
+			break;
 		case 'mac_arm64':
 			if (defined('NOAWAY_RELEASE_MACOS_ARM64') && NOAWAY_RELEASE_MACOS_ARM64) {
-				return (string) NOAWAY_RELEASE_MACOS_ARM64;
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_ARM64;
 			}
-			// Single-build deploy: serve universal if arm64 not set
+			if (defined('NOAWAY_RELEASE_MACOS_UNIVERSAL') && NOAWAY_RELEASE_MACOS_UNIVERSAL) {
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS_UNIVERSAL;
+			}
 			if (defined('NOAWAY_RELEASE_MACOS') && NOAWAY_RELEASE_MACOS) {
-				return (string) NOAWAY_RELEASE_MACOS;
+				$candidates[] = (string) NOAWAY_RELEASE_MACOS;
 			}
-			return '';
+			break;
 		case 'win':
-			return (defined('NOAWAY_RELEASE_WINDOWS') && NOAWAY_RELEASE_WINDOWS)
-				? (string) NOAWAY_RELEASE_WINDOWS
-				: '';
-		default:
-			return '';
+			if (defined('NOAWAY_RELEASE_WINDOWS') && NOAWAY_RELEASE_WINDOWS) {
+				$candidates[] = (string) NOAWAY_RELEASE_WINDOWS;
+			}
+			break;
 	}
+	return array_values(array_unique(array_filter($candidates)));
 }
 
-$filename = noaway_release_filename($platform);
-if ($filename === '') {
+$base = rtrim((string) NOAWAY_RELEASES_PATH, '/\\');
+$candidates = noaway_release_filename_candidates($platform);
+if ($candidates === array()) {
 	http_response_code(503);
 	header('Content-Type: text/plain; charset=utf-8');
 	echo 'Installer not configured for this platform.';
 	exit;
 }
 
-$base = rtrim((string) NOAWAY_RELEASES_PATH, '/\\');
-$path = $base . DIRECTORY_SEPARATOR . $filename;
+$filename = '';
+$path = '';
+foreach ($candidates as $candidate) {
+	$try = $base . DIRECTORY_SEPARATOR . $candidate;
+	if (is_readable($try) && is_file($try)) {
+		$filename = $candidate;
+		$path = $try;
+		break;
+	}
+}
 
-if (! is_readable($path) || ! is_file($path)) {
+if ($filename === '' || $path === '') {
 	http_response_code(404);
 	header('Content-Type: text/plain; charset=utf-8');
 	echo 'File not found.';
