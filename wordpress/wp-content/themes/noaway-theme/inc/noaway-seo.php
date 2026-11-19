@@ -174,8 +174,8 @@ function noaway_seo_get_page_data() {
     $data['title']       = 'How NoAway Works | Install, Enable, Stay Available';
     $data['description'] = 'Install NoAway once, enable Keep Active from the tray, and your computer stays active automatically. No complicated setup. Works with Teams, Slack, Zoom.';
   } elseif ( $template === 'page-keep-teams-active.php' ) {
-    $data['title']       = 'Stop Teams Showing Away After 5 Minutes – Keep Status Green | NoAway';
-    $data['description'] = 'Teams can show Away after about 5 minutes without keyboard or mouse input. ' . noaway_fact_i18n( 'benefit.short', 'en' ) . ' One-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac and Windows.';
+    $data['title']       = 'How to Keep Teams Active (Stop Away After 5 Min) – Mac & Windows | NoAway';
+    $data['description'] = 'How to keep Microsoft Teams active on Mac and Windows when the desktop app turns Away after about five minutes without input. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. Honest limits: lock screen, calendar, and company policy.';
   } elseif ( $template === 'page-teams-away-status.php' ) {
     $data['title']       = 'Why Does Teams Show Away? Idle, Lock Screen & Status | NoAway';
     $data['description'] = 'Diagnose why Microsoft Teams shows Away: idle, lock screen, sleep, calendar, calls, other devices, and company policy. Desktop, browser, and mobile differ. Link to Microsoft presence docs.';
@@ -809,10 +809,10 @@ function noaway_seo_howto_schema( $template_slug, $download_url ) {
   $download_url = noaway_seo_canonical_url( $download_url );
   $maps = array(
     'page-keep-teams-active.php' => array(
-      'name'          => 'How to keep Teams active and the icon green on Mac and Windows',
-      'description'   => 'Keep Microsoft Teams Available, including a green icon, on Mac and Windows by keeping the computer active during builds, downloads, and deep work.',
+      'name'          => 'How to keep Microsoft Teams active on Mac and Windows',
+      'description'   => 'Download NoAway, install it, and turn Keep Active on so this computer does not look idle to the Teams desktop app during builds, downloads, and deep work.',
       'totalTime'     => 'PT2M',
-      'step3_text'    => 'On Windows, open NoAway from the system tray. On Mac, open it from the menu bar. Turn Keep Active on so Teams does not mark the session idle.',
+      'step3_text'    => 'Click the NoAway icon in your tray or menu bar and hit Start. Your computer stays active, so Teams does not flip you to Away during a build, a download, or a call.',
     ),
     'page-keep-slack-active.php' => array(
       'name'        => 'How to keep Slack active and prevent Away status',
@@ -899,8 +899,8 @@ function noaway_seo_article_schema_for_template( $template_slug, $canonical_url,
       'description' => 'To prevent computer sleep and keep your computer awake on Mac or Windows, use a small app that keeps the system active so it never goes idle. That also keeps Teams, Slack, and other apps showing you as available during long downloads, builds, or remote work.',
     ),
     'page-keep-teams-active.php' => array(
-      'headline'    => 'Never Go Away on Teams Again — Keep Teams Active',
-      'description' => 'How to keep Microsoft Teams Available on Mac and Windows, including a green icon, without mouse jigglers. NoAway keeps your computer active during builds, downloads, and deep work.',
+      'headline'    => 'How to Keep Microsoft Teams Active and Stop Away Status',
+      'description' => 'How to keep Microsoft Teams active on Mac and Windows when Away appears after about five minutes without input. Compare free tricks, mouse jigglers, and NoAway—with honest limits for lock screen and policy.',
     ),
     'page-is-noaway-safe.php' => array(
       'headline'    => 'Is NoAway Safe?',

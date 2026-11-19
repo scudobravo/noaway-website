@@ -33,9 +33,11 @@ get_header();
             <?php echo noaway_i18n_plain( $t['h1'] ); ?>
           </h1>
           <?php noaway_i18n_language_switcher( 'teams', 'under-title' ); ?>
+          <?php if ( ! empty( $t['lead'] ) ) : ?>
           <p class="na-lead max-w-xl">
             <?php echo noaway_i18n_plain( $t['lead'] ); ?>
           </p>
+          <?php endif; ?>
           <div class="mt-2 p-6 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 max-w-xl" role="complementary" aria-label="<?php echo esc_attr( $t['aria_brief'] ); ?>">
             <p class="text-sm font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2"><?php echo noaway_i18n_plain( $t['brief_label'] ); ?></p>
             <p class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed mb-0">
@@ -52,7 +54,9 @@ get_header();
           <p class="text-sm text-slate-600 dark:text-slate-400 min-h-[44px] flex items-center"><?php echo noaway_refund_near_price_html( $noaway_landing_lang ); ?></p>
           <div class="flex flex-col gap-1 text-slate-600 dark:text-slate-400 text-sm">
             <span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span> <?php echo noaway_i18n_plain( $t['onetime'] ); ?></span>
+            <?php if ( ! empty( $t['stress'] ) ) : ?>
             <span class="font-semibold text-slate-700 dark:text-slate-300"><?php echo noaway_i18n_plain( $t['stress'] ); ?></span>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -122,6 +126,50 @@ get_header();
           <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['detect_h'] ); ?></h2>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_html( $t['detect_p'] ); ?></p>
         </div>
+        <?php if ( ! empty( $t['mac_h'] ) ) : ?>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['mac_h'] ); ?></h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_plain( $t['mac_p'] ); ?></p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['win_h'] ); ?></h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_plain( $t['win_p'] ); ?></p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['away_h'] ); ?></h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_plain( $t['away_p'] ); ?></p>
+        </div>
+        <div>
+          <h2 id="keep-teams-icon-green" class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['mouse_h'] ); ?></h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_plain( $t['mouse_p'] ); ?></p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['free_h'] ); ?></h2>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6"><?php echo noaway_i18n_plain( $t['free_intro'] ); ?></p>
+          <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/40">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="bg-slate-50 dark:bg-slate-900/60">
+                  <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700"><?php echo noaway_i18n_plain( $t['free_col_method'] ); ?></th>
+                  <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700"><?php echo noaway_i18n_plain( $t['free_col_idle'] ); ?></th>
+                  <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700"><?php echo noaway_i18n_plain( $t['free_col_admin'] ); ?></th>
+                  <th class="p-4 font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700"><?php echo noaway_i18n_plain( $t['free_col_cost'] ); ?></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                <?php foreach ( $t['free_rows'] as $i => $row ) : ?>
+                <tr class="<?php echo ( $i % 2 === 0 ) ? 'bg-white dark:bg-slate-900/20' : 'bg-slate-50/70 dark:bg-slate-800/30'; ?>">
+                  <td class="p-4 font-semibold text-slate-800 dark:text-slate-200"><?php echo noaway_i18n_plain( $row[0] ); ?></td>
+                  <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $row[1] ); ?></td>
+                  <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $row[2] ); ?></td>
+                  <td class="p-4 text-slate-600 dark:text-slate-400"><?php echo noaway_i18n_plain( $row[3] ); ?></td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <?php else : ?>
         <div>
           <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4"><?php echo noaway_i18n_plain( $t['tricks_h'] ); ?></h2>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_html( $t['tricks_p'] ); ?></p>
@@ -131,6 +179,7 @@ get_header();
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4"><?php echo noaway_i18n_plain( $t['icon_p1'] ); ?></p>
           <p class="text-slate-600 dark:text-slate-400 leading-relaxed"><?php echo noaway_i18n_html( $t['icon_p2'] ); ?></p>
         </div>
+        <?php endif; ?>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 hover:border-primary/40 transition-all group">
@@ -188,7 +237,10 @@ get_header();
           </li>
           <?php endforeach; ?>
         </ul>
-        <div class="mt-8">
+        <div class="mt-8 flex flex-col gap-4">
+          <?php if ( ! empty( $t['controls_disclaimer'] ) ) : ?>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-3xl mb-0"><?php echo noaway_i18n_plain( $t['controls_disclaimer'] ); ?></p>
+          <?php endif; ?>
           <?php noaway_render_controls_note( $noaway_landing_lang ); ?>
         </div>
       </div>
@@ -263,16 +315,19 @@ get_header();
   </section>
 
   <?php
+  $cta_lines = array(
+    esc_html( $t['perk_updates'] ) . ' · ' . esc_html( $t['perk_purchase'] ) . ' · ' . esc_html( $t['perk_devices'] ),
+  );
+  if ( ! empty( $t['stress'] ) ) {
+    array_unshift( $cta_lines, '<span class="font-semibold">' . esc_html( $t['stress'] ) . '</span>' );
+  }
   get_template_part(
     'template-parts/cta-final',
     null,
     array(
       'title'        => $t['cta_h'],
       'subtitle'     => $t['cta_p'],
-      'lines'        => array(
-        '<span class="font-semibold">' . esc_html( $t['stress'] ) . '</span>',
-        esc_html( $t['perk_updates'] ) . ' · ' . esc_html( $t['perk_purchase'] ) . ' · ' . esc_html( $t['perk_devices'] ),
-      ),
+      'lines'        => $cta_lines,
       'button_url'   => $checkout_url,
       'button_label' => $t['buy'],
       'cta_position' => 'footer-cta',
