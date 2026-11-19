@@ -23,6 +23,9 @@ require_once $noaway_inc . 'noaway-sitemap.php';
 require_once $noaway_inc . 'noaway-ai-discovery.php';
 require_once $noaway_inc . 'noaway-ui.php';
 
+// Use theme sitemap.xml only; disable WordPress core sitemaps.
+add_filter( 'wp_sitemaps_enabled', '__return_false' );
+
 /**
  * Redirect host/protocol are enforced at web-server level to keep one-hop 301.
  * Avoid PHP-level host redirects here to prevent chains and crawl instability.
@@ -142,12 +145,14 @@ add_filter(
 );
 
 /**
- * Legacy path (no trailing slash) => target path.
- * Add rows here. /noaway-releases/ is never redirected.
+ * Legacy / hygiene path (no trailing slash) => target path.
+ * Matched on REQUEST_URI so redirects still fire after pages are trashed (404).
+ * /noaway-releases/ is never redirected.
  *
  * /contacts/ is the canonical contact page (page-contatti.php).
  * /contact/ 301s here. Canonical download URL is /downloads/; /download/ 301s there.
  * /privacy-policy/ is canonical; /privacy-policy-2/ 301s there.
+ * Locale roots /de|es|fr|pt-br/ only (not child landings) 301 to home.
  */
 function noaway_legacy_redirects() {
 	return array(
@@ -162,11 +167,16 @@ function noaway_legacy_redirects() {
 		'/download'                    => '/downloads/',
 		'/contact'                     => '/contacts/',
 		'/privacy-policy-2'            => '/privacy-policy/',
+		'/sample-page'                 => '/',
+		'/de'                          => '/',
+		'/es'                          => '/',
+		'/fr'                          => '/',
+		'/pt-br'                       => '/',
 	);
 }
 
 /**
- * 301 legacy URLs before any template output.
+ * 301 hygiene / legacy URLs before any template output.
  */
 add_action(
 	'template_redirect',
@@ -174,6 +184,25 @@ add_action(
 		if ( is_admin() || wp_doing_ajax() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
 			return;
 		}
+
+		$redirect_home = static function () {
+			$target = home_url( '/' );
+			if ( function_exists( 'noaway_seo_canonical_url' ) ) {
+				$target = noaway_seo_canonical_url( $target );
+			}
+			if ( ! is_string( $target ) || $target === '' ) {
+				return;
+			}
+			wp_safe_redirect( $target, 301 );
+			exit;
+		};
+
+		// Unused WP archives / attachments: do not leave indexable soft-homes.
+		if ( is_author() || is_category() || is_tag() || is_date() || is_attachment() ) {
+			$redirect_home();
+			return;
+		}
+
 		$path = '';
 		if ( isset( $_SERVER['REQUEST_URI'] ) && is_string( $_SERVER['REQUEST_URI'] ) ) {
 			$parsed = wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH );

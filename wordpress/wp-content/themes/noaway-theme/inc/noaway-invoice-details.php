@@ -515,15 +515,19 @@ add_action( 'after_switch_theme', 'noaway_ensure_invoice_details_page' );
 add_action( 'admin_init', 'noaway_ensure_invoice_details_page', 33 );
 
 /**
- * noindex — post-purchase form, not for search engines.
+ * noindex — post-purchase pages (invoice form + thank-you), not for search engines.
  *
  * @param array<string,bool|string> $robots Robots directives.
  * @return array<string,bool|string>
  */
 function noaway_invoice_details_robots( $robots ) {
-	if ( is_page_template( 'page-invoice-details.php' ) || is_page( 'invoice-details' ) ) {
-		$robots['noindex']  = true;
-		$robots['nofollow'] = true;
+	$private = is_page_template( 'page-invoice-details.php' )
+		|| is_page( 'invoice-details' )
+		|| is_page_template( 'page-thank-you.php' )
+		|| is_page( 'thank-you' );
+	if ( $private ) {
+		$robots['noindex']   = true;
+		$robots['nofollow']  = true;
 		$robots['noarchive'] = true;
 	}
 	return $robots;
