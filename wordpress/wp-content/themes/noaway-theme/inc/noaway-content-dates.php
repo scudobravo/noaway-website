@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 return array(
   'front-page.php' => '2026-11-19',
   'inc/noaway-facts.php' => '2026-10-19',
-  'inc/noaway-i18n-slack.php' => '2026-10-13',
+  'inc/noaway-i18n-slack.php' => '2026-11-19',
   'inc/noaway-i18n-teams.php' => '2026-11-19',
   'inc/noaway-i18n.php' => '2026-11-19',
   'page-compare.php' => '2026-10-13',

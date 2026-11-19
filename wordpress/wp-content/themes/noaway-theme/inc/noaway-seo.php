@@ -101,9 +101,11 @@ function noaway_seo_get_page_data() {
     $data['canonical_branch'] = 'request';
   }
 
+  $price_label = function_exists( 'noaway_price_label' ) ? noaway_price_label() : ( '€' . NOAWAY_SEO_PRICE_AMOUNT );
+
   if ( is_front_page() ) {
     $data['title']       = 'Keep Teams and Slack from going Away | NoAway';
-    $data['description'] = noaway_fact_i18n( 'benefit.short', 'en' ) . ' One-time €' . NOAWAY_SEO_PRICE_AMOUNT . ' for Mac and Windows.';
+    $data['description'] = 'Keep Teams and Slack from going Away while you work. NoAway prevents idle on this Mac or Windows PC during long tasks—one-time ' . $price_label . ', Mac & Windows.';
     $front = trailingslashit( is_string( $base_url ) ? $base_url : '' );
     if ( $front === '' || $front === '/' ) {
       $data['canonical']        = noaway_seo_request_canonical_url();
@@ -174,19 +176,19 @@ function noaway_seo_get_page_data() {
   }
   if ( $template === 'page-features.php' ) {
     $data['title']       = 'Features | NoAway – Lightweight App to Keep Teams & Slack Active';
-    $data['description'] = 'NoAway features: lightweight tray app, Mac & Windows, minimal resources, simple setup, automatic startup, scheduled wake. Built to stay out of your way.';
+    $data['description'] = 'NoAway features: lightweight tray app for Mac and Windows, Keep Active, automatic startup, simple setup, low resources—one-time ' . $price_label . ', Mac & Windows.';
   } elseif ( $template === 'page-how-it-works.php' ) {
     $data['title']       = 'How NoAway Works | Install, Enable, Stay Available';
     $data['description'] = 'Install NoAway once, enable Keep Active from the tray, and your computer stays active automatically. No complicated setup. Works with Teams, Slack, Zoom.';
   } elseif ( $template === 'page-keep-teams-active.php' ) {
     $data['title']       = 'How to Keep Teams Active (Stop Away After 5 Min) – Mac & Windows | NoAway';
-    $data['description'] = 'How to keep Microsoft Teams active on Mac and Windows when the desktop app turns Away after about five minutes without input. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. Honest limits: lock screen, calendar, and company policy.';
+    $data['description'] = 'Teams shows Away after about 5 minutes without input. How to keep Teams active on Mac and Windows, free ways vs NoAway—one-time ' . $price_label . ', Mac & Windows.';
   } elseif ( $template === 'page-teams-away-status.php' ) {
     $data['title']       = 'Why Does Teams Show Away? (After 5 Min) & How to Stop It | NoAway';
-    $data['description'] = 'Teams can show Away after about 5 minutes without keyboard or mouse input. Diagnose idle, lock screen, calendar, mobile, and policy.';
+    $data['description'] = 'Teams can show Away after about 5 minutes without input. Diagnose idle, lock, calendar, mobile, policy—then stop it. One-time ' . $price_label . ', Mac & Windows.';
   } elseif ( $template === 'page-keep-slack-active.php' ) {
     $data['title']       = 'How to Keep Slack Active (Away After 10 Min) – Mac & Windows | NoAway';
-    $data['description'] = 'Slack’s desktop app sets you to away after ten minutes of inactivity. Mobile apps do it when you leave or close the app. NoAway keeps this computer from going idle.';
+    $data['description'] = 'Slack sets you Away after 10 minutes of desktop inactivity. Keep Slack active on Mac and Windows: free tricks vs NoAway—one-time ' . $price_label . ', Mac & Windows.';
   } elseif ( $template === 'page-prevent-computer-sleep.php' ) {
     $data['title']       = 'Prevent Computer Sleep on Mac & Windows (Without Admin Rights) | NoAway';
     $data['description'] = 'OS sleep settings keep the machine on but do not stop idle status. Prevent sleep without admin rights with NoAway—one-time €' . NOAWAY_SEO_PRICE_AMOUNT . ', Mac & Windows.';
@@ -212,7 +214,7 @@ function noaway_seo_get_page_data() {
     }
   } elseif ( $template === 'page-downloads.php' || $template === 'page-download.php' ) {
     $data['title']       = 'Download NoAway – Keep Teams & Slack Active | Mac & Windows';
-    $data['description'] = 'Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. ' . noaway_fact_i18n( 'benefit.short', 'en' );
+    $data['description'] = 'Download NoAway for macOS and Windows after purchase. Keep this computer from going idle during builds and downloads—one-time ' . $price_label . ', Mac & Windows.';
   } elseif ( $template === 'page-thank-you.php' ) {
     $data['title']       = 'Thank You – Your NoAway Download | Purchase Confirmed';
     $data['description'] = 'Your NoAway purchase is confirmed. Download NoAway for macOS or Windows. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. ' . noaway_fact( 'license.lifetime_updates_short' ) . ' Need help? Visit Help or Contact.';

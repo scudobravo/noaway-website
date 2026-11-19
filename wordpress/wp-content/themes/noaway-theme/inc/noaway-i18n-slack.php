@@ -15,7 +15,7 @@ function noaway_i18n_slack_copies() {
 	return array(
 		'en' => array(
 			'seo_title'       => 'How to Keep Slack Active (Stop Away After 10 Min) – Mac & Windows | NoAway',
-			'seo_description' => 'Slack sets you to away after 10 minutes of desktop inactivity. See what the active and away dots mean, then keep this computer from going idle on Mac & Windows with NoAway.',
+			'seo_description' => 'Slack sets you Away after 10 minutes of desktop inactivity. Keep Slack active on Mac and Windows: free tricks vs NoAway—one-time {price}, Mac & Windows.',
 			'badge'           => 'Slack',
 			'h1'              => 'How to Keep Slack Active and Prevent Away Status',
 			'lead'            => 'Slack’s help article says you are set to away after 10 minutes of desktop inactivity. This page covers desktop and mobile availability, what the dot means, and how to keep this computer from going idle.',

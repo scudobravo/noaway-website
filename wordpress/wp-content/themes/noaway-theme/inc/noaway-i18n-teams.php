@@ -16,7 +16,7 @@ function noaway_i18n_teams_copies() {
 	return array(
 		'en' => array(
 			'seo_title'       => 'How to Keep Teams Active (Stop Away After 5 Min) – Mac & Windows | NoAway',
-			'seo_description' => 'How to keep Microsoft Teams active on Mac and Windows when the desktop app turns Away after about five minutes without input. One-time {price}. Honest limits: lock screen, calendar, and company policy.',
+			'seo_description' => 'Teams shows Away after about 5 minutes without input. How to keep Teams active on Mac and Windows, free ways vs NoAway—one-time {price}, Mac & Windows.',
 			'badge'           => 'Stays Available while you work',
 			'h1'              => 'How to Keep Microsoft Teams Active and Stop Away Status',
 			'lead'            => '',
