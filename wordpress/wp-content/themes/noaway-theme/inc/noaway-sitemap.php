@@ -129,16 +129,16 @@ function noaway_sitemap_template_for_path( $path ) {
     '/features'                 => 'page-features.php',
     '/how-it-works'             => 'page-how-it-works.php',
     '/keep-teams-active'        => 'page-keep-teams-active.php',
-    '/de/keep-teams-active'     => 'page-keep-teams-active.php',
-    '/es/keep-teams-active'     => 'page-keep-teams-active.php',
-    '/pt-br/keep-teams-active'  => 'page-keep-teams-active.php',
-    '/fr/keep-teams-active'     => 'page-keep-teams-active.php',
+    '/de/keep-teams-active'     => 'page-keep-teams-active-de.php',
+    '/es/keep-teams-active'     => 'page-keep-teams-active-es.php',
+    '/pt-br/keep-teams-active'  => 'page-keep-teams-active-pt-br.php',
+    '/fr/keep-teams-active'     => 'page-keep-teams-active-fr.php',
     '/teams-away-status'        => 'page-teams-away-status.php',
     '/keep-slack-active'        => 'page-keep-slack-active.php',
-    '/de/keep-slack-active'     => 'page-keep-slack-active.php',
-    '/es/keep-slack-active'     => 'page-keep-slack-active.php',
-    '/pt-br/keep-slack-active'  => 'page-keep-slack-active.php',
-    '/fr/keep-slack-active'     => 'page-keep-slack-active.php',
+    '/de/keep-slack-active'     => 'page-keep-slack-active-de.php',
+    '/es/keep-slack-active'     => 'page-keep-slack-active-es.php',
+    '/pt-br/keep-slack-active'  => 'page-keep-slack-active-pt-br.php',
+    '/fr/keep-slack-active'     => 'page-keep-slack-active-fr.php',
     '/prevent-computer-sleep'   => 'page-prevent-computer-sleep.php',
     '/is-noaway-safe'           => 'page-is-noaway-safe.php',
     '/compare'                  => 'page-compare.php',
@@ -155,12 +155,97 @@ function noaway_sitemap_template_for_path( $path ) {
 }
 
 /**
- * lastmod — same source as JSON-LD dateModified.
+ * lastmod for localized keep-*-active guides.
+ * Max of WP post_modified and filemtime of the template / translation files that render the page.
+ * Never falls back to the current date.
+ *
+ * @param string $lang de|es|pt-br|fr
+ * @param string $slug keep-teams-active|keep-slack-active
+ * @return string Y-m-d or empty.
+ */
+function noaway_sitemap_localized_guide_lastmod( $lang, $slug ) {
+  $lang = is_string( $lang ) ? $lang : '';
+  $slug = is_string( $slug ) ? $slug : '';
+  if ( $lang === '' || ( $slug !== 'keep-teams-active' && $slug !== 'keep-slack-active' ) ) {
+    return '';
+  }
+
+  $family   = $slug === 'keep-teams-active' ? 'teams' : 'slack';
+  $dir      = get_stylesheet_directory();
+  $stamps   = array();
+  $lang_tpl = function_exists( 'noaway_i18n_guide_template' )
+    ? noaway_i18n_guide_template( $family, $lang )
+    : ( 'page-' . $slug . '-' . $lang . '.php' );
+  $base_tpl = 'page-' . $slug . '.php';
+  $i18n_rel = $family === 'teams' ? '/inc/noaway-i18n-teams.php' : '/inc/noaway-i18n-slack.php';
+
+  foreach ( array( $lang_tpl, $base_tpl ) as $tpl ) {
+    if ( ! is_string( $tpl ) || $tpl === '' ) {
+      continue;
+    }
+    $file = $dir . '/' . ltrim( $tpl, '/' );
+    if ( file_exists( $file ) ) {
+      $stamps[] = (int) filemtime( $file );
+    }
+  }
+
+  $i18n = $dir . $i18n_rel;
+  if ( file_exists( $i18n ) ) {
+    $stamps[] = (int) filemtime( $i18n );
+  }
+
+  $post = null;
+  if ( function_exists( 'noaway_i18n_find_page_by_template' ) && is_string( $lang_tpl ) && $lang_tpl !== '' ) {
+    $post = noaway_i18n_find_page_by_template( $lang_tpl );
+  }
+  if ( ! ( $post instanceof WP_Post ) ) {
+    $found = get_page_by_path( $lang . '/' . $slug, OBJECT, 'page' );
+    if ( $found instanceof WP_Post ) {
+      $post = $found;
+    }
+  }
+  if ( $post instanceof WP_Post && ! empty( $post->post_modified_gmt ) && $post->post_modified_gmt !== '0000-00-00 00:00:00' ) {
+    $ts = strtotime( $post->post_modified_gmt . ' UTC' );
+    if ( $ts ) {
+      $body = trim( wp_strip_all_tags( (string) $post->post_content ) );
+      // Empty routing shells get post_modified bumped by ensure/meta fixes;
+      // only trust that stamp when it is not newer than the rendering files.
+      if ( $body !== '' ) {
+        $stamps[] = (int) $ts;
+      } else {
+        $file_max = $stamps ? max( $stamps ) : 0;
+        if ( $file_max > 0 && (int) $ts <= $file_max ) {
+          $stamps[] = (int) $ts;
+        } elseif ( $file_max === 0 ) {
+          $stamps[] = (int) $ts;
+        }
+      }
+    }
+  }
+
+  $stamps = array_filter( $stamps );
+  if ( ! $stamps ) {
+    return '';
+  }
+  return gmdate( 'Y-m-d', max( $stamps ) );
+}
+
+/**
+ * lastmod — localized guides use post_modified / template / translation filemtimes;
+ * everything else shares the JSON-LD dateModified source. Never emits "now".
  *
  * @param string $loc Absolute URL.
  * @return string Y-m-d or empty.
  */
 function noaway_sitemap_lastmod( $loc ) {
+  $path = wp_parse_url( is_string( $loc ) ? $loc : '', PHP_URL_PATH );
+  $path = is_string( $path ) ? '/' . trim( $path, '/' ) : '';
+  if ( $path !== '/' && $path !== '' ) {
+    $path = untrailingslashit( $path );
+  }
+  if ( preg_match( '#^/(de|es|pt-br|fr)/(keep-teams-active|keep-slack-active)$#', $path, $m ) ) {
+    return noaway_sitemap_localized_guide_lastmod( $m[1], $m[2] );
+  }
   return function_exists( 'noaway_content_modified' ) ? noaway_content_modified( $loc ) : '';
 }
 

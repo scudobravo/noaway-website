@@ -299,6 +299,82 @@ function noaway_i18n_ensure_lang_parent( $lang ) {
 }
 
 /**
+ * Content file mtimes that actually render a localized guide (wrapper, base template, i18n).
+ *
+ * @param string $family slack|teams
+ * @param string $lang
+ * @return int[] Unix timestamps
+ */
+function noaway_i18n_guide_content_mtimes( $family, $lang ) {
+	$dir    = get_stylesheet_directory();
+	$slug   = noaway_i18n_guide_slug( $family );
+	$files  = array(
+		$dir . '/' . noaway_i18n_guide_template( $family, $lang ),
+		$dir . '/page-' . $slug . '.php',
+		$dir . ( $family === 'teams' ? '/inc/noaway-i18n-teams.php' : '/inc/noaway-i18n-slack.php' ),
+	);
+	$stamps = array();
+	foreach ( $files as $file ) {
+		if ( is_string( $file ) && file_exists( $file ) ) {
+			$stamps[] = (int) filemtime( $file );
+		}
+	}
+	return array_filter( $stamps );
+}
+
+/**
+ * Empty routing shells get post_modified bumped by meta/parent fixes.
+ * Align modified to the newest rendering file (or post_date) so sitemap/JSON-LD stay honest.
+ *
+ * @param WP_Post $post
+ * @param string  $family
+ * @param string  $lang
+ * @return bool True when the row was updated.
+ */
+function noaway_i18n_repair_guide_modified( $post, $family, $lang ) {
+	global $wpdb;
+	if ( ! ( $post instanceof WP_Post ) || ! ( $wpdb instanceof wpdb ) ) {
+		return false;
+	}
+	if ( trim( wp_strip_all_tags( (string) $post->post_content ) ) !== '' ) {
+		return false;
+	}
+	$stamps = noaway_i18n_guide_content_mtimes( $family, $lang );
+	if ( ! empty( $post->post_date_gmt ) && $post->post_date_gmt !== '0000-00-00 00:00:00' ) {
+		$created = strtotime( $post->post_date_gmt . ' UTC' );
+		if ( $created ) {
+			$stamps[] = (int) $created;
+		}
+	}
+	$stamps = array_filter( $stamps );
+	if ( ! $stamps ) {
+		return false;
+	}
+	$real = max( $stamps );
+	$current = ! empty( $post->post_modified_gmt ) ? strtotime( $post->post_modified_gmt . ' UTC' ) : 0;
+	if ( ! $current || $current <= $real ) {
+		return false;
+	}
+	$gmt   = gmdate( 'Y-m-d H:i:s', $real );
+	$local = get_date_from_gmt( $gmt );
+	$updated = $wpdb->update(
+		$wpdb->posts,
+		array(
+			'post_modified'     => $local,
+			'post_modified_gmt' => $gmt,
+		),
+		array( 'ID' => (int) $post->ID ),
+		array( '%s', '%s' ),
+		array( '%d' )
+	);
+	if ( $updated ) {
+		clean_post_cache( (int) $post->ID );
+		return true;
+	}
+	return false;
+}
+
+/**
  * Ensure a localized guide page exists under its language parent.
  *
  * @param string $family slack|teams
@@ -334,6 +410,10 @@ function noaway_i18n_ensure_guide_page( $family, $lang, $parent_id ) {
 		}
 		if ( $changed ) {
 			wp_update_post( $update );
+			$page = get_post( (int) $page->ID );
+		}
+		if ( $page instanceof WP_Post && noaway_i18n_repair_guide_modified( $page, $family, $lang ) ) {
+			$changed = true;
 		}
 		return $changed;
 	}
@@ -341,17 +421,37 @@ function noaway_i18n_ensure_guide_page( $family, $lang, $parent_id ) {
 	$path = $lang . '/' . $slug;
 	$by_path = get_page_by_path( $path, OBJECT, 'page' );
 	if ( $by_path instanceof WP_Post ) {
-		wp_update_post(
-			array(
-				'ID'          => (int) $by_path->ID,
-				'post_parent' => (int) $parent_id,
-				'post_name'   => $slug,
-				'post_status' => 'publish',
-				'post_title'  => $title,
-			)
-		);
-		update_post_meta( (int) $by_path->ID, '_wp_page_template', $template );
-		return true;
+		$update  = array( 'ID' => (int) $by_path->ID );
+		$changed = false;
+		if ( (int) $by_path->post_parent !== (int) $parent_id ) {
+			$update['post_parent'] = (int) $parent_id;
+			$changed               = true;
+		}
+		if ( $by_path->post_name !== $slug ) {
+			$update['post_name'] = $slug;
+			$changed             = true;
+		}
+		if ( $by_path->post_status !== 'publish' ) {
+			$update['post_status'] = 'publish';
+			$changed               = true;
+		}
+		if ( $by_path->post_title !== $title ) {
+			$update['post_title'] = $title;
+			$changed              = true;
+		}
+		if ( $changed ) {
+			wp_update_post( $update );
+			$by_path = get_post( (int) $by_path->ID );
+		}
+		$current_tpl = get_post_meta( (int) $by_path->ID, '_wp_page_template', true );
+		if ( $current_tpl !== $template ) {
+			update_post_meta( (int) $by_path->ID, '_wp_page_template', $template );
+			$changed = true;
+		}
+		if ( $by_path instanceof WP_Post && noaway_i18n_repair_guide_modified( $by_path, $family, $lang ) ) {
+			$changed = true;
+		}
+		return $changed;
 	}
 
 	$id = wp_insert_post(
@@ -392,7 +492,7 @@ function noaway_i18n_ensure_localized_pages() {
 			}
 		}
 	}
-	$version = '1';
+	$version = '2';
 	if ( get_option( 'noaway_i18n_pages_version' ) !== $version ) {
 		update_option( 'noaway_i18n_pages_version', $version, false );
 		$created_or_fixed = true;
