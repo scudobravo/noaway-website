@@ -488,8 +488,37 @@ function noaway_seo_theme_version_for_schema() {
 }
 
 /**
+ * Git-based content date for a theme-relative file (survives deploy copies).
+ * Falls back to filemtime only when the file is missing from the map.
+ *
+ * @param string $relative Path under the theme, e.g. page-help.php or inc/noaway-facts.php.
+ * @return int Unix timestamp or 0.
+ */
+function noaway_content_file_timestamp( $relative ) {
+  static $map = null;
+  $relative = is_string( $relative ) ? ltrim( str_replace( '\\', '/', $relative ), '/' ) : '';
+  if ( $relative === '' ) {
+    return 0;
+  }
+  if ( $map === null ) {
+    $file = get_stylesheet_directory() . '/inc/noaway-content-dates.php';
+    $loaded = ( file_exists( $file ) ) ? include $file : array();
+    $map = is_array( $loaded ) ? $loaded : array();
+  }
+  if ( isset( $map[ $relative ] ) && is_string( $map[ $relative ] ) && $map[ $relative ] !== '' ) {
+    $ts = strtotime( $map[ $relative ] . ' UTC' );
+    return $ts ? (int) $ts : 0;
+  }
+  $abs = get_stylesheet_directory() . '/' . $relative;
+  if ( file_exists( $abs ) ) {
+    return (int) filemtime( $abs );
+  }
+  return 0;
+}
+
+/**
  * Single source for content last-modified (sitemap lastmod + JSON-LD dateModified).
- * Max of: WP post_modified, template filemtime, related i18n filemtime.
+ * Max of: WP post_modified, template/i18n/facts content dates (from git map).
  *
  * @param string $page Template file (e.g. page-help.php), path slug (e.g. teams-away-status), or absolute URL.
  * @return string Y-m-d or empty.
@@ -529,9 +558,9 @@ function noaway_content_modified( $page ) {
 
   $stamps = array();
   if ( is_string( $template ) && $template !== '' ) {
-    $file = get_stylesheet_directory() . '/' . ltrim( $template, '/' );
-    if ( file_exists( $file ) ) {
-      $stamps[] = (int) filemtime( $file );
+    $ts = noaway_content_file_timestamp( $template );
+    if ( $ts > 0 ) {
+      $stamps[] = $ts;
     }
   }
 
@@ -540,20 +569,20 @@ function noaway_content_modified( $page ) {
     $check_path = '/' . str_replace( array( 'page-', '.php' ), '', $template );
   }
   if ( is_string( $check_path ) && strpos( $check_path, 'keep-slack-active' ) !== false ) {
-    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-slack.php';
-    if ( file_exists( $i18n ) ) {
-      $stamps[] = (int) filemtime( $i18n );
+    $ts = noaway_content_file_timestamp( 'inc/noaway-i18n-slack.php' );
+    if ( $ts > 0 ) {
+      $stamps[] = $ts;
     }
   }
   if ( is_string( $check_path ) && strpos( $check_path, 'keep-teams-active' ) !== false ) {
-    $i18n = get_stylesheet_directory() . '/inc/noaway-i18n-teams.php';
-    if ( file_exists( $i18n ) ) {
-      $stamps[] = (int) filemtime( $i18n );
+    $ts = noaway_content_file_timestamp( 'inc/noaway-i18n-teams.php' );
+    if ( $ts > 0 ) {
+      $stamps[] = $ts;
     }
   }
-  $facts = get_stylesheet_directory() . '/inc/noaway-facts.php';
-  if ( file_exists( $facts ) ) {
-    $stamps[] = (int) filemtime( $facts );
+  $ts = noaway_content_file_timestamp( 'inc/noaway-facts.php' );
+  if ( $ts > 0 ) {
+    $stamps[] = $ts;
   }
 
   if ( is_singular() ) {
@@ -575,7 +604,16 @@ function noaway_content_modified( $page ) {
   if ( $post instanceof WP_Post && ! empty( $post->post_modified_gmt ) ) {
     $ts = strtotime( $post->post_modified_gmt . ' UTC' );
     if ( $ts ) {
-      $stamps[] = (int) $ts;
+      $body = trim( wp_strip_all_tags( (string) $post->post_content ) );
+      // Empty shells are often touched by ensure; don't let that become "today".
+      if ( $body !== '' ) {
+        $stamps[] = (int) $ts;
+      } else {
+        $file_max = $stamps ? max( $stamps ) : 0;
+        if ( $file_max === 0 || (int) $ts <= $file_max ) {
+          $stamps[] = (int) $ts;
+        }
+      }
     }
   }
 

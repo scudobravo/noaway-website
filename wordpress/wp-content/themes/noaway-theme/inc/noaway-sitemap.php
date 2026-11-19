@@ -171,27 +171,29 @@ function noaway_sitemap_localized_guide_lastmod( $lang, $slug ) {
   }
 
   $family   = $slug === 'keep-teams-active' ? 'teams' : 'slack';
-  $dir      = get_stylesheet_directory();
   $stamps   = array();
   $lang_tpl = function_exists( 'noaway_i18n_guide_template' )
     ? noaway_i18n_guide_template( $family, $lang )
     : ( 'page-' . $slug . '-' . $lang . '.php' );
   $base_tpl = 'page-' . $slug . '.php';
-  $i18n_rel = $family === 'teams' ? '/inc/noaway-i18n-teams.php' : '/inc/noaway-i18n-slack.php';
+  $i18n_rel = $family === 'teams' ? 'inc/noaway-i18n-teams.php' : 'inc/noaway-i18n-slack.php';
 
-  foreach ( array( $lang_tpl, $base_tpl ) as $tpl ) {
-    if ( ! is_string( $tpl ) || $tpl === '' ) {
+  foreach ( array( $lang_tpl, $base_tpl, $i18n_rel ) as $rel ) {
+    if ( ! is_string( $rel ) || $rel === '' ) {
       continue;
     }
-    $file = $dir . '/' . ltrim( $tpl, '/' );
-    if ( file_exists( $file ) ) {
-      $stamps[] = (int) filemtime( $file );
+    $ts = function_exists( 'noaway_content_file_timestamp' )
+      ? noaway_content_file_timestamp( $rel )
+      : 0;
+    if ( $ts <= 0 ) {
+      $file = get_stylesheet_directory() . '/' . ltrim( $rel, '/' );
+      if ( file_exists( $file ) ) {
+        $ts = (int) filemtime( $file );
+      }
     }
-  }
-
-  $i18n = $dir . $i18n_rel;
-  if ( file_exists( $i18n ) ) {
-    $stamps[] = (int) filemtime( $i18n );
+    if ( $ts > 0 ) {
+      $stamps[] = $ts;
+    }
   }
 
   $post = null;

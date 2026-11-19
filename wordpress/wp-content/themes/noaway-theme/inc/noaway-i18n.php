@@ -306,17 +306,25 @@ function noaway_i18n_ensure_lang_parent( $lang ) {
  * @return int[] Unix timestamps
  */
 function noaway_i18n_guide_content_mtimes( $family, $lang ) {
-	$dir    = get_stylesheet_directory();
-	$slug   = noaway_i18n_guide_slug( $family );
-	$files  = array(
-		$dir . '/' . noaway_i18n_guide_template( $family, $lang ),
-		$dir . '/page-' . $slug . '.php',
-		$dir . ( $family === 'teams' ? '/inc/noaway-i18n-teams.php' : '/inc/noaway-i18n-slack.php' ),
+	$slug  = noaway_i18n_guide_slug( $family );
+	$rels  = array(
+		noaway_i18n_guide_template( $family, $lang ),
+		'page-' . $slug . '.php',
+		$family === 'teams' ? 'inc/noaway-i18n-teams.php' : 'inc/noaway-i18n-slack.php',
 	);
 	$stamps = array();
-	foreach ( $files as $file ) {
-		if ( is_string( $file ) && file_exists( $file ) ) {
-			$stamps[] = (int) filemtime( $file );
+	foreach ( $rels as $rel ) {
+		if ( ! is_string( $rel ) || $rel === '' ) {
+			continue;
+		}
+		if ( function_exists( 'noaway_content_file_timestamp' ) ) {
+			$ts = noaway_content_file_timestamp( $rel );
+		} else {
+			$file = get_stylesheet_directory() . '/' . ltrim( $rel, '/' );
+			$ts   = file_exists( $file ) ? (int) filemtime( $file ) : 0;
+		}
+		if ( $ts > 0 ) {
+			$stamps[] = $ts;
 		}
 	}
 	return array_filter( $stamps );
