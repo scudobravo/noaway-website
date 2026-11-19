@@ -2,10 +2,11 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/izmljlig/public_html
-    - /bin/cp -R wordpress/wp-content/themes/noaway-theme $DEPLOYPATH/wp-content/themes/
-    - /bin/cp -R wordpress/wp-content/plugins/noaway-analytics $DEPLOYPATH/wp-content/plugins/
-    - /bin/cp wordpress/robots.txt wordpress/llms.txt wordpress/favicon.ico $DEPLOYPATH/
+    # -p keeps source mtimes so sitemap lastmod / dateModified stay real (not deploy day).
+    - /bin/cp -pR wordpress/wp-content/themes/noaway-theme $DEPLOYPATH/wp-content/themes/
+    - /bin/cp -pR wordpress/wp-content/plugins/noaway-analytics $DEPLOYPATH/wp-content/plugins/
+    - /bin/cp -p wordpress/robots.txt wordpress/llms.txt wordpress/favicon.ico $DEPLOYPATH/
     - /bin/mkdir -p $DEPLOYPATH/api
-    - /bin/cp api/download.php $DEPLOYPATH/api/download.php
+    - /bin/cp -p api/download.php $DEPLOYPATH/api/download.php
     - /bin/mkdir -p $DEPLOYPATH/wp-content/uploads/noaway-releases
-    - /bin/cp wordpress/wp-content/uploads/noaway-releases/.htaccess $DEPLOYPATH/wp-content/uploads/noaway-releases/.htaccess
+    - /bin/cp -p wordpress/wp-content/uploads/noaway-releases/.htaccess $DEPLOYPATH/wp-content/uploads/noaway-releases/.htaccess
