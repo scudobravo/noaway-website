@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 return array(
-  'front-page.php' => '2026-10-22',
+  'front-page.php' => '2026-11-19',
   'inc/noaway-facts.php' => '2026-10-19',
   'inc/noaway-i18n-slack.php' => '2026-10-13',
   'inc/noaway-i18n-teams.php' => '2026-11-19',
@@ -40,7 +40,7 @@ return array(
   'page-privacy-policy.php' => '2026-10-22',
   'page-releases.php' => '2026-10-22',
   'page-sitemap.php' => '2026-10-22',
-  'page-teams-away-status.php' => '2026-10-22',
+  'page-teams-away-status.php' => '2026-11-19',
   'page-terms-of-service.php' => '2026-10-22',
   'page-thank-you.php' => '2026-11-13',
 );

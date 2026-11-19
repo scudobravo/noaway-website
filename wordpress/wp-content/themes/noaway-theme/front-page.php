@@ -28,7 +28,7 @@ get_header();
               <p class="text-slate-600 dark:text-slate-400 text-sm">Mac &amp; Windows · one-time payment · instant download after purchase</p>
               <p class="text-sm text-slate-600 dark:text-slate-400 min-h-[44px] flex items-center"><?php echo noaway_refund_near_price_html( 'en' ); ?></p>
             </div>
-            <p class="text-slate-600 dark:text-slate-400 text-base mt-4">See <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Teams</a>, <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">why Teams shows Away</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Slack</a>, or <a href="<?php echo esc_url( noaway_prevent_computer_sleep_page_url() ); ?>" class="text-primary font-semibold hover:underline">sleep</a>.</p>
+            <p class="text-slate-600 dark:text-slate-400 text-base mt-4">See <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">keep Teams active</a>, <a href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>" class="text-primary font-semibold hover:underline">why Teams shows Away</a>, <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">keep Slack active</a>, or <a href="<?php echo esc_url( noaway_prevent_computer_sleep_page_url() ); ?>" class="text-primary font-semibold hover:underline">prevent computer sleep</a>.</p>
           </div>
           <div class="flex-1 relative w-full order-2">
             <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
@@ -72,7 +72,7 @@ get_header();
     <section class="py-16 md:py-32" id="features">
       <div class="max-w-7xl mx-auto px-6">
         <div class="mb-12 md:mb-20 text-center">
-          <h2 class="na-h2 mb-4">Why your status suddenly turns Away—and how to keep Teams active</h2>
+          <h2 class="na-h2 mb-4">Why your status suddenly turns Away</h2>
           <p class="text-slate-600 text-lg">Standard power settings can make your computer idle at the worst possible moment. Learn how to <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-medium hover:underline">keep Teams active</a> and <a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="text-primary font-medium hover:underline">get help</a> with setup.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -259,25 +259,18 @@ get_header();
       </div>
     </section>
 
-    <!-- SEO Section -->
+    <!-- Guides (detail lives on /keep-teams-active/ and /keep-slack-active/) -->
     <section class="py-16 md:py-32 bg-slate-50 dark:bg-slate-900/50" id="teams-status">
       <div class="max-w-3xl mx-auto px-6">
-        <h2 class="na-h2 mb-8">How to keep Microsoft Teams active and keep the Teams icon green</h2>
+        <h2 class="na-h2 mb-8">Guides for Teams and Slack</h2>
         <div class="max-w-none text-[17px] text-slate-700 dark:text-slate-300 leading-relaxed">
-          <p class="mb-4">Many remote workers ask how to keep Teams active and prevent Teams away. Microsoft Teams automatically changes your status to Away after a few minutes of inactivity—so learning how to keep the Teams icon green matters.</p>
-          <p class="mb-4">This can happen while you are:</p>
-          <ul class="mb-4 space-y-2 list-none p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-xl" aria-hidden="true">check_circle</span> downloading files</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-xl" aria-hidden="true">check_circle</span> waiting for builds</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-xl" aria-hidden="true">check_circle</span> reading documentation</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-xl" aria-hidden="true">check_circle</span> attending meetings</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-xl" aria-hidden="true">check_circle</span> watching presentations</li>
-          </ul>
-          <p class="mb-4">Even though you are still working, your status may appear as inactive.</p>
-          <p class="mb-4">NoAway prevents this by keeping your computer active automatically. Keep Teams Web App status as Active and follow the best practice for staying active: prevent your system from going idle.</p>
-          <p class="mb-4">As long as NoAway is running, your system does not enter an idle state, helping apps like Microsoft Teams or Slack show Away less often.</p>
-          <p class="mb-4">This simple tool removes the stress of unexpectedly appearing Away during important work.</p>
-          <p>If you're searching for how to keep your status always online in Microsoft Teams or how you actually set Teams to always available, NoAway provides a simple one-click solution.</p>
+          <p class="mb-4">Teams and Slack can show Away while you are still working—during downloads, builds, or long reads—because the desktop apps watch for idle time on this computer.</p>
+          <p class="mb-4">NoAway keeps this Mac or Windows PC from looking idle while Keep Active is on, so those apps are less likely to flip your status. Limits still apply: lock screen, calendar, and company policy.</p>
+          <p class="mb-0">
+            <a href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">Read the full guide: how to keep Teams active</a>
+            ·
+            <a href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>" class="text-primary font-semibold hover:underline">how to keep Slack active</a>
+          </p>
         </div>
       </div>
     </section>

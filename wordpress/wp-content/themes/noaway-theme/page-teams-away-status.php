@@ -72,12 +72,16 @@ $rows = array(
         <span class="na-eyebrow">Microsoft Teams</span>
       </div>
       <h1 class="na-h1 mb-6" style="text-wrap:balance">
-        Why Microsoft Teams shows Away
+        Why Does Microsoft Teams Show Away When You're Working?
       </h1>
       <p class="na-lead">
-        Microsoft Teams chooses presence from signals such as your activity, calendar, calls, and which client you are using—not from a permanent “always Available” switch. Microsoft documents how presence works for admins in
+        Microsoft Teams chooses presence from signals such as your activity, calendar, calls, and which client you are using—not from a permanent “always Available” switch. On the desktop app, Away often appears after about five minutes without keyboard or mouse input. Microsoft documents how presence works for admins in
         <a href="<?php echo esc_url( $ms_presence_url ); ?>" class="text-primary font-semibold hover:underline" rel="noopener noreferrer" target="_blank">User presence in Teams</a>.
         Use the table below to diagnose what you are seeing before changing settings.
+      </p>
+      <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-0">
+        When the cause is idle on this computer, see
+        <a href="<?php echo esc_url( $teams_active_url ); ?>" class="text-primary font-semibold hover:underline">How to keep Teams active on Mac and Windows</a>.
       </p>
       <?php noaway_render_last_reviewed( 'page-teams-away-status.php' ); ?>
     </header>
@@ -122,11 +126,11 @@ $rows = array(
     </section>
 
     <section class="mb-14" aria-labelledby="away-vs-heading">
-      <h2 id="away-vs-heading" class="na-guide-h2 !mt-0">Away vs Offline vs Appear away</h2>
+      <h2 id="away-vs-heading" class="na-guide-h2 !mt-0">Away vs Offline vs Be right back</h2>
       <ul class="list-disc pl-5 text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] space-y-3 mb-4">
-        <li><strong>Away</strong> — You are signed in; Teams treats you as inactive or sets Away based on presence rules (for example idle on the desktop client).</li>
+        <li><strong>Away</strong> — You are signed in; Teams treats you as inactive or sets Away based on presence rules (for example idle on the desktop client after about five minutes without input).</li>
         <li><strong>Offline</strong> — That client is not connected in a way that shows you as present (app closed, signed out, or no connection for that client).</li>
-        <li><strong>Appear away</strong> — A manual status you can set in Teams so others see Away even if you are active. It is a user-chosen status, not the same as automatic idle Away.</li>
+        <li><strong>Be right back</strong> — A manual status you choose in Teams. It is not the same as automatic idle Away, and it does not stop the computer from looking idle when you clear it.</li>
       </ul>
       <p class="text-[17px] text-slate-700 dark:text-slate-300 leading-[1.75] mb-4">
         For the full list of presence states and admin configuration, see Microsoft’s

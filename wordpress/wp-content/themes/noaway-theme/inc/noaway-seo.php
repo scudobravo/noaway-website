@@ -129,37 +129,42 @@ function noaway_seo_get_page_data() {
   }
 
   $template = get_page_template_slug();
-  // Fallback when get_page_template_slug() is empty (wrong Page Attributes template in wp-admin,
-  // or title filter runs without a resolved template): match page slug / request path.
-  // This fixes /teams-away-status/ falling through to the home default title.
-  if ( ( ! is_string( $template ) || $template === '' ) && ! is_front_page() ) {
-    $page_slug_map = array(
-      'features'               => 'page-features.php',
-      'how-it-works'           => 'page-how-it-works.php',
-      'keep-teams-active'      => 'page-keep-teams-active.php',
-      'teams-away-status'      => 'page-teams-away-status.php',
-      'keep-slack-active'      => 'page-keep-slack-active.php',
-      'prevent-computer-sleep' => 'page-prevent-computer-sleep.php',
-      'is-noaway-safe'         => 'page-is-noaway-safe.php',
-      'download'               => 'page-downloads.php',
-      'downloads'              => 'page-downloads.php',
-      'thank-you'              => 'page-thank-you.php',
-      'invoice-details'        => 'page-invoice-details.php',
-      'help'                   => 'page-help.php',
-      'contacts'               => 'page-contatti.php',
-      'contact'                => 'page-contatti.php',
-      'faq'                    => 'page-faq.php',
-      'compare'                => 'page-compare.php',
-      'sitemap'                => 'page-sitemap.php',
-      'releases'               => 'page-releases.php',
-    );
+  if ( ! is_string( $template ) ) {
+    $template = '';
+  }
+  // Prefer page slug / request path over Page Attributes when mapped. Prevents
+  // /teams-away-status/ (and peers) falling through to the home default title
+  // when the template meta is empty, wrong, or not yet resolved.
+  $page_slug_map = array(
+    'features'               => 'page-features.php',
+    'how-it-works'           => 'page-how-it-works.php',
+    'keep-teams-active'      => 'page-keep-teams-active.php',
+    'teams-away-status'      => 'page-teams-away-status.php',
+    'keep-slack-active'      => 'page-keep-slack-active.php',
+    'prevent-computer-sleep' => 'page-prevent-computer-sleep.php',
+    'is-noaway-safe'         => 'page-is-noaway-safe.php',
+    'download'               => 'page-downloads.php',
+    'downloads'              => 'page-downloads.php',
+    'thank-you'              => 'page-thank-you.php',
+    'invoice-details'        => 'page-invoice-details.php',
+    'help'                   => 'page-help.php',
+    'contacts'               => 'page-contatti.php',
+    'contact'                => 'page-contatti.php',
+    'faq'                    => 'page-faq.php',
+    'compare'                => 'page-compare.php',
+    'sitemap'                => 'page-sitemap.php',
+    'releases'               => 'page-releases.php',
+    'privacy-policy'         => 'page-privacy-policy.php',
+    'terms-of-service'       => 'page-terms-of-service.php',
+  );
+  if ( ! is_front_page() ) {
     foreach ( $page_slug_map as $slug => $tpl ) {
       if ( is_page( $slug ) ) {
         $template = $tpl;
         break;
       }
     }
-    if ( ! is_string( $template ) || $template === '' ) {
+    if ( $template === '' || ! in_array( $template, $page_slug_map, true ) ) {
       $req_path = (string) wp_parse_url( noaway_seo_request_canonical_url(), PHP_URL_PATH );
       $req_path = trim( untrailingslashit( $req_path ), '/' );
       if ( isset( $page_slug_map[ $req_path ] ) ) {
@@ -177,8 +182,8 @@ function noaway_seo_get_page_data() {
     $data['title']       = 'How to Keep Teams Active (Stop Away After 5 Min) – Mac & Windows | NoAway';
     $data['description'] = 'How to keep Microsoft Teams active on Mac and Windows when the desktop app turns Away after about five minutes without input. One-time €' . NOAWAY_SEO_PRICE_AMOUNT . '. Honest limits: lock screen, calendar, and company policy.';
   } elseif ( $template === 'page-teams-away-status.php' ) {
-    $data['title']       = 'Why Does Teams Show Away? Idle, Lock Screen & Status | NoAway';
-    $data['description'] = 'Diagnose why Microsoft Teams shows Away: idle, lock screen, sleep, calendar, calls, other devices, and company policy. Desktop, browser, and mobile differ. Link to Microsoft presence docs.';
+    $data['title']       = 'Why Does Teams Show Away? (After 5 Min) & How to Stop It | NoAway';
+    $data['description'] = 'Teams can show Away after about 5 minutes without keyboard or mouse input. Diagnose idle, lock screen, calendar, mobile, and policy.';
   } elseif ( $template === 'page-keep-slack-active.php' ) {
     $data['title']       = 'How to Keep Slack Active (Away After 10 Min) – Mac & Windows | NoAway';
     $data['description'] = 'Slack’s desktop app sets you to away after ten minutes of inactivity. Mobile apps do it when you leave or close the app. NoAway keeps this computer from going idle.';
@@ -696,8 +701,8 @@ function noaway_seo_landing_faq_items( $template_slug ) {
         'text' => 'Teams sets presence from activity, calendar, calls, and which client you use. Reading without input, a locked screen, a meeting, or another device can change status even though you are still working. See Microsoft’s presence documentation for admin details.',
       ),
       array(
-        'name' => 'What is the difference between Away, Offline, and Appear away?',
-        'text' => 'Away means you are signed in and Teams treats you as inactive or Away. Offline means that client is not showing you as present (closed, signed out, or disconnected). Appear away is a manual status you choose so others see Away even if you are active.',
+        'name' => 'What is the difference between Away, Offline, and Be right back?',
+        'text' => 'Away means you are signed in and Teams treats you as inactive or Away (often after about five minutes without input on desktop). Offline means that client is not showing you as present (closed, signed out, or disconnected). Be right back is a manual status you choose; it is not the same as automatic idle Away.',
       ),
       array(
         'name' => 'Does locking the screen make Teams show Away?',
@@ -705,14 +710,14 @@ function noaway_seo_landing_faq_items( $template_slug ) {
       ),
       array(
         'name' => 'Can a meeting or calendar event change my status?',
-        'text' => 'Yes. A call or a calendar block can set Busy, In a meeting, or Out of office. Keeping the computer active does not override calendar or call presence.',
+        'text' => 'Yes. A call or a calendar block can set Busy, In a meeting, or Out of office. Stopping idle on the computer does not override calendar or call presence.',
       ),
       array(
         'name' => 'Do desktop, web, and mobile follow the same rule?',
         'text' => 'No. The desktop app commonly follows the computer idle timer (about 5 minutes). The browser follows the browser session. Mobile can change when you leave the app or lock the phone. Activity on one device does not keep the others Available.',
       ),
       array(
-        'name' => 'Why does changing sleep settings not keep me Available?',
+        'name' => 'Why does changing sleep settings not stop Teams showing Away?',
         'text' => 'Sleep settings decide when the display or the computer sleeps. Teams still looks for recent input. A machine that is awake but idle can still show Away.',
       ),
     ),
@@ -887,8 +892,8 @@ function noaway_seo_article_schema_for_template( $template_slug, $canonical_url,
   }
   $by_template = array(
     'page-teams-away-status.php' => array(
-      'headline'    => 'Why Teams shows Away while you\'re working',
-      'description' => 'Teams can show Away while you work because of a locked screen, a calendar event or call, or idle time. Desktop, web, and mobile differ. Sleep settings alone do not keep you Available.',
+      'headline'    => 'Why Does Microsoft Teams Show Away When You\'re Working?',
+      'description' => 'Teams can show Away after about 5 minutes without keyboard or mouse input—or because of lock screen, calendar, mobile, or policy. Diagnose the cause before changing settings.',
     ),
     'page-keep-slack-active.php' => array(
       'headline'    => 'How to Keep Slack Active and Prevent Away Status',

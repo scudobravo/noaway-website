@@ -37,7 +37,7 @@ get_header();
           <li><a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>">How it works</a></li>
           <li><a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>">Compare prices</a></li>
           <li>
-            <a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>">Keep Teams Active</a>
+            <a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_keep_teams_active_page_url() ); ?>">keep Teams active</a>
             — <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'teams', 'de' ) ); ?>">Deutsch</a>,
             <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'teams', 'es' ) ); ?>">Español</a>,
             <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'teams', 'pt-br' ) ); ?>">Português</a>,
@@ -55,7 +55,7 @@ get_header();
         <ul class="pl-0 space-y-1 list-none m-0">
           <li><a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_teams_away_status_page_url() ); ?>">Why Teams Shows Away</a></li>
           <li>
-            <a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>">Keep Slack Active</a>
+            <a class="text-primary hover:underline font-medium inline-flex items-center min-h-[44px]" href="<?php echo esc_url( noaway_keep_slack_active_page_url() ); ?>">keep Slack active</a>
             — <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'slack', 'de' ) ); ?>">Deutsch</a>,
             <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'slack', 'es' ) ); ?>">Español</a>,
             <a class="text-primary hover:underline font-medium" href="<?php echo esc_url( noaway_i18n_landing_url( 'slack', 'pt-br' ) ); ?>">Português</a>,
