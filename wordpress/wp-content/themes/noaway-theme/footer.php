@@ -3,7 +3,10 @@
  * Footer: 4-column layout (brand, product, download, company).
  */
 $checkout = noaway_checkout_url();
-$tagline  = __( 'Stay active on Teams and Slack during long tasks, builds, and remote work.', 'noaway' );
+$tagline  = function_exists( 'noaway_i18n_ui' )
+	? noaway_i18n_ui( 'footer_tagline' )
+	: __( 'Stay active on Teams and Slack during long tasks, builds, and remote work.', 'noaway' );
+$ui       = function_exists( 'noaway_i18n_ui' );
 ?>
 <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 mt-auto">
 	<style id="noaway-footer-critical">
@@ -34,24 +37,24 @@ $tagline  = __( 'Stay active on Teams and Slack during long tasks, builds, and r
 
 			<!-- Product -->
 			<div class="noaway-footer-col">
-				<p class="noaway-footer-heading"><?php esc_html_e( 'Product', 'noaway' ); ?></p>
+				<p class="noaway-footer-heading"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_product' ) : __( 'Product', 'noaway' ) ); ?></p>
 				<ul class="noaway-footer-links" role="list">
-					<li><a href="<?php echo esc_url( noaway_features_page_url() ); ?>"><?php esc_html_e( 'Features', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>"><?php esc_html_e( 'How it works', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>"><?php esc_html_e( 'Is NoAway safe?', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>"><?php esc_html_e( 'Compare', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>"><?php esc_html_e( 'FAQ', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_help_page_url() ); ?>"><?php esc_html_e( 'Help', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_releases_page_url() ); ?>"><?php esc_html_e( 'Releases', 'noaway' ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_features_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_features' ) : __( 'Features', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_how' ) : __( 'How it works', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_is_noaway_safe_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_safe' ) : __( 'Is NoAway safe?', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_compare' ) : __( 'Compare', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_faq_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_faq' ) : __( 'FAQ', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_help_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_help' ) : __( 'Help', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_releases_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_releases' ) : __( 'Releases', 'noaway' ) ); ?></a></li>
 				</ul>
 			</div>
 
 			<!-- Download -->
 			<div class="noaway-footer-col">
-				<p class="noaway-footer-heading"><?php esc_html_e( 'Download', 'noaway' ); ?></p>
+				<p class="noaway-footer-heading"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_download' ) : __( 'Download', 'noaway' ) ); ?></p>
 				<ul class="noaway-footer-links" role="list">
-					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php esc_html_e( 'macOS', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php esc_html_e( 'Windows', 'noaway' ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_macos' ) : __( 'macOS', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_windows' ) : __( 'Windows', 'noaway' ) ); ?></a></li>
 					<li><a href="<?php echo esc_url( $checkout ); ?>"<?php echo noaway_buy_cta_attrs( 'footer' ); ?>><?php
 						echo esc_html( function_exists( 'noaway_i18n_buy_cta_label' ) ? noaway_i18n_buy_cta_label() : ( 'Buy NoAway – ' . noaway_price_label() ) );
 					?></a></li>
@@ -60,18 +63,18 @@ $tagline  = __( 'Stay active on Teams and Slack during long tasks, builds, and r
 
 			<!-- Company -->
 			<div class="noaway-footer-col">
-				<p class="noaway-footer-heading"><?php esc_html_e( 'Company', 'noaway' ); ?></p>
+				<p class="noaway-footer-heading"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_company' ) : __( 'Company', 'noaway' ) ); ?></p>
 				<ul class="noaway-footer-links" role="list">
-					<li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy Policy', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>"><?php esc_html_e( 'Terms of Service', 'noaway' ); ?></a></li>
-					<li><a href="#" class="noaway-cookie-settings-link" data-cookie-settings><?php esc_html_e( 'Cookie Settings', 'noaway' ); ?></a></li>
-					<li><a href="<?php echo esc_url( noaway_contact_page_url() ); ?>"><?php esc_html_e( 'Contact', 'noaway' ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_privacy' ) : __( 'Privacy Policy', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/terms-of-service/' ) ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_terms' ) : __( 'Terms of Service', 'noaway' ) ); ?></a></li>
+					<li><a href="#" class="noaway-cookie-settings-link" data-cookie-settings><?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_cookies' ) : __( 'Cookie Settings', 'noaway' ) ); ?></a></li>
+					<li><a href="<?php echo esc_url( noaway_contact_page_url() ); ?>"><?php echo esc_html( $ui ? noaway_i18n_ui( 'nav_contact' ) : __( 'Contact', 'noaway' ) ); ?></a></li>
 				</ul>
 			</div>
 		</div>
 
 		<p class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-600 max-w-4xl mx-auto">
-			© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — <?php esc_html_e( 'VAT NUMBER 02045420490', 'noaway' ); ?>
+			© <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?> — <?php echo esc_html( $ui ? noaway_i18n_ui( 'footer_vat' ) : __( 'VAT NUMBER 02045420490', 'noaway' ) ); ?>
 		</p>
 	</div>
 	<?php wp_footer(); ?>

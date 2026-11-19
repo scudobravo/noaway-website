@@ -25,7 +25,7 @@
 				data-noaway-menu-toggle
 				aria-expanded="false"
 				aria-controls="noaway-mobile-menu"
-				aria-label="<?php esc_attr_e( 'Toggle menu', 'noaway' ); ?>"
+				aria-label="<?php echo esc_attr( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_toggle' ) : __( 'Toggle menu', 'noaway' ) ); ?>"
 			>
 				<span class="noaway-menu-toggle__line"></span>
 				<span class="noaway-menu-toggle__line"></span>
@@ -33,16 +33,16 @@
 			</button>
 		</div>
 		<div class="noaway-header-links" id="noaway-mobile-menu">
-			<nav class="noaway-primary-nav text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="Primary">
-				<a href="<?php echo esc_url( noaway_features_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Features', 'noaway' ); ?></a>
-				<a href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'How it works', 'noaway' ); ?></a>
-				<a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Compare', 'noaway' ); ?></a>
-				<a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Download', 'noaway' ); ?></a>
-				<a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'FAQ', 'noaway' ); ?></a>
-				<a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="hover:text-primary transition-colors"><?php esc_html_e( 'Help', 'noaway' ); ?></a>
+			<nav class="noaway-primary-nav text-sm font-semibold text-slate-600 dark:text-slate-300" aria-label="<?php echo esc_attr( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_primary' ) : 'Primary' ); ?>">
+				<a href="<?php echo esc_url( noaway_features_page_url() ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_features' ) : __( 'Features', 'noaway' ) ); ?></a>
+				<a href="<?php echo esc_url( noaway_how_it_works_page_url() ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_how' ) : __( 'How it works', 'noaway' ) ); ?></a>
+				<a href="<?php echo esc_url( function_exists( 'noaway_market_compare_page_url' ) ? noaway_market_compare_page_url() : home_url( '/compare/' ) ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_compare' ) : __( 'Compare', 'noaway' ) ); ?></a>
+				<a href="<?php echo esc_url( noaway_downloads_page_url() ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_download' ) : __( 'Download', 'noaway' ) ); ?></a>
+				<a href="<?php echo esc_url( noaway_faq_page_url() ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_faq' ) : __( 'FAQ', 'noaway' ) ); ?></a>
+				<a href="<?php echo esc_url( noaway_help_page_url() ); ?>" class="hover:text-primary transition-colors"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_help' ) : __( 'Help', 'noaway' ) ); ?></a>
 			</nav>
 			<div class="noaway-header-cta">
-				<a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary inline-flex items-center min-h-[48px]"><?php esc_html_e( 'Contact', 'noaway' ); ?></a>
+				<a href="<?php echo esc_url( noaway_contact_page_url() ); ?>" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary inline-flex items-center min-h-[48px]"><?php echo esc_html( function_exists( 'noaway_i18n_ui' ) ? noaway_i18n_ui( 'nav_contact' ) : __( 'Contact', 'noaway' ) ); ?></a>
 				<a href="<?php echo esc_url( noaway_checkout_url() ); ?>" class="noaway-header-buy-menu na-btn-primary w-full"<?php echo noaway_buy_cta_attrs( 'header' ); ?>><?php
 					echo esc_html( function_exists( 'noaway_i18n_buy_cta_label' ) ? noaway_i18n_buy_cta_label() : ( 'Buy NoAway – ' . noaway_price_label() ) );
 				?></a>

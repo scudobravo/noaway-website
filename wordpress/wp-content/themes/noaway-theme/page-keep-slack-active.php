@@ -18,7 +18,6 @@ get_header();
   <?php noaway_i18n_render_locale_banner( 'slack', $noaway_landing_lang ); ?>
   <article class="max-w-6xl mx-auto px-6 pt-12 lg:pt-20 pb-12" itemscope itemtype="https://schema.org/Article">
     <header class="max-w-3xl mb-12 lg:mb-16" data-noaway-sticky-after>
-      <?php noaway_i18n_language_switcher( 'slack', 'header' ); ?>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit mb-6">
         <span class="na-eyebrow"><?php echo noaway_i18n_plain( $t['badge'] ); ?></span>
       </div>
@@ -184,7 +183,7 @@ get_header();
       $noaway_guide_body,
       array(
         'buy_url'   => $noaway_checkout_url,
-        'buy_label' => 'Buy NoAway – ' . noaway_price_label(),
+        'buy_label' => noaway_i18n_raw( $t['buy'] ),
         'tracked'   => true,
         'position'  => 'guide-toc',
       )
@@ -206,7 +205,7 @@ get_header();
       'button_label'       => noaway_i18n_raw( $t['buy'] ),
       'cta_position'       => 'footer-cta',
       'before_button_html' => noaway_capture_mobile_email_box( true ),
-      'secondary_html'     => '<p class="mb-2">' . noaway_refund_near_price_html( $noaway_landing_lang, true ) . '</p><p class="flex flex-wrap justify-center items-center gap-x-2"><a href="' . esc_url( noaway_faq_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['faq_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( noaway_help_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['help_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( $noaway_compare_url ) . '" class="' . $noaway_cta_link_class . '">Compare prices</a></p>',
+      'secondary_html'     => '<p class="mb-2">' . noaway_refund_near_price_html( $noaway_landing_lang, true ) . '</p><p class="flex flex-wrap justify-center items-center gap-x-2"><a href="' . esc_url( noaway_faq_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['faq_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( noaway_help_page_url() ) . '" class="' . $noaway_cta_link_class . '">' . noaway_i18n_plain( $t['help_link'] ) . '</a> <span aria-hidden="true">·</span> <a href="' . esc_url( $noaway_compare_url ) . '" class="' . $noaway_cta_link_class . '">' . esc_html( noaway_i18n_ui( 'nav_compare_prices' ) ) . '</a></p>',
     )
   );
   ?>
@@ -215,6 +214,7 @@ get_header();
       <?php noaway_render_before_you_buy( $noaway_landing_lang, 'horizontal' ); ?>
     </div>
   </section>
+  <?php noaway_i18n_render_other_guides( 'slack', $noaway_landing_lang ); ?>
 </main>
 <?php
 if ( function_exists( 'noaway_render_sticky_buy_bar' ) ) {

@@ -334,6 +334,7 @@ get_header();
     )
   );
   ?>
+  <?php noaway_i18n_render_other_guides( 'teams', $noaway_landing_lang ); ?>
 </main>
 <?php
 if ( function_exists( 'noaway_render_sticky_buy_bar' ) ) {
